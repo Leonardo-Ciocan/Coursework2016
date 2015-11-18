@@ -1,0 +1,25 @@
+.sheet-card{
+  width:150px;
+  height:200px;
+  margin:5px;
+  float:left;
+  background:white;
+  padding:3px;
+  transition: transform 0.2s;
+  cursor: pointer;
+
+  &:hover{
+    transform: translateY(-5px);
+  }
+
+  h1{
+    max-lines: 1;
+    font-size: 15pt;
+  }
+
+  h2{
+    font-size: 12pt;
+    color:darkgray;
+  }
+
+}

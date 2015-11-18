@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> <%= @sheet.name %> </title>
+  <script>
+    var sheet = <%= raw @sheet.to_json %>;
+    var questions = <%= raw @questions.to_json %>;
+  </script>
+</head>
+<body>
+    <div id="root"/>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'sheet_editor', 'data-turbolinks-track' => true %>
+
+</body>
+</html>
