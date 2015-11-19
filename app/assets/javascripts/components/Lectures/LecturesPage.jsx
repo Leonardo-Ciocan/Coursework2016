@@ -14,19 +14,29 @@ class Sheet extends React.Component {
             background:"white",
             margin:"10px",
             boxShadow:"0px 0px 10px 0px rgba(0,0,0,0.19)",
-            cursor:"pointer"
+            cursor:"pointer",
+            overflow:"hidden"
         };
 
         var titleStyle = {
-          fontSize:"15pt",
-            color:"gray",
+            background:"rgba(0,0,0,0.09)",
+            fontSize:"15pt",
+            color:"green",
             textAlign:"center",
             borderBottom:"1px solid gray",
             padding:"4px",margin:"0px"
         };
 
+        var descriptionStyle = {
+            fontSize:"12pt",
+            color:"gray",
+            textAlign:"center",
+            padding:"4px",margin:"4px"
+        };
+
         return <div style={containerStyle} onClick={this.clicked.bind(this)}>
                     <h1 style={titleStyle}>{this.props.sheet.name}</h1>
+                    <h2 style={descriptionStyle}>{this.props.sheet.description}</h2>
         </div>
     }
 }
