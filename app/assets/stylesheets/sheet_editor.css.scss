@@ -1,3 +1,6 @@
+body{
+  background:white;
+}
 .page-editor{
   margin-top:110px;
   width:800px;
@@ -8,6 +11,7 @@
 
 .question-block{
   padding:10px;
+  padding-top:20px;
   width:100%;
   position:relative;
 }
@@ -17,7 +21,6 @@
   left:0;
   right:0;
   top:0;
-  box-shadow:0px 0px 7px #B8B8B8;
 }
 
 .sheet-title{
@@ -35,18 +38,18 @@
 }
 
 .question-title{
-  text-align: center;
+  text-align: left;
   width:100%;
-  font-size: 15pt;
+  font-size: 13pt;
   margin-bottom: 0px;
 }
 
 .question-subtitle{
-  text-align: center;
+  text-align: left;
   width:100%;
   color:gray;
   font-size: 10pt;
-  margin-top: 0px;
+  margin-top: 5px;
 }
 
 .number-choice{

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "/cake" => "application#cake"
   get "/current" => "application#current"
   get "/sheets/:id" => "sheet_editor#index"
+  post "/answer/:id" => "sheet_editor#update_answer"
+
   get "/lectures/" => "lecture_list#index"
   get "/sheets/" => "sheets#index"
   # The priority is based upon order of creation: first created -> highest priority.

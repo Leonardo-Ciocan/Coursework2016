@@ -5,12 +5,14 @@ class ChoiceQuestionFragment extends React.Component{
     }
 
     render(){
+        console.log(this.props.selected);
         var answerStyle={
             border:"1px solid green",
             borderRadius:"2px",
             display:"inline-block",
             margin:"5px",
             cursor:"pointer",
+            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             background: this.props.selected ? "green":"white",
             color: !this.props.selected ? "green":"white"
         };
@@ -26,14 +28,27 @@ class ChoiceQuestion extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-           selected : -1,
+           selected : parseInt(this.props.answer.data),
             color:"green"
         };
+        console.log(this.state.selected);
     }
 
     onPick(index){
-        console.log(index);
-        this.setState({selected:index})
+        console.log("/answer/" + this.props.answer.id);
+        this.setState({selected:index});
+        $.post("/answer/" + this.props.answer.id,
+            { data : index + ""}
+        );
+    }
+
+    mouseEnter(e){
+        $(this.refs.card).css("box-shadow","0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.22)");
+    }
+
+
+    mouseLeave(e){
+        $(this.refs.card).css("box-shadow","0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
     }
 
     render() {
@@ -49,18 +64,30 @@ class ChoiceQuestion extends React.Component {
 
         var iconStyle = {
             position:"absolute",
-            left:"-30px",
-            top:"50%",
-            marginTop:"-7px"
+            left:"0%",
+            top:"0%",
+            marginLeft:"10px",
+            padding:"10px",
+            marginTop:"-17px",
+            color:this.state.color,
+            background:"white",
+            border:"1px solid green",
+            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
+            borderRadius:"100%"
         };
+
         return <div className="question-block" >
-                    <div className="  panel panel-default" style={{
+                    <div ref="card" className="panel panel-default"
+                         onMouseEnter={this.mouseEnter.bind(this)}
+                         onMouseLeave={this.mouseLeave.bind(this)}
+                         style={{
                         background:"white",
                         margin:"0 auto",
                         width:"600px",
                         padding:"10px",
+                        border:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
-                        border:"1px solid " + this.state.color
+                        transition:"box-shadow 0.3s"
                     }}>
 
                         <span style={iconStyle} className="glyphicon glyphicon-list"></span>

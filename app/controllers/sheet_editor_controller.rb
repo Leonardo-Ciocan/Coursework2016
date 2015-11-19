@@ -11,4 +11,11 @@ class SheetEditorController < ApplicationController
     end
     render "sheet_editor/SheetEditor"
   end
+
+  def update_answer
+    answer = Answer.find params[:id]
+    answer.data = params[:data]
+    answer.save
+    head :ok , content_type: "text/html"
+  end
 end
