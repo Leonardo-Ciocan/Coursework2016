@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118235402) do
+ActiveRecord::Schema.define(version: 20151120102750) do
 
   create_table "answers", force: true do |t|
     t.string   "data"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151118235402) do
     t.datetime "updated_at"
     t.integer  "type"
     t.integer  "sheet_id"
+    t.string   "correct_answer"
   end
 
   create_table "sheets", force: true do |t|

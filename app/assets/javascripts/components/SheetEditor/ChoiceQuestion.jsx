@@ -7,14 +7,14 @@ class ChoiceQuestionFragment extends React.Component{
     render(){
         console.log(this.props.selected);
         var answerStyle={
-            border:"1px solid green",
+            border:"1px solid " + window.color,
             borderRadius:"2px",
             display:"inline-block",
             margin:"5px",
             cursor:"pointer",
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
-            background: this.props.selected ? "green":"white",
-            color: !this.props.selected ? "green":"white"
+            background: this.props.selected ? window.color:"white",
+            color: !this.props.selected ? window.color:"white"
         };
 
         return (<div style={answerStyle} onClick={this.onClick.bind(this)}>
@@ -29,7 +29,8 @@ class ChoiceQuestion extends React.Component {
         super(props);
         this.state = {
            selected : parseInt(this.props.answer.data),
-            color:"green"
+            color:window.color,
+            completed : this.props.question.correct_answer == parseInt(this.props.answer.data)
         };
         console.log(this.state.selected);
     }
@@ -40,6 +41,9 @@ class ChoiceQuestion extends React.Component {
         $.post("/answer/" + this.props.answer.id,
             { data : index + ""}
         );
+        this.setState({
+           completed : this.props.question.correct_answer == index
+        });
     }
 
     mouseEnter(e){
@@ -71,9 +75,25 @@ class ChoiceQuestion extends React.Component {
             marginTop:"-17px",
             color:this.state.color,
             background:"white",
-            border:"1px solid green",
+            border:"1px solid " + this.state.color,
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             borderRadius:"100%"
+        };
+
+        var statusStyle = {
+            border:"1px solid " + (this.state.completed ? "green" : "rgba(0,0,0,0.15)"),
+            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
+            background:"white",
+            position:"absolute",
+            right:"10px",
+            top:"-13px",
+            borderRadius:"5px"
+        };
+
+        var statusTextStyle ={
+          margin:"5px",
+            fontSize:"10pt",
+            color:+ this.state.completed ? "green" : "rgba(0,0,0,0.55)"
         };
 
         return <div className="question-block" >
@@ -95,7 +115,12 @@ class ChoiceQuestion extends React.Component {
                     <h1 className="question-title"> {this.props.question.title} </h1>
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
                     <div style={{display:"inline-block"}}>{answers}</div>
+
+                        <div style={statusStyle}>
+                            <h5 style={statusTextStyle}> { this.state.completed ? "Correct" :"Incomplete"} </h5>
                         </div>
+
+                    </div>
                 </div>
     }
 }

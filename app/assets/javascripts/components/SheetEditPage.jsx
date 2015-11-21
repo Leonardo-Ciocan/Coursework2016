@@ -1,9 +1,10 @@
 //=require ./SheetEditor/ChoiceQuestion
 //=require ./SheetEditor/InputQuestion
+//=require ./SheetEditor/DrawingQuestion
 
 class SheetEditPage extends React.Component {
     render() {
-
+        window.color= "#37006E";
         var questions = this.props.questions.map(function(question,i){
             //console.log(question.type);
             question.type = question.type == null ? 0 : question.type;

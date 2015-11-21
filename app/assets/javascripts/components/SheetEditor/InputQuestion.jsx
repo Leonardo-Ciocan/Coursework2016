@@ -4,7 +4,7 @@ class InputQuestion extends React.Component {
         super(props);
         this.state = {
             text : this.props.answer.data,
-            color: "green"
+            color:window.color
         };
         console.log(this.state.selected);
     }
@@ -16,7 +16,7 @@ class InputQuestion extends React.Component {
     }
 
     mouseEnter(e){
-        $(this.refs.card).css("box-shadow","0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.22)");
+        $(this.refs.card).css("box-shadow","0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.12)");
     }
 
 
@@ -35,7 +35,7 @@ class InputQuestion extends React.Component {
             marginTop:"-17px",
             color:this.state.color,
             background:"white",
-            border:"1px solid green",
+            border:"1px solid " + window.color,
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             borderRadius:"100%"
         };

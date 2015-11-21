@@ -4,10 +4,19 @@ class DrawingQuestion extends React.Component {
         super(props);
         this.state = {
             text : this.props.answer.data,
-            color: "green"
+            color:window.color
         };
     }
 
+
+    mouseEnter(e){
+        $(this.refs.card).css("box-shadow","0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.22)");
+    }
+
+
+    mouseLeave(e){
+        $(this.refs.card).css("box-shadow","0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
+    }
 
 
     render() {
@@ -21,15 +30,15 @@ class DrawingQuestion extends React.Component {
             marginTop:"-17px",
             color:this.state.color,
             background:"white",
-            border:"1px solid green",
+            border:"1px solid " + window.color,
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             borderRadius:"100%"
         };
 
 
         var canvasStyle = {
-            width:"600px",
-            height:"600px",
+            width:"580px",
+            height:"300",
             border:"1px solid " + this.state.color
         };
 
