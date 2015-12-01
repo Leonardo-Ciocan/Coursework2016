@@ -14,14 +14,15 @@ class Sheet extends React.Component {
             background:"white",
             margin:"10px",
             boxShadow:"0px 0px 10px 0px rgba(0,0,0,0.19)",
+            border:"1px solid gray",
             cursor:"pointer",
             overflow:"hidden"
         };
 
         var titleStyle = {
-            background:"rgba(0,0,0,0.09)",
-            fontSize:"15pt",
-            color:"green",
+            background:"rgba(0,0,0,0.01)",
+            fontSize:"11pt",
+            color:"#2C76DE",
             textAlign:"center",
             borderBottom:"1px solid gray",
             padding:"4px",margin:"0px"
@@ -48,6 +49,14 @@ class SheetList extends React.Component{
         });
 
         var parentStyle = {position:"relative"};
-        return <div style={parentStyle}>{items}</div>;
+        var lectureTitle ={
+          margin:"15px",
+            color:"#2C76DE"
+
+        };
+        return <div style={parentStyle}>
+            <h1 style={lectureTitle}> AFL - Automata and Formal Languages </h1>
+            {items}
+        </div>;
     }
 }

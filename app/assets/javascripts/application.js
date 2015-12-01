@@ -19,5 +19,3 @@
 //= require ripples.min.js
 // require components
 // require_tree .
-
-//

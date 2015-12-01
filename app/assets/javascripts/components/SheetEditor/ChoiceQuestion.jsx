@@ -12,7 +12,6 @@ class ChoiceQuestionFragment extends React.Component{
             display:"inline-block",
             margin:"5px",
             cursor:"pointer",
-            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             background: this.props.selected ? window.color:"white",
             color: !this.props.selected ? window.color:"white"
         };
@@ -73,17 +72,16 @@ class ChoiceQuestion extends React.Component {
             marginLeft:"10px",
             padding:"10px",
             marginTop:"-17px",
-            color:this.state.color,
+            color:"purple",
             background:"white",
-            border:"1px solid " + this.state.color,
+            border:"1px solid " + "purple",
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             borderRadius:"100%"
         };
 
         var statusStyle = {
             border:"1px solid " + (this.state.completed ? "green" : "rgba(0,0,0,0.15)"),
-            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
-            background:"white",
+            background:+ this.state.completed ? "green" : "rgba(0,0,0,0.55)",
             position:"absolute",
             right:"10px",
             top:"-13px",
@@ -93,7 +91,7 @@ class ChoiceQuestion extends React.Component {
         var statusTextStyle ={
           margin:"5px",
             fontSize:"10pt",
-            color:+ this.state.completed ? "green" : "rgba(0,0,0,0.55)"
+            color:"white"
         };
 
         return <div className="question-block" >
@@ -110,7 +108,7 @@ class ChoiceQuestion extends React.Component {
                         transition:"box-shadow 0.3s"
                     }}>
 
-                        <span style={iconStyle} className="glyphicon glyphicon-list"></span>
+                        <span style={iconStyle} className="glyphicon glyphicon-align-center"></span>
 
                     <h1 className="question-title"> {this.props.question.title} </h1>
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>

@@ -33,22 +33,20 @@ class InputQuestion extends React.Component {
             marginLeft:"10px",
             padding:"10px",
             marginTop:"-17px",
-            color:this.state.color,
+            color:"orange",
             background:"white",
-            border:"1px solid " + window.color,
+            border:"1px solid " + "orange",
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             borderRadius:"100%"
         };
 
         var inputStyle = {
             padding:"5px",
-            border:"1px solid " + this.state.color,
-            width:"100%",
-            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)"
+            width:"100%"
         };
 
         return <div className="question-block" >
-            <div ref="card" className="  panel panel-default"
+            <window.Paper ref="card"
                  onMouseEnter={this.mouseEnter.bind(this)}
                  onMouseLeave={this.mouseLeave.bind(this)}
                  style={{
@@ -66,9 +64,12 @@ class InputQuestion extends React.Component {
                 <h1 className="question-title"> {this.props.question.title} </h1>
                 <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
                 <div>
-                    <input onChange={this.onChange.bind(this)} style={inputStyle} defaultValue={this.state.text}/>
+                    <window.TextField
+                        underlineFocusStyle={{borderColor: window.color}}
+                        underlineStyle={{borderColor: window.color}}
+                        hintText="Type here" onChange={this.onChange.bind(this)} style={inputStyle} defaultValue={this.state.text}/>
                 </div>
-            </div>
+            </window.Paper>
         </div>
     }
 }

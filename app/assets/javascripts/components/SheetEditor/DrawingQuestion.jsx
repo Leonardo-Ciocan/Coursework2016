@@ -28,9 +28,9 @@ class DrawingQuestion extends React.Component {
             marginLeft:"10px",
             padding:"10px",
             marginTop:"-17px",
-            color:this.state.color,
+            color:"red",
             background:"white",
-            border:"1px solid " + window.color,
+            border:"1px solid " + "Red",
             boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
             borderRadius:"100%"
         };
@@ -56,7 +56,7 @@ class DrawingQuestion extends React.Component {
                         transition:"box-shadow 0.3s"
                     }}>
 
-                <span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
+                <span style={iconStyle} className="glyphicon glyphicon-pencil"></span>
 
                 <h1 className="question-title"> {this.props.question.title} </h1>
                 <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>

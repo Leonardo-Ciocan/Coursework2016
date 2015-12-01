@@ -1,12 +1,6 @@
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require react
-//= require react_ujs
-//= require material.min.js
-//= require ripples.min.js
-//= require components/Lectures/LecturesPage
+//= require ./components/Lectures/lectures.js
+
 ReactDOM.render(
-    React.createElement(SheetList , {sheets:sheets}),
+    React.createElement(LecturePage , {sheets:sheets}),
     document.getElementById('root')
 );
