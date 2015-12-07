@@ -29,11 +29,21 @@ class SheetEditPage extends React.Component {
                     style={{
                           marginTop:"110px",
                           width:"600px",
+                          marginBottom:"50px",
                           marginLeft:"auto",
                           marginRight:"auto",
                           boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);"
                     }}>
                     {questions}
+                    <div style={{height:"65px"}}>
+                        <h1 style={{
+                            verticalAlign:"middle",
+                            textAlign:"center",
+                            lineHeight:"65px",
+                            fontSize:"25px",
+                            margin:"0px"
+                        }}>That's all folks</h1>
+                    </div>
                </div>
             </div>
     }

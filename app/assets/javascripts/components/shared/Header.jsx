@@ -31,7 +31,8 @@ class Header extends React.Component {
                      style={{
                                 height:"65px",
                                 background:"white",
-                                boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.05);"
+                                boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.05);",
+                                borderBottom:"1px solid lightgray"
                            }}
 
                     >

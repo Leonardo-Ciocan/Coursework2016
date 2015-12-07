@@ -42,7 +42,9 @@ class InputQuestion extends React.Component {
 
             var inputStyle = {
                 padding: "5px",
-                width: "100%"
+                width: "100%",
+                border:"1px solid "+ window.color,
+                padding:"10px"
             };
             //<span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
 
@@ -67,9 +69,8 @@ class InputQuestion extends React.Component {
 
                     <div>
                         <input
-                            underlineFocusStyle={{borderColor: window.color}}
-                            underlineStyle={{borderColor: window.color}}
-                            hintText="Type here" onChange={this.onChange.bind(this)} style={inputStyle}
+
+                            onChange={this.onChange.bind(this)} style={inputStyle}
                             defaultValue={this.state.text}/>
                     </div>
                 </div>
