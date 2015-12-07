@@ -1,5 +1,4 @@
-var inputQuestion = function(material,React) {
-    return class InputQuestion extends React.Component {
+class InputQuestion extends React.Component {
 
         constructor(props) {
             super(props);
@@ -45,38 +44,35 @@ var inputQuestion = function(material,React) {
                 padding: "5px",
                 width: "100%"
             };
+            //<span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
 
             return <div className="question-block">
-                <material.Paper
+                <div
                        onMouseEnter={this.mouseEnter.bind(this)}
                        onMouseLeave={this.mouseLeave.bind(this)}
                        style={{
-                        background:"white",
+                         background:"  white",
                         margin:"0 auto",
                         width:"600px",
-                        border:"1px solid rgba(0,0,0,0.15)",
-                        padding:"10px",
+                        padding:"35px",
+                        borderBottom:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
                         transition:"box-shadow 0.3s"
                     }}>
 
-                    <span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
 
                     <h1 className="question-title"> {this.props.question.title} </h1>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 
                     <div>
-                        <material.TextField
+                        <input
                             underlineFocusStyle={{borderColor: window.color}}
                             underlineStyle={{borderColor: window.color}}
                             hintText="Type here" onChange={this.onChange.bind(this)} style={inputStyle}
                             defaultValue={this.state.text}/>
                     </div>
-                </material.Paper>
+                </div>
             </div>
         }
     }
-};
-
-module.exports = inputQuestion;

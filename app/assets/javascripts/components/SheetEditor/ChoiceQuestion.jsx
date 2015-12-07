@@ -1,6 +1,5 @@
 
 
-module.exports = function(material,React) {
     class ChoiceQuestionFragment extends React.Component {
         onClick() {
             this.props.onPick(this.props.index);
@@ -24,14 +23,13 @@ module.exports = function(material,React) {
         }
     }
 
-return class ChoiceQuestion extends React.Component {
+ class ChoiceQuestion extends React.Component {
 
         constructor(props) {
             super(props);
             this.state = {
                 selected: parseInt(this.props.answer.data),
-                color: window.color,
-                completed: this.props.question.correct_answer == parseInt(this.props.answer.data)
+                color: window.color
             };
             console.log(this.state.selected);
         }
@@ -42,9 +40,6 @@ return class ChoiceQuestion extends React.Component {
             $.post("/answer/" + this.props.answer.id,
                 {data: index + ""}
             );
-            this.setState({
-                completed: this.props.question.correct_answer == index
-            });
         }
 
         mouseEnter(e) {
@@ -58,7 +53,6 @@ return class ChoiceQuestion extends React.Component {
 
         render() {
 
-
             var answers = JSON.parse(this.props.question.data.replace(/'/g, '"')).answers.map(function (a, i) {
                 return <ChoiceQuestionFragment
                     selected={i==this.state.selected}
@@ -70,48 +64,31 @@ return class ChoiceQuestion extends React.Component {
 
             var iconStyle = {
                 position: "absolute",
-                left: "0%",
-                top: "0%",
-                marginLeft: "10px",
+                left: "-17px",
+                top: "50%",
                 padding: "10px",
                 marginTop: "-17px",
                 color: "purple",
                 background: "white",
-                border: "1px solid " + "purple",
-                boxShadow: "0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
+                border: "1px solid " + "gray",
                 borderRadius: "100%"
             };
 
-            var statusStyle = {
-                border: "1px solid " + (this.state.completed ? "green" : "rgba(0,0,0,0.15)"),
-                background: +this.state.completed ? "green" : "rgba(0,0,0,0.55)",
-                position: "absolute",
-                right: "10px",
-                top: "-13px",
-                borderRadius: "5px"
-            };
 
-            var statusTextStyle = {
-                margin: "5px",
-                fontSize: "10pt",
-                color: "white"
-            };
-
-            return <div className="question-block">
-                <div className="panel panel-default"
+            return <div className="question-block" >
+                <div
                      onMouseEnter={this.mouseEnter.bind(this)}
                      onMouseLeave={this.mouseLeave.bind(this)}
                      style={{
-                        background:"white",
+                        background:"  white",
                         margin:"0 auto",
                         width:"600px",
-                        padding:"10px",
-                        border:"1px solid rgba(0,0,0,0.15)",
+                        padding:"35px",
+                        borderBottom:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
                         transition:"box-shadow 0.3s"
                     }}>
 
-                    <span style={iconStyle} className="glyphicon glyphicon-align-center"></span>
 
                     <h1 className="question-title"> {this.props.question.title} </h1>
 
@@ -119,13 +96,9 @@ return class ChoiceQuestion extends React.Component {
 
                     <div style={{display:"inline-block"}}>{answers}</div>
 
-                    <div style={statusStyle}>
-                        <h5 style={statusTextStyle}> { this.state.completed ? "Correct" : "Incomplete"} </h5>
-                    </div>
 
                 </div>
             </div>
         }
     }
-};
 

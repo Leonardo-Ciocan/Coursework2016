@@ -1,5 +1,4 @@
-module.exports = function(material,React) {
-    return class DrawingQuestion extends React.Component {
+     class DrawingQuestion extends React.Component {
 
         constructor(props) {
             super(props);
@@ -38,26 +37,24 @@ module.exports = function(material,React) {
 
 
             var canvasStyle = {
-                width: "580px",
+                width: "530px",
                 height: "300",
                 border: "1px solid " + this.state.color
             };
 
             return <div className="question-block">
-                <div className="  panel panel-default"
+                <div
                      onMouseEnter={this.mouseEnter.bind(this)}
                      onMouseLeave={this.mouseLeave.bind(this)}
                      style={{
-                        background:"white",
+                         background:"  white",
                         margin:"0 auto",
                         width:"600px",
-                        border:"1px solid rgba(0,0,0,0.15)",
-                        padding:"10px",
+                        padding:"35px",
+                        borderBottom:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
                         transition:"box-shadow 0.3s"
                     }}>
-
-                    <span style={iconStyle} className="glyphicon glyphicon-pencil"></span>
 
                     <h1 className="question-title"> {this.props.question.title} </h1>
 
@@ -70,4 +67,3 @@ module.exports = function(material,React) {
             </div>
         }
     }
-};
