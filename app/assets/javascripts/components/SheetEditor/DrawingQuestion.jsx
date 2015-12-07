@@ -1,52 +1,53 @@
-class DrawingQuestion extends React.Component {
+module.exports = function(material,React) {
+    return class DrawingQuestion extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            text : this.props.answer.data,
-            color:window.color
-        };
-    }
-
-
-    mouseEnter(e){
-        $(this.refs.card).css("box-shadow","0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.22)");
-    }
+        constructor(props) {
+            super(props);
+            this.state = {
+                text: this.props.answer.data,
+                color: window.color
+            };
+        }
 
 
-    mouseLeave(e){
-        $(this.refs.card).css("box-shadow","0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
-    }
+        mouseEnter(e) {
+            //$(this.refs.card).css("box-shadow", "0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.22)");
+        }
 
 
-    render() {
-
-        var iconStyle = {
-            position:"absolute",
-            left:"0%",
-            top:"0%",
-            marginLeft:"10px",
-            padding:"10px",
-            marginTop:"-17px",
-            color:"red",
-            background:"white",
-            border:"1px solid " + "Red",
-            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
-            borderRadius:"100%"
-        };
+        mouseLeave(e) {
+            //$(this.refs.card).css("box-shadow", "0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
+        }
 
 
-        var canvasStyle = {
-            width:"580px",
-            height:"300",
-            border:"1px solid " + this.state.color
-        };
+        render() {
 
-        return <div className="question-block" >
-            <div ref="card" className="  panel panel-default"
-                 onMouseEnter={this.mouseEnter.bind(this)}
-                 onMouseLeave={this.mouseLeave.bind(this)}
-                 style={{
+            var iconStyle = {
+                position: "absolute",
+                left: "0%",
+                top: "0%",
+                marginLeft: "10px",
+                padding: "10px",
+                marginTop: "-17px",
+                color: "red",
+                background: "white",
+                border: "1px solid " + "Red",
+                boxShadow: "0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
+                borderRadius: "100%"
+            };
+
+
+            var canvasStyle = {
+                width: "580px",
+                height: "300",
+                border: "1px solid " + this.state.color
+            };
+
+            return <div className="question-block">
+                <div className="  panel panel-default"
+                     onMouseEnter={this.mouseEnter.bind(this)}
+                     onMouseLeave={this.mouseLeave.bind(this)}
+                     style={{
                         background:"white",
                         margin:"0 auto",
                         width:"600px",
@@ -56,14 +57,17 @@ class DrawingQuestion extends React.Component {
                         transition:"box-shadow 0.3s"
                     }}>
 
-                <span style={iconStyle} className="glyphicon glyphicon-pencil"></span>
+                    <span style={iconStyle} className="glyphicon glyphicon-pencil"></span>
 
-                <h1 className="question-title"> {this.props.question.title} </h1>
-                <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
-                <div>
-                    <canvas style={canvasStyle}/>
+                    <h1 className="question-title"> {this.props.question.title} </h1>
+
+                    <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
+
+                    <div>
+                        <canvas style={canvasStyle}/>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
     }
-}
+};

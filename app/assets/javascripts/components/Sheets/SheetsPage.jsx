@@ -10,10 +10,10 @@ class Sheet extends React.Component {
             float:"left",
             width:"150px",
             height:"200px",
-            borderRadius:"5px",
+            borderRadius:"2px",
             background:"white",
-            margin:"10px",
-            boxShadow:"0px 0px 10px 0px rgba(0,0,0,0.19)",
+            margin:"20px",
+            boxShadow:"0px 0px 10px 0px rgba(0,0,0,0.09)",
             border:"1px solid gray",
             cursor:"pointer",
             overflow:"hidden"
@@ -60,3 +60,4 @@ class SheetList extends React.Component{
         </div>;
     }
 }
+

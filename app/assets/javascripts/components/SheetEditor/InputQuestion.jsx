@@ -1,55 +1,56 @@
-class InputQuestion extends React.Component {
+var inputQuestion = function(material,React) {
+    return class InputQuestion extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            text : this.props.answer.data,
-            color:window.color
-        };
-        console.log(this.state.selected);
-    }
+        constructor(props) {
+            super(props);
+            this.state = {
+                text: this.props.answer.data,
+                color: window.color
+            };
+            console.log(this.state.selected);
+        }
 
-    onChange(e){
-        $.post("/answer/" + this.props.answer.id,
-            { data : e.target.value}
-        );
-    }
+        onChange(e) {
+            $.post("/answer/" + this.props.answer.id,
+                {data: e.target.value}
+            );
+        }
 
-    mouseEnter(e){
-        $(this.refs.card).css("box-shadow","0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.12)");
-    }
+        mouseEnter(e) {
+            //$(this.refs.card).css("box-shadow", "0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.12)");
+        }
 
 
-    mouseLeave(e){
-        $(this.refs.card).css("box-shadow","0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
-    }
+        mouseLeave(e) {
+            //$(this.refs.card).css("box-shadow", "0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
+        }
 
-    render() {
+        render() {
 
-        var iconStyle = {
-            position:"absolute",
-            left:"0%",
-            top:"0%",
-            marginLeft:"10px",
-            padding:"10px",
-            marginTop:"-17px",
-            color:"orange",
-            background:"white",
-            border:"1px solid " + "orange",
-            boxShadow:"0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
-            borderRadius:"100%"
-        };
+            var iconStyle = {
+                position: "absolute",
+                left: "0%",
+                top: "0%",
+                marginLeft: "10px",
+                padding: "10px",
+                marginTop: "-17px",
+                color: "orange",
+                background: "white",
+                border: "1px solid " + "orange",
+                boxShadow: "0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)",
+                borderRadius: "100%"
+            };
 
-        var inputStyle = {
-            padding:"5px",
-            width:"100%"
-        };
+            var inputStyle = {
+                padding: "5px",
+                width: "100%"
+            };
 
-        return <div className="question-block" >
-            <window.Paper ref="card"
-                 onMouseEnter={this.mouseEnter.bind(this)}
-                 onMouseLeave={this.mouseLeave.bind(this)}
-                 style={{
+            return <div className="question-block">
+                <material.Paper
+                       onMouseEnter={this.mouseEnter.bind(this)}
+                       onMouseLeave={this.mouseLeave.bind(this)}
+                       style={{
                         background:"white",
                         margin:"0 auto",
                         width:"600px",
@@ -59,17 +60,23 @@ class InputQuestion extends React.Component {
                         transition:"box-shadow 0.3s"
                     }}>
 
-                <span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
+                    <span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
 
-                <h1 className="question-title"> {this.props.question.title} </h1>
-                <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
-                <div>
-                    <window.TextField
-                        underlineFocusStyle={{borderColor: window.color}}
-                        underlineStyle={{borderColor: window.color}}
-                        hintText="Type here" onChange={this.onChange.bind(this)} style={inputStyle} defaultValue={this.state.text}/>
-                </div>
-            </window.Paper>
-        </div>
+                    <h1 className="question-title"> {this.props.question.title} </h1>
+
+                    <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
+
+                    <div>
+                        <material.TextField
+                            underlineFocusStyle={{borderColor: window.color}}
+                            underlineStyle={{borderColor: window.color}}
+                            hintText="Type here" onChange={this.onChange.bind(this)} style={inputStyle}
+                            defaultValue={this.state.text}/>
+                    </div>
+                </material.Paper>
+            </div>
+        }
     }
-}
+};
+
+module.exports = inputQuestion;

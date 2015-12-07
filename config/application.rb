@@ -20,5 +20,6 @@ module TestUsers
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     Rails.application.config.assets.precompile += %w( sheet_editor.js )
+    config.browserify_rails.commandline_options = "-t [ reactify --es6 target --es5 ]"
   end
 end
