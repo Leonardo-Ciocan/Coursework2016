@@ -8,6 +8,9 @@ Rails.application.routes.draw do
 
   get "/lectures/" => "lecture_list#index"
   get "/sheets/" => "sheets#index"
+  get "/dashboard/:id" => "sheet_dashboard#index"
+
+  get "/api/answers/" => "api#answers"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

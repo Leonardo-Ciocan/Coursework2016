@@ -1,3 +1,11 @@
+PATH
+  remote: vendor/typescript
+  specs:
+    typescript-rails (0.6.2)
+      railties
+      tilt
+      typescript-node (>= 1.6.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -123,6 +131,9 @@ GEM
     tilt (1.4.1)
     turbolinks (2.5.3)
       coffee-rails
+    typescript-node (1.6.2)
+      typescript-src (~> 1.6.2)
+    typescript-src (1.6.2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -149,6 +160,7 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
+  typescript-rails!
   uglifier (>= 1.3.0)
   unicorn
 

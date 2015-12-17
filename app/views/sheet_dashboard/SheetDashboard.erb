@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Sheet Dashboard </title>
+  <script>
+        var sheetID = <%= raw @sheet.id %>;
+        var data = <%= raw @data.to_json %>;
+  </script>
+</head>
+<body>
+    <div id="root"/>
+
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'sheet_dashboard', 'data-turbolinks-track' => true %>
+
+</body>
+</html>

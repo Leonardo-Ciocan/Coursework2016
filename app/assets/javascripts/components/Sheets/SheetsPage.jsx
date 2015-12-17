@@ -37,7 +37,7 @@ class Sheet extends React.Component {
         };
 
         var descriptionStyle = {
-            fontSize:"12pt",
+            fontSize:"11pt",
             color:"gray",
             textAlign:"center",
             padding:"4px",margin:"4px"

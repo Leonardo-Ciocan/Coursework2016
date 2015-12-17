@@ -9,3 +9,4 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( lecture_list.js )
 Rails.application.config.assets.precompile += %w( components/SheetEditor/entry.js )
 Rails.application.config.assets.precompile += %w( sheets.js )
+Rails.application.config.assets.precompile += %w( sheet_dashboard.js )
