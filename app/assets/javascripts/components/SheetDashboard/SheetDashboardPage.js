@@ -1,5 +1,4 @@
 //require ../shared/Header
-
 //class SheetDashboardPage extends React.Component{
 //    render(){
 //        var rows = data.map(function(i,v){
@@ -15,22 +14,19 @@
 //    React.createElement(SheetDashboardPage),
 //    document.getElementById('root')
 //);
-
-/// <reference path="../../typing/react.d.ts" />
-
-class DemoProps {
-}
-
-class SheetDashboardPage extends React.Component<DemoProps, any> {
-  constructor(props:DemoProps) {
-    super(props);
-  }
-  render() {
-    return <div>Hello world!</div>
-  }
-}
-
-ReactDOM.render(
-   React.createElement(SheetDashboardPage),
-   document.getElementById('root')
-);
+console.log("nope");
+// class DemoProps {
+// }
+// class SheetDashboardPage extends React.Component<DemoProps, any> {
+//   constructor(props:DemoProps) {
+//     super(props);
+//   }
+//   render() {
+//     return <h1>Hello world!</h1>
+//   }
+// }
+// console.log("alright");
+// ReactDOM.render(
+//    React.createElement(SheetDashboardPage),
+//    document.getElementById('root')
+// ); 

@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   get "/sheets/" => "sheets#index"
   get "/dashboard/:id" => "sheet_dashboard#index"
 
-  get "/api/answers/" => "api#answers"
+  get "/api/stats/" => "api#statistics_for_question"
+  get "/api/questions/" => "api#questions"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

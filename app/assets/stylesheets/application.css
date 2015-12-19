@@ -18,3 +18,7 @@
 body{
     background: rgba(128, 128, 128, 0.08);
 }
+
+*{
+    font-family: "Open Sans";
+}

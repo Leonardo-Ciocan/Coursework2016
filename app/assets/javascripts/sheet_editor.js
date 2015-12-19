@@ -1,1 +1,1 @@
-//=require ./components/SheetEditPage.js
+//=require ./components/SheetEditor/entry.ts

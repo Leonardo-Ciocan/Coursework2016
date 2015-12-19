@@ -33,6 +33,7 @@ gem 'typescript-rails' , path: "vendor/typescript"
 
 # Use unicorn as the app server
 gem 'unicorn'
+gem 'mongo', '~> 2.1'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -26,10 +26,13 @@ var Header = (function (_super) {
             margin: "auto",
             verticalAlign: "middle",
             lineHeight: "65px",
-            fontSize: "20px",
+            fontSize: "16px",
             position: "absolute",
             right: "10px",
-            top: "0px"
+            top: "0px",
+            background: "#a0000000",
+            padding: "10px",
+            borderRadius: "5px"
         };
         var iconStyle = {
             width: "65px",
@@ -40,7 +43,7 @@ var Header = (function (_super) {
         };
         return <div className="header" style={{
             height: "65px",
-            background: "white",
+            background: "rgb(0, 102, 255)",
             boxShadow: "0px 5px 13px -1px rgba(0,0,0,0.05);",
             borderBottom: "1px solid lightgray"
         }}>
