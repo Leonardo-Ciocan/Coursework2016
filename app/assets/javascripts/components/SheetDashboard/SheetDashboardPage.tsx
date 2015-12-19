@@ -9,7 +9,6 @@ class DemoProps {
 declare var sheet_id
 
 class SheetDashboardPage extends React.Component<DemoProps, any> {
-  
   constructor(props:DemoProps) {
     super(props);
     this.state = {questions:[]};
@@ -28,7 +27,7 @@ class SheetDashboardPage extends React.Component<DemoProps, any> {
   }
   
   render() {
-    var stats = this.state.questions.map((item) => <ChoiceStats question={item}/>);
+    var stats = this.state.questions.map((item) => <ChoiceStats color="purple" question={item}/>);
     return <div>
                  <Header color="purple" name={"leonardo"} title={"Dashboard"}/>
                  <div style={{marginTop:"100px"}}/>

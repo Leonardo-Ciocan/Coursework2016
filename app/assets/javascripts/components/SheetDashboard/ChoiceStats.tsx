@@ -5,6 +5,7 @@
 
 class ChoiceStatsProps{
     question : Question
+    color : string
 }
 
 enum StatType{
@@ -32,7 +33,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
         return <div style={containerStyle}>
                     <h1 style={titleStyle}>Question 1</h1>
                     <div>
-                        <BarChart title={"Overall clicks"} data={this.state.stats}/>
+                        <BarChart color={this.props.color} title={"Overall clicks"} data={this.state.stats}/>
                     </div>
                </div>;
     }
