@@ -2,6 +2,7 @@ class SheetEditorController < ApplicationController
   before_action :authenticate_user!
 
   @@stat_overall_clicks = 0
+  @@stat_first_click = 1
 
   def index
     @sheet = Sheet.find params[:id]
@@ -16,13 +17,21 @@ class SheetEditorController < ApplicationController
 
   def update_answer
     answer = Answer.find params[:id]
-    answer.data = params[:data]
-    answer.save
-    puts(answer.question.type)
+
 
     if answer.question.type == 0
-      Statistic.create :answer => answer, :kind=> @@stat_overall_clicks , :data=>answer.data
+      if answer.data == nil
+        #this means that this is their first choice
+        Statistic.create :answer => answer , :kind => @@stat_first_click , :data => params[:data]
+      else
+        #this is for overall clicks
+        #TODO: is this useful
+        Statistic.create :answer => answer, :kind=> @@stat_overall_clicks , :data => params[:data]
+      end
     end
+
+    answer.data = params[:data]
+    answer.save
 
     head :ok , content_type: "text/html"
   end

@@ -16,8 +16,6 @@ class SheetDashboardPage extends React.Component<DemoProps, any> {
         (data)=>{
             var arr : Array<Question> = []        
             for(var i of data){
-                
-                console.log(i);
                 if(i.type == 0){
                     arr.push(new ChoiceQuestion(i.title , i.subtitle , i.id , JSON.parse(i.data.replace(/'/g, '"')).answers))
                 }

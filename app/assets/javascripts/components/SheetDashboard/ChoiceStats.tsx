@@ -14,11 +14,15 @@ enum StatType{
 }
 
 class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
-
+   static count : number = 0
+   countCurrent : number = 0
+   
    constructor(props : ChoiceStatsProps, context) {
         super(props,context);
+        this.state={overallStats:[] , firstStats:[]};
         this.getQuestionStats();
-        this.state={stats:[]};
+        ChoiceStats.count++;
+        this.countCurrent = ChoiceStats.count
     }
     
     render(){
@@ -31,9 +35,11 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
             margin:"10px"
         };
         return <div style={containerStyle}>
-                    <h1 style={titleStyle}>Question 1</h1>
+                    <h2 style={titleStyle}>Question {this.countCurrent}</h2>
+                    <h3 style={titleStyle}>{this.props.question.title}</h3>
                     <div>
-                        <BarChart color={this.props.color} title={"Overall clicks"} data={this.state.stats}/>
+                        <BarChart color={this.props.color} title={"First choices"} data={this.state.firstStats}/>
+                        <BarChart color={this.props.color} title={"Overall clicks"} data={this.state.overallStats}/>
                     </div>
                </div>;
     }
@@ -50,12 +56,17 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
                 var question : ChoiceQuestion = this.props.question as ChoiceQuestion;
 
                 var arr : Array<BarChartEntry> = []
-                for(var i in data[0]){
+                for(var i in data[StatType.OverallClicks]){
                     console.log(question.choices);
-                    arr.push({name: question.choices[i] , value : +data[0][+i]})
+                    arr.push({name: question.choices[i] , value : +data[StatType.OverallClicks][+i]})
                 }
-                console.log(arr);
-                this.setState({stats:arr});
+                this.setState({overallStats:arr});
+                
+                var arrFirst : Array<BarChartEntry> = []
+                for(var i in data[StatType.FirstClicks]){
+                    arrFirst.push({name: question.choices[i] , value : +data[StatType.FirstClicks][+i]})
+                }
+                this.setState({firstStats:arrFirst});
             }
         )
     }

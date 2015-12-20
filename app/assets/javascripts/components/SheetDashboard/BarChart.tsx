@@ -26,12 +26,25 @@ class BarChart  extends React.Component<BarChartProps, any> {
         let containerStyle = {
           border:"1px solid lightgray",
           display:"inline-block",
-          padding:"10px"
+          padding:"10px",
+          marginRight:"10px",
+          verticalAlign:"top"
         };
+        
         let titleStyle = {
             fontSize:"15px",
             color:"gray",
             margin:"10px"
+        };
+        
+        let valueStyle = {
+          lineHeight:"20px",
+          fontSize:"10pt",
+          margin:"0",
+          textAlign:"left",
+          color:this.props.color,
+          verticalAlign:"middle",
+          marginLeft:"-20px"
         };
         
         for(var i of this.props.data) {
@@ -50,12 +63,15 @@ class BarChart  extends React.Component<BarChartProps, any> {
                             <div
                                 style={
                                     {
-                                        height:"15px",
+                                        marginLeft:"15px",
+                                        height:"20px",
                                         width:((entry.value)/this.total*280) +"px",
                                         background:this.props.color
                                     }
                                 }
-                            ></div>
+                            >
+                                <h1 style={valueStyle}>{entry.value}</h1>
+                            </div>
                        </div>      
             }.bind(this)
         );
