@@ -32,4 +32,43 @@ class ApiController < ApplicationController
 
     render :json => answers , status: 200
   end
+
+  def lectures
+    lectures = Lecture.all.map{
+      |lecture|
+      {
+          "id" => lecture.id,
+          "name" => lecture.name,
+          "author" => User.find(lecture.author).email,
+          "color" => lecture.color
+      }
+    }
+    render :json => lectures , status: 200
+  end
+
+  def lecture
+    lecture = Lecture.find(params[:id])
+    render :json => {
+               "id" => lecture.id,
+               "name" => lecture.name,
+               "author" => User.find(lecture.author).email,
+               "color" => lecture.color
+           } , status: 200
+  end
+
+  def sheets
+    id = params[:id]
+    sheets = Sheet.where(:lecture_id => id).map{
+        |sheet|
+      {
+          "id" => sheet.id,
+          "description" => sheet.description ,
+          "name" => sheet.name
+      }
+    }
+
+
+
+    render :json => sheets , status: 200
+  end
 end

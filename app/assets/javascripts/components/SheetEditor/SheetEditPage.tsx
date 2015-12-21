@@ -28,7 +28,7 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
 
 
         return <div >
-               <Header color={color} title={this.props.sheet.name} name={"leonardo"}>
+               <Header color={color} title={this.props.sheet.name} name={"leonardo"} subtitle={"Sheet"}>
 
                </Header>
                 <div className="page-editor"

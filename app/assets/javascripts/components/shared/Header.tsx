@@ -4,6 +4,7 @@ class HeaderProps {
     title : string
     name : string
     color : string
+    subtitle : string
 }
 
 class Header  extends React.Component<HeaderProps, any> {
@@ -15,13 +16,23 @@ class Header  extends React.Component<HeaderProps, any> {
         var titleStyle = {
             margin:"0px",
             marginLeft:"55px",
+            marginTop:"5px",
             color:"white",
             verticalAlign:"middle",
             textAlign:"left",
-            lineHeight:"50px",
-            fontSize:"20px",
-            background:"#af000000",
-            borderRadius:"5px",
+            lineHeight:"25px",
+            fontSize:"13pt",
+            fontFamily:"Open Sans"
+        };
+        
+         var subtitleStyle = {
+            margin:"0px",
+            marginLeft:"55px",
+            color:"rgba(255,255,255,0.8)",
+            verticalAlign:"top",
+            textAlign:"left",
+            lineHeight:"15px",
+            fontSize:"8pt",
             fontFamily:"Open Sans"
         };
 
@@ -56,6 +67,7 @@ class Header  extends React.Component<HeaderProps, any> {
 
                     >
                     <h1 style={titleStyle}> {this.props.title}</h1>
+                    <h1 style={subtitleStyle}> {this.props.subtitle}</h1>
                     <h1 style={nameStyle}> {this.props.name}</h1>
                     <img style={iconStyle} src="/assets/icon_hat.png"/>
                 </div>

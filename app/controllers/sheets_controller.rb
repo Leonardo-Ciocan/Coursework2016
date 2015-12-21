@@ -1,6 +1,6 @@
 class SheetsController < ApplicationController
   def index
-    @sheets = Sheet.all
+    @lecture_id = params[:id]
     render "sheets/Sheets"
   end
 end

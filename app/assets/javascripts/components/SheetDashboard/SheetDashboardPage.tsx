@@ -27,7 +27,7 @@ class SheetDashboardPage extends React.Component<DemoProps, any> {
   render() {
     var stats = this.state.questions.map((item) => <ChoiceStats color="purple" question={item}/>);
     return <div>
-                 <Header color="purple" name={"leonardo"} title={"Dashboard"}/>
+                 <Header color="purple" name={"leonardo"} title={"Dashboard"} subtitle={"Lecture title"}/>
                  <div style={{marginTop:"100px"}}/>
                  {stats}
             </div>

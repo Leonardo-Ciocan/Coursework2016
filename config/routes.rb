@@ -7,12 +7,16 @@ Rails.application.routes.draw do
   post "/answer/:id" => "sheet_editor#update_answer"
 
   get "/lectures/" => "lecture_list#index"
-  get "/sheets/" => "sheets#index"
+  get "/lectures/:id" => "sheets#index"
   get "/dashboard/:id" => "sheet_dashboard#index"
 
   get "/api/stats/" => "api#statistics_for_question"
   get "/api/questions/" => "api#questions"
   get "/api/completions/" => "api#completions"
+  get "/api/lectures/" => "api#lectures"
+  get "/api/lecture/" => "api#lecture"
+  get "/api/sheets/" => "api#sheets"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
