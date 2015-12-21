@@ -24,4 +24,12 @@ class ApiController < ApplicationController
   def questions
     render :json => Question.where(:sheet=>Sheet.find(params[:id]))
   end
+
+  def completions
+    question = Question.find params[:id]
+
+    answers = Answer.where(:question => question).map{|answer| answer.data == question.correct_answer}
+
+    render :json => answers , status: 200
+  end
 end

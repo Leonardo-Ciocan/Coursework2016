@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   get "/api/stats/" => "api#statistics_for_question"
   get "/api/questions/" => "api#questions"
+  get "/api/completions/" => "api#completions"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

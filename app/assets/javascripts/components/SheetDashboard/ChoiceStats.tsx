@@ -2,6 +2,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 /// <reference path="./BarChart.tsx" />
+/// <reference path="./ActivityIndicator.tsx" />
 
 class ChoiceStatsProps{
     question : Question
@@ -28,8 +29,8 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
     render(){
         let containerStyle = {
           borderTop:"1px solid lightgray",
-          borderBottom:"1px solid lightgray",
-          padding:"10px"  
+          padding:"10px"
+          
         };
         let titleStyle = {
             margin:"10px"
@@ -37,9 +38,13 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
         return <div style={containerStyle}>
                     <h2 style={titleStyle}>Question {this.countCurrent}</h2>
                     <h3 style={titleStyle}>{this.props.question.title}</h3>
-                    <div>
+                    <div style={{
+                        whiteSpace:"nowrap"
+                    }}>
+                        <ActivityIndicator color={this.props.color}  question={this.props.question}/>
                         <BarChart color={this.props.color} title={"First choices"} data={this.state.firstStats}/>
                         <BarChart color={this.props.color} title={"Overall clicks"} data={this.state.overallStats}/>
+                        <div style={{clear:"both"}}></div>
                     </div>
                </div>;
     }

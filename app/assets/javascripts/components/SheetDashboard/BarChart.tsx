@@ -1,7 +1,4 @@
 /// <reference path="../../typing/react-global.d.ts" />
-/// <reference path="../../typing/chart.d.ts" />
-
-
 
 interface BarChartEntry{
     name : String
@@ -24,11 +21,15 @@ class BarChart  extends React.Component<BarChartProps, any> {
     
     render(){
         let containerStyle = {
-          border:"1px solid lightgray",
+          border:"1px solid rgba(255,255,255,0.1)",
           display:"inline-block",
           padding:"10px",
           marginRight:"10px",
-          verticalAlign:"top"
+          verticalAlign:"top",
+          width:"300px",
+          float:"left",
+          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);",
+          background:"white"
         };
         
         let titleStyle = {
@@ -38,13 +39,28 @@ class BarChart  extends React.Component<BarChartProps, any> {
         };
         
         let valueStyle = {
-          lineHeight:"20px",
+          lineHeight:"25px",
+          fontSize:"9pt",
+          margin:"0",
+          textAlign:"left",
+          color:"white",
+          verticalAlign:"middle",
+          position:"absolute",
+          top:"0",
+          right:"0",
+          bottom:"0",
+          paddingLeft:"10px",
+          paddingRight:"10px",
+          background:"rgba(255,255,255,0.1)"
+        };
+        
+        let headerStyle= {
+          lineHeight:"25px",
           fontSize:"10pt",
           margin:"0",
           textAlign:"left",
-          color:this.props.color,
-          verticalAlign:"middle",
-          marginLeft:"-20px"
+          color:"white"  ,
+          marginLeft:"10px"
         };
         
         for(var i of this.props.data) {
@@ -54,24 +70,36 @@ class BarChart  extends React.Component<BarChartProps, any> {
         this.props.data.sort((a,b) => a.value < b.value ? 1 : 0);
         
 
-        
+        // <h1 style={valueStyle}>{entry.value}</h1>
         let content = this.props.data.map(
             function(entry){
 
-                return <div>
-                            <h5>{entry.name}</h5>
+                return <div style={{clear: "both"}}>
+                            <h5 style={{
+                                        lineHeight:"25px",margin:"0",float:"left",verticalAlign:"middle",textAlign:"right",width:"84px",display:"inline-block"}}>{entry.name}</h5>
+                            <div
+                                style={{width:"190px",
+                                        float:"left"}}
+                            >
+                           
                             <div
                                 style={
                                     {
-                                        marginLeft:"15px",
-                                        height:"20px",
-                                        width:((entry.value)/this.total*280) +"px",
+                                        display:"inline-block",
+                                        position:"relative",
+                                        borderRadius:"5px",
+                                        marginBottom:"10px",
+                                        height:"25px",
+                                        marginLeft:"10px",
+                                        width:((entry.value)/this.total*150) +"px",
                                         background:this.props.color
                                     }
                                 }
                             >
+
                                 <h1 style={valueStyle}>{entry.value}</h1>
                             </div>
+                             </div>
                        </div>      
             }.bind(this)
         );
