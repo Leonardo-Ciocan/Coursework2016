@@ -2,6 +2,7 @@
 /// <reference path="../../models/Lecture.ts" />
 /// <reference path="../shared/Header.tsx" />
 /// <reference path="../../typing/jquery.d.ts" />
+/// <reference path="../shared/Dialog.tsx" />
 
 class LectureProps {
     lecture : Lecture
@@ -68,9 +69,17 @@ class LecturePage extends React.Component<LecturePageProps,any>{
         var items =  this.state.lectures.map(function(lecture){
             return <LectureItem lecture={lecture}/>;
         });
-
+        // <Dialog title={"Subscribe to a lecture"} 
+        //                 content={
+        //                     <div>
+        //                         <h1 style={{fontSize:"15pt"}}>The lecture code is <input placeholder={"code"}></input></h1>
+        //                     </div>
+        //                 }
+        //             />
+        let inputStyle = {border:"none" , borderBottom:"1px solid gray"};
         var parentStyle = {position:"relative" , margin:"20px" , marginTop:"60px"};
         return <div>
+                    
                     <Header color="black" name={"leonardo"} title={"Your lectures"} subtitle={this.state.lectures.length + " lectures"}/>
                     <div style={parentStyle}>{items}</div>
                </div>

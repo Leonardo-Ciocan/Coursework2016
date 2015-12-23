@@ -28,7 +28,7 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
 
 
         return <div >
-               <Header color={color} title={this.props.sheet.name} name={"leonardo"} subtitle={"Sheet"}>
+               <Header onBack={this.onBack.bind(this)} color={color} title={this.props.sheet.name} name={"leonardo"} subtitle={this.props.questions.length + " questions"}>
 
                </Header>
                 <div className="page-editor"
@@ -52,6 +52,10 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                     </div>
                </div>
             </div>
+    }
+    
+    onBack(){
+        window.location.href = "/lectures/" + this.props.sheet.lecture_id;
     }
 }
 

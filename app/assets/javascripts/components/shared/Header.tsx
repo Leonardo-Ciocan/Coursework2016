@@ -1,10 +1,11 @@
 /// <reference path="../../typing/react-global.d.ts" />
 
-class HeaderProps {
+interface HeaderProps {
     title : string
     name : string
     color : string
     subtitle : string
+    onBack? : () => void
 }
 
 class Header  extends React.Component<HeaderProps, any> {
@@ -19,7 +20,7 @@ class Header  extends React.Component<HeaderProps, any> {
             marginTop:"5px",
             color:"white",
             verticalAlign:"middle",
-            textAlign:"left",
+            textAlign:"center",
             lineHeight:"25px",
             fontSize:"13pt",
             fontFamily:"Open Sans"
@@ -30,7 +31,7 @@ class Header  extends React.Component<HeaderProps, any> {
             marginLeft:"55px",
             color:"rgba(255,255,255,0.8)",
             verticalAlign:"top",
-            textAlign:"left",
+            textAlign:"center",
             lineHeight:"15px",
             fontSize:"8pt",
             fontFamily:"Open Sans"
@@ -43,18 +44,28 @@ class Header  extends React.Component<HeaderProps, any> {
             lineHeight:"50px",
             fontSize:"16px",
             position:"absolute",
-            right:"10px",
+            right:"0px",
+            paddingRight:"10px",
+            paddingLeft:"10px",
             top:"0px",
-            fontFamily:"Open Sans"
+            fontFamily:"Open Sans",
+            background:"rgba(255,255,255,0.2)"
         };
 
         var iconStyle={
             width:"50px",
             height:"50px",
             position:"absolute",
-            left:"10px",
+            left:"0px",
             top:"0",
-            padding:"10px"
+            lineHeight:"50px",
+            color:"white",
+            paddingRight:"10px",
+            paddingLeft:"10px",
+            verticalAlign:"middle",
+            fontSize:"18pt",
+            cursor:"pointer",
+            background:"rgba(255,255,255,0.2)"
         };
 
         return  <div className="header"
@@ -69,7 +80,7 @@ class Header  extends React.Component<HeaderProps, any> {
                     <h1 style={titleStyle}> {this.props.title}</h1>
                     <h1 style={subtitleStyle}> {this.props.subtitle}</h1>
                     <h1 style={nameStyle}> {this.props.name}</h1>
-                    <img style={iconStyle} src="/assets/icon_hat.png"/>
+                    <i className="fa fa-arrow-left" style={iconStyle} onClick={this.props.onBack}></i>
                 </div>
     }
 }

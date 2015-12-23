@@ -1,6 +1,12 @@
 class ApiController < ApplicationController
   skip_before_action :authenticate_user!
 
+  def subscribe
+    print current_user
+    Subscription.create :lecture_id => params[:lecture_id] , :user_id => current_user.id
+    head :ok
+  end
+
   def statistics_for_question
     question = Question.find params[:id]
     c = Statistic.joins(:answer).where(:answers => {:question_id => question.id}).group_by(&:kind)

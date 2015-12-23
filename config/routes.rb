@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/lectures/" => "lecture_list#index"
   get "/lectures/:id" => "sheets#index"
   get "/dashboard/:id" => "sheet_dashboard#index"
+  get "/subscribe/:id" => "lecture_list#subscribe"
 
   get "/api/stats/" => "api#statistics_for_question"
   get "/api/questions/" => "api#questions"
@@ -16,6 +17,7 @@ Rails.application.routes.draw do
   get "/api/lectures/" => "api#lectures"
   get "/api/lecture/" => "api#lecture"
   get "/api/sheets/" => "api#sheets"
+  post "/api/subscribe" => "api#subscribe"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

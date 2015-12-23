@@ -27,8 +27,7 @@ class SheetItem extends React.Component<SheetItemProps,any> {
             boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
             border:"0px solid gray",
             cursor:"pointer",
-            overflow:"hidden",
-            padding:"10px"
+            overflow:"hidden"
         };
 
         var titleStyle = {
@@ -36,9 +35,9 @@ class SheetItem extends React.Component<SheetItemProps,any> {
             fontSize:"12pt",
             color:this.props.color,
             textAlign:"center",
-            borderBottom:"1px solid gray",
+            borderBottom:"1px solid rgba(0,0,0,0.2)",
             padding:"4px",
-            margin:"0px",
+            margin:"10px",
             textOverflow: "ellipsis",
             lines:"1",
             overflow:"hidden",
@@ -49,7 +48,7 @@ class SheetItem extends React.Component<SheetItemProps,any> {
             fontSize:"11pt",
             color:"gray",
             textAlign:"center",
-            padding:"4px",margin:"4px"
+            padding:"4px",margin:"14px"
         };
 
         return <div style={containerStyle} onClick={this.clicked.bind(this)}>
@@ -75,18 +74,20 @@ class SheetList extends React.Component<SheetListProps , any>{
             return <SheetItem sheet={sheet} color={this.props.lecture.color}/>;
         }.bind(this));
 
-        var parentStyle = {position:"relative",paddingTop:"80px"};
+        var parentStyle = {position:"relative",paddingTop:"60px"};
         var lectureTitle ={
           margin:"15px",
             color:"#2C76DE"
 
         };
         return <div style={parentStyle}>
-            <Header color={this.props.lecture.color} name={"leonardo"} title={this.props.lecture.name} subtitle={this.state.sheets.length + " sheets"}/>
+            <Header onBack={this.onBack} color={this.props.lecture.color} name={"leonardo"} title={this.props.lecture.name} subtitle={this.state.sheets.length + " sheets"}/>
             {items}
         </div>;
     }
-    
+    onBack(){
+        window.location.href = "/lectures/";
+    }
     getSheets(){
         $.get(
             "/api/sheets",

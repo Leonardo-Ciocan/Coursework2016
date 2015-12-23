@@ -1,0 +1,1 @@
+//= require ./components/Lectures/entrySubscribe.js
