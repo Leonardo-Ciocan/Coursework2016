@@ -38,7 +38,7 @@ class ApiController < ApplicationController
 
     render :json => answers , status: 200
   end
-
+``
   def lectures
     lectures = Lecture.all.map{
       |lecture|

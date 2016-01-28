@@ -3,6 +3,7 @@ class SheetEditorController < ApplicationController
 
   @@stat_overall_clicks = 0
   @@stat_first_click = 1
+  @@stat_current_click = 2
 
   def index
     @sheet = Sheet.find params[:id]

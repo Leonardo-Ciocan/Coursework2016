@@ -32,15 +32,16 @@ class SubscribePage extends React.Component<SubscribePageProps , any>{
             width:"300px",
             border: "1px solid "+this.state.lecture.color,
             color : this.state.lecture.color,
-            fontSize:"20pt"
+            fontSize:"20pt",
+            cursor:"pointer"
         };
         
         return <div>
-                <Header title={"Subscribe to this lecture"} subtitle={this.state.lecture.name} color={this.state.lecture.color} name={"leonardo.ciocan@outlook.com"}/>
+                <Header title={""} subtitle={""} color={this.state.lecture.color} name={"leonardo.ciocan@outlook.com"}/>
                 <div style={containerStyle}>
                     <h1>{this.state.lecture.name}</h1>
                     <h3>Made by {this.state.lecture.author}</h3>
-                    <div style={btnStyle}>Subscribe</div>
+                    <div style={btnStyle} onClick={this.subscribeClicked}>Subscribe</div>
                 </div>
                 </div>
     }
@@ -54,6 +55,10 @@ class SubscribePage extends React.Component<SubscribePageProps , any>{
                 this.setState({lecture : new Lecture(i.id , i.name , i.author , i.color)});
             }
         )
+    }
+    
+    subscribeClicked(){
+        window.location.href = "/lectures/" + lecture_id;
     }
     
 }

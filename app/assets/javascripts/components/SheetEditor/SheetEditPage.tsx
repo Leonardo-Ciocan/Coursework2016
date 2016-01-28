@@ -48,7 +48,7 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                             lineHeight:"65px",
                             fontSize:"25px",
                             margin:"0px"
-                        }}>That's all folks</h1>
+                        }}>That's all</h1>
                     </div>
                </div>
             </div>

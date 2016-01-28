@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TestUsers</title>
+  <%= csrf_meta_tags %>
+  <script>
+  </script>
+</head>
+<body>
+
+<div id="root"></div>
+<%= yield %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'sheet_creator', 'data-turbolinks-track' => true %>
+
+
+</body>
+</html>

@@ -11,3 +11,4 @@ Rails.application.config.assets.precompile += %w( components/SheetEditor/entry.j
 Rails.application.config.assets.precompile += %w( sheets.js )
 Rails.application.config.assets.precompile += %w( sheet_dashboard.js )
 Rails.application.config.assets.precompile += %w( lecture_subscribe.js )
+Rails.application.config.assets.precompile += %w( sheet_creator.js )

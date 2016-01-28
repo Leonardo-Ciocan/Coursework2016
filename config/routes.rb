@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get "/dashboard/:id" => "sheet_dashboard#index"
   get "/subscribe/:id" => "lecture_list#subscribe"
 
+  get "/create/sheet/:id" => "sheet_creator#index"
+
   get "/api/stats/" => "api#statistics_for_question"
   get "/api/questions/" => "api#questions"
   get "/api/completions/" => "api#completions"
