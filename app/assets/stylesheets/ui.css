@@ -1,0 +1,12 @@
+.lc-button{
+    padding: 5px;
+    width: 100%;
+    font-size: 15pt;
+    border: 1px solid lightgray;
+    background: rgba(0,0,0,0.05);
+    border-radius: 5px;
+}
+
+.lc-textbox{
+
+}

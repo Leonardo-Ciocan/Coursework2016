@@ -2,14 +2,15 @@
 /// <reference path="../shared/Checkbox.tsx" />
 
 class ChoiceCreatorAnswerProps{
-    
+    color : string
 }
 
 class ChoiceCreatorAnswer extends React.Component<ChoiceCreatorAnswerProps,any> {
     render(){
         let containerStyle = {
             marginRight:"10px",
-            marginLeft:"10px"
+            marginLeft:"10px",
+            marginBottom:"20px"
         };
         
         let inputStyle = {
@@ -23,8 +24,9 @@ class ChoiceCreatorAnswer extends React.Component<ChoiceCreatorAnswerProps,any> 
         };
         
         return <div style={containerStyle}>
-                   <div style={{width:"50px",display:"inline-block"}}><CheckBox color={"red"}/></div>
+                   <div style={{width:"50px",display:"inline-block"}}><CheckBox color={this.props.color}/></div>
                    <input placeholder={"Answer 1"} style={inputStyle}/>
+                   <a style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold"}} >Delete</a>
                </div>;
     }
 }

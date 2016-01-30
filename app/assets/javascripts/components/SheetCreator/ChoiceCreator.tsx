@@ -1,8 +1,13 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="./ChoiceCreatorAnswer.tsx" />
 
+interface Answer { 
+    text : string
+    isAnswer : boolean
+}
+
 class ChoiceCreatorProps{
-    
+    color : string
 }
 
 class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
@@ -10,7 +15,7 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
     constructor(props) {
             super(props);
             this.state = {
-                answers : [""]
+                answers : ["",""]
             };
     }
     
@@ -45,7 +50,6 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
         };
         
         let answerContainer = {
-            boxShadow:"inset 0px 5px 13px -1px rgba(0,0,0,0.09)",
             marginLeft: "-10px",
             marginRight: "-10px",
             marginBottom: "-10px",
@@ -67,14 +71,15 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
             cursor:"pointer",
         };
         
-        let answers = this.state.answers.map((answer) => <ChoiceCreatorAnswer/>);
+        let answers = this.state.answers.map((answer) => <ChoiceCreatorAnswer color={this.props.color}/>);
         
         return <div style={containerStyle}>
                    <input placeholder={"Question title"} style={inputStyle}/>
                    <input placeholder={"Subtitle"} style={inputSubStyle}/>
                    <div style={answerContainer}>
                         <div style={{
-                            background:"rgba(0,0,0,0.05)",
+                            background:"rgba(0,0,0,0.025)",
+                            borderRight:"1px solid lightgray",
                             position:"absolute",
                             left:0,top:0,bottom:0,width:"65px",
                             zIndex:0,
@@ -83,10 +88,16 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
                         </div>
                         <div>
                             <span style={{width:"100px",marginRight:"10px"}}>Correct </span>
-                            <span>Answer</span>
                         </div>
                         {answers}
+                        <a onClick={this.createAnswer.bind(this)} style={{
+                            cursor:"pointer",color:this.props.color,marginTop:"0", marginLeft:"60px" , fontWeight:"bold"
+                        }} >New answer</a>
                    </div>
                </div>;
+    }
+    
+    createAnswer(){
+        
     }
 }
