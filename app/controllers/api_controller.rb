@@ -80,12 +80,15 @@ class ApiController < ApplicationController
 
   def create_sheet
     sheet = params[:sheet]
-    new_sheet = Sheet.create :description=>sheet["description"] , :name => sheet["name"]
+    new_sheet = Sheet.create :description=>sheet["description"] ,
+                             :name => sheet["name"] ,
+                             :lecture_id => params[:lecture_id]
     for i,v in params[:questions]
       puts i
       Question.create :title => v["title"] ,
                       :subtitle => v["subtitle"] ,
                       :data => v["data"],
+                      :correct_answer => v["correct_answer"],
                       :sheet_id => new_sheet.id
     end
     head :ok

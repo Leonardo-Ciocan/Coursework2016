@@ -8,6 +8,7 @@
 /// <reference path="../../api.ts" />
 
 
+
 class SheetCreatorPageProps{
     lecture : Lecture
 }
@@ -55,7 +56,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         let items = this.state.items.map((item) => <ChoiceCreator key={item.id} question={item} color={this.props.lecture.color}/>);
         
         return  <div>
-            <Header title={"Creating new sheet"} subtitle={"For lecture X"} color={this.props.lecture.color} name={"leonardo"} />
+            <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color={this.props.lecture.color} name={"leonardo"} />
             <div style={editorStyle}>
 
                 <div>
@@ -71,6 +72,10 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 </div>
             </div>
         </div>
+    }
+    
+    onBack(){
+        window.location.href = "/lectures/" + this.props.lecture.id;
     }
     
     addMultipleChoice(){
@@ -91,10 +96,15 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 answers : item.answers.map((answer)=>answer.text)
             };
             newQuestion.data = JSON.stringify(data);
+            
+            newQuestion.correct_answer = ""+item.answers.indexOf(item.answers.filter((answer)=>answer.isAnswer)[0]);
             return newQuestion; 
         });
         
         var sheet = new Sheet(0,"description here","title here");
-        API.createSheet(sheet , questions);
+        API.createSheet(this.props.lecture.id , sheet , questions);
+        window.location.href = "/lectures/" + this.props.lecture.id;
     }
+    
+    
 }

@@ -2,9 +2,15 @@
 /// <reference path="./SheetCreatorPage.tsx" />
 /// <reference path="../../models/Lecture.ts" />
 
-console.log("hello world"); 
+declare var lecture_id : number
 
-ReactDOM.render(
-    React.createElement(SheetCreatorPage , {lecture: new Lecture(0,"","","dodgerblue")}),
-    document.getElementById('root')
-);
+$.get(
+    "/api/lecture/",
+    {id : lecture_id},
+    (data) => {
+        ReactDOM.render(
+            React.createElement(SheetCreatorPage , {lecture: new Lecture(data.id , data.name , data.author , data.color)}),
+            document.getElementById('root')
+        );
+    }
+)

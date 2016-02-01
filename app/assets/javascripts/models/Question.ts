@@ -1,8 +1,10 @@
 class Question {
     title : string
     subtitle : string
-    id : number
+    id   : number
     data : string
+    type : number
+    correct_answer : string
 }
 
 class ChoiceQuestion extends Question{

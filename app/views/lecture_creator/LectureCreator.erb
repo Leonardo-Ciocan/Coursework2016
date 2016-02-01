@@ -4,7 +4,6 @@
   <title>TestUsers</title>
   <%= csrf_meta_tags %>
   <script>
-    var lecture_id = <%= raw @lecture_id %>;
   </script>
 </head>
 <body>
@@ -13,8 +12,7 @@
 <%= yield %>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-<%= javascript_include_tag 'sheet_creator', 'data-turbolinks-track' => true %>
-
+<%= javascript_include_tag 'lecture_creator', 'data-turbolinks-track' => true %>
 
 </body>
 </html>

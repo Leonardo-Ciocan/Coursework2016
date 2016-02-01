@@ -3,6 +3,7 @@
 /// <reference path="../../models/Sheet.ts" />
 /// <reference path="../../models/Lecture.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
+/// <reference path="../shared/LCButton.tsx" />
 
 class SheetItemProps{
     sheet : Sheet
@@ -82,12 +83,22 @@ class SheetList extends React.Component<SheetListProps , any>{
         };
         return <div style={parentStyle}>
             <Header onBack={this.onBack} color={this.props.lecture.color} name={"leonardo"} title={this.props.lecture.name} subtitle={this.state.sheets.length + " sheets"}/>
-            {items}
+            <div style={{marginLeft:"50px" , marginTop:"5px"}}>
+                <div><LCButton onClick={this.createSheet.bind(this)} color={this.props.lecture.color} text="New sheet" /></div>
+                {items}
+            </div>
+            
         </div>;
     }
+    
+    createSheet(){
+        window.location.href = "/create/sheet/"+ this.props.lecture.id;
+    }
+    
     onBack(){
         window.location.href = "/lectures/";
     }
+    
     getSheets(){
         $.get(
             "/api/sheets",
