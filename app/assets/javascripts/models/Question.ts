@@ -2,6 +2,7 @@ class Question {
     title : string
     subtitle : string
     id : number
+    data : string
 }
 
 class ChoiceQuestion extends Question{
@@ -11,5 +12,4 @@ class ChoiceQuestion extends Question{
                   public choices : Array<String>){
         super()
     }
-    
 }

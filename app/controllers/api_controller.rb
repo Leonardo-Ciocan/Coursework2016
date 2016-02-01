@@ -78,4 +78,17 @@ class ApiController < ApplicationController
     render :json => sheets , status: 200
   end
 
+  def create_sheet
+    sheet = params[:sheet]
+    new_sheet = Sheet.create :description=>sheet["description"] , :name => sheet["name"]
+    for i,v in params[:questions]
+      puts i
+      Question.create :title => v["title"] ,
+                      :subtitle => v["subtitle"] ,
+                      :data => v["data"],
+                      :sheet_id => new_sheet.id
+    end
+    head :ok
+  end
+
 end

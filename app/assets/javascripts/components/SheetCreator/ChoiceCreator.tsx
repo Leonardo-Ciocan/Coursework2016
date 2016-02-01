@@ -1,32 +1,38 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="./ChoiceCreatorAnswer.tsx" />
+/// <reference path="./Answer.ts" />
+/// <reference path="../shared/IDFactory.ts" />
+/// <reference path="../../models/Question.ts" />
 
-interface Answer { 
-    text : string
-    isAnswer : boolean
-}
 
-class ChoiceCreatorProps{
+interface ChoiceCreatorProps{
     color : string
+    question : RQuestion
+    key? : any
 }
 
-class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
+class ChoiceCreatorState{
+    answers : Array<Answer>
+}
+
+class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorState> {
+    
     
     constructor(props) {
             super(props);
             this.state = {
-                answers : ["",""]
+                answers : this.props.question.answers
             };
     }
     
     render(){
         let containerStyle = {
-            borderBottom : "1px solid lightgray",
+            border : "1px solid lightgray",
             padding:"10px",
-                         boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
-                         background:"white",
-                         borderRadius:"5px",
-                         margin:"10px"
+            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
+            background:"white",
+            borderRadius:"5px",
+            margin:"20px"
         };
         
         let inputStyle = {
@@ -71,11 +77,13 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
             cursor:"pointer",
         };
         
-        let answers = this.state.answers.map((answer) => <ChoiceCreatorAnswer color={this.props.color}/>);
+        console.log(this.state.answers);
+        let answers = this.state.answers.map((answer) => 
+                <ChoiceCreatorAnswer key={answer.id} onDelete={this.onDeleteAnswer.bind(this)} answer={answer} color={this.props.color}/>);
         
         return <div style={containerStyle}>
-                   <input placeholder={"Question title"} style={inputStyle}/>
-                   <input placeholder={"Subtitle"} style={inputSubStyle}/>
+                   <input onChange={this.titleChanged.bind(this)} placeholder={"Question title"} style={inputStyle}/>
+                   <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
                    <div style={answerContainer}>
                         <div style={{
                             background:"rgba(0,0,0,0.025)",
@@ -87,17 +95,34 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,any> {
                         }}>
                         </div>
                         <div>
-                            <span style={{width:"100px",marginRight:"10px"}}>Correct </span>
+                            <span style={{visibility:this.state.answers.length==0?"collapse":"visible", width:"100px",marginRight:"10px"}}>Correct </span>
                         </div>
                         {answers}
                         <a onClick={this.createAnswer.bind(this)} style={{
-                            cursor:"pointer",color:this.props.color,marginTop:"0", marginLeft:"60px" , fontWeight:"bold"
+                            cursor:"pointer",color:this.props.color,marginTop:"0", marginLeft:"70px" , fontWeight:"bold"
                         }} >New answer</a>
                    </div>
                </div>;
     }
     
+    titleChanged(e){
+        this.props.question.title = e.target.value;
+    }
+    
+    subtitleChanged(e){
+        this.props.question.subtitle = e.target.value;
+    }
+    
+    onDeleteAnswer(answer:Answer){
+        var index : number = this.state.answers.indexOf(answer);
+        if(index >= 0){
+            this.state.answers.splice(index,1);
+        }
+        this.setState({answers:this.state.answers});
+    }
+    
     createAnswer(){
-        
+        this.state.answers.push({text:"",isAnswer:false,id:IDFactory.getNumber()});
+        this.setState({answers:this.state.answers});
     }
 }

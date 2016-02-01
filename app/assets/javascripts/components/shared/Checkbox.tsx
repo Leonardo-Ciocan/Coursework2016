@@ -3,6 +3,7 @@
 interface CheckBoxProps{
     checked? : Boolean
     color : string 
+    onChange? : Function
 }
 
 class CheckBox extends React.Component<CheckBoxProps , any> {
@@ -20,7 +21,7 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
         };
         
          let boxStyle = {
-            border : "2px solid " + this.props.color,
+            border : "1px solid " + this.props.color,
             borderRadius : "5px",
             width:"20px",
             height:"20px"
@@ -30,8 +31,8 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
             border:"3px solid white",
             background:this.state.checked ? this.props.color:"",
             borderRadius : "5px",
-            width:"16px",
-            height:"16px"
+            width:"18px",
+            height:"18px"
          };
         
         return <div onClick={this.onClicked.bind(this)} style={containerStyle}>
@@ -45,5 +46,6 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
     
     onClicked(){
         this.setState({checked:!this.state.checked});
+        if(this.props.onChange!= undefined) this.props.onChange(this.state.checked);
     }
 }

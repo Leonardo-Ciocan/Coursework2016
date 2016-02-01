@@ -3,18 +3,25 @@
 /// <reference path="./ChoiceCreator.tsx" />
 /// <reference path="../shared/LCButton.tsx" />
 /// <reference path="../../models/Lecture.ts" />
+/// <reference path="../shared/IDFactory.ts" />
+/// <reference path="./Answer.ts" />
+/// <reference path="../../api.ts" />
 
 
 class SheetCreatorPageProps{
     lecture : Lecture
 }
-
-class SheetCreatorPage extends React.Component<SheetCreatorPageProps,any> {
+class SheetCreatorPageState{
+    items : Array<RQuestion>
+}
+class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreatorPageState> {
     
      constructor(props) {
             super(props);
+            var qs = new RQuestion();
+            qs.id = IDFactory.getNumber();
             this.state = {
-                items : [""]
+                items : [qs]
             };
         }
     
@@ -30,7 +37,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,any> {
         };
         
         let footerContainer = {
-
+             borderBottom :"1px solid lightgray"
         };
         
         let addButtonStyle = {
@@ -45,24 +52,49 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,any> {
             cursor:"pointer"
         };
         
-        let items = this.state.items.map((item) => <ChoiceCreator color={this.props.lecture.color}/>);
+        let items = this.state.items.map((item) => <ChoiceCreator key={item.id} question={item} color={this.props.lecture.color}/>);
         
         return  <div>
             <Header title={"Creating new sheet"} subtitle={"For lecture X"} color={this.props.lecture.color} name={"leonardo"} />
             <div style={editorStyle}>
+
                 <div>
                     {items}
                 </div>
                 <div style={footerContainer}>
-                    <LCButton text="Multiple Choice" onClick={this.addMultipleChoice.bind(this)}  color={this.props.lecture.color}/>
-                    <LCButton text={"Input"} color={this.props.lecture.color}/>
+                    <span>Create question : </span>
+                    <LCButton text="Multiple Choice" onClick={this.addMultipleChoice.bind(this)}  color={"gray"}/>
+                    <LCButton text={"Input"} color={"gray"}/>
+                </div>
+                <div style={{display:"inline-block",float:"right"}}>
+                    <LCButton onClick={this.createSheet.bind(this)} text={"Create sheet"} color={this.props.lecture.color} />
                 </div>
             </div>
         </div>
     }
     
     addMultipleChoice(){
-        this.state.items.push("");
+        var qs = new RQuestion();
+        qs.id = IDFactory.getNumber();
+        this.state.items.push(qs);
         this.setState({items:this.state.items});
+    }
+    
+    createSheet(){
+        console.log(this.state.items);
+        
+        var questions = this.state.items.map((item) => {
+           var newQuestion = new Question();
+            newQuestion.title = item.title;
+            newQuestion.subtitle = item.subtitle;
+            var data = {
+                answers : item.answers.map((answer)=>answer.text)
+            };
+            newQuestion.data = JSON.stringify(data);
+            return newQuestion; 
+        });
+        
+        var sheet = new Sheet(0,"description here","title here");
+        API.createSheet(sheet , questions);
     }
 }

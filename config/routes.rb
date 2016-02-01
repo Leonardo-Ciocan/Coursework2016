@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/api/lecture/" => "api#lecture"
   get "/api/sheets/" => "api#sheets"
   post "/api/subscribe" => "api#subscribe"
+  post "/api/create/sheet" => "api#create_sheet"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
