@@ -94,4 +94,9 @@ class ApiController < ApplicationController
     head :ok
   end
 
+  def create_lecture
+    lecture = Lecture.create :name => params[:name] , :color => params[:color] , :author=>current_user
+    render text: lecture.id
+  end
+
 end

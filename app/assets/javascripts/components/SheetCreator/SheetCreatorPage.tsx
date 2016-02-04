@@ -6,14 +6,16 @@
 /// <reference path="../shared/IDFactory.ts" />
 /// <reference path="./Answer.ts" />
 /// <reference path="../../api.ts" />
+/// <reference path="../shared/TextBox.tsx" />
 
 
 
 class SheetCreatorPageProps{
     lecture : Lecture
 }
-class SheetCreatorPageState{
-    items : Array<RQuestion>
+interface SheetCreatorPageState{
+    items? : Array<RQuestion>
+    name? : string
 }
 class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreatorPageState> {
     
@@ -22,7 +24,8 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             var qs = new RQuestion();
             qs.id = IDFactory.getNumber();
             this.state = {
-                items : [qs]
+                items : [qs],
+                name : ""
             };
         }
     
@@ -58,8 +61,9 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         return  <div>
             <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color={this.props.lecture.color} name={"leonardo"} />
             <div style={editorStyle}>
-
+                
                 <div>
+                    <TextBox onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/>
                     {items}
                 </div>
                 <div style={footerContainer}>
@@ -72,6 +76,10 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 </div>
             </div>
         </div>
+    }
+    
+    onNameChange(e){
+        this.setState({name:e.target.value})
     }
     
     onBack(){
@@ -101,9 +109,14 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             return newQuestion; 
         });
         
-        var sheet = new Sheet(0,"description here","title here");
-        API.createSheet(this.props.lecture.id , sheet , questions);
-        window.location.href = "/lectures/" + this.props.lecture.id;
+        var sheet = new Sheet(0,"description here",this.state.name);
+         $.post("/api/create/sheet",
+            {
+               sheet:sheet,
+               questions:questions,
+               lecture_id : lecture_id
+            }
+        ).then(()=>window.location.href = "/lectures/" + this.props.lecture.id);
     }
     
     

@@ -73,7 +73,8 @@ class Header  extends React.Component<HeaderProps, any> {
                                 height:"50px",
                                 background:this.props.color,
                                 boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.05);",
-                                borderBottom:"5px solid rgba(0, 0, 0, 0.07)"
+                                borderBottom:"5px solid rgba(0, 0, 0, 0.14)",
+                                paddingBottom:"5px"
                            }}
 
                     >

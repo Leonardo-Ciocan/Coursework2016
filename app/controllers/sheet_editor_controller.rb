@@ -6,7 +6,9 @@ class SheetEditorController < ApplicationController
   @@stat_current_click = 2
 
   def index
+
     @sheet = Sheet.find params[:id]
+    @lecture_id = @sheet.lecture_id
     @questions = @sheet.questions.all
     @answers = []
     for qs in @questions

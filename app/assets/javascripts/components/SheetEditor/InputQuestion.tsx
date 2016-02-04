@@ -62,8 +62,8 @@ class InputQuestion extends React.Component<InputProps , any> {
                        style={{
                          background:"  white",
                         margin:"0 auto",
-                        width:"600px",
-                        padding:"35px",
+                        width:"100%",
+                        padding:"25px",
                         borderBottom:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
                         transition:"box-shadow 0.3s"

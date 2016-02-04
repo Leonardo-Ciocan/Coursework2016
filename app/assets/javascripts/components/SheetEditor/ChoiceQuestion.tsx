@@ -1,6 +1,8 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 
+declare var marked : Function
+
 class ChoiceFragmentProps {
     onPick:Function
     index:number
@@ -100,15 +102,16 @@ class ChoiceProps{
                      style={{
                         background:"  white",
                         margin:"0 auto",
-                        width:"600px",
-                        padding:"35px",
+                        width:"100%",
+                        padding:"25px",
                         borderBottom:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
                         transition:"box-shadow 0.3s"
                     }}>
 
 
-                    <h1 className="question-title"> {this.props.question.title} </h1>
+                    <h1 className="question-title" 
+                        dangerouslySetInnerHTML={{__html: marked(this.props.question.title)}}/>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 

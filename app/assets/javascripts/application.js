@@ -15,8 +15,6 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
-//= require material.min.js
-//= require ripples.min.js
 // require components
 // require_tree .
 

@@ -16,7 +16,7 @@ class LectureItem extends React.Component<LectureProps,any> {
 
     render() {
         var containerStyle = {
-            float:"left",
+            display:"inline-block",
             width:"230px",
             height:"100px",
             borderRadius:"5px",
@@ -81,7 +81,12 @@ class LecturePage extends React.Component<LecturePageProps,any>{
         return <div>
                     
                     <Header color="black" name={"leonardo"} title={"Your lectures"} subtitle={this.state.lectures.length + " lectures"}/>
-                    <div style={parentStyle}>{items}</div>
+
+                    <div style={parentStyle}>
+                                        <h1>Subscribed to</h1>
+                    {items}
+                                        <h1>My lectures</h1>
+                    </div>
                </div>
     }
     

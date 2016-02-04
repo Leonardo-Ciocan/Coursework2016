@@ -2,10 +2,13 @@
 /// <reference path="./ChoiceQuestion.tsx" />
 /// <reference path="./InputQuestion.tsx" />
 /// <reference path="../shared/Header.tsx" />
+/// <reference path="../../models/Lecture.ts" />
+
 console.log("hello");
 class SheetEditPageProps{
     questions : any
     sheet :any
+    lecture : Lecture
 }
 
 declare var answers : any
@@ -14,7 +17,7 @@ declare var questions:any
 
 class SheetEditPage extends React.Component<SheetEditPageProps,any> {
     render() {
-        var color = "purple";
+        var color = this.props.lecture.color;
         var questions = this.props.questions.map(function(question,i){
             //console.log(question.type);
             question.type = question.type == null ? 0 : question.type;
@@ -38,7 +41,8 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                           marginBottom:"50px",
                           marginLeft:"auto",
                           marginRight:"auto",
-                          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);"
+                          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);",
+                          border:"1px solid lightgray"
                     }}>
                     {questions}
                     <div style={{height:"65px"}}>
@@ -60,7 +64,15 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
 }
 
 
-ReactDOM.render(
-    React.createElement(SheetEditPage , {sheet:sheet , questions:questions}),
-    document.getElementById('root')
-);
+declare var lecture_id
+
+$.get(
+    "/api/lecture/",
+    {id : lecture_id},
+    (data) => {
+        ReactDOM.render(
+            React.createElement(SheetEditPage , {sheet:sheet , questions:questions , lecture:new Lecture(data.id , data.name , data.author , data.color)}),
+            document.getElementById('root')
+        );
+    }
+)

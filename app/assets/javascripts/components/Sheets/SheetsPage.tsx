@@ -26,23 +26,23 @@ class SheetItem extends React.Component<SheetItemProps,any> {
             background:"white",
             margin:"20px",
             boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
-            border:"0px solid gray",
             cursor:"pointer",
-            overflow:"hidden"
+            overflow:"hidden",
+            border:"1px solid lightgray"
         };
 
         var titleStyle = {
-            background:"rgba(0,0,0,0.01)",
+            background:"rgba(0,0,0,0.025)",
             fontSize:"12pt",
             color:this.props.color,
             textAlign:"center",
-            borderBottom:"1px solid rgba(0,0,0,0.2)",
-            padding:"4px",
-            margin:"10px",
+            borderBottom:"1px solid lightgray",
+            padding:"10px",
             textOverflow: "ellipsis",
             lines:"1",
             overflow:"hidden",
-            whiteSpace: "nowrap"
+            whiteSpace: "nowrap",
+            margin:0
         };
 
         var descriptionStyle = {
