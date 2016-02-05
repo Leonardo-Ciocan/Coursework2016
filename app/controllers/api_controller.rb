@@ -89,6 +89,7 @@ class ApiController < ApplicationController
                       :subtitle => v["subtitle"] ,
                       :data => v["data"],
                       :correct_answer => v["correct_answer"],
+                      :type => v["type"],
                       :sheet_id => new_sheet.id
     end
     head :ok

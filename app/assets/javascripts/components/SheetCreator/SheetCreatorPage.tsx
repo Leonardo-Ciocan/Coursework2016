@@ -1,6 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../shared/Header.tsx" />
 /// <reference path="./ChoiceCreator.tsx" />
+/// <reference path="./InputCreator.tsx" />
 /// <reference path="../shared/LCButton.tsx" />
 /// <reference path="../../models/Lecture.ts" />
 /// <reference path="../shared/IDFactory.ts" />
@@ -22,6 +23,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
      constructor(props) {
             super(props);
             var qs = new RQuestion();
+            qs.type = 0;
             qs.id = IDFactory.getNumber();
             this.state = {
                 items : [qs],
@@ -56,7 +58,16 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             cursor:"pointer"
         };
         
-        let items = this.state.items.map((item) => <ChoiceCreator key={item.id} question={item} color={this.props.lecture.color}/>);
+        let items = this.state.items.map((item) =>{ 
+            
+            if(item.type == 0){
+                return  <ChoiceCreator key={item.id} question={item} color={this.props.lecture.color}/>
+            }   
+            else if(item.type == 1){
+                return <InputCreator  key={item.id} question={item} color={this.props.lecture.color}/>
+            }
+        
+        });
         
         return  <div>
             <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color={this.props.lecture.color} name={"leonardo"} />
@@ -69,7 +80,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 <div style={footerContainer}>
                     <span>Create question : </span>
                     <LCButton text="Multiple Choice" onClick={this.addMultipleChoice.bind(this)}  color={"gray"}/>
-                    <LCButton text={"Input"} color={"gray"}/>
+                    <LCButton text={"Input"} onClick={this.addInputQuestion.bind(this)} color={"gray"}/>
                 </div>
                 <div style={{display:"inline-block",float:"right"}}>
                     <LCButton onClick={this.createSheet.bind(this)} text={"Create sheet"} color={this.props.lecture.color} />
@@ -88,10 +99,21 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
     
     addMultipleChoice(){
         var qs = new RQuestion();
+        qs.type = 0;
         qs.id = IDFactory.getNumber();
         this.state.items.push(qs);
         this.setState({items:this.state.items});
     }
+    
+    addInputQuestion(){
+        var qs = new RQuestion();
+        qs.type = 1;
+        qs.id = IDFactory.getNumber();
+        this.state.items.push(qs);
+        this.setState({items:this.state.items});
+    }
+    
+    
     
     createSheet(){
         console.log(this.state.items);
@@ -100,12 +122,18 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
            var newQuestion = new Question();
             newQuestion.title = item.title;
             newQuestion.subtitle = item.subtitle;
-            var data = {
-                answers : item.answers.map((answer)=>answer.text)
-            };
-            newQuestion.data = JSON.stringify(data);
-            
-            newQuestion.correct_answer = ""+item.answers.indexOf(item.answers.filter((answer)=>answer.isAnswer)[0]);
+            newQuestion.type = item.type;
+            if(item.type == 0){
+                var data = {
+                    answers : item.answers.map((answer)=>answer.text)
+                };
+                newQuestion.data = JSON.stringify(data);
+                
+                newQuestion.correct_answer = ""+item.answers.indexOf(item.answers.filter((answer)=>answer.isAnswer)[0]);
+            }
+            else if(item.type == 1){
+                newQuestion.correct_answer = item.correct_answer;
+            }
             return newQuestion; 
         });
         
