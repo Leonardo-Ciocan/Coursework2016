@@ -10,12 +10,19 @@
     var lecture_id = <%= raw @lecture_id %>;
 
   </script>
+
+  <%= stylesheet_link_tag "codemirror" %>
+  <%= stylesheet_link_tag "base16-light" %>
+  <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div id="root"/>
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'marked', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'codemirror', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'python_mode', 'data-turbolinks-track' => true %>
+
     <%= javascript_include_tag 'sheet_editor', 'data-turbolinks-track' => true %>
 </body>
 </html>

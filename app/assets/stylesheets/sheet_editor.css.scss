@@ -40,6 +40,7 @@ body{
   width:100%;
   font-size: 13pt;
   margin-bottom: 0px;
+  margin-top:0px;
 }
 
 .question-subtitle{
@@ -76,4 +77,14 @@ h3,h5{
 }
 
 h1,h2{
+}
+
+
+.CodeMirror {
+  border: 1px solid #eee;
+}
+.CodeMirror-scroll {
+  height: auto;
+  overflow-y: hidden;
+  overflow-x: auto;
 }
