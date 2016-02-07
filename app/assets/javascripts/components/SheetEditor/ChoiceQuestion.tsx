@@ -2,6 +2,7 @@
 /// <reference path="../../typing/jquery.d.ts" />
 
 declare var marked : Function
+declare var hljs : any
 
 class ChoiceFragmentProps {
     onPick:Function
@@ -111,7 +112,9 @@ class ChoiceProps{
 
 
                     <h1 className="question-title" 
-                        dangerouslySetInnerHTML={{__html: marked(this.props.question.title)}}/>
+                        dangerouslySetInnerHTML={{__html: marked(this.props.question.title,{highlight: function (code) {
+    return hljs.highlightAuto(code).value;
+  }})}}/>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 

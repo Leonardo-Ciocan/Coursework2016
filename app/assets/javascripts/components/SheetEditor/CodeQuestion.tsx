@@ -1,6 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 /// <reference path="../shared/LCButton.tsx" />
+/// <reference path="../shared/SegmentedButton.tsx" />
 
 declare var marked : Function
 declare var CodeMirror : Function

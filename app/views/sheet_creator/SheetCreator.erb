@@ -11,6 +11,22 @@
 
 <div id="root"></div>
 <%= yield %>
+<%= javascript_include_tag 'marked', 'data-turbolinks-track' => true %>
+
+<%= javascript_include_tag 'highlight', 'data-turbolinks-track' => true %>
+
+<%= javascript_include_tag "python" %>
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script>
+
+    marked.setOptions({
+        highlight: function (code) {
+            return hljs.highlightAuto(code).value;
+        }
+    });
+</script>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 <%= javascript_include_tag 'sheet_creator', 'data-turbolinks-track' => true %>

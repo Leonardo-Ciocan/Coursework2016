@@ -9,8 +9,10 @@
     var answers = <%= raw @answers.to_json %>;
     var lecture_id = <%= raw @lecture_id %>;
 
+
   </script>
 
+  <%= stylesheet_link_tag "vs" %>
   <%= stylesheet_link_tag "codemirror" %>
   <%= stylesheet_link_tag "base16-light" %>
   <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500' rel='stylesheet' type='text/css'>
@@ -20,6 +22,20 @@
 
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'marked', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'highlight', 'data-turbolinks-track' => true %>
+
+    <%= javascript_include_tag "python" %>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <script>
+
+        marked.setOptions({
+            highlight: function (code) {
+                return hljs.highlightAuto(code).value;
+            }
+        });
+    </script>
     <%= javascript_include_tag 'codemirror', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'python_mode', 'data-turbolinks-track' => true %>
 

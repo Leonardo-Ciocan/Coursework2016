@@ -1,6 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="./ChoiceQuestion.tsx" />
 /// <reference path="./InputQuestion.tsx" />
+/// <reference path="./WebQuestion.tsx" />
 /// <reference path="./CodeQuestion.tsx" />
 /// <reference path="../shared/Header.tsx" />
 /// <reference path="../../models/Lecture.ts" />
@@ -30,6 +31,9 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                 }
                 else if (question.type == 3){
                     return <CodeQuestion color={color}   question={question} answer={answers[i]}/>;
+                }
+                else if (question.type == 4){
+                    return <WebQuestion color={color}/>;
                 }
             }.bind(this));
 

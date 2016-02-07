@@ -3,6 +3,8 @@
 /// <reference path="./Answer.ts" />
 /// <reference path="../shared/IDFactory.ts" />
 /// <reference path="../../models/Question.ts" />
+/// <reference path="../shared/TextArea.tsx" />
+/// <reference path="../shared/MDPreview.tsx" />
 
 
 interface ChoiceCreatorProps{
@@ -11,8 +13,8 @@ interface ChoiceCreatorProps{
     key? : any
 }
 
-class ChoiceCreatorState{
-    answers : Array<Answer>
+interface ChoiceCreatorState{
+    answers? : Array<Answer>
 }
 
 class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorState> {
@@ -82,8 +84,9 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
                 <ChoiceCreatorAnswer key={answer.id} onDelete={this.onDeleteAnswer.bind(this)} answer={answer} color={this.props.color}/>);
         
         return <div style={containerStyle}>
-                   <input onChange={this.titleChanged.bind(this)} placeholder={"Question title"} style={inputStyle}/>
+                   <TextArea fontSize="13pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
                    <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
+                   <MDPreview code={this.props.question.title || ""} />
                    <div style={answerContainer}>
                         <div style={{
                             background:"rgba(0,0,0,0.025)",
@@ -107,6 +110,7 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
     
     titleChanged(e){
         this.props.question.title = e.target.value;
+        this.setState({});
     }
     
     subtitleChanged(e){
