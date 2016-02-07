@@ -16,26 +16,32 @@
   <%= stylesheet_link_tag "codemirror" %>
   <%= stylesheet_link_tag "base16-light" %>
   <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:500' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <%= javascript_include_tag 'markdown-it', 'data-turbolinks-track' => true %>
+  <script>
+      var md = window.markdownit({
+          highlight: function (str, lang) {
+              if (lang && hljs.getLanguage(lang)) {
+                  try {
+                      return hljs.highlight(lang, str).value;
+                  } catch (__) {}
+              }
+
+              return ''; // use external default escaping
+          }
+      });
+  </script>
 </head>
 <body>
     <div id="root"/>
 
+
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'marked', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'highlight', 'data-turbolinks-track' => true %>
 
-    <%= javascript_include_tag "python" %>
 
-    <script>hljs.initHighlightingOnLoad();</script>
 
-    <script>
-
-        marked.setOptions({
-            highlight: function (code) {
-                return hljs.highlightAuto(code).value;
-            }
-        });
-    </script>
     <%= javascript_include_tag 'codemirror', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'python_mode', 'data-turbolinks-track' => true %>
 

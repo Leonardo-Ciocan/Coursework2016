@@ -79,12 +79,11 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
             cursor:"pointer",
         };
         
-        console.log(this.state.answers);
         let answers = this.state.answers.map((answer) => 
                 <ChoiceCreatorAnswer key={answer.id} onDelete={this.onDeleteAnswer.bind(this)} answer={answer} color={this.props.color}/>);
         
         return <div style={containerStyle}>
-                   <TextArea fontSize="13pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
+                   <TextArea fontSize="11pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
                    <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
                    <MDPreview code={this.props.question.title || ""} />
                    <div style={answerContainer}>

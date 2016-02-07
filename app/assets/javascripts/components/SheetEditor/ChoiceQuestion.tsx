@@ -1,7 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 
-declare var marked : Function
+declare var md : any
 declare var hljs : any
 
 class ChoiceFragmentProps {
@@ -26,7 +26,7 @@ class ChoiceProps{
         }
 
         render() {
-            console.log(this.props.selected);
+
             var answerStyle = {
                 border: "1px solid " + this.props.color,
                 borderRadius: "2px",
@@ -98,8 +98,6 @@ class ChoiceProps{
 
             return <div className="question-block" >
                 <div
-                     onMouseEnter={this.mouseEnter.bind(this)}
-                     onMouseLeave={this.mouseLeave.bind(this)}
                      style={{
                         background:"  white",
                         margin:"0 auto",
@@ -111,10 +109,8 @@ class ChoiceProps{
                     }}>
 
 
-                    <h1 className="question-title" 
-                        dangerouslySetInnerHTML={{__html: marked(this.props.question.title,{highlight: function (code) {
-    return hljs.highlightAuto(code).value;
-  }})}}/>
+                    <span className="question-title" 
+                        dangerouslySetInnerHTML={{__html:md.render(this.props.question.title)}}/>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 

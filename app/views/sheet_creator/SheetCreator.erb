@@ -6,24 +6,30 @@
   <script>
     var lecture_id = <%= raw @lecture_id %>;
   </script>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
+  <%= javascript_include_tag 'markdown-it', 'data-turbolinks-track' => true %>
+
 </head>
 <body>
 
 <div id="root"></div>
 <%= yield %>
-<%= javascript_include_tag 'marked', 'data-turbolinks-track' => true %>
 
-<%= javascript_include_tag 'highlight', 'data-turbolinks-track' => true %>
 
-<%= javascript_include_tag "python" %>
 
-<script>hljs.initHighlightingOnLoad();</script>
+<!--<script>hljs.initHighlightingOnLoad();</script>-->
 
 <script>
+    var md = window.markdownit({
+        highlight: function (str, lang) {
+            if (lang && hljs.getLanguage(lang)) {
+                try {
+                    return hljs.highlight(lang, str).value;
+                } catch (__) {}
+            }
 
-    marked.setOptions({
-        highlight: function (code) {
-            return hljs.highlightAuto(code).value;
+            return ''; // use external default escaping
         }
     });
 </script>

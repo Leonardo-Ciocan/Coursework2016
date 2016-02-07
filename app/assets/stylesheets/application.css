@@ -26,3 +26,14 @@ body{
 *:focus {
     outline: none;
 }
+
+
+pre code span , pre code{
+    font-family: "Source Code Pro", Monaco, monospace !important;
+}
+
+code {
+    background-color: rgba(0,0,0,0.1);
+    color:black;
+    padding:5px;
+}
