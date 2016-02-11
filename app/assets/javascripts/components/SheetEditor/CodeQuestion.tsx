@@ -3,7 +3,7 @@
 /// <reference path="../shared/LCButton.tsx" />
 /// <reference path="../shared/SegmentedButton.tsx" />
 
-declare var marked : Function
+declare var md : any
 declare var CodeMirror : Function
 
 class CodeQuestionProps {
@@ -40,8 +40,8 @@ class CodeQuestionProps {
                     }}>
 
 
-                    <h1 className="question-title" 
-                        dangerouslySetInnerHTML={{__html: marked(this.props.question.title)}}/>
+                    <span className="question-title" 
+                        dangerouslySetInnerHTML={{__html: md.render(this.props.question.title)}}/>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
                     

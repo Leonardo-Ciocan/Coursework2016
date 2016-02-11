@@ -16,10 +16,10 @@ class LCButton extends React.Component<LCButtonProps , any> {
     render(){
         
         let containerStyle = {
-            borderBottom:"4px solid rgba(0,0,0,0.2)",
-            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.03)",
-            color:"white",
-            background:this.props.color,
+            border:"1px solid " + this.props.color,
+
+            background:"white",
+            color:this.props.color,
             borderRadius:"5px",
             fontWeight:"bold",
             margin:this.props.margin || "10px",

@@ -33,7 +33,11 @@ pre code span , pre code{
 }
 
 code {
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.05);
     color:black;
     padding:5px;
+}
+
+p > code {
+    border : 1px solid lightgray;
 }

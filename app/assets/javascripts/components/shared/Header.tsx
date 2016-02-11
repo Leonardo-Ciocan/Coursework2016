@@ -6,6 +6,8 @@ interface HeaderProps {
     color : string
     subtitle : string
     onBack? : () => void
+    foreground? : string
+    hideBack? : boolean
 }
 
 class Header  extends React.Component<HeaderProps, any> {
@@ -18,7 +20,7 @@ class Header  extends React.Component<HeaderProps, any> {
             margin:"0px",
             marginLeft:"55px",
             marginTop:"5px",
-            color:"white",
+            color:this.props.foreground || "white",
             verticalAlign:"middle",
             textAlign:"center",
             lineHeight:"25px",
@@ -29,7 +31,7 @@ class Header  extends React.Component<HeaderProps, any> {
          var subtitleStyle = {
             margin:"0px",
             marginLeft:"55px",
-            color:"rgba(255,255,255,0.8)",
+            color:this.props.foreground || "white",
             verticalAlign:"top",
             textAlign:"center",
             lineHeight:"15px",
@@ -39,7 +41,7 @@ class Header  extends React.Component<HeaderProps, any> {
 
         var nameStyle = {
             margin:"auto",
-            color:"white",
+            color:this.props.foreground || "white",
             verticalAlign:"middle",
             lineHeight:"50px",
             fontSize:"16px",
@@ -59,21 +61,22 @@ class Header  extends React.Component<HeaderProps, any> {
             left:"0px",
             top:"0",
             lineHeight:"50px",
-            color:"white",
+            color:this.props.foreground || "white",
             paddingRight:"10px",
             paddingLeft:"10px",
             verticalAlign:"middle",
             fontSize:"18pt",
             cursor:"pointer",
-            background:"rgba(255,255,255,0.2)"
+            background:"rgba(255,255,255,0.2)",
+            visibility: this.props.hideBack != true ? "visible" : "hidden"
         };
 
         return  <div className="header"
                      style={{
                                 height:"50px",
                                 background:this.props.color,
-                                boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.05);",
-                                borderBottom:"5px solid rgba(0, 0, 0, 0.14)",
+
+                                borderBottom:"1px solid rgba(0, 0, 0, 0.14)",
                                 paddingBottom:"5px"
                            }}
 

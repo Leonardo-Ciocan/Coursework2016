@@ -32,7 +32,7 @@ class LectureCreatorPage extends React.Component<LectureCreatorPageProps,Lecture
         let containerStyle = {
             border : "1px solid lightgray",
             padding:"10px",
-            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
+            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.0)",
             background:"white",
             borderRadius:"5px",
             margin:"20px",
@@ -44,9 +44,10 @@ class LectureCreatorPage extends React.Component<LectureCreatorPageProps,Lecture
         
         return  <div>
                   <Header onBack={this.onBack.bind(this)} 
+                    foreground={this.state.color || "darkgray"} 
                     title={"Creating new sheet"} 
                     subtitle={""} 
-                    color={this.state.color || "darkgray"} 
+                    color={"transparent"} 
                     name={"leonardo"} />
                     
                     <div style={containerStyle}>

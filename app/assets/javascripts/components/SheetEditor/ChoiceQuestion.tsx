@@ -20,7 +20,7 @@ class ChoiceProps{
 }
 
 
-    class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
+class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
         onClick() {
             this.props.onPick(this.props.index);
         }
@@ -37,11 +37,12 @@ class ChoiceProps{
                 color: !this.props.selected ? this.props.color : "white"
             };
 
-            return (<div style={answerStyle} onClick={this.onClick.bind(this)}>
-                <h3>{this.props.text}</h3>
-            </div>);
+            return <div style={answerStyle} onClick={this.onClick.bind(this)}>
+                        <h3>{this.props.text}</h3>
+                    </div>
+                
         }
-    }
+}
 
  class ChoiceQuestion extends React.Component<ChoiceProps,any> {
 
@@ -62,14 +63,6 @@ class ChoiceProps{
             );
         }
 
-        mouseEnter(e) {
-            //$(this.refs.card).css("box-shadow", "0 6px 15px 0 rgba(0,0,0,.22),0 6px 15px 0 rgba(0,0,0,.22)");
-        }
-
-
-        mouseLeave(e) {
-            //$(this.refs.card).css("box-shadow", "0 1px 6px 0 rgba(0,0,0,.12),0 1px 6px 0 rgba(0,0,0,.12)");
-        }
 
         render() {
 

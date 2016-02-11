@@ -70,7 +70,7 @@ class InputQuestion extends React.Component<InputProps , any> {
                     }}>
 
 
-                    <h1 className="question-title"> {this.props.question.title} </h1>
+                    <span className="question-title"> {this.props.question.title} </span>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 

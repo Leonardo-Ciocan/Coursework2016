@@ -11,13 +11,12 @@ class MDPreview extends React.Component<MDPreviewProps , any> {
    
     constructor(p){
         super(p);
-        this.state = { code : " "};
+        this.state = { code : " " };
     }
     
     render(){
         
         let containerStyle = {
-            width:"100%",
             padding:"10px",
             borderTop:"1px solid lightgray",
             marginLeft:"-10px",

@@ -3,6 +3,9 @@
 /// <reference path="../shared/Header.tsx" />
 /// <reference path="../../typing/jquery.d.ts" />
 /// <reference path="../shared/Dialog.tsx" />
+/// <reference path="../shared/LCButton.tsx" />
+/// <reference path="../shared/LCRoundButton.tsx" />
+
 
 class LectureProps {
     lecture : Lecture
@@ -69,25 +72,30 @@ class LecturePage extends React.Component<LecturePageProps,any>{
         var items =  this.state.lectures.map(function(lecture){
             return <LectureItem lecture={lecture}/>;
         });
-        // <Dialog title={"Subscribe to a lecture"} 
-        //                 content={
-        //                     <div>
-        //                         <h1 style={{fontSize:"15pt"}}>The lecture code is <input placeholder={"code"}></input></h1>
-        //                     </div>
-        //                 }
-        //             />
         let inputStyle = {border:"none" , borderBottom:"1px solid gray"};
         var parentStyle = {position:"relative" , margin:"20px" , marginTop:"60px"};
         return <div>
                     
-                    <Header color="black" name={"leonardo"} title={"Your lectures"} subtitle={this.state.lectures.length + " lectures"}/>
+                    <Header hideBack={true} color="transparent" foreground="black" name={"leonardo"} title={"Your lectures"} subtitle={this.state.lectures.length + " lectures"}/>
 
                     <div style={parentStyle}>
-                                        <h1>Subscribed to</h1>
+
+                    <div style={
+                        {marginTop:"30px"}
+                    }>
+                        <span style={{lineHeight:"30px",verticalAlign:"middle",fontSize:"15pt", margin:"10px"}}>Lectures you're subscribed to</span>
+                    </div>
                     {items}
-                                        <h1>My lectures</h1>
+                    <div style={{marginTop:"10px" , paddingTop:"10px"}}>
+                        <span style={{lineHeight:"30px",verticalAlign:"middle",fontSize:"15pt", margin:"10px"}}>Your own lectures</span>
+                        <RoundButton onClick={this.createLecture} background="transparent"/>
+                    </div>
                     </div>
                </div>
+    }
+    
+    createLecture(){
+        window.location.href = "/create/lecture";
     }
     
     getLectures() : void {
