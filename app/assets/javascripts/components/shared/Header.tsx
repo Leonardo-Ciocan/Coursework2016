@@ -54,7 +54,8 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
             paddingLeft:"10px",
             top:"0px",
             fontFamily:"Open Sans",
-            borderLeft:"1px solid lightgray"
+            borderLeft:"1px solid lightgray",
+            cursor:"pointer"
         };
 
         var iconStyle={

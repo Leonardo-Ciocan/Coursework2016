@@ -1,6 +1,12 @@
 /// <reference path="./subscribe.tsx" />
 
-ReactDOM.render(
-    React.createElement(SubscribePage , {}),
-    document.getElementById('root')
-);
+        $.get(
+            "/api/lecture",
+            {id:lecture_id},
+            (i) => {
+                 ReactDOM.render(
+                    React.createElement(SubscribePage , {lecture : new Lecture(i.id , i.name , i.author , i.color)}),
+                    document.getElementById('root')
+                );
+            }
+        )

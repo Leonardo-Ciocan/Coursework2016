@@ -57,26 +57,30 @@ class LectureItem extends React.Component<LectureProps,any> {
 }
 
 class LecturePageProps{
-    lectures : Array<Lecture>
+    created : Array<Lecture>
+    subscribed : Array<Lecture>
 }
 
 class LecturePage extends React.Component<LecturePageProps,any>{
     
     constructor(p:LecturePageProps){
         super(p);
-        this.state = {lectures:[]}
-        this.getLectures();
     }
     
     render(){
-        var items =  this.state.lectures.map(function(lecture){
+        var created =  this.props.created.map(function(lecture){
             return <LectureItem lecture={lecture}/>;
         });
+        
+        var subscribed =  this.props.subscribed.map(function(lecture){
+            return <LectureItem lecture={lecture}/>;
+        });
+        
         let inputStyle = {border:"none" , borderBottom:"1px solid gray"};
         var parentStyle = {position:"relative" , margin:"20px" , marginTop:"60px"};
         return <div>
                     
-                    <Header hideBack={true} color="transparent" foreground="black" name={"leonardo"} title={"Your lectures"} subtitle={this.state.lectures.length + " lectures"}/>
+                    <Header hideBack={true} color="transparent" foreground="black" name={"leonardo"} title={"Your lectures"} subtitle={this.props.subscribed.length + " lectures"}/>
 
                     <div style={parentStyle}>
 
@@ -85,11 +89,12 @@ class LecturePage extends React.Component<LecturePageProps,any>{
                     }>
                         <span style={{lineHeight:"30px",verticalAlign:"middle",fontSize:"15pt", margin:"10px"}}>Lectures you're subscribed to</span>
                     </div>
-                    {items}
+                    {subscribed}
                     <div style={{marginTop:"10px" , paddingTop:"10px"}}>
                         <span style={{lineHeight:"30px",verticalAlign:"middle",fontSize:"15pt", margin:"10px"}}>Your own lectures</span>
                         <RoundButton onClick={this.createLecture} background="transparent"/>
                     </div>
+                    {created}
                     </div>
                </div>
     }
@@ -98,16 +103,4 @@ class LecturePage extends React.Component<LecturePageProps,any>{
         window.location.href = "/create/lecture";
     }
     
-    getLectures() : void {
-        $.get("/api/lectures",
-            (data) => {
-                console.log(data);
-                var arr : Array<Lecture> = []
-                for(var i of data){
-                    arr.push(new Lecture(i.id , i.name , i.author , i.color));
-                }
-                this.setState({lectures:arr});
-            }
-        )
-    }
 }

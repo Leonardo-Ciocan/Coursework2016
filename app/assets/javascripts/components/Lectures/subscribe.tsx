@@ -13,8 +13,6 @@ class SubscribePage extends React.Component<SubscribePageProps , any>{
     
     constructor(p:SubscribePageProps){
         super(p);
-        this.state = {lecture:{}}
-        this.getLecture();
     }
     
     render(){
@@ -23,42 +21,38 @@ class SubscribePage extends React.Component<SubscribePageProps , any>{
             height : "200px",
             marginTop:"100px",
             width:"100%",
-            color:this.state.lecture.color,
+            color:this.props.lecture.color,
             textAlign:"center"
         };
         
         let btnStyle = {
             marginLeft:"auto" , marginRight :"auto", marginTop:"50px",
             width:"300px",
-            border: "1px solid "+this.state.lecture.color,
-            color : this.state.lecture.color,
+            border: "1px solid "+this.props.lecture.color,
+            color : this.props.lecture.color,
             fontSize:"20pt",
             cursor:"pointer"
         };
         
         return <div>
-                <Header title={""} subtitle={""} color={this.state.lecture.color} name={"leonardo.ciocan@outlook.com"}/>
+                <Header onBack={this.back} title={""} subtitle={""} foreground={this.props.lecture.color} color={"transparent"} name={"leonardo.ciocan"}/>
                 <div style={containerStyle}>
-                    <h1>{this.state.lecture.name}</h1>
-                    <h3>Made by {this.state.lecture.author}</h3>
+                    <h1>{this.props.lecture.name}</h1>
+                    <h3>Made by {this.props.lecture.author}</h3>
                     <div style={btnStyle} onClick={this.subscribeClicked}>Subscribe</div>
                 </div>
                 </div>
     }
     
-    getLecture(){
-        $.get(
-            "/api/lecture",
-            {id:lecture_id},
-            (i) => {
-                
-                this.setState({lecture : new Lecture(i.id , i.name , i.author , i.color)});
-            }
-        )
+    back(){
+        window.location.href = "/lectures/";
     }
     
     subscribeClicked(){
-        window.location.href = "/lectures/" + lecture_id;
+        $.post(
+            "/api/subscribe/",
+            {lecture_id : lecture_id}
+        ).then(() => window.location.href = "/lectures/" + lecture_id);
     }
     
 }

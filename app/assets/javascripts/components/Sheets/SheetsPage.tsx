@@ -33,7 +33,7 @@ class SheetItem extends React.Component<SheetItemProps,any> {
 
         var titleStyle = {
             background:"rgba(0,0,0,0.025)",
-            fontSize:"12pt",
+            fontSize:"10pt",
             color:"black",
             textAlign:"center",
             borderBottom:"1px solid lightgray",

@@ -2,7 +2,6 @@ class ApiController < ApplicationController
   skip_before_action :authenticate_user!
 
   def subscribe
-    print current_user
     Subscription.create :lecture_id => params[:lecture_id] , :user_id => current_user.id
     head :ok
   end
@@ -40,7 +39,7 @@ class ApiController < ApplicationController
   end
 ``
   def lectures
-    lectures = Lecture.all.map{
+    lectures = Lecture.where(:author => current_user.id).map{
       |lecture|
       {
           "id" => lecture.id,
@@ -49,7 +48,20 @@ class ApiController < ApplicationController
           "color" => lecture.color
       }
     }
-    render :json => lectures , status: 200
+
+    subscribed_to = Subscription.where(:user_id => current_user.id).map{
+      |subscription|
+          lecture = Lecture.find(subscription.lecture_id)
+          {
+            "id" => lecture.id,
+            "name" => lecture.name,
+            "author" => User.find(lecture.author).email,
+            "color" => lecture.color
+          }
+
+    }
+
+    render :json => {:subscribed => subscribed_to , :created=>lectures} , status: 200
   end
 
   def lecture
