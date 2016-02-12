@@ -3,7 +3,7 @@
 interface HeaderProps {
     title : string
     name : string
-    color : string
+    color? : string
     subtitle : string
     onBack? : () => void
     foreground? : string
@@ -74,8 +74,7 @@ class Header  extends React.Component<HeaderProps, any> {
         return  <div className="header"
                      style={{
                                 height:"50px",
-                                background:this.props.color,
-
+                                background:this.props.color || "#fafafa",
                                 borderBottom:"1px solid rgba(0, 0, 0, 0.14)",
                                 paddingBottom:"5px"
                            }}
@@ -84,7 +83,7 @@ class Header  extends React.Component<HeaderProps, any> {
                     <h1 style={titleStyle}> {this.props.title}</h1>
                     <h1 style={subtitleStyle}> {this.props.subtitle}</h1>
                     <h1 style={nameStyle}> {this.props.name}</h1>
-                    <i className="fa fa-arrow-left" style={iconStyle} onClick={this.props.onBack}></i>
+                    <i className="fa fa-chevron-left" style={iconStyle} onClick={this.props.onBack}></i>
                 </div>
     }
 }

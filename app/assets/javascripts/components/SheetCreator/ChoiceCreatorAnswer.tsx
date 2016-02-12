@@ -1,6 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../shared/Checkbox.tsx" />
 /// <reference path="./Answer.ts" />
+/// <reference path="../shared/TextBox.tsx" />
 
 interface ChoiceCreatorAnswerProps{
     color : string

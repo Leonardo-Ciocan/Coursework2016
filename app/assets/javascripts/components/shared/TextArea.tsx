@@ -14,7 +14,7 @@ class TextArea extends React.Component<TextAreaProps , any>{
             width:"100%",
             fontSize: this.props.fontSize || "15pt",
             border:"1px solid lightgray",
-            background:"rgba(0,0,0,0.05)",
+            background:"rgba(0,0,0,0.02)",
             borderRadius:"5px"
         };
         

@@ -58,7 +58,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             cursor:"pointer"
         };
         
-        let items = this.state.items.map((item) =>{ 
+        let items = this.state.items.map((item) =>{
             
             if(item.type == 0){
                 return  <ChoiceCreator key={item.id} question={item} color={this.props.lecture.color}/>
@@ -70,7 +70,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         });
         
         return  <div>
-            <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color={this.props.lecture.color} name={"leonardo"} />
+            <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color="transparent" foreground={this.props.lecture.color} name={"leonardo"} />
             <div style={editorStyle}>
                 
                 <div>

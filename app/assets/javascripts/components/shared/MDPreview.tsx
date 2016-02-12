@@ -26,10 +26,8 @@ class MDPreview extends React.Component<MDPreviewProps , any> {
 
         
         return <div style={containerStyle}>
-                <span style={{fontSize:"12pt", color:"gray"}}>Title preview</span>
-                <div 
-                    dangerouslySetInnerHTML={{__html:md.render(this.props.code)}}
-                >
+                <span style={{display:"block",fontSize:"12pt", color:"gray",textAlign:"center",width:"100%"}}>Question preview</span>
+                <div dangerouslySetInnerHTML={{__html:md.render(this.props.code)}}>
                         
                 </div>
                </div>

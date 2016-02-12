@@ -25,7 +25,7 @@ class SheetItem extends React.Component<SheetItemProps,any> {
             borderRadius:"2px",
             background:"white",
             margin:"20px",
-            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
+            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.00)",
             cursor:"pointer",
             overflow:"hidden",
             border:"1px solid lightgray"
@@ -34,7 +34,7 @@ class SheetItem extends React.Component<SheetItemProps,any> {
         var titleStyle = {
             background:"rgba(0,0,0,0.025)",
             fontSize:"12pt",
-            color:this.props.color,
+            color:"black",
             textAlign:"center",
             borderBottom:"1px solid lightgray",
             padding:"10px",

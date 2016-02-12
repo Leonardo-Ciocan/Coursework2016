@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sheets</title>
+  <%= csrf_meta_tags %>
+  <script>
+      var lecture_id = <%= raw @lecture_id  %>
+  </script>
+
+</head>
+<body>
+
+<div id="root"></div>
+<%= yield %>
+
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'sheet_manager', 'data-turbolinks-track' => true %>
+
+
+</body>
+</html>

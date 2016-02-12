@@ -30,7 +30,7 @@ class LectureCreatorPage extends React.Component<LectureCreatorPageProps,Lecture
     
     render(){
         let containerStyle = {
-            border : "1px solid lightgray",
+            border : "1px solid " + this.state.color,
             padding:"10px",
             boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.0)",
             background:"white",

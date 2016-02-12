@@ -100,4 +100,10 @@ class ApiController < ApplicationController
     render text: lecture.id
   end
 
+
+  def delete_sheet
+    Sheet.find(params[:sheet]).delete
+    render :nothing => 200
+  end
+
 end

@@ -31,7 +31,7 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
         let containerStyle = {
             border : "1px solid lightgray",
             padding:"10px",
-            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19)",
+            boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.00)",
             background:"white",
             borderRadius:"5px",
             margin:"20px"
@@ -83,7 +83,7 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
                 <ChoiceCreatorAnswer key={answer.id} onDelete={this.onDeleteAnswer.bind(this)} answer={answer} color={this.props.color}/>);
         
         return <div style={containerStyle}>
-                   <TextArea fontSize="11pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
+                   <TextArea fontSize="10pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
                    <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
                    <MDPreview code={this.props.question.title || ""} />
                    <div style={answerContainer}>
