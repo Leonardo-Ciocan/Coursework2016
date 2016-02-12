@@ -82,7 +82,7 @@ class SheetList extends React.Component<SheetListProps , any>{
 
         };
         return <div style={parentStyle}>
-            <Header color="transparent" onBack={this.onBack} foreground={this.props.lecture.color} name={"leonardo"} title={this.props.lecture.name} subtitle={this.state.sheets.length + " sheets"}/>
+            <Header color="#fafafa" onBack={this.onBack} foreground={this.props.lecture.color} name={"leonardo"} title={this.props.lecture.name} subtitle={this.state.sheets.length + " sheets"}/>
             <div style={{marginLeft:"50px" , marginTop:"5px"}}>
                 <div><LCButton onClick={this.createSheet.bind(this)} color={this.props.lecture.color} text="New sheet" /></div>
                 {items}

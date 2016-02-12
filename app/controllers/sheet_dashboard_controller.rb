@@ -1,4 +1,6 @@
 class SheetDashboardController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @sheet = Sheet.find(params[:id])
     @answers = Answer.joins(:question).where(:questions => {:sheet_id=>params[:id]})

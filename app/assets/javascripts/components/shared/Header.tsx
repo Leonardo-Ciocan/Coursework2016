@@ -51,7 +51,7 @@ class Header  extends React.Component<HeaderProps, any> {
             paddingLeft:"10px",
             top:"0px",
             fontFamily:"Open Sans",
-            background:"rgba(255,255,255,0.2)"
+            borderLeft:"1px solid lightgray"
         };
 
         var iconStyle={
@@ -67,8 +67,8 @@ class Header  extends React.Component<HeaderProps, any> {
             verticalAlign:"middle",
             fontSize:"18pt",
             cursor:"pointer",
-            background:"rgba(255,255,255,0.2)",
-            visibility: this.props.hideBack != true ? "visible" : "hidden"
+            visibility: this.props.hideBack != true ? "visible" : "hidden",
+            borderRight:"1px solid lightgray"
         };
 
         return  <div className="header"

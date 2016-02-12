@@ -39,12 +39,11 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
 
 
         return <div >
-               <Header onBack={this.onBack.bind(this)} foreground={color} color="transparent" title={this.props.sheet.name} name={"leonardo"} subtitle={this.props.questions.length + " questions"}>
-
+               <Header onBack={this.onBack.bind(this)} foreground={color}  color="#fafafa" title={this.props.sheet.name} name={"leonardo"} subtitle={this.props.questions.length + " questions"}>
+              
                </Header>
                 <div className="page-editor"
                     style={{
-                          marginTop:"110px",
                           width:"600px",
                           marginBottom:"50px",
                           marginLeft:"auto",

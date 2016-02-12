@@ -1,4 +1,5 @@
 class LectureListController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @lectures = Lecture.all

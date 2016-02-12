@@ -4,9 +4,7 @@ interface LCButtonProps{
     text : string
     color: string
     onClick? : Function
-    margin? : string
-    padding? : string
-    displayBlock? : boolean
+    style? : any
 }
 
 class LCButton extends React.Component<LCButtonProps , {hovering:boolean}> {
@@ -25,13 +23,16 @@ class LCButton extends React.Component<LCButtonProps , {hovering:boolean}> {
             color:this.state.hovering ? "white" : this.props.color,
             borderRadius:"5px",
             fontWeight:"bold",
-            margin:this.props.margin || "10px",
-            padding:this.props.padding || "8px",
-            display: this.props.displayBlock == true ? "block" : "inline-block",
+            margin: "10px",
+            padding: "8px",
+            display: "inline-block",
             cursor:"pointer",
             textAlign:"center",
-            borderBottomWidth:"4px"
+            borderBottomWidth:"4px",
+            fontSize:"14px"
         };
+        
+        if(this.props.style != undefined) $.extend(containerStyle , this.props.style);
         
         
         return <div onMouseEnter={this.mouseEnter.bind(this)}
