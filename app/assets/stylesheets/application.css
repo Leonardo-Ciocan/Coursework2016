@@ -41,3 +41,46 @@ code {
 p > code {
     border : 1px solid lightgray;
 }
+
+#devise_root{
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 150px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    background:white;
+}
+
+#devise_root h2{
+    text-align: center;
+}
+
+#devise_root input[type="email"] , #devise_root input[type="password"]{
+    width:100%;
+    border:1px solid lightgray;
+    border-radius: 5px;
+    padding:3px;
+
+    margin:3px;
+    margin-left:0px;
+
+}
+
+#devise_root input[type="submit"]{
+    display:inline-block;
+    width:100%;
+    text-align: center;
+    padding:7px;
+    margin:5px;
+    background:#fafafa;
+    border-radius :5px;
+    border:1px solid lightgray;
+    margin-bottom: 15px;
+    margin-left:0px;
+}
+
+#devise_root input[type="submit"]:hover{
+    background: gray;
+    color:white
+}

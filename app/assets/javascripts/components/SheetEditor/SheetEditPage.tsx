@@ -46,9 +46,10 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                     style={{
                           width:"600px",
                           marginBottom:"50px",
+                          marginTop:"80px",
                           marginLeft:"auto",
                           marginRight:"auto",
-                          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);",
+                          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.0);",
                           border:"1px solid lightgray"
                     }}>
                     {questions}

@@ -17,7 +17,7 @@ class LCButton extends React.Component<LCButtonProps , {hovering:boolean}> {
     render(){
         
         let containerStyle = {
-            border:"1px solid",
+            border:"0px solid",
             borderColor:(this.state.hovering ? "rgba(0,0,0,0.2)" : this.props.color),
             background:this.state.hovering ? this.props.color : "transparent",
             color:this.state.hovering ? "white" : this.props.color,
@@ -28,7 +28,7 @@ class LCButton extends React.Component<LCButtonProps , {hovering:boolean}> {
             display: "inline-block",
             cursor:"pointer",
             textAlign:"center",
-            borderBottomWidth:"4px",
+            borderBottomWidth:"0px",
             fontSize:"14px"
         };
         
