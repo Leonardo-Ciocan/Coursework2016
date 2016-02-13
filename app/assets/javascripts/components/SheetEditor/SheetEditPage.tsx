@@ -79,7 +79,7 @@ $.get(
     {id : lecture_id},
     (data) => {
         ReactDOM.render(
-            React.createElement(SheetEditPage , {sheet:sheet , questions:questions , lecture:new Lecture(data.id , data.name , data.author , data.color)}),
+            React.createElement(SheetEditPage , {sheet:sheet , questions:questions , lecture:new Lecture(data.id , data.name , data.author , data.color,data.sheets)}),
             document.getElementById('root')
         );
     }

@@ -22,7 +22,7 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
         
          let boxStyle = {
             border : "1px solid " + this.props.color,
-            borderRadius : "5px",
+            borderRadius : "10px",
             width:"20px",
             height:"20px"
          };
@@ -30,7 +30,7 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
          let innerBoxStyle = {
             border:"3px solid white",
             background:this.state.checked ? this.props.color:"",
-            borderRadius : "5px",
+            borderRadius : "10px",
             width:"18px",
             height:"18px"
          };

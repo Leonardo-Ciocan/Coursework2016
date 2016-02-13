@@ -4,6 +4,7 @@ interface TextAreaProps{
     fontSize? : string
     placeholder? : string
     onChange? : React.EventHandler<React.FormEvent>
+    text : string
 }
 
 class TextArea extends React.Component<TextAreaProps , any>{
@@ -18,6 +19,6 @@ class TextArea extends React.Component<TextAreaProps , any>{
             borderRadius:"5px"
         };
         
-        return <textarea rows={4} onChange={this.props.onChange || function(){}} placeholder={this.props.placeholder} style={inputStyle}/>
+        return <textarea defaultValue={this.props.text} rows={4} onChange={this.props.onChange || function(){}} placeholder={this.props.placeholder} style={inputStyle}/>
     }
 }

@@ -45,7 +45,8 @@ class ApiController < ApplicationController
           "id" => lecture.id,
           "name" => lecture.name,
           "author" => User.find(lecture.author).email,
-          "color" => lecture.color
+          "color" => lecture.color,
+          "sheets" => Sheet.where(:lecture_id => lecture.id).count
       }
     }
 
@@ -56,7 +57,8 @@ class ApiController < ApplicationController
             "id" => lecture.id,
             "name" => lecture.name,
             "author" => User.find(lecture.author).email,
-            "color" => lecture.color
+            "color" => lecture.color,
+            "sheets" => Sheet.where(:lecture_id => lecture.id).count
           }
 
     }
@@ -70,7 +72,8 @@ class ApiController < ApplicationController
                "id" => lecture.id,
                "name" => lecture.name,
                "author" => User.find(lecture.author).email,
-               "color" => lecture.color
+               "color" => lecture.color,
+               "sheets" => Sheet.where(:lecture_id => lecture.id).count
            } , status: 200
   end
 
@@ -116,6 +119,11 @@ class ApiController < ApplicationController
   def delete_sheet
     Sheet.find(params[:sheet]).delete
     render :nothing => 200
+  end
+
+  def lecture_users_count
+    users = Subscription.where(:lecture_id => params[:id]).count
+    render :text => users
   end
 
 end

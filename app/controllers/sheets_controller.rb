@@ -6,7 +6,8 @@ class SheetsController < ApplicationController
     lecture = Lecture.find @lecture_id
 
     if lecture.author == current_user.id
-      redirect_to "lectures/manage/" + @lecture_id
+      redirect_to "/lectures/manage/" + @lecture_id
+      return
     end
     render "sheets/Sheets"
   end

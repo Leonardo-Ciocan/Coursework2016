@@ -32,7 +32,7 @@ class ChoiceCreatorAnswer extends React.Component<ChoiceCreatorAnswerProps,any> 
         
         return <div style={containerStyle}>
                    <div style={{width:"50px",display:"inline-block"}}><CheckBox onChange={this.checkChanged.bind(this)} color={this.props.color}/></div>
-                   <input onChange={this.textChanged.bind(this)} placeholder={"Answer"} style={inputStyle}/>
+                   <TextBox onChange={this.textChanged.bind(this)} placeholder={"Answer"} style={inputStyle}/>
                    <a onClick={this.onDelete.bind(this)} style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold"}} >Delete</a>
                </div>;
     }

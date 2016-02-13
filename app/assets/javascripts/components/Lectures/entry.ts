@@ -7,14 +7,12 @@ $.get("/api/lectures",
                 
                 var arr : Array<Lecture> = []
                 for(var i of data.created){
-                    arr.push(new Lecture(i.id , i.name , i.author , i.color));
+                    arr.push(new Lecture(i.id , i.name , i.author , i.color,i.sheets));
                 }
-                
-                
                 
                 var s_arr : Array<Lecture> = []
                 for(var i of data.subscribed){
-                    s_arr.push(new Lecture(i.id , i.name , i.author , i.color));
+                    s_arr.push(new Lecture(i.id , i.name , i.author , i.color,i.sheets));
                 }
                 
                 ReactDOM.render(

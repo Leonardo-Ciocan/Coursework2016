@@ -51,7 +51,7 @@ class LectureItem extends React.Component<LectureProps,any> {
 
         return <div style={containerStyle} onClick={this.clicked.bind(this)}>
             <h1 style={titleStyle}>{this.props.lecture.name}</h1>
-            <h2 style={descriptionStyle}>{this.props.lecture.author}</h2>
+            <h2 style={descriptionStyle}>{this.props.lecture.sheetCount +" sheets"}</h2>
         </div>
     }
 }
@@ -80,7 +80,12 @@ class LecturePage extends React.Component<LecturePageProps,any>{
         var parentStyle = {position:"relative" , margin:"20px" , marginTop:"60px"};
         return <div>
                     
-                    <Header hideBack={true} color="transparent" foreground="black" name={"leonardo"} title={"Your lectures"} subtitle={this.props.subscribed.length + " lectures"}/>
+                    <Header hideBack={true} 
+                            color="#fafafa" 
+                            foreground="black" 
+                            name={"leonardo"} 
+                            title={"Your lectures"} 
+                            subtitle={"Subscribed to " + this.props.subscribed.length + " | Created " +this.props.created.length}/>
 
                     <div style={parentStyle}>
 

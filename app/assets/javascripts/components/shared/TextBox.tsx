@@ -4,6 +4,8 @@ interface TextBoxProps{
     fontSize? : string
     placeholder? : string
     onChange? : React.EventHandler<React.FormEvent>
+    style? : any
+    text? : string
 }
 
 class TextBox extends React.Component<TextBoxProps , any>{
@@ -18,6 +20,8 @@ class TextBox extends React.Component<TextBoxProps , any>{
             borderRadius:"5px"
         };
         
-        return <input onChange={this.props.onChange || function(){}} placeholder={this.props.placeholder} style={inputStyle}/>
+        if(this.props.style != undefined) $.extend(inputStyle , this.props.style);
+        
+        return <input defaultValue={this.props.text || ""} onChange={this.props.onChange || function(){}} placeholder={this.props.placeholder} style={inputStyle}/>
     }
 }
