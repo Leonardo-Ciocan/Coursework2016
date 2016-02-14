@@ -1,8 +1,4 @@
-/// <reference path="../../typing/react.d.ts" />
-/// <reference path="../../typing/react-dom.d.ts" />
-/// <reference path="./SheetDashboardPage.tsx"/>
-/// <reference path="../../typing/jquery.d.ts" />
-/// <reference path="../../models/Answer.ts" />
+//x
 
 // module DashboardState{
 // 	export var answers : {[question:string] : Answer;} = {}
