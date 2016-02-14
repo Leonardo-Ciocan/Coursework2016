@@ -39,12 +39,12 @@ class ApiController < ApplicationController
   end
 ``
   def lectures
-    lectures = Lecture.where(:author => current_user.id).map{
+    lectures = Lecture.where(:author_id => current_user.id).map{
       |lecture|
       {
           "id" => lecture.id,
           "name" => lecture.name,
-          "author" => User.find(lecture.author).email,
+          "author" => User.find(lecture.author_id).email,
           "color" => lecture.color,
           "sheets" => Sheet.where(:lecture_id => lecture.id).count
       }
@@ -56,7 +56,7 @@ class ApiController < ApplicationController
           {
             "id" => lecture.id,
             "name" => lecture.name,
-            "author" => User.find(lecture.author).email,
+            "author" => User.find(lecture.author_id).email,
             "color" => lecture.color,
             "sheets" => Sheet.where(:lecture_id => lecture.id).count
           }
@@ -71,7 +71,7 @@ class ApiController < ApplicationController
     render :json => {
                "id" => lecture.id,
                "name" => lecture.name,
-               "author" => User.find(lecture.author).email,
+               "author" => User.find(lecture.author_id).email,
                "color" => lecture.color,
                "sheets" => Sheet.where(:lecture_id => lecture.id).count
            } , status: 200
@@ -111,7 +111,7 @@ class ApiController < ApplicationController
   end
 
   def create_lecture
-    lecture = Lecture.create :name => params[:name] , :color => params[:color] , :author=>current_user
+    lecture = Lecture.create :name => params[:name] , :color => params[:color] , :author_id=>current_user.id
     render text: lecture.id
   end
 
@@ -124,6 +124,15 @@ class ApiController < ApplicationController
   def lecture_users_count
     users = Subscription.where(:lecture_id => params[:id]).count
     render :text => users
+  end
+
+  def update_lecture
+    lecture = Lecture.find params[:lecture_id]
+    if params.has_key?("name")
+      lecture.name = params[:name]
+      lecture.save
+    end
+    render :nothing => 200
   end
 
 end

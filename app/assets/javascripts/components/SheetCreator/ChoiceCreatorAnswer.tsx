@@ -25,7 +25,6 @@ class ChoiceCreatorAnswer extends React.Component<ChoiceCreatorAnswerProps,any> 
             width:"250px",
             fontSize:"12pt",
             border:"1px solid lightgray",
-            background:"rgba(0,0,0,0.05)",
             borderRadius:"5px",
             marginLeft:"10px"
         };

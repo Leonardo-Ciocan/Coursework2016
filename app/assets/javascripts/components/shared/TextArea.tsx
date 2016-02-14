@@ -4,7 +4,7 @@ interface TextAreaProps{
     fontSize? : string
     placeholder? : string
     onChange? : React.EventHandler<React.FormEvent>
-    text : string
+    text? : string
 }
 
 class TextArea extends React.Component<TextAreaProps , any>{

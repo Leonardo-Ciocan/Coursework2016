@@ -23,7 +23,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
      constructor(props) {
             super(props);
             var qs = new RQuestion();
-            qs.type = 0;
+            qs.type = 1;
             qs.id = IDFactory.getNumber();
             this.state = {
                 items : [qs],
@@ -43,7 +43,9 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         };
         
         let footerContainer = {
-             borderBottom :"1px solid lightgray"
+             borderBottom :"1px solid lightgray",
+             paddingLeft:"20px",
+             paddingRight:"20px"
         };
         
         let addButtonStyle = {
@@ -70,11 +72,13 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         });
         
         return  <div>
-            <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color="transparent" foreground={this.props.lecture.color} name={"leonardo"} />
+            <Header onBack={this.onBack.bind(this)} title={"Creating new sheet"} subtitle={"For " + this.props.lecture.name} color="#fafafa" foreground={this.props.lecture.color} name={"leonardo"} />
             <div style={editorStyle}>
                 
                 <div>
-                    <TextBox onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/>
+                    <div style={{
+             paddingLeft:"20px",
+             paddingRight:"20px"}}><TextBox onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/></div>
                     {items}
                 </div>
                 <div style={footerContainer}>
@@ -82,7 +86,9 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                     <LCButton text="Multiple Choice" onClick={this.addMultipleChoice.bind(this)}  color={"gray"}/>
                     <LCButton text={"Input"} onClick={this.addInputQuestion.bind(this)} color={"gray"}/>
                 </div>
-                <div style={{display:"inline-block",float:"right"}}>
+                <div style={{display:"inline-block",float:"right",
+             paddingLeft:"20px",
+             paddingRight:"20px"}}>
                     <LCButton onClick={this.createSheet.bind(this)} text={"Create sheet"} color={this.props.lecture.color} />
                 </div>
             </div>

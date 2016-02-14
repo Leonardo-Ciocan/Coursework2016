@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160128000724) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "answers", force: true do |t|
     t.string   "data"
     t.datetime "created_at"
@@ -21,22 +24,28 @@ ActiveRecord::Schema.define(version: 20160128000724) do
     t.integer  "question_id"
   end
 
-# Could not dump table "lectures" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "lectures", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "author_id"
+    t.string   "color"
+  end
 
   create_table "questions", force: true do |t|
     t.string   "title"
     t.string   "subtitle"
     t.string   "data"
+    t.integer  "type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "type"
     t.integer  "sheet_id"
     t.string   "correct_answer"
   end
 
   create_table "sheets", force: true do |t|
-    t.string   "name"
+    t.string   "name",        null: false
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -75,7 +84,7 @@ ActiveRecord::Schema.define(version: 20160128000724) do
     t.datetime "updated_at",                          null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

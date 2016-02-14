@@ -42,3 +42,4 @@ gem 'mongo', '~> 2.1'
 # gem 'debugger', group: [:development, :test]
 
 gem 'devise'
+gem "pg"

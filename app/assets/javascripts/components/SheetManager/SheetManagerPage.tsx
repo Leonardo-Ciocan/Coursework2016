@@ -15,7 +15,9 @@ interface SheetManagerPageState{
 class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetManagerPageState>{
     constructor(props){
         super(props);
-        this.state = {sheets : Array<Sheet>() , showMenu: (window.localStorage["showLectureMenu"] == "true")}
+        this.state = {sheets : Array<Sheet>() , 
+            showMenu: (window.localStorage["showLectureMenu"] == "true")
+        }
         this.getSheets();
     }
     render(){
@@ -55,7 +57,7 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                                         margin:"7px",
                                         padding:"5px"}} 
                         onClick={this.showMenu.bind(this)}
-                        color={this.props.lecture.color} text={this.state.showMenu ? "< Hide lecture info" : "> Show lecture info"}/>
+                        color={this.props.lecture.color} text={this.state.showMenu ? "◄ Hide lecture info" : "► Show lecture info"}/>
                    </div>
                </div>
                 <div style={{position:"absolute" , top:"91px",left:"0px",bottom:"0px",right:"0px"}}>
@@ -67,10 +69,12 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                     	    
                             <div>
                                 <span>Lecture name</span>
-                                <TextBox fontSize="10pt" text={this.props.lecture.name} style={{marginBottom:"10px"}}/>
+                                <TextBox onChange={this.changeName.bind(this)} fontSize="10pt" text={this.props.lecture.name} style={{marginBottom:"10px"}}/>
                                 
                                 <span>Description</span>
                                 <TextArea fontSize="8pt" text={"This subject is about x and y bla bla"} />
+                                
+                                <LCButton onClick={this.saveInfo.bind(this)} style={{textAlign:"right", display:"block"}} text="Save" color={this.props.lecture.color}/>
                                 
                                 <div style={{borderTop:"1px solid lightgray",marginTop:"10px",paddingTop:"10px"}}>
                                     <span>Invite students</span>
@@ -85,6 +89,18 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                     </div>
                 </div>
         </div>
+    }
+    
+    changeName(e){
+        this.props.lecture.name = e.target.value;
+        this.setState({});
+    }
+    
+    saveInfo(){
+        $.post(
+            "/api/update/lecture",
+            {lecture_id: this.props.lecture.id , name:this.props.lecture.name}
+        );
     }
     
     showMenu(){

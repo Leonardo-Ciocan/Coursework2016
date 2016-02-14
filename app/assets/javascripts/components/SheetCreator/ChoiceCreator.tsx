@@ -34,7 +34,8 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
             boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.00)",
             background:"white",
             borderRadius:"5px",
-            margin:"20px"
+            margin:"20px",
+            position:"relative"
         };
         
         let inputStyle = {
@@ -79,10 +80,54 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
             cursor:"pointer",
         };
         
+        let numberStyle = {
+            color:"black",
+            borderRadius:"100%",
+            position:"absolute",
+            top:"10px",
+            left:"-35px",
+            border:"1px solid gray",
+            width:"25px",
+            height:"25px",
+            lineHeight:"23px",
+            verticalAlign:"middle",
+            textAlign:"center",
+            fontWeight:"bold"
+        };
+        
+        let deleteStyle = {
+            color:"black",
+            borderRadius:"100%",
+            position:"absolute",
+            top:"10px",
+            right:"-35px",
+            border:"1px solid gray",
+            width:"25px",
+            height:"25px",
+            lineHeight:"23px",
+            verticalAlign:"middle",
+            textAlign:"center",
+            fontWeight:"bold"
+        };
+        
         let answers = this.state.answers.map((answer) => 
                 <ChoiceCreatorAnswer key={answer.id} onDelete={this.onDeleteAnswer.bind(this)} answer={answer} color={this.props.color}/>);
         
         return <div style={containerStyle}>
+                     <div style={{
+                        background:"rgba(0,0,0,0.03)",
+                        padding:"10px",
+                        marginTop:"-10px",
+                        marginLeft:"-10px",
+                        marginRight:"-10px",
+                        marginBottom:"10px",
+                        borderBottom:"1px solid lightgray"
+                    }}>
+                        
+                    	   <span>Question 1</span> 
+                           <span style={{color:"gray" , marginRight:"10px",marginTop:"-10px",marginBottom:"-10px"}}> | Multiple Choice</span>
+                        <a style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold",float:"right"}} >Delete</a>
+                    </div>
                    <TextArea fontSize="10pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
                    <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
                    <MDPreview code={this.props.question.title || ""} />
