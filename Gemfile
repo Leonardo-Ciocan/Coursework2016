@@ -4,7 +4,6 @@ gem 'react-rails', '~> 1.4.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,7 +31,7 @@ gem 'typescript-rails' , path: "vendor/typescript"
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use unicorn as the app server
-gem 'unicorn'
+# gem 'unicorn'
 gem 'mongo', '~> 2.1'
 
 # Use Capistrano for deployment
@@ -43,3 +42,8 @@ gem 'mongo', '~> 2.1'
 
 gem 'devise'
 gem "pg"
+
+# group :development do
+#   gem 'capistrano-rails'
+#   gem 'capistrano-rbenv', '~> 2.0', require: false
+# end
