@@ -2,6 +2,7 @@
 /// <reference path="../../models/Lecture.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 /// <reference path="../shared/Header.tsx" />
+/// <reference path="../shared/LCButton.tsx" />
 
 declare var lecture_id : number
 
@@ -18,28 +19,27 @@ class SubscribePage extends React.Component<SubscribePageProps , any>{
     render(){
         
         let containerStyle = {
-            height : "200px",
+            width:"450px",
+            textAlign:"center",
+            background:"white",
+            margin:"auto",
             marginTop:"100px",
-            width:"100%",
-            color:this.props.lecture.color,
-            textAlign:"center"
+            padding:"20px",
+            border:"1px solid lightgray",
+            borderRadius:"5px"
         };
         
         let btnStyle = {
-            marginLeft:"auto" , marginRight :"auto", marginTop:"50px",
-            width:"300px",
-            border: "1px solid "+this.props.lecture.color,
-            color : this.props.lecture.color,
             fontSize:"20pt",
-            cursor:"pointer"
+            display:"block"
         };
         
         return <div>
-                <Header onBack={this.back} title={""} subtitle={""} foreground={this.props.lecture.color} color={"transparent"} name={"leonardo.ciocan"}/>
+                <Header onBack={this.back} title={""} subtitle={""} foreground={this.props.lecture.color} color={"#fafafa"} name={"leonardo.ciocan"}/>
                 <div style={containerStyle}>
                     <h1>{this.props.lecture.name}</h1>
                     <h3>Made by {this.props.lecture.author}</h3>
-                    <div style={btnStyle} onClick={this.subscribeClicked}>Subscribe</div>
+                    <LCButton color={this.props.lecture.color} style={btnStyle} onClick={this.subscribeClicked} text="Subscribe"/>
                 </div>
                 </div>
     }

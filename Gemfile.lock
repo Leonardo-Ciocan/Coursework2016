@@ -1,7 +1,7 @@
 PATH
   remote: vendor/typescript
   specs:
-    typescript-rails (0.6.2)
+    typescript-rails (1.7.5)
       railties
       tilt
       typescript-node (>= 1.6.2)
@@ -41,7 +41,6 @@ GEM
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
     bcrypt (3.1.10)
-    bson (4.0.0)
     builder (3.2.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -73,8 +72,6 @@ GEM
       mime-types (>= 1.16, < 3)
     mime-types (2.6.2)
     minitest (5.8.1)
-    mongo (2.2.1)
-      bson (~> 4.0)
     multi_json (1.11.2)
     orm_adapter (0.5.0)
     pg (0.18.4)
@@ -150,7 +147,6 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
-  mongo (~> 2.1)
   pg
   rails (= 4.1.6)
   react-rails (~> 1.4.0)

@@ -4,6 +4,8 @@
 /// <reference path="./BarChart.tsx" />
 /// <reference path="./ActivityIndicator.tsx" />
 
+declare var md : any
+
 class ChoiceStatsProps{
     question : Question
     color : string
@@ -23,7 +25,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
         this.state={overallStats:[] , firstStats:[]};
         this.getQuestionStats();
         ChoiceStats.count++;
-        this.countCurrent = ChoiceStats.count
+        this.countCurrent = ChoiceStats.count;
     }
     
     render(){
@@ -37,7 +39,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
         };
         return <div style={containerStyle}>
                     <h2 style={titleStyle}>Question {this.countCurrent}</h2>
-                    <h3 style={titleStyle}>{this.props.question.title}</h3>
+                    <span style={{marginLeft:"20px" , maxWidth:"800px"}} dangerouslySetInnerHTML={{__html:md.render(this.props.question.title)}}/>
                     <div style={{
                         whiteSpace:"nowrap"
                     }}>

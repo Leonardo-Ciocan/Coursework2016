@@ -40,7 +40,7 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
                         }
                     }    
                     ReactDOM.render(
-                        React.createElement(SheetDashboardPage,{questions:arr,lecture:new Lecture(lecture_data.id , lecture_data.name , lecture_data.author , lecture_data.color)}),
+                        React.createElement(SheetDashboardPage,{questions:arr,lecture:new Lecture(lecture_data.id , lecture_data.name , lecture_data.author , lecture_data.color , lecture_data.sheet)}),
                         document.getElementById('root')
                     );
                 })

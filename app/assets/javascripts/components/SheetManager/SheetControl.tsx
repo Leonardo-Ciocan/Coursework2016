@@ -1,5 +1,6 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../shared/LCButton.tsx" />
+/// <reference path="../shared/SegmentedButton.tsx" />
 /// <reference path="../../models/Sheet.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 
@@ -43,13 +44,24 @@ class SheetControl extends React.Component<SheetControlProps,SheetControlState>{
         
         return <div style={containerStyle} >
                     <h1 style={titleStyle}>{this.props.sheet.name}</h1>
+                    <div style={{padding:"10px" , borderBottom:"1px solid lightgray"}}>
+                        <SegmentedButton selectedIndex={this.props.sheet.live?1:0} onSelected={this.onSelected.bind(this)} labels={["Hidden" , "Live"]} color={this.props.lecture.color}/>
+                    </div>
                     <LCButton onClick={this.dashboard.bind(this)} style={{display:"block",borderWidth:"0"}} color={this.props.lecture.color} text="Dashboard"/>
                     
                     <LCButton onClick={this.modelAnswers.bind(this)} style={{display:"block",borderWidth:"0"}} color={"gray"} text="Edit model answers"/>
+                    <LCButton onClick={this.modelAnswers.bind(this)} style={{display:"block",borderWidth:"0"}} color={"gray"} text="Release answers"/>
                     <div style={{borderTop:"1px solid lightgray"}}>
                         <LCButton onClick={this.delete.bind(this)} style={{display:"block",borderWidth:"0"}} color={"Red"} text="Delete"/>
                     </div>
               </div>
+    }
+    
+    onSelected(index){
+        $.post(
+            "/api/update/sheet",
+            {sheet : this.props.sheet.id , live: (index == 1)}
+        );
     }
     
     modelAnswers(){

@@ -79,16 +79,28 @@ class ApiController < ApplicationController
 
   def sheets
     id = params[:id]
-    sheets = Sheet.where(:lecture_id => id).map{
-        |sheet|
-      {
-          "id" => sheet.id,
-          "description" => sheet.description ,
-          "name" => sheet.name
+    lecture = Lecture.find id
+    sheets = []
+    if current_user.id == lecture.author_id
+      sheets = Sheet.where(:lecture_id => id).map{
+          |sheet|
+        {
+            "id" => sheet.id,
+            "description" => sheet.description ,
+            "name" => sheet.name,
+            "live" => sheet.live
+        }
       }
-    }
-
-
+    else
+      sheets = Sheet.where(:lecture_id => id , :live=>true).map{
+          |sheet|
+        {
+            "id" => sheet.id,
+            "description" => sheet.description ,
+            "name" => sheet.name
+        }
+      }
+    end
 
     render :json => sheets , status: 200
   end
@@ -107,6 +119,22 @@ class ApiController < ApplicationController
                       :type => v["type"],
                       :sheet_id => new_sheet.id
     end
+    head :ok
+  end
+
+  def update_sheet
+    sheet = Sheet.find params[:sheet]
+
+    if params.has_key?("name")
+      sheet.name = params[:name]
+      sheet.save
+    end
+
+    if params.has_key?("live")
+      sheet.live = params[:live]
+      sheet.save
+    end
+
     head :ok
   end
 
@@ -132,6 +160,12 @@ class ApiController < ApplicationController
       lecture.name = params[:name]
       lecture.save
     end
+
+    if params.has_key?("color")
+      lecture.color = params[:color]
+      lecture.save
+    end
+
     render :nothing => 200
   end
 

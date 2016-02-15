@@ -4,6 +4,7 @@
 /// <reference path="../shared/TextArea.tsx" />
 /// <reference path="../../models/Sheet.ts" />
 /// <reference path="./SheetControl.tsx" />
+/// <reference path="../shared/ColorPicker.tsx" />
 
 interface SheetManagerPageProps{
     lecture : Lecture
@@ -74,7 +75,10 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                                 <span>Description</span>
                                 <TextArea fontSize="8pt" text={"This subject is about x and y bla bla"} />
                                 
+                                <ColorPicker onPicked={this.onColorPicked.bind(this)}/>
+                                
                                 <LCButton onClick={this.saveInfo.bind(this)} style={{textAlign:"right", display:"block"}} text="Save" color={this.props.lecture.color}/>
+                                
                                 
                                 <div style={{borderTop:"1px solid lightgray",marginTop:"10px",paddingTop:"10px"}}>
                                     <span>Invite students</span>
@@ -91,15 +95,21 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
         </div>
     }
     
+    onColorPicked(color){
+        this.props.lecture.color = color;
+        this.setState({});        
+    }
+    
     changeName(e){
         this.props.lecture.name = e.target.value;
         this.setState({});
     }
     
+    
     saveInfo(){
         $.post(
             "/api/update/lecture",
-            {lecture_id: this.props.lecture.id , name:this.props.lecture.name}
+            {lecture_id: this.props.lecture.id , name:this.props.lecture.name , color:this.props.lecture.color}
         );
     }
     
@@ -130,7 +140,7 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
             (data) => {
                 var arr : Array<Sheet> = []
                 for(var item of data){
-                    arr.push(new Sheet(item.id , item.description , item.name));
+                    arr.push({id:item.id ,description: item.description , name:item.name , live:item.live});
                 }
                 this.setState({
                     sheets : arr

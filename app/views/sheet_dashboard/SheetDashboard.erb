@@ -14,7 +14,22 @@
 </head>
 <body>
     <div id="root"/>
+    <%= javascript_include_tag 'markdown-it', 'data-turbolinks-track' => true %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
 
+    <script>
+        var md = window.markdownit({
+            highlight: function (str, lang) {
+                if (lang && hljs.getLanguage(lang)) {
+                    try {
+                        return hljs.highlight(lang, str).value;
+                    } catch (__) {}
+                }
+
+                return ''; // use external default escaping
+            }
+        });
+    </script>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'sheet_dashboard', 'data-turbolinks-track' => true %>
 

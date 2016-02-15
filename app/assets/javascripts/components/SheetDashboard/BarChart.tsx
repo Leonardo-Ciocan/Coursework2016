@@ -76,7 +76,8 @@ class BarChart  extends React.Component<BarChartProps, any> {
 
                 return <div style={{clear: "both"}}>
                             <h5 style={{
-                                        lineHeight:"25px",margin:"0",float:"left",verticalAlign:"middle",textAlign:"right",width:"84px",display:"inline-block"}}>{entry.name}</h5>
+                                        lineHeight:"25px",margin:"0",float:"left",verticalAlign:"middle",
+                                        textAlign:"left",width:"100%"}}>{entry.name}</h5>
                             <div
                                 style={{width:"190px",
                                         float:"left"}}

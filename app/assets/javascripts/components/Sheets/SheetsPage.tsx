@@ -101,7 +101,7 @@ class SheetList extends React.Component<SheetListProps , any>{
             (data) => {
                 var arr : Array<Sheet> = []
                 for(var item of data){
-                    arr.push(new Sheet(item.id , item.description , item.name));
+                    arr.push({id:item.id , description:item.description , name:item.name,live:true});
                 }
                 this.setState({
                     sheets : arr

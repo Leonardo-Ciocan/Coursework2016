@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   post "/api/delete/sheet" => "api#delete_sheet"
   post "/api/update/lecture" => "api#update_lecture"
+  post "/api/update/sheet" => "api#update_sheet"
 
 
   root 'application#index'

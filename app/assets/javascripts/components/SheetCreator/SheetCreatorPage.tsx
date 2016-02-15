@@ -8,6 +8,7 @@
 /// <reference path="./Answer.ts" />
 /// <reference path="../../api.ts" />
 /// <reference path="../shared/TextBox.tsx" />
+/// <reference path="../shared/TextArea.tsx" />
 
 
 
@@ -17,6 +18,7 @@ class SheetCreatorPageProps{
 interface SheetCreatorPageState{
     items? : Array<RQuestion>
     name? : string
+    description? : string
 }
 class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreatorPageState> {
     
@@ -26,7 +28,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             qs.type = 1;
             qs.id = IDFactory.getNumber();
             this.state = {
-                items : [qs],
+                items : [],
                 name : ""
             };
         }
@@ -78,7 +80,10 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 <div>
                     <div style={{
              paddingLeft:"20px",
-             paddingRight:"20px"}}><TextBox onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/></div>
+             paddingRight:"20px"}}>
+             
+                    <TextBox onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/></div>
+                    <div style={{padding:"20px"}}><TextArea placeholder="Description" onChange={this.onDescriptionChange.bind(this)} fontSize="10pt" lines={3}/></div>
                     {items}
                 </div>
                 <div style={footerContainer}>
@@ -95,8 +100,11 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         </div>
     }
     
+    onDescriptionChange(e){
+         this.setState({description:e.target.value});
+    }
     onNameChange(e){
-        this.setState({name:e.target.value})
+        this.setState({name:e.target.value});
     }
     
     onBack(){
@@ -143,7 +151,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             return newQuestion; 
         });
         
-        var sheet = new Sheet(0,"description here",this.state.name);
+         var sheet = {id:0,description:this.state.description,name:this.state.name};
          $.post("/api/create/sheet",
             {
                sheet:sheet,

@@ -1,8 +1,6 @@
 class Sheet {
-    constructor(
-        public id : number,
-        public description : string,
-        public name : string){
-        
-    }
+    public id : number
+    public description : string
+    public name : string
+    public live : boolean
 }

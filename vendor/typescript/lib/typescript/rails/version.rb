@@ -1,5 +1,5 @@
 module Typescript
   module Rails
-    VERSION = '0.6.2'
+    VERSION = '1.7.5'
   end
 end

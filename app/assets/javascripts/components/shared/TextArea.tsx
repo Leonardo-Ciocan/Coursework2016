@@ -5,6 +5,8 @@ interface TextAreaProps{
     placeholder? : string
     onChange? : React.EventHandler<React.FormEvent>
     text? : string
+    style? : any
+    lines? : number
 }
 
 class TextArea extends React.Component<TextAreaProps , any>{
@@ -19,6 +21,8 @@ class TextArea extends React.Component<TextAreaProps , any>{
             borderRadius:"5px"
         };
         
-        return <textarea defaultValue={this.props.text} rows={4} onChange={this.props.onChange || function(){}} placeholder={this.props.placeholder} style={inputStyle}/>
+        $.extend(inputStyle , this.props.style);
+        
+        return <textarea rows={this.props.lines || 4} defaultValue={this.props.text} onChange={this.props.onChange || function(){}} placeholder={this.props.placeholder} style={inputStyle}/>
     }
 }

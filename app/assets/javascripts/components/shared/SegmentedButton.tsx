@@ -3,6 +3,9 @@
 interface SegmentedButtonProps{
     color : string
     labels : Array<string>
+    style? : any
+    onSelected? : (index) => void
+    selectedIndex? : number
 }
 
 interface SegmentedButtonState{
@@ -13,7 +16,7 @@ class SegmentedButton extends React.Component<SegmentedButtonProps,SegmentedButt
     
     constructor(props){
         super(props);
-        this.state = {selectedIndex : 0};
+        this.state = {selectedIndex : this.props.selectedIndex || 0};
     }
     
     render(){
@@ -34,20 +37,28 @@ class SegmentedButton extends React.Component<SegmentedButtonProps,SegmentedButt
                 borderBottomLeftRadius : index == 0 ? "5px": "",
                 borderTopLeftRadius : index == 0 ? "5px": "",
                 cursor:"pointer",
-                background : index == this.state.selectedIndex ? this.props.color : "white"
+                background : index == this.state.selectedIndex ? this.props.color : "white",
+                width:(100 / this.props.labels.length) + "%"
             };
+           
+           
+          
             
             return <div style={buttonStyle} onClick={() => this.buttonClicked(index)}>
                         {label}     
                    </div>
         });
         
-        return <div  style={{textAlign:"center"}}>
+        let style = {textAlign:"center"};
+        $.extend(style , this.props.style );
+        
+        return <div  style={style}>
                  {buttons}
                </div>
     }
     
     buttonClicked(index){
         this.setState({selectedIndex : index});
+        if(this.props.onSelected != undefined) this.props.onSelected(index);
     }
 }

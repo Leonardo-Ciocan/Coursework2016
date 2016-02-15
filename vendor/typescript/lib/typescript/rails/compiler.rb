@@ -60,7 +60,7 @@ module Typescript::Rails::Compiler
       begin
         ::TypeScript::Node.compile(s, *default_options, *options)
       rescue Exception => e
-        raise "Typescript error in file '#{ts_path}':\n#{e.message}"
+        raise "Typescript error in file '#{ts_path}':\n#{e.message}\n#{e.to_json}"
       end
     end
 
