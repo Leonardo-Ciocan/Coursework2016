@@ -29,7 +29,7 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
          
          let innerBoxStyle = {
             border:"3px solid white",
-            background:this.state.checked ? this.props.color:"",
+            background: this.state.checked ? this.props.color:"",
             borderRadius : "10px",
             width:"18px",
             height:"18px"
@@ -46,6 +46,6 @@ class CheckBox extends React.Component<CheckBoxProps , any> {
     
     onClicked(){
         this.setState({checked:!this.state.checked});
-        if(this.props.onChange!= undefined) this.props.onChange(this.state.checked);
+        if(this.props.onChange!= undefined) this.props.onChange(!this.state.checked);
     }
 }

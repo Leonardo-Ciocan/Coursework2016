@@ -45,6 +45,7 @@ class ChoiceCreatorAnswer extends React.Component<ChoiceCreatorAnswerProps,any> 
     }
     
     checkChanged(checked){
+        console.log(checked);
         this.props.answer.isAnswer = checked;
     }
 }

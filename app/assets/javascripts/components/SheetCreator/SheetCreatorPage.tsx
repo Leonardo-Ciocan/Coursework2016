@@ -10,7 +10,9 @@
 /// <reference path="../shared/TextBox.tsx" />
 /// <reference path="../shared/TextArea.tsx" />
 
-
+interface Errors{
+    
+}
 
 class SheetCreatorPageProps{
     lecture : Lecture
@@ -19,18 +21,22 @@ interface SheetCreatorPageState{
     items? : Array<RQuestion>
     name? : string
     description? : string
+    errors? : {[key: number]: Array<string>;}
 }
 class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreatorPageState> {
     
      constructor(props) {
             super(props);
             var qs = new RQuestion();
-            qs.type = 1;
+            qs.type = 0;
             qs.id = IDFactory.getNumber();
             this.state = {
-                items : [],
-                name : ""
+                items : [qs],
+                name : "",
+                errors : {}
             };
+            
+            
         }
     
     render(){
@@ -62,10 +68,10 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             cursor:"pointer"
         };
         
-        let items = this.state.items.map((item) =>{
+        let items = this.state.items.map((item,index) =>{
             
             if(item.type == 0){
-                return  <ChoiceCreator key={item.id} question={item} color={this.props.lecture.color}/>
+                return  <ChoiceCreator errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
             }   
             else if(item.type == 1){
                 return <InputCreator  key={item.id} question={item} color={this.props.lecture.color}/>
@@ -130,7 +136,6 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
     
     
     createSheet(){
-        console.log(this.state.items);
         
         var questions = this.state.items.map((item) => {
            var newQuestion = new Question();
@@ -142,7 +147,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                     answers : item.answers.map((answer)=>answer.text)
                 };
                 newQuestion.data = JSON.stringify(data);
-                
+                console.log(item.answers.filter((answer)=>answer.isAnswer));
                 newQuestion.correct_answer = ""+item.answers.indexOf(item.answers.filter((answer)=>answer.isAnswer)[0]);
             }
             else if(item.type == 1){
@@ -158,7 +163,15 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                questions:questions,
                lecture_id : lecture_id
             }
-        ).then(()=>window.location.href = "/lectures/" + this.props.lecture.id);
+        ).then((data)=>{
+            if(data == ""){
+                window.location.href = "/lectures/" + this.props.lecture.id
+            }
+            else{
+                this.setState({errors : data});
+            }
+            
+        });
     }
     
     

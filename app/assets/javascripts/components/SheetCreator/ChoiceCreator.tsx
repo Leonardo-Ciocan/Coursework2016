@@ -11,11 +11,12 @@ interface ChoiceCreatorProps{
     color : string
     question : RQuestion
     key? : any
+    errors? : Array<string>
 }
 
 interface ChoiceCreatorState{
     answers? : Array<Answer>
-}
+} 
 
 class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorState> {
     
@@ -113,6 +114,12 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
         let answers = this.state.answers.map((answer) => 
                 <ChoiceCreatorAnswer key={answer.id} onDelete={this.onDeleteAnswer.bind(this)} answer={answer} color={this.props.color}/>);
         
+        let errors = this.props.errors.map((error) => {
+
+                return <span style={{display:"block",textAlign:"center", color:"Red"}}>{error}</span>;
+        });
+        
+
         return <div style={containerStyle}>
                      <div style={{
                         background:"rgba(0,0,0,0.03)",
@@ -148,6 +155,10 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
                         <a onClick={this.createAnswer.bind(this)} style={{
                             cursor:"pointer",color:this.props.color,marginTop:"0", marginLeft:"70px" , fontWeight:"bold"
                         }} >New answer</a>
+                   </div>
+                   <div style={{borderTop:"1px solid lightgray",marginTop:"10px",marginRight:"-10px",padding:"10px",marginBottom:"-10px",
+                   marginLeft:"-10px",display: this.props.errors.length > 0 ? "" : "none"}}>
+                            {errors}
                    </div>
                </div>;
     }

@@ -107,19 +107,41 @@ class ApiController < ApplicationController
 
   def create_sheet
     sheet = params[:sheet]
-    new_sheet = Sheet.create :description=>sheet["description"] ,
-                             :name => sheet["name"] ,
-                             :lecture_id => params[:lecture_id]
-    for i,v in params[:questions]
-      puts i
-      Question.create :title => v["title"] ,
-                      :subtitle => v["subtitle"] ,
-                      :data => v["data"],
-                      :correct_answer => v["correct_answer"],
-                      :type => v["type"],
-                      :sheet_id => new_sheet.id
+
+    errors = Hash.new { |h, k| h[k] = [] }
+    for i , qs in params[:questions]
+      if qs["title"] == ""
+        errors[i].append("Can't have an empty question body" )
+      end
+
+      puts qs["type"]
+      if qs["type"] == "0"
+        if qs["correct_answer"] == "-1"
+          errors[i].append("No answer was selected")
+        end
+      end
     end
-    head :ok
+
+
+
+    if errors.length != 0
+      render :json => errors
+    else
+      new_sheet = Sheet.create :description=>sheet["description"] ,
+                               :name => sheet["name"] ,
+                               :lecture_id => params[:lecture_id]
+      for i,v in params[:questions]
+        puts i
+        Question.create :title => v["title"] ,
+                        :subtitle => v["subtitle"] ,
+                        :data => v["data"],
+                        :correct_answer => v["correct_answer"],
+                        :type => v["type"],
+                        :sheet_id => new_sheet.id
+      end
+      head :ok
+    end
+
   end
 
   def update_sheet
