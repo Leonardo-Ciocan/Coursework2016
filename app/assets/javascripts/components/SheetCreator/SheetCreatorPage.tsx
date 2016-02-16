@@ -2,6 +2,7 @@
 /// <reference path="../shared/Header.tsx" />
 /// <reference path="./ChoiceCreator.tsx" />
 /// <reference path="./InputCreator.tsx" />
+/// <reference path="./CodeCreator.tsx" />
 /// <reference path="../shared/LCButton.tsx" />
 /// <reference path="../../models/Lecture.ts" />
 /// <reference path="../shared/IDFactory.ts" />
@@ -28,7 +29,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
      constructor(props) {
             super(props);
             var qs = new RQuestion();
-            qs.type = 0;
+            qs.type = 2;
             qs.id = IDFactory.getNumber();
             this.state = {
                 items : [qs],
@@ -71,12 +72,14 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         let items = this.state.items.map((item,index) =>{
             
             if(item.type == 0){
-                return  <ChoiceCreator errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
+                return  <ChoiceCreator onDelete={this.onQuestionDelete.bind(this)} index={index} errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
             }   
             else if(item.type == 1){
-                return <InputCreator  key={item.id} question={item} color={this.props.lecture.color}/>
+                return <InputCreator  onDelete={this.onQuestionDelete.bind(this)} index={index}  errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
             }
-        
+            else if(item.type == 2){
+                return <CodeCreator  onDelete={this.onQuestionDelete.bind(this)} index={index}  errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
+            }
         });
         
         return  <div>
@@ -88,8 +91,9 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
              paddingLeft:"20px",
              paddingRight:"20px"}}>
              
-                    <TextBox onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/></div>
-                    <div style={{padding:"20px"}}><TextArea placeholder="Description" onChange={this.onDescriptionChange.bind(this)} fontSize="10pt" lines={3}/></div>
+                    <TextBox style={{borderColor:this.state.errors[-1] != undefined ? "red" : "lightgray"}} onChange={this.onNameChange.bind(this)} placeholder="Sheet name"/></div>
+                    <div style={{padding:"20px",
+             borderBottom:"1px solid lightgray"}}><TextArea placeholder="Description" onChange={this.onDescriptionChange.bind(this)} fontSize="10pt" lines={3}/></div>
                     {items}
                 </div>
                 <div style={footerContainer}>
@@ -104,6 +108,14 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 </div>
             </div>
         </div>
+    }
+    
+    onQuestionDelete(question){
+        var index : number = this.state.items.indexOf(question);
+        if(index >= 0){
+            this.state.items.splice(index,1);
+        }
+        this.setState({items:this.state.items});
     }
     
     onDescriptionChange(e){
@@ -152,6 +164,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             }
             else if(item.type == 1){
                 newQuestion.correct_answer = item.correct_answer;
+                newQuestion.model_answer = item.model_answer;
             }
             return newQuestion; 
         });

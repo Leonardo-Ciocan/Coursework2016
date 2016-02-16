@@ -5,6 +5,7 @@ class Question {
     data : string
     type : number
     correct_answer : string
+    model_answer : string
 }
 
 class ChoiceQuestion extends Question{

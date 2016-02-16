@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160215042605) do
+ActiveRecord::Schema.define(version: 20160215180815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20160215042605) do
     t.datetime "updated_at"
     t.integer  "sheet_id"
     t.string   "correct_answer"
+    t.string   "model_answer"
   end
 
   create_table "sheets", force: true do |t|

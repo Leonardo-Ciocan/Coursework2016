@@ -119,10 +119,22 @@ class ApiController < ApplicationController
         if qs["correct_answer"] == "-1"
           errors[i].append("No answer was selected")
         end
+      elsif qs["type"] == "1"
+        if qs["model_answer"] == ""
+          errors[i].append("Enter a model answer for this question" )
+        end
+
+        regex = Regexp.new qs["correct_answer"]
+        if (qs["model_answer"] =~ regex).nil?
+          errors[i].append("Model answer does not match regex" )
+        end
       end
     end
 
 
+    if sheet["name"] == ""
+      errors[-1].append("The sheet needs a name")
+    end
 
     if errors.length != 0
       render :json => errors
@@ -137,7 +149,8 @@ class ApiController < ApplicationController
                         :data => v["data"],
                         :correct_answer => v["correct_answer"],
                         :type => v["type"],
-                        :sheet_id => new_sheet.id
+                        :sheet_id => new_sheet.id,
+                        :model_answer => v["model_answer"]
       end
       head :ok
     end

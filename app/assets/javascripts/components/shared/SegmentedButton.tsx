@@ -6,6 +6,7 @@ interface SegmentedButtonProps{
     style? : any
     onSelected? : (index) => void
     selectedIndex? : number
+    itemPadding? : string
 }
 
 interface SegmentedButtonState{
@@ -30,7 +31,7 @@ class SegmentedButton extends React.Component<SegmentedButtonProps,SegmentedButt
                 color : index != this.state.selectedIndex ? this.props.color : "white",
                 display:"inline-block",
                 padding:"7px",
-                paddingTop:"4px",paddingBottom:"4px",
+                paddingTop:this.props.itemPadding || "4px",paddingBottom:this.props.itemPadding ||"4px",
                 verticalAlign:"middle",
                 borderTopRightRadius : index == this.props.labels.length-1 ? "5px": "",
                 borderBottomRightRadius : index == this.props.labels.length-1 ? "5px": "",

@@ -4,12 +4,17 @@
 /// <reference path="../shared/IDFactory.ts" />
 /// <reference path="../../models/Question.ts" />
 /// <reference path="../shared/TextBox.tsx" />
+/// <reference path="../shared/MDPreview.tsx" />
+/// <reference path="../shared/SegmentedButton.tsx" />
 
 
 interface InputCreatorProps{
     color : string
     question : RQuestion
     key? : any
+    index? : number
+    onDelete? : (question) => void
+    errors? : Array<string>
 }
 
 class InputCreatorState{
@@ -38,7 +43,7 @@ class InputCreator extends React.Component<InputCreatorProps,InputCreatorState> 
             textAlignment:"center",
             padding:"5px",
             width:"100%",
-            fontSize:"13pt",
+            fontSize:"10pt",
             border:"1px solid lightgray",
             borderRadius:"5px"
         };
@@ -114,6 +119,11 @@ class InputCreator extends React.Component<InputCreatorProps,InputCreatorState> 
             fontWeight:"bold"
         };
        
+        let errors = this.props.errors.map((error) => {
+
+                return <span style={{display:"block",textAlign:"center", color:"Red"}}>{error}</span>;
+        });
+       
         return <div style={containerStyle}>
                      <div style={{
                         background:"rgba(0,0,0,0.03)",
@@ -125,22 +135,31 @@ class InputCreator extends React.Component<InputCreatorProps,InputCreatorState> 
                         borderBottom:"1px solid lightgray"
                     }}>
                        
-                    	   <span>Question 1</span> 
+                    	   <span>Question {this.props.index+1}</span> 
                             <span style={{color:"gray" , marginRight:"10px",marginTop:"-10px",marginBottom:"-10px"}}> | Text</span>
-                        <a style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold",float:"right"}} >Delete</a>
+                        <a onClick={()=>this.props.onDelete(this.props.question)}  style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold",float:"right"}} >Delete</a>
                     </div>
         
-
-
-                   <TextBox onChange={this.titleChanged.bind(this)} placeholder={"Question title"} style={inputStyle}/>
+                  <TextArea fontSize="10pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
                    <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
-                   <div style={{paddingTop:"10px",borderTop:"1px solid lightgray",marginRight:"-10px" , marginLeft:"-10px"}}></div>    
-                   <TextBox onChange={this.answerChanged.bind(this)}  placeholder={"Regex of valid answer"} style={inputStyle}/>
+                   <MDPreview code={this.props.question.title || ""} />
+                   <div style={{paddingTop:"10px",borderTop:"1px solid lightgray",marginRight:"-10px" , marginLeft:"-10px"}}></div>   
+                   <span style={{display:"block",fontSize:"10pt", color:"gray",textAlign:"left",width:"100%",paddingBottom:"5px"}}>Regex of valid answer</span> 
+                   <TextBox onChange={this.answerChanged.bind(this)}   style={inputStyle}/>
+                   <div style={{marginTop:"10px",borderTop:"0px solid lightgray"}}> 
+                        <span style={{display:"block",fontSize:"10pt", color:"gray",textAlign:"left",width:"100%",paddingBottom:"5px"}}>Model answer</span>
+                        <TextBox onChange={this.modelChanged.bind(this)}  style={inputStyle}/>
+                   </div>
+                   <div style={{borderTop:"1px solid lightgray",marginTop:"10px",marginRight:"-10px",padding:"10px",marginBottom:"-10px",
+                   marginLeft:"-10px",display: this.props.errors.length > 0 ? "" : "none"}}>
+                            {errors}
+                   </div>
                </div>;
     }
     
     titleChanged(e){
         this.props.question.title = e.target.value;
+        this.setState({});	
     }
     
     subtitleChanged(e){
@@ -149,5 +168,9 @@ class InputCreator extends React.Component<InputCreatorProps,InputCreatorState> 
     
     answerChanged(e){
         this.props.question.correct_answer = e.target.value;
+    }
+    
+    modelChanged(e){
+        this.props.question.model_answer = e.target.value;
     }
 }
