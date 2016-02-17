@@ -57,7 +57,7 @@ class SheetEditorController < ApplicationController
       puts "inputs: " + inputs.to_s
       puts "outputs: " + outputs.to_s
       puts resp
-      render :text => resp
+      render :text => resp.strip
       return
     end
 

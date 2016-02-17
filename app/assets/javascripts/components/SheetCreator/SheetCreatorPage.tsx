@@ -29,7 +29,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
      constructor(props) {
             super(props);
             var qs = new RQuestion();
-            qs.type = 2;
+            qs.type = 3;
             qs.id = IDFactory.getNumber();
             this.state = {
                 items : [qs],
@@ -77,7 +77,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             else if(item.type == 1){
                 return <InputCreator  onDelete={this.onQuestionDelete.bind(this)} index={index}  errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
             }
-            else if(item.type == 2){
+            else if(item.type == 3){
                 return <CodeCreator  onDelete={this.onQuestionDelete.bind(this)} index={index}  errors={this.state.errors[index] || []} key={item.id} question={item} color={this.props.lecture.color}/>
             }
         });
@@ -166,8 +166,16 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 newQuestion.correct_answer = item.correct_answer;
                 newQuestion.model_answer = item.model_answer;
             }
+            else if(item.type == 3){
+                var inputs  = item.solutions.map((io) => io.input);
+                var outputs = item.solutions.map((io)=>io.output);
+                newQuestion.data = JSON.stringify({inputs : inputs , language : item.language});
+                newQuestion.correct_answer = JSON.stringify(outputs);
+            }
+            console.log(newQuestion);
             return newQuestion; 
         });
+        
         
          var sheet = {id:0,description:this.state.description,name:this.state.name};
          $.post("/api/create/sheet",

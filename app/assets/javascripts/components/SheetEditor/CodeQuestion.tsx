@@ -12,7 +12,7 @@ class CodeQuestionProps {
     color : string
 }
 
- class CodeQuestion extends React.Component<CodeQuestionProps,{code:string , correct:boolean}> {
+ class CodeQuestion extends React.Component<CodeQuestionProps,{code?:string , correct:number}> {
 
         refs: {
             [string: string]: any;
@@ -22,7 +22,7 @@ class CodeQuestionProps {
 
         constructor(props) {
             super(props);
-            this.state = {code:this.props.answer.data || "", correct:false};
+            this.state = {code:this.props.answer.data || "", correct:-1};
         }
         
         render() {
@@ -50,8 +50,8 @@ class CodeQuestionProps {
                     
                     <div>
                         <span
-                            style={{color:this.state.correct ? "green" : "darkgray"}}
-                        >{this.state.correct ? "Correct code" : "Incorrect code"}</span>
+                            style={{color:this.state.correct == 0 ? "green" : (this.state.correct == -1 ? "gray" : "red")}}
+                        >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span>
                         <LCButton onClick={this.commit.bind(this)} text={"Commit"} color={this.props.color}/>
                     </div>
                 </div>
@@ -59,14 +59,14 @@ class CodeQuestionProps {
         }
         
         commit(){
+            this.setState({correct : -1});
             $.post("/answer/" + this.props.answer.id,
                 {data: this.state.code}
             ).then(function(data){
                 
-                this.setState({correct : data == "true"});
+                this.setState({correct : data == "true" ? 0 : 1});
                 console.log(this.state.correct);
-            }.bind(this));
-            console.log(this.state.code);   
+            }.bind(this)); 
         }
         
         componentDidMount(){
