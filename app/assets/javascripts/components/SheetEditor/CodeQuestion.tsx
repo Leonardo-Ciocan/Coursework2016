@@ -22,7 +22,7 @@ class CodeQuestionProps {
 
         constructor(props) {
             super(props);
-            this.state = {code:this.props.answer.data , correct:false};
+            this.state = {code:this.props.answer.data || "", correct:false};
         }
         
         render() {
@@ -62,7 +62,9 @@ class CodeQuestionProps {
             $.post("/answer/" + this.props.answer.id,
                 {data: this.state.code}
             ).then(function(data){
+                
                 this.setState({correct : data == "true"});
+                console.log(this.state.correct);
             }.bind(this));
             console.log(this.state.code);   
         }
