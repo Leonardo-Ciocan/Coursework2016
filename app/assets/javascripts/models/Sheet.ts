@@ -3,4 +3,5 @@ class Sheet {
     public description : string
     public name : string
     public live : boolean
+    public released : boolean
 }

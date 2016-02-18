@@ -50,11 +50,22 @@ class SheetControl extends React.Component<SheetControlProps,SheetControlState>{
                     <LCButton onClick={this.dashboard.bind(this)} style={{display:"block",borderWidth:"0"}} color={this.props.lecture.color} text="Dashboard"/>
                     
                     <LCButton onClick={this.modelAnswers.bind(this)} style={{display:"block",borderWidth:"0"}} color={"gray"} text="Edit model answers"/>
-                    <LCButton onClick={this.modelAnswers.bind(this)} style={{display:"block",borderWidth:"0"}} color={"gray"} text="Release answers"/>
+                    
+                    <LCButton onClick={this.releaseSheet.bind(this)} style={{display:"block",borderWidth:"0"}} color={"gray"} text={this.props.sheet.released ? "Withdraw answers": "Release answers"}/>
+                    
                     <div style={{borderTop:"1px solid lightgray"}}>
                         <LCButton onClick={this.delete.bind(this)} style={{display:"block",borderWidth:"0"}} color={"Red"} text="Delete"/>
                     </div>
               </div>
+    }
+    
+    releaseSheet(){
+        this.props.sheet.released = !this.props.sheet.released;
+        $.post(
+            "/api/release/sheet",
+            {id : this.props.sheet.id , released : this.props.sheet.released}
+        );
+        this.setState({});
     }
     
     onSelected(index){

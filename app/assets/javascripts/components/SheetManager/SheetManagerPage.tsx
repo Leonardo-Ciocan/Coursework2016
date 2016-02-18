@@ -140,7 +140,7 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
             (data) => {
                 var arr : Array<Sheet> = []
                 for(var item of data){
-                    arr.push({id:item.id ,description: item.description , name:item.name , live:item.live});
+                    arr.push({id:item.id ,description: item.description , name:item.name , live:item.live , released:item.released});
                 }
                 this.setState({
                     sheets : arr

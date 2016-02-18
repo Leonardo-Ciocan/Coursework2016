@@ -5,6 +5,8 @@ class InputProps{
     answer:any
     color:string
     question :any
+    releaseMode : boolean
+    modelAnswer : any
 }
 class InputQuestion extends React.Component<InputProps , any> {
 
@@ -53,8 +55,7 @@ class InputQuestion extends React.Component<InputProps , any> {
                 border:"1px solid "+ this.props.color,
                 padding:"10px"
             };
-            //<span style={iconStyle} className="glyphicon glyphicon-text-color"></span>
-
+                
             return <div className="question-block">
                 <div
                        onMouseEnter={this.mouseEnter.bind(this)}
@@ -74,12 +75,20 @@ class InputQuestion extends React.Component<InputProps , any> {
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 
-                    <div>
+                    <div style={{opacity: this.props.releaseMode ? 0.5 : 1 , paddingBottom:"10px"}}>
                         <input
-
+                            readOnly={this.props.releaseMode}
                             onChange={this.onChange.bind(this)} style={inputStyle}
                             defaultValue={this.state.text}/>
                     </div>
+                    
+                    {
+
+                       this.props.releaseMode ? <span style={{display:"block",fontSize:"10pt", color:"gray",textAlign:"left",width:"100%",paddingBottom:"5px"}}>Model answer</span> : ""
+                    }
+                    {
+                       this.props.releaseMode ? <input readOnly={true} style={inputStyle} defaultValue={this.props.modelAnswer.data}/> : ""
+                    }
                 </div>
             </div>
         }

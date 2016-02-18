@@ -25,16 +25,13 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
             //console.log(question.type);
             question.type = question.type == null ? 0 : question.type;
                 if(question.type == 0) {
-                    return <ChoiceQuestion color={color}  question={question} answer={this.props.answers[i]}/>;
+                    return <ChoiceQuestion releaseMode={this.props.sheet.released} modelAnswer={this.props.modelAnswers[i]}  color={color}  question={question} answer={this.props.answers[i]}/>;
                 }
                 else if (question.type == 1){
-                    return <InputQuestion color={color}   question={question} answer={this.props.answers[i]}/>;
+                    return <InputQuestion releaseMode={this.props.sheet.released} modelAnswer={this.props.modelAnswers[i]} color={color}   question={question} answer={this.props.answers[i]}/>;
                 }
                 else if (question.type == 3){
-                    return <CodeQuestion color={color}   question={question} answer={this.props.answers[i]}/>;
-                }
-                else if (question.type == 4){
-                    return <WebQuestion color={color}/>;
+                    return <CodeQuestion releaseMode={this.props.sheet.released} modelAnswer={this.props.modelAnswers[i]}  color={color}   question={question} answer={this.props.answers[i]}/>;
                 }
             }.bind(this));
             

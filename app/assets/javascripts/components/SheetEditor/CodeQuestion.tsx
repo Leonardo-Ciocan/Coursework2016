@@ -10,6 +10,8 @@ class CodeQuestionProps {
     question : any
     answer : any
     color : string
+    releaseMode : boolean
+    modelAnswer : any
 }
 
  class CodeQuestion extends React.Component<CodeQuestionProps,{code?:string , correct:number}> {
@@ -17,6 +19,7 @@ class CodeQuestionProps {
         refs: {
             [string: string]: any;
             codeEditor: any;
+            codeEditor2: any;
         }
 
 
@@ -45,15 +48,32 @@ class CodeQuestionProps {
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
                     
-                    <div style={{fontFamily:"Source Code Pro!important"}} ref="codeEditor">
+                    <div style={{opacity: this.props.releaseMode ? 0.5 : 1 , paddingBottom:"10px"}}>
+                        <div style={{fontFamily:"Source Code Pro!important"}} ref="codeEditor">
+                        </div>
+                        
+                        <div>
+                            <span
+                                style={{color:this.state.correct == 0 ? "green" : (this.state.correct == -1 ? "gray" : "red")}}
+                            >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span>
+                            <LCButton onClick={this.commit.bind(this)} text={"Commit"} color={this.props.color}/>
+                        </div>
                     </div>
-                    
-                    <div>
-                        <span
-                            style={{color:this.state.correct == 0 ? "green" : (this.state.correct == -1 ? "gray" : "red")}}
-                        >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span>
-                        <LCButton onClick={this.commit.bind(this)} text={"Commit"} color={this.props.color}/>
-                    </div>
+                    {
+
+                       this.props.releaseMode ? <div>
+                       
+                                <span style={{display:"block",fontSize:"10pt", color:"gray",
+                                              textAlign:"left",width:"100%",paddingBottom:"5px"}}>Model answer</span>
+                                <div>
+                                    <div style={{fontFamily:"Source Code Pro!important"}} ref="codeEditor2">
+                                    </div>
+                                </div>
+                            
+                            </div>
+                             : ""
+                    }
+                     
                 </div>
             </div>
         }
@@ -71,7 +91,7 @@ class CodeQuestionProps {
         
         componentDidMount(){
             var myCodeMirror = CodeMirror(this.refs.codeEditor,{
-
+                readOnly:this.props.releaseMode,
                 value : this.state.code,
                 lineNumbers:true ,
                  theme:"base16-light"});
@@ -81,6 +101,20 @@ class CodeQuestionProps {
                  }.bind(this));
                  
                  myCodeMirror.setSize("100%","auto");
+                 
+                 if(this.props.modelAnswer){
+                    var myCodeMirror2 = CodeMirror(this.refs.codeEditor2,{
+                    readOnly:true,
+                    value : this.props.modelAnswer.data,
+                    lineNumbers:true ,
+                    theme:"base16-light"});
+                    
+                    
+                    myCodeMirror2.setSize("100%","auto");
+                 }
+                 
+                 
         }
+        
     }
 

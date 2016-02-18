@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   post "/api/update/lecture" => "api#update_lecture"
   post "/api/update/sheet" => "api#update_sheet"
 
-  post "/api/release/sheet" => "api#release_sheet"
+  post "/api/release/sheet" => 'api#release_sheet'
 
 
   root 'application#index'

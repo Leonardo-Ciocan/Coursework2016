@@ -88,7 +88,8 @@ class ApiController < ApplicationController
     sheet = Sheet.find(params[:sheet_id])
     sheet_json = {
         "id" => sheet.id,
-        "name" => sheet.name
+        "name" => sheet.name,
+        "released" => sheet.released
     }
 
     questions = sheet.questions.all
@@ -126,7 +127,8 @@ class ApiController < ApplicationController
             "id" => sheet.id,
             "description" => sheet.description ,
             "name" => sheet.name,
-            "live" => sheet.live
+            "live" => sheet.live,
+            "released" => sheet.released
         }
       }
     else
@@ -256,7 +258,7 @@ class ApiController < ApplicationController
 
   def release_sheet
     sheet = Sheet.find params[:id]
-    sheet.released = true
+    sheet.released = params[:released] == "true"
     sheet.save
     head :ok
   end

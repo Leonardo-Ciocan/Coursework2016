@@ -11,12 +11,15 @@ class ChoiceFragmentProps {
     text : string
     color: string
     key : string
+    releaseMode : boolean
 }
 
 class ChoiceProps{
     answer : any
     color  : string
     question : any
+    releaseMode : boolean
+    modelAnswer : any
 }
 
 
@@ -68,7 +71,19 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
 
             var answers = JSON.parse(this.props.question.data.replace(/'/g, '"')).answers.map(function (a, i) {
                 return <ChoiceQuestionFragment
+                    releaseMode={this.props.releaseMode}
                     selected={i==this.state.selected}
+                    index={i}
+                    color={this.state.color}
+                    key={i}
+                    onPick={this.onPick.bind(this)}
+                    text={a}/>
+            }.bind(this));
+            
+            var modelAnswers = JSON.parse(this.props.question.data.replace(/'/g, '"')).answers.map(function (a, i) {
+                return <ChoiceQuestionFragment
+                    releaseMode={this.props.releaseMode}
+                    selected={i==this.props.modelAnswer.data}
                     index={i}
                     color={this.state.color}
                     key={i}
@@ -107,7 +122,12 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 
-                    <div style={{display:"inline-block"}}>{answers}</div>
+                    <div style={{opacity:this.props.releaseMode ? 0.5 :1}}>{answers}</div>
+                    
+                    { this.props.releaseMode ? <div><span style={{display:"block",fontSize:"10pt", color:"gray",
+                                              textAlign:"left",width:"100%",paddingBottom:"5px",paddingTop:"5px"}}>Model answer</span>
+                    <div>{modelAnswers}</div></div>
+                    :""}
 
 
                 </div>
