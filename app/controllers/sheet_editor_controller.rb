@@ -28,16 +28,7 @@ class SheetEditorController < ApplicationController
     answer = Answer.find params[:id]
 
 
-    if answer.question.type == 0
-      if answer.data == nil
-        #this means that this is their first choice
-        Statistic.create :answer => answer , :kind => @@stat_first_click , :data => params[:data]
-      else
-        #this is for overall clicks
-        #TODO: is this useful
-        Statistic.create :answer => answer, :kind=> @@stat_overall_clicks , :data => params[:data]
-      end
-    end
+
 
     answer.data = params[:data]
     answer.save

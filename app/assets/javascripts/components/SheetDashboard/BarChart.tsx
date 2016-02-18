@@ -19,15 +19,21 @@ class BarChart  extends React.Component<BarChartProps, any> {
         super(p);
     }
     
+    ctx : any
+    chart : any
+    legend : any
+    
     render(){
         let containerStyle = {
           display:"inline-block",
           padding:"10px",
           verticalAlign:"top",
-          width:"300px",
           float:"left",
           background:"white",
-          border:"1px solid lightgray"
+          border:"1px solid lightgray",
+          borderTop:"none",
+          borderLeft:"none",
+          height:"300px"
         };
         
         let titleStyle = {
@@ -67,45 +73,51 @@ class BarChart  extends React.Component<BarChartProps, any> {
         
         this.props.data.sort((a,b) => a.value < b.value ? 1 : 0);
         
-
-        // <h1 style={valueStyle}>{entry.value}</h1>
-        let content = this.props.data.map(
-            function(entry){
-
-                return <div style={{clear: "both"}}>
-                            <h5 style={{
-                                        lineHeight:"25px",margin:"0",float:"left",verticalAlign:"middle",
-                                        textAlign:"left",width:"100%"}}>{entry.name}</h5>
-                            <div
-                                style={{width:"190px",
-                                        float:"left"}}
-                            >
-                           
-                            <div
-                                style={
-                                    {
-                                        display:"inline-block",
-                                        position:"relative",
-                                        borderRadius:"5px",
-                                        marginBottom:"10px",
-                                        height:"25px",
-                                        marginLeft:"10px",
-                                        width:((entry.value)/this.total*150) +"px",
-                                        background:this.props.color
-                                    }
-                                }
-                            >
-
-                                <h1 style={valueStyle}>{entry.value}</h1>
-                            </div>
-                             </div>
-                       </div>      
-            }.bind(this)
-        );
-        
         return <div style={containerStyle}>
                     <h1 style={titleStyle}>{this.props.title}</h1>
-                    {content}
+                    <canvas ref={(ref) => this.ctx = ref} width="150" height="150"/>
+                    <div ref={(ref) => this.legend = ref}/>
                </div>;
+    }
+    
+    componentDidUpdate(){
+        var rdata = this.props.data.map((item) => {
+           return {value : item.value , color:"white" , label: item.name} 
+        });
+        
+        // var firstdata = this.props.firstData.map((item) => {
+        //    return item.value; 
+        // });
+        // var labels = this.props.data.map((item) => {
+        //    return item.name; 
+        // });
+        
+        //         var data = {labels:labels,
+        //                 datasets:[{data:rdata,
+        //                     label: "My First dataset",
+        //                 fillColor: this.props.color,
+        //                 strokeColor: "black",
+        //                 pointColor: "rgba(220,220,220,1)",
+        //                 highlightFill:this.props.color,
+        //                 pointStrokeColor: "#fff",
+        //                 pointHighlightFill: "#fff",
+        //                 pointHighlightStroke: "black",} ,
+                        
+        //                  {data:firstdata,
+        //                                  label: "My Second dataset",
+        //                 fillColor: this.props.color,
+        //                 strokeColor: "black",
+        //                 pointColor: "rgba(220,220,220,1)",
+        //                 highlightFill:this.props.color,
+        //                 pointStrokeColor: "#fff",
+        //                 pointHighlightFill: "#fff",
+        //                 pointHighlightStroke: "black",}]    
+        // };
+        console.log(rdata);
+        
+        console.log(this.ctx.getContext("2d"));
+        var myPieChart = new Chart(this.ctx.getContext("2d")).Pie(rdata,{
+            multiTooltipTemplate: "<%= label %>",
+            segmentStrokeWidth : 1,segmentStrokeColor : this.props.color,percentageInnerCutout : 0});
     }
 }

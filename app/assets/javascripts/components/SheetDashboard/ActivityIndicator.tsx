@@ -17,11 +17,6 @@ class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
     
     ctx : any
     
-    refs: {
-            [string: string]: any;
-            ctx: any;
-        }
-    
     render(){
         let containerStyle={
           display:"inline-block",
@@ -29,7 +24,9 @@ class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
           verticalAlign:"top",
           float:"left",
           background:"white",
-          border:"1px solid lightgray"
+          border:"1px solid lightgray",
+          borderTop:"none",
+          height:"300px"
         };
         
          let titleStyle = {
