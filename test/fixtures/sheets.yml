@@ -1,9 +1,5 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  name: MyString
-  description: 
-
-two:
-  name: MyString
-  description: 
+first:
+  id: 1
+  lecture_id: 1
+  live: true
+  name: Christmas Sheet

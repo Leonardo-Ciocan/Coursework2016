@@ -1,73 +1,59 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../../typing/jquery.d.ts" />
 
-
+declare var Chart
 
 class ActivityIndicatorProps{
     question : Question
     color : string
+    percentage : any
 }
 
 class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
     colors = {true:"green" , false:"gray"};
     constructor(p:ActivityIndicatorProps){
         super(p);
-        this.state = {data:[]};
-        this.getCompletions();
     }
+    
+    ctx : any
+    
+    refs: {
+            [string: string]: any;
+            ctx: any;
+        }
     
     render(){
         let containerStyle={
           display:"inline-block",
           padding:"10px",
-          marginRight:"10px",
           verticalAlign:"top",
-          width:"300px",
           float:"left",
           background:"white",
-          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);"
+          border:"1px solid lightgray"
         };
         
-        let dotStyle = {
-            width:"15px",
-            height:"15px",
-            border:"1px solid white",
-            borderRadius:"100%",
-            display:"inline-block"
-        };
          let titleStyle = {
             fontSize:"15px",
             color:"gray",
             margin:"10px"
         };
-        let dots = this.state.data.map((record) => {
-            return <div style={{
-                width:"15px",
-                height:"15px",
-                margin:"10px",
-                borderRadius:"100%",
-                display:"inline-block",
-                border:"1px solid white",
-                borderColor: record ? this.props.color : "gray",
-                background : record ? this.props.color : ""
-            }}/>;
-        });
-        console.log(dots);
+        console.log(this.props.percentage);
         return <div style={containerStyle}>
                     <h1 style={titleStyle}>Student Progress</h1>
-                    {dots}
+                    <canvas style={{display:"block"}} ref={(ref) => this.ctx = ref} width="150" height="150"/>
+                    <span style={{marginTop:"10px",display:"block",width:"100%" , textAlign:"center",color:this.props.color}}>
+                            {Math.round(this.props.percentage)}% correct</span>
                 </div>
     }
     
-    getCompletions(){
-        $.get(
-            "/api/completions",
-            {id: this.props.question.id},
-            (data) => {
-                this.setState({data:data});
-
-            }
-        );
+    componentDidUpdate(){
+        
+        var data = [
+            {value: (100-this.props.percentage)  , color:"white"},            
+            {value: this.props.percentage , color:this.props.color}
+        ];
+        console.log(this.ctx.getContext("2d"));
+        var myPieChart = new Chart(this.ctx.getContext("2d")).Pie(data,{segmentStrokeWidth : 1,segmentStrokeColor : "#000",percentageInnerCutout : 0});
     }
     
 }

@@ -1,4 +1,5 @@
 chemistry:
+  id: 1
   name: Chemistry
   color: green
   author_id : 1

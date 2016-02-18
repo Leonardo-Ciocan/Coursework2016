@@ -22,7 +22,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
    
    constructor(props : ChoiceStatsProps, context) {
         super(props,context);
-        this.state={overallStats:[] , firstStats:[]};
+        this.state={overallStats:[] , firstStats:[] , percentage:0};
         this.getQuestionStats();
         ChoiceStats.count++;
         this.countCurrent = ChoiceStats.count;
@@ -31,19 +31,21 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
     render(){
         let containerStyle = {
           borderTop:"1px solid lightgray",
-          padding:"10px"
+          padding:"10px",
+          background:"white"
           
         };
         let titleStyle = {
             margin:"10px"
         };
+        let f = parseFloat(this.state.percentage);
         return <div style={containerStyle}>
                     <h2 style={titleStyle}>Question {this.countCurrent}</h2>
-                    <span style={{marginLeft:"20px" , maxWidth:"800px"}} dangerouslySetInnerHTML={{__html:md.render(this.props.question.title)}}/>
+                    <span style={{marginLeft:"20px" , maxWidth:"800px"}} dangerouslySetInnerHTML={{__html:md.render(this.props.question.title||"")}}/>
                     <div style={{
                         whiteSpace:"nowrap"
                     }}>
-                        <ActivityIndicator color={this.props.color}  question={this.props.question}/>
+                        <ActivityIndicator percentage={f} color={this.props.color}  question={this.props.question}/>
                         <BarChart color={this.props.color} title={"First choices"} data={this.state.firstStats}/>
                         <BarChart color={this.props.color} title={"Overall clicks"} data={this.state.overallStats}/>
                         <div style={{clear:"both"}}></div>
@@ -53,28 +55,38 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
     
     getQuestionStats = () => {
         console.log(this.props);
-        $.get(
-            "/api/stats",
-            {
-                id : this.props.question.id
-            },
-            (data) => {                    
+        // $.get(
+        //     "/api/stats",
+        //     {
+        //         id : this.props.question.id
+        //     },
+        //     (data) => {                    
                 
-                var question : ChoiceQuestion = this.props.question as ChoiceQuestion;
+        //         var question : ChoiceQuestion = this.props.question as ChoiceQuestion;
 
-                var arr : Array<BarChartEntry> = []
-                for(var i in data[StatType.OverallClicks]){
-                    console.log(question.choices);
-                    arr.push({name: question.choices[i] , value : +data[StatType.OverallClicks][+i]})
-                }
-                this.setState({overallStats:arr});
+        //         var arr : Array<BarChartEntry> = []
+        //         for(var i in data[StatType.OverallClicks]){
+        //             console.log(question.choices);
+        //             arr.push({name: question.choices[i] , value : +data[StatType.OverallClicks][+i]})
+        //         }
+        //         this.setState({overallStats:arr});
                 
-                var arrFirst : Array<BarChartEntry> = []
-                for(var i in data[StatType.FirstClicks]){
-                    arrFirst.push({name: question.choices[i] , value : +data[StatType.FirstClicks][+i]})
-                }
-                this.setState({firstStats:arrFirst});
+        //         var arrFirst : Array<BarChartEntry> = []
+        //         for(var i in data[StatType.FirstClicks]){
+        //             arrFirst.push({name: question.choices[i] , value : +data[StatType.FirstClicks][+i]})
+        //         }
+        //         this.setState({firstStats:arrFirst});
+        //     }
+        // )
+        
+        $.get(
+            "/api/statistics",
+            {question_id : this.props.question.id}
+        ).then(
+            ({percentage}) => {
+                console.log(percentage);
+                this.setState({percentage : percentage});
             }
-        )
+        );
     }
 }

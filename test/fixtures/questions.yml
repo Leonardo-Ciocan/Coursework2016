@@ -1,11 +1,6 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-one:
-  title: MyString
-  subtitle: MyString
-  data: MyString
-
-two:
-  title: MyString
-  subtitle: MyString
-  data: MyString
+q1:
+  id: 1
+  type: 0
+  data: "{\"answers\":[\"Cake\" , \"Pie\" , \"Fish\"]}"
+  correct_answer: 1
+  sheet_id: 1

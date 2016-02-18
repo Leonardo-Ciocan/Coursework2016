@@ -21,15 +21,13 @@ class BarChart  extends React.Component<BarChartProps, any> {
     
     render(){
         let containerStyle = {
-          border:"1px solid rgba(255,255,255,0.1)",
           display:"inline-block",
           padding:"10px",
-          marginRight:"10px",
           verticalAlign:"top",
           width:"300px",
           float:"left",
-          boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.19);",
-          background:"white"
+          background:"white",
+          border:"1px solid lightgray"
         };
         
         let titleStyle = {

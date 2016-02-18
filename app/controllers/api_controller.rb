@@ -1,4 +1,7 @@
+require "lc_helper"
+
 class ApiController < ApplicationController
+  include LCHelper
   skip_before_action :authenticate_user!
 
   def subscribe
@@ -261,6 +264,26 @@ class ApiController < ApplicationController
     sheet.released = params[:released] == "true"
     sheet.save
     head :ok
+  end
+
+  def stats
+    question = Question.find(params[:question_id])
+    answers = Answer.where(:question_id => params[:question_id])
+
+    percentage = 0
+    if question.type == 0
+      sum = 0
+      for i in answers
+        if valid?(i)
+          sum += 1
+        end
+      end
+      percentage = (sum.fdiv answers.size) * 100.0
+    end
+
+    render :json => {
+               "percentage" => percentage
+           }
   end
 
 end
