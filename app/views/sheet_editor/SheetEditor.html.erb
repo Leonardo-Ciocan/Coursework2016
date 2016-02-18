@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <title> <%= @sheet.name %> </title>
   <script>
-    var sheet = <%= raw @sheet.to_json %>;
-    var questions = <%= raw @questions.to_json %>;
-    var answers = <%= raw @answers.to_json %>;
     var lecture_id = <%= raw @lecture_id %>;
-
+    var sheet_id = <%= raw @sheet_id %>;
 
   </script>
 
@@ -28,7 +25,6 @@
                       return hljs.highlight(lang, str).value;
                   } catch (__) {}
               }
-
               return ''; // use external default escaping
           }
       });

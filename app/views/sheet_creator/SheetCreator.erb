@@ -9,7 +9,10 @@
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js"></script>
   <%= javascript_include_tag 'markdown-it', 'data-turbolinks-track' => true %>
-
+  <%= stylesheet_link_tag "codemirror" %>
+  <%= stylesheet_link_tag "vs" %>
+  <%= stylesheet_link_tag "codemirror" %>
+  <%= stylesheet_link_tag "base16-light" %>
 </head>
 <body>
 
@@ -35,6 +38,9 @@
 </script>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'codemirror', 'data-turbolinks-track' => true %>
+<%= javascript_include_tag 'python_mode', 'data-turbolinks-track' => true %>
+
 <%= javascript_include_tag 'sheet_creator', 'data-turbolinks-track' => true %>
 
 

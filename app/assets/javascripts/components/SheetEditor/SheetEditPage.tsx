@@ -11,11 +11,12 @@ class SheetEditPageProps{
     questions : any
     sheet :any
     lecture : Lecture
+    answers: any
+    modelAnswers : any
 }
 
-declare var answers : any
-declare var sheet :any
-declare var questions:any
+declare var lecture_id : any
+declare var sheet_id : any
 
 class SheetEditPage extends React.Component<SheetEditPageProps,any> {
     render() {
@@ -24,25 +25,26 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
             //console.log(question.type);
             question.type = question.type == null ? 0 : question.type;
                 if(question.type == 0) {
-                    return <ChoiceQuestion color={color}  question={question} answer={answers[i]}/>;
+                    return <ChoiceQuestion color={color}  question={question} answer={this.props.answers[i]}/>;
                 }
                 else if (question.type == 1){
-                    return <InputQuestion color={color}   question={question} answer={answers[i]}/>;
+                    return <InputQuestion color={color}   question={question} answer={this.props.answers[i]}/>;
                 }
                 else if (question.type == 3){
-                    return <CodeQuestion color={color}   question={question} answer={answers[i]}/>;
+                    return <CodeQuestion color={color}   question={question} answer={this.props.answers[i]}/>;
                 }
                 else if (question.type == 4){
                     return <WebQuestion color={color}/>;
                 }
             }.bind(this));
+            
 
 
         return <div >
                <Header onBack={this.onBack.bind(this)} foreground={color}  color="#fafafa" title={this.props.sheet.name} name={"leonardo"} subtitle={this.props.questions.length + " questions"}>
               
                </Header>
-                <div className="page-editor"
+                <div
                     style={{
                           width:"600px",
                           marginBottom:"50px",
@@ -63,24 +65,27 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                         }}>That's all</h1>
                     </div>
                </div>
+               
+               
             </div>
     }
     
     onBack(){
-        window.location.href = "/lectures/" + this.props.sheet.lecture_id;
+        window.location.href = "/lectures/" + this.props.lecture.id;
     }
 }
 
 
-declare var lecture_id
-
 $.get(
-    "/api/lecture/",
-    {id : lecture_id},
-    (data) => {
+    "/api/sheet/full",
+    {lecture_id : lecture_id , sheet_id : sheet_id},
+    ({lecture , sheet , questions , answers , modelAnswers}) => {
         ReactDOM.render(
-            React.createElement(SheetEditPage , {sheet:sheet , questions:questions , lecture:new Lecture(data.id , data.name , data.author , data.color,data.sheets)}),
-            document.getElementById('root')
-        );
+                    React.createElement(SheetEditPage , {sheet:sheet , questions:questions ,
+                        answers : answers, modelAnswers: modelAnswers,
+                         lecture:new Lecture(lecture.id , lecture.name , lecture.author , lecture.color,lecture.sheets)}),
+                    document.getElementById('root')
+                );  
+             
     }
 )

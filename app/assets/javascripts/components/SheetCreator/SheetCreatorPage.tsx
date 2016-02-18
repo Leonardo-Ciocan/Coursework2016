@@ -100,6 +100,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                     <span>Create question : </span>
                     <LCButton text="Multiple Choice" onClick={this.addMultipleChoice.bind(this)}  color={"gray"}/>
                     <LCButton text={"Input"} onClick={this.addInputQuestion.bind(this)} color={"gray"}/>
+                    <LCButton text={"Code"} onClick={this.addCodeQuestion.bind(this)} color={"gray"}/>
                 </div>
                 <div style={{display:"inline-block",float:"right",
              paddingLeft:"20px",
@@ -145,6 +146,14 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         this.setState({items:this.state.items});
     }
     
+    addCodeQuestion(){
+        var qs = new RQuestion();
+        qs.type = 3;
+        qs.id = IDFactory.getNumber();
+        this.state.items.push(qs);
+        this.setState({items:this.state.items});
+    }
+    
     
     
     createSheet(){
@@ -161,6 +170,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 newQuestion.data = JSON.stringify(data);
                 console.log(item.answers.filter((answer)=>answer.isAnswer));
                 newQuestion.correct_answer = ""+item.answers.indexOf(item.answers.filter((answer)=>answer.isAnswer)[0]);
+                newQuestion.model_answer = newQuestion.correct_answer;
             }
             else if(item.type == 1){
                 newQuestion.correct_answer = item.correct_answer;
@@ -171,13 +181,15 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                 var outputs = item.solutions.map((io)=>io.output);
                 newQuestion.data = JSON.stringify({inputs : inputs , language : item.language});
                 newQuestion.correct_answer = JSON.stringify(outputs);
+                newQuestion.model_answer = item.model_answer;
             }
             console.log(newQuestion);
             return newQuestion; 
         });
         
-        
+
          var sheet = {id:0,description:this.state.description,name:this.state.name};
+
          $.post("/api/create/sheet",
             {
                sheet:sheet,
@@ -185,7 +197,8 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
                lecture_id : lecture_id
             }
         ).then((data)=>{
-            if(data == ""){
+            console.log(data);
+            if(data ==" "){
                 window.location.href = "/lectures/" + this.props.lecture.id
             }
             else{
@@ -193,6 +206,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             }
             
         });
+
     }
     
     

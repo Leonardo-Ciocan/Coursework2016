@@ -77,7 +77,7 @@ class CodeQuestionProps {
                  theme:"base16-light"});
                 
                 myCodeMirror.on("change", function(cm, change) { 
-                             this.setState({code:cm.getValue()});
+                      if(cm != undefined)this.setState({code:cm.getValue()});
                  }.bind(this));
                  
                  myCodeMirror.setSize("100%","auto");

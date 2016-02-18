@@ -77,6 +77,44 @@ class ApiController < ApplicationController
            } , status: 200
   end
 
+  def full_sheet
+    lecture = Lecture.find(params[:lecture_id])
+    lecture_json = {
+               "id" => lecture.id,
+               "name" => lecture.name,
+               "author" => User.find(lecture.author_id).email,
+               "color" => lecture.color}
+
+    sheet = Sheet.find(params[:sheet_id])
+    sheet_json = {
+        "id" => sheet.id,
+        "name" => sheet.name
+    }
+
+    questions = sheet.questions.all
+    answers = []
+    for qs in questions
+      item = Answer.find_or_create_by(user:current_user , question:qs)
+      answers.push item
+    end
+
+    modelAnswers = questions.map{
+      |question|
+        {
+            "data" => question.model_answer,
+            "id" => question.id
+        }
+    }
+
+    render :json => {
+               "lecture" => lecture_json,
+               "sheet"   => sheet_json,
+               "questions" => questions,
+               "answers" => answers,
+               "modelAnswers" => modelAnswers
+           } , status: 200
+  end
+
   def sheets
     id = params[:id]
     lecture = Lecture.find id
@@ -128,6 +166,13 @@ class ApiController < ApplicationController
         if (qs["model_answer"] =~ regex).nil?
           errors[i].append("Model answer does not match regex" )
         end
+      elsif qs["type"] == "3"
+        inputs = JSON.parse(qs["data"])["inputs"]
+        outputs = JSON.parse(qs["correct_answer"])
+
+        if inputs.count != outputs.count or inputs.count == 0
+          errors[i].append("You need to have tests for this question")
+        end
       end
     end
 
@@ -170,6 +215,11 @@ class ApiController < ApplicationController
       sheet.save
     end
 
+    if params.has_key?("released")
+      sheet.released = params[:released] == "true"
+      sheet.save
+    end
+
     head :ok
   end
 
@@ -202,6 +252,13 @@ class ApiController < ApplicationController
     end
 
     render :nothing => 200
+  end
+
+  def release_sheet
+    sheet = Sheet.find params[:id]
+    sheet.released = true
+    sheet.save
+    head :ok
   end
 
 end

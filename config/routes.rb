@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get "/api/completions/" => "api#completions"
   get "/api/lectures/" => "api#lectures"
   get "/api/lecture/" => "api#lecture"
+  get "/api/sheet/full" => "api#full_sheet"
   get "/api/sheets/" => "api#sheets"
   post "/api/subscribe" => "api#subscribe"
 
@@ -29,6 +30,8 @@ Rails.application.routes.draw do
   post "/api/delete/sheet" => "api#delete_sheet"
   post "/api/update/lecture" => "api#update_lecture"
   post "/api/update/sheet" => "api#update_sheet"
+
+  post "/api/release/sheet" => "api#release_sheet"
 
 
   root 'application#index'

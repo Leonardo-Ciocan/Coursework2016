@@ -23,7 +23,7 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
             margin:"0px",
             marginLeft:"55px",
             marginTop:"5px",
-            color:this.props.foreground || "white",
+            color:"gray",
             verticalAlign:"middle",
             textAlign:"center",
             lineHeight:"25px",
@@ -34,7 +34,7 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
          var subtitleStyle = {
             margin:"0px",
             marginLeft:"55px",
-            color:this.props.foreground || "white",
+            color:"gray",
             verticalAlign:"top",
             textAlign:"center",
             lineHeight:"15px",

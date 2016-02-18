@@ -14,6 +14,7 @@ class SheetEditorController < ApplicationController
 
     @sheet = Sheet.find params[:id]
     @lecture_id = @sheet.lecture_id
+    @sheet_id = @sheet.id
     @questions = @sheet.questions.all
     @answers = []
     for qs in @questions
