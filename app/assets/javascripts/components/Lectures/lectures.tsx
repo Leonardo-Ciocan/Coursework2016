@@ -97,7 +97,7 @@ class LecturePage extends React.Component<LecturePageProps,any>{
                     {subscribed}
                     <div style={{marginTop:"10px" , paddingTop:"10px"}}>
                         <span style={{lineHeight:"30px",verticalAlign:"middle",fontSize:"15pt", margin:"10px"}}>Your own lectures</span>
-                        <RoundButton onClick={this.createLecture} background="transparent"/>
+                        <RoundButton color={"rgba(0,0,0,0.03)"} onClick={this.createLecture} background="transparent"/>
                     </div>
                     {created}
                     </div>
