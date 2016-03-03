@@ -35,10 +35,17 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
                 (data)=>{
                     console.log(data);
                     var arr : Array<Question> = []        
-                    for(var i of data){
+                    for(var x of data){
+                        let i = x as Question;
                         if(i.type == 0){
-                            console.log(i.data);
-                            arr.push(new ChoiceQuestion(i.title , i.subtitle || "" , i.id , JSON.parse(i.data).answers))
+                            var q =new Question();
+
+                            q.type = i.type;
+                            q.title = i.title;
+                            q.id = i.id;
+                            q.subtitle = i.subtitle;
+                            q.data = i.data;
+                            arr.push(q);
                         }
                     }    
                     ReactDOM.render(

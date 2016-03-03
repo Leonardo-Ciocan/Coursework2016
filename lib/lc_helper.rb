@@ -27,4 +27,15 @@ module LCHelper
 
 
   end
+
+
+  def mutate_data
+    for i in Answer.all
+      puts i.question.type
+      if i.question.type == 0
+        i.data = (rand * 2).round.to_s
+        i.save
+      end
+    end
+  end
 end

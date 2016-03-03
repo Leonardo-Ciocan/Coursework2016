@@ -4,7 +4,7 @@ class Answer < ActiveRecord::Base
 
   @@stat_overall_clicks = 0
   @@stat_first_click = 1
-  @@stat_current_click = 2
+  @@stat_change = 2
 
   def data=(val)
     puts self
@@ -13,9 +13,7 @@ class Answer < ActiveRecord::Base
         #this means that this is their first choice
         Statistic.create :answer => self , :kind => @@stat_first_click , :data => val
       else
-        #this is for overall clicks
-        #TODO: is this useful
-        #Statistic.create :answer => self, :kind=> @@stat_overall_clicks , :data => val
+        Statistic.create :answer => self , :kind => @@stat_change , :data => {"from" => self.data , "to"=>val}.to_json.to_s
       end
     end
 

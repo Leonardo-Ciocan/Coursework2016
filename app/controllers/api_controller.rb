@@ -285,6 +285,9 @@ class ApiController < ApplicationController
     question = Question.find(params[:question_id])
     answers = Answer.where(:question_id => params[:question_id])
 
+    correct = 0
+    wrong = 0
+
     percentage = 0
     if question.type == 0
       sum = 0
@@ -294,10 +297,31 @@ class ApiController < ApplicationController
         end
       end
       percentage = (sum.fdiv answers.size) * 100.0
+      correct = sum
+      wrong = answers.size - correct
     end
 
+    c = Statistic.joins(:answer).where(:answers => {:question_id => question.id}).where(:kind => 2).map{
+      |stat|
+      JSON.parse(stat.data)
+    }
+
+    transitions = Hash.new { |h, k| h[k] = Hash.new { |h, k| h[k] = 0 } }
+    c.each{
+      |transition|
+      transitions[transition["from"]][transition["to"]] += 1
+    }
+
+
+    puts transitions
+
+
+
     render :json => {
-               "percentage" => percentage
+               "percentage" => percentage,
+               "correct" => correct,
+               "wrong" => wrong,
+               "transitions" => transitions
            }
   end
 

@@ -89,8 +89,6 @@ class BarChart  extends React.Component<BarChartProps, any> {
     
     componentDidUpdate(){
           var color = new Chromath(this.props.color);
-        console.log(color);
-        console.log(color.darken(0.3));
         
         
         let step = 0.65 / this.props.data.length;
@@ -136,11 +134,9 @@ class BarChart  extends React.Component<BarChartProps, any> {
         //                 pointHighlightFill: "#fff",
         //                 pointHighlightStroke: "black",}]    
         // };
-        console.log(rdata);
-        
-        console.log(this.ctx.getContext("2d"));
         var myPieChart = new Chart(this.ctx.getContext("2d")).Pie(rdata,{
             multiTooltipTemplate: "<%= label %>",
+            segmentStrokeColor : color.darken(0.4).toRGBString(),
             segmentStrokeWidth : 0,borderWidth:0,percentageInnerCutout : 0});
     }
 }

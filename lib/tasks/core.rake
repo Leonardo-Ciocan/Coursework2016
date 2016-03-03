@@ -6,5 +6,7 @@ namespace :core do
   task recreate: :environment do
     LCHelper.create_dummy_data
   end
-
+  task mutate: :environment do
+    LCHelper.mutate_data
+  end
 end
