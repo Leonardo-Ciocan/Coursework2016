@@ -33,17 +33,28 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
 
         
         let containerStyle = {
-          borderTop:"1px solid lightgray",     
-          borderBottom:"1px solid lightgray",
-          background:"white"
-          
+          border:"1px solid lightgray",     
+
+          background:"white",
+          display:"inline-block",
+          margin:"0 auto",
+          padding:"10px"
         };
         let titleStyle = {
-            margin:"0px",
-            padding:"5px",
-            paddingTop:"15px",
+            margin:"10px",
+            marginTop:"15px",
             fontSize:"17pt",
+            width:"50px",
+            height:"50px",
+            color:this.props.color,
+            fontWeight:"bold",
+            lineHeight:"50px",
+            verticalAlign:"middle",
             textAlign:"center",
+            borderRadius:"100%",
+            border:"1px solid "+this.props.color,
+            display:"inline-block",
+            float:"left"
         };
         
         
@@ -100,10 +111,11 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
             padding:"10px"
         };
         return <div style={containerStyle}>
-                    <h2 style={titleStyle}>Question {this.state.n}</h2>
+
                     <div style={{
                         whiteSpace:"nowrap"
                     }}>
+                        <h2 style={titleStyle}>{this.state.n}</h2>
                         <ActivityIndicator percentage={f}  correct={c} wrong={w} color={this.props.color}  question={this.props.question}/>
                         <BarChart color={this.props.color} title={"First choices"} data={this.state.firstStats}/>
                         <div style={{float:"left"}}>

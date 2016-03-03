@@ -30,13 +30,26 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
         }
            
     });
-    return <div>
-                 <Header name={"leonardo"} title={"Dashboard"} subtitle={"Lecture title"} foreground={this.props.lecture.color} />
+    return <div  style={{textAlign:"center"}}>
+                 <Header onBack={this.back} name={"leonardo"} title={"Dashboard"} subtitle={"Lecture title"} foreground={this.props.lecture.color} />
                  <div style={{marginTop:"100px"}}/>
                  {stats}
             </div>
   }
+
+  back = () =>{
+    window.location.href = "/lectures/" + this.props.lecture.id;    
+  }
+  
 }
+
+
+
+// function loadPageVar (sVar) {
+//   return decodeURI(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURI(sVar).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+// }
+
+// console.log("from:" + loadPageVar("from"));
 
     $.get(
         "/api/lecture/",
