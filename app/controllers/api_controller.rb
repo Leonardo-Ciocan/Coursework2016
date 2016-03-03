@@ -33,7 +33,6 @@ class ApiController < ApplicationController
 
     c.each {
         |key,val|
-      puts val
       stats = Hash.new { |h, k| h[k] = 0 }
       for i in val
         stats[i.data] += 1

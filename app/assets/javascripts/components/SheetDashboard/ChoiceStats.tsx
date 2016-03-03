@@ -29,18 +29,24 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
     }
     
     render(){
+        
+        
+
+        
         let containerStyle = {
-          borderTop:"1px solid lightgray",
+          borderTop:"1px solid lightgray",     
+          borderBottom:"1px solid lightgray",
           background:"white"
           
         };
         let titleStyle = {
             margin:"0px",
             padding:"5px",
+            paddingTop:"15px",
             fontSize:"17pt",
             textAlign:"center",
-            borderBottom:"1px solid lightgray"
         };
+        
         
         let f = parseFloat(this.state.percentage);
         return <div style={containerStyle}>

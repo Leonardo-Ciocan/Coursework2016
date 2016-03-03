@@ -4,22 +4,11 @@
     <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/ActivityIndicator.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/ActivityIndicator.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/BarChart.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/BarChart.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/ChoiceQuestion.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/ChoiceQuestion.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/ChoiceStats.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/ChoiceStats.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/shared/Header.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/shared/Header.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/InputQuestion.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/InputQuestion.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/SheetDashboardPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/SheetDashboardPage.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/SheetEditPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/SheetEditPage.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/Sheets/SheetsPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/Sheets/SheetsPage.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/answer.rb" afterPath="$PROJECT_DIR$/app/models/answer.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb" afterPath="$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/devise.rb" afterPath="$PROJECT_DIR$/config/initializers/devise.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/assets.rb" afterPath="$PROJECT_DIR$/config/initializers/assets.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/lc_helper.rb" afterPath="$PROJECT_DIR$/lib/lc_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/fixtures/questions.yml" afterPath="$PROJECT_DIR$/test/fixtures/questions.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestUsers.iws" />
@@ -44,7 +33,7 @@
     <SUITE FILE_PATH="coverage/TestUsers@application.coverage" NAME="application Coverage Results" MODIFIED="1446485988045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@Development__TestUsers.coverage" NAME="Development: TestUsers Coverage Results" MODIFIED="1456888208112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@db_migrate__2_.coverage" NAME="db:migrate (2) Coverage Results" MODIFIED="1450252103443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
-    <SUITE FILE_PATH="coverage/TestUsers@test.coverage" NAME="test Coverage Results" MODIFIED="1456976387184" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
+    <SUITE FILE_PATH="coverage/TestUsers@test.coverage" NAME="test Coverage Results" MODIFIED="1456983158417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@db_migrate__1_.coverage" NAME="db:migrate (1) Coverage Results" MODIFIED="1449255529096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@db_migrate__5_.coverage" NAME="db:migrate (5) Coverage Results" MODIFIED="1449849585314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
   </component>
@@ -73,42 +62,42 @@
         <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+              <caret line="290" column="22" selection-start-line="290" selection-start-column="22" selection-end-line="290" selection-end-column="22" />
               <folding>
-                <element signature="e#944#1031#0" expanded="false" />
-                <element signature="e#1035#1244#0" expanded="false" />
-                <element signature="e#1146#1195#0" expanded="false" />
-                <element signature="e#1663#2009#0" expanded="false" />
-                <element signature="e#2106#2462#0" expanded="false" />
-                <element signature="e#2947#3069#0" expanded="false" />
-                <element signature="e#3103#3224#0" expanded="false" />
-                <element signature="e#3490#4184#0" expanded="false" />
-                <element signature="e#3572#4136#0" expanded="false" />
-                <element signature="e#3661#3896#0" expanded="false" />
-                <element signature="e#3969#4128#0" expanded="false" />
-                <element signature="e#4188#5977#0" expanded="false" />
-                <element signature="e#4255#4275#0" expanded="false" />
-                <element signature="e#4280#5182#0" expanded="false" />
-                <element signature="e#4319#4412#0" expanded="false" />
-                <element signature="e#4442#5174#0" expanded="false" />
-                <element signature="e#4471#4567#1" expanded="false" />
-                <element signature="e#4606#4715#0" expanded="false" />
-                <element signature="e#4773#4887#0" expanded="false" />
-                <element signature="e#5028#5164#0" expanded="false" />
-                <element signature="e#5189#5269#0" expanded="false" />
-                <element signature="e#5275#5970#0" expanded="false" />
-                <element signature="e#5531#5947#0" expanded="false" />
-                <element signature="e#5981#6347#0" expanded="false" />
-                <element signature="e#6041#6125#0" expanded="false" />
-                <element signature="e#6131#6215#0" expanded="false" />
-                <element signature="e#6221#6327#0" expanded="false" />
-                <element signature="e#6351#6512#0" expanded="false" />
-                <element signature="e#6517#6604#0" expanded="false" />
-                <element signature="e#6608#6728#0" expanded="false" />
-                <element signature="e#6732#7021#0" expanded="false" />
-                <element signature="e#6802#6890#0" expanded="false" />
-                <element signature="e#6896#6987#0" expanded="false" />
-                <element signature="e#7025#7160#0" expanded="false" />
+                <element signature="e#929#1016#0" expanded="false" />
+                <element signature="e#1020#1229#0" expanded="false" />
+                <element signature="e#1131#1180#0" expanded="false" />
+                <element signature="e#1648#1994#0" expanded="false" />
+                <element signature="e#2091#2447#0" expanded="false" />
+                <element signature="e#2932#3054#0" expanded="false" />
+                <element signature="e#3088#3209#0" expanded="false" />
+                <element signature="e#3475#4169#0" expanded="false" />
+                <element signature="e#3557#4121#0" expanded="false" />
+                <element signature="e#3646#3881#0" expanded="false" />
+                <element signature="e#3954#4113#0" expanded="false" />
+                <element signature="e#4173#5962#0" expanded="false" />
+                <element signature="e#4240#4260#0" expanded="false" />
+                <element signature="e#4265#5167#0" expanded="false" />
+                <element signature="e#4304#4397#0" expanded="false" />
+                <element signature="e#4427#5159#0" expanded="false" />
+                <element signature="e#4456#4552#1" expanded="false" />
+                <element signature="e#4591#4700#0" expanded="false" />
+                <element signature="e#4758#4872#0" expanded="false" />
+                <element signature="e#5013#5149#0" expanded="false" />
+                <element signature="e#5174#5254#0" expanded="false" />
+                <element signature="e#5260#5955#0" expanded="false" />
+                <element signature="e#5516#5932#0" expanded="false" />
+                <element signature="e#5966#6332#0" expanded="false" />
+                <element signature="e#6026#6110#0" expanded="false" />
+                <element signature="e#6116#6200#0" expanded="false" />
+                <element signature="e#6206#6312#0" expanded="false" />
+                <element signature="e#6336#6497#0" expanded="false" />
+                <element signature="e#6502#6589#0" expanded="false" />
+                <element signature="e#6593#6713#0" expanded="false" />
+                <element signature="e#6717#7006#0" expanded="false" />
+                <element signature="e#6787#6875#0" expanded="false" />
+                <element signature="e#6881#6972#0" expanded="false" />
+                <element signature="e#7010#7145#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -154,26 +143,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sheet_manager_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/sheet_manager_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sheet_editor_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="lecture.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models/lecture.rb">
           <provider selected="true" editor-type-id="text-editor">
@@ -184,11 +153,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="lc_helper.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="lc_helper.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/lc_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39589444">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SheetDashboard.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-10.0">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="assets.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.35190615">
+              <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -224,14 +213,13 @@
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <push-targets>
-      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="github" target-branch="master" />
+      <push-target-info repo="$PROJECT_DIR$" source="master" target-remote="origin" target-branch="master" />
     </push-targets>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/assets/stylesheets/sheet_editor.css.scss" />
-        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
         <option value="$PROJECT_DIR$/app/views/sheet_manager/SheetManager.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160212011952_add_is_model_answer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
@@ -266,7 +254,6 @@
         <option value="$PROJECT_DIR$/test/fixtures/lectures.yml" />
         <option value="$PROJECT_DIR$/test/fixtures/sheets.yml" />
         <option value="$PROJECT_DIR$/test/fixtures/users.yml" />
-        <option value="$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/test.rb" />
         <option value="$PROJECT_DIR$/test/fixtures/answers.yml" />
@@ -277,10 +264,12 @@
         <option value="$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160302032719_add_default_answer.rb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api_controller.rb" />
         <option value="$PROJECT_DIR$/app/models/answer.rb" />
         <option value="$PROJECT_DIR$/lib/tasks/core.rake" />
+        <option value="$PROJECT_DIR$/app/controllers/api_controller.rb" />
         <option value="$PROJECT_DIR$/lib/lc_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb" />
+        <option value="$PROJECT_DIR$/config/initializers/assets.rb" />
       </list>
     </option>
   </component>
@@ -1368,7 +1357,19 @@
       <option name="project" value="LOCAL" />
       <updated>1456328223231</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Cleaned up a lot of stuff">
+      <created>1456978356590</created>
+      <option name="number" value="00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1456978356590</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Added missing files">
+      <created>1456978443178</created>
+      <option name="number" value="00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1456978443178</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1384,12 +1385,13 @@
     <frame x="19" y="23" width="1346" height="1417" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31902295" sideWeight="0.4896" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281493" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2570481" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26303682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26303682" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25092524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22205773" sideWeight="0.4912" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1400,7 +1402,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864544" sideWeight="0.4968" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32905984" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1418,8 +1419,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="User can now create sheets with multiple choice questions" />
-    <MESSAGE value="Added basic page for creating lectures , UI works so far" />
     <MESSAGE value="Various UI tweaks" />
     <MESSAGE value="Added code mirror for basic code questions" />
     <MESSAGE value="Can now create input questions via the UI" />
@@ -1443,7 +1442,9 @@
     <MESSAGE value="Revamped basic dashboard" />
     <MESSAGE value="Improved statistics and fixtures" />
     <MESSAGE value="Fixed UI bugs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed UI bugs" />
+    <MESSAGE value="Cleaned up a lot of stuff" />
+    <MESSAGE value="Added missing files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added missing files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1455,13 +1456,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/vendor/typescript/Rakefile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/typescript/typescript-rails.gemspec">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1609,13 +1603,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.48">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.52">
@@ -1670,6 +1657,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1820,50 +1808,66 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="0" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+          <caret line="290" column="22" selection-start-line="290" selection-start-column="22" selection-end-line="290" selection-end-column="22" />
           <folding>
-            <element signature="e#944#1031#0" expanded="false" />
-            <element signature="e#1035#1244#0" expanded="false" />
-            <element signature="e#1146#1195#0" expanded="false" />
-            <element signature="e#1663#2009#0" expanded="false" />
-            <element signature="e#2106#2462#0" expanded="false" />
-            <element signature="e#2947#3069#0" expanded="false" />
-            <element signature="e#3103#3224#0" expanded="false" />
-            <element signature="e#3490#4184#0" expanded="false" />
-            <element signature="e#3572#4136#0" expanded="false" />
-            <element signature="e#3661#3896#0" expanded="false" />
-            <element signature="e#3969#4128#0" expanded="false" />
-            <element signature="e#4188#5977#0" expanded="false" />
-            <element signature="e#4255#4275#0" expanded="false" />
-            <element signature="e#4280#5182#0" expanded="false" />
-            <element signature="e#4319#4412#0" expanded="false" />
-            <element signature="e#4442#5174#0" expanded="false" />
-            <element signature="e#4471#4567#1" expanded="false" />
-            <element signature="e#4606#4715#0" expanded="false" />
-            <element signature="e#4773#4887#0" expanded="false" />
-            <element signature="e#5028#5164#0" expanded="false" />
-            <element signature="e#5189#5269#0" expanded="false" />
-            <element signature="e#5275#5970#0" expanded="false" />
-            <element signature="e#5531#5947#0" expanded="false" />
-            <element signature="e#5981#6347#0" expanded="false" />
-            <element signature="e#6041#6125#0" expanded="false" />
-            <element signature="e#6131#6215#0" expanded="false" />
-            <element signature="e#6221#6327#0" expanded="false" />
-            <element signature="e#6351#6512#0" expanded="false" />
-            <element signature="e#6517#6604#0" expanded="false" />
-            <element signature="e#6608#6728#0" expanded="false" />
-            <element signature="e#6732#7021#0" expanded="false" />
-            <element signature="e#6802#6890#0" expanded="false" />
-            <element signature="e#6896#6987#0" expanded="false" />
-            <element signature="e#7025#7160#0" expanded="false" />
+            <element signature="e#929#1016#0" expanded="false" />
+            <element signature="e#1020#1229#0" expanded="false" />
+            <element signature="e#1131#1180#0" expanded="false" />
+            <element signature="e#1648#1994#0" expanded="false" />
+            <element signature="e#2091#2447#0" expanded="false" />
+            <element signature="e#2932#3054#0" expanded="false" />
+            <element signature="e#3088#3209#0" expanded="false" />
+            <element signature="e#3475#4169#0" expanded="false" />
+            <element signature="e#3557#4121#0" expanded="false" />
+            <element signature="e#3646#3881#0" expanded="false" />
+            <element signature="e#3954#4113#0" expanded="false" />
+            <element signature="e#4173#5962#0" expanded="false" />
+            <element signature="e#4240#4260#0" expanded="false" />
+            <element signature="e#4265#5167#0" expanded="false" />
+            <element signature="e#4304#4397#0" expanded="false" />
+            <element signature="e#4427#5159#0" expanded="false" />
+            <element signature="e#4456#4552#1" expanded="false" />
+            <element signature="e#4591#4700#0" expanded="false" />
+            <element signature="e#4758#4872#0" expanded="false" />
+            <element signature="e#5013#5149#0" expanded="false" />
+            <element signature="e#5174#5254#0" expanded="false" />
+            <element signature="e#5260#5955#0" expanded="false" />
+            <element signature="e#5516#5932#0" expanded="false" />
+            <element signature="e#5966#6332#0" expanded="false" />
+            <element signature="e#6026#6110#0" expanded="false" />
+            <element signature="e#6116#6200#0" expanded="false" />
+            <element signature="e#6206#6312#0" expanded="false" />
+            <element signature="e#6336#6497#0" expanded="false" />
+            <element signature="e#6502#6589#0" expanded="false" />
+            <element signature="e#6593#6713#0" expanded="false" />
+            <element signature="e#6717#7006#0" expanded="false" />
+            <element signature="e#6787#6875#0" expanded="false" />
+            <element signature="e#6881#6972#0" expanded="false" />
+            <element signature="e#7010#7145#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/lc_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39589444">
-          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/sheet_dashboard/SheetDashboard.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.0">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35190615">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
           <folding />
         </state>
       </provider>

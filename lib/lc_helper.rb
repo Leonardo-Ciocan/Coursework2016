@@ -15,7 +15,7 @@ module LCHelper
 
     sheet = Sheet.create :name => "Stacks and Trees" , :lecture_id => lecture.id
 
-    q1 = Question.create :type => 0, :title => "What is the best data structure?" , :sheet_id => sheet.id , :data => {"answers" => ["Stack" , "Linked list" , "Queue"]}.to_json.to_s
+    q1 = Question.create :type => 0, :title => "What is the best data structure?" , :sheet_id => sheet.id , :data => {"answers" => ["Stack" , "Linked list" , "Queue"]}.to_json.to_s , :correct_answer => "1"
 
     for i in 0..20
       a = Answer.create :question_id => q1.id

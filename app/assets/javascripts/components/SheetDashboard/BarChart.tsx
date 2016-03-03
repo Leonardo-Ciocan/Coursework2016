@@ -1,5 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 
+declare var Chromath : any;
+
 interface BarChartEntry{
     name : String
     value  : number
@@ -17,6 +19,7 @@ class BarChart  extends React.Component<BarChartProps, any> {
     
     constructor(p:BarChartProps){
         super(p);
+        this.state = {data : []};
     }
     
     ctx : any
@@ -30,11 +33,9 @@ class BarChart  extends React.Component<BarChartProps, any> {
           verticalAlign:"top",
           float:"left",
           background:"white",
-          border:"1px solid lightgray",
-          borderTop:"none",
-          borderLeft:"none",
-          borderRight:"none",
-          height:"300px"
+          height:"300px",
+          paddingLeft:"25px",
+          paddingRight:"25px"
         };
         
         let titleStyle = {
@@ -68,22 +69,43 @@ class BarChart  extends React.Component<BarChartProps, any> {
           marginLeft:"10px"
         };
         
-        for(var i of this.props.data) {
-            this.total = i.value > this.total? i.value : this.total;
-        }
+      
+        
         
         this.props.data.sort((a,b) => a.value < b.value ? 1 : 0);
-        
+        let firstItems = this.props.data.map((stat : BarChartEntry)=>{
+            return <span style={{display:"block"}}><b style={{color:this.props.color}}>{String("   "+stat.value).slice(-3)}</b> people chose <b style={{color:this.props.color}}>{stat.name}</b></span>
+        });
         return <div style={containerStyle}>
                     <h1 style={titleStyle}>{this.props.title}</h1>
                     <canvas ref={(ref) => this.ctx = ref} width="150" height="150"/>
-                    <div ref={(ref) => this.legend = ref}/>
+     
+
+                    <div style={{paddingTop:"10px"}}>
+                        {firstItems}   
+                    </div>
                </div>;
     }
     
     componentDidUpdate(){
-        var rdata = this.props.data.map((item) => {
-           return {value : item.value , color:"white" , label: item.name} 
+          var color = new Chromath(this.props.color);
+        console.log(color);
+        console.log(color.darken(0.3));
+        
+        
+        let step = 0.65 / this.props.data.length;
+        let colors = [];
+        for(var z = 0; z < this.props.data.length;z++){
+            colors.push(color.darken(step * z).toRGBString());
+        }
+        
+        for(var i of this.props.data) {
+            this.total = i.value > this.total? i.value : this.total;
+        }
+        
+        
+        var rdata = this.props.data.map((item,index) => {
+           return {value : item.value , color:colors[index] , label: item.name} 
         });
         
         // var firstdata = this.props.firstData.map((item) => {
@@ -119,6 +141,6 @@ class BarChart  extends React.Component<BarChartProps, any> {
         console.log(this.ctx.getContext("2d"));
         var myPieChart = new Chart(this.ctx.getContext("2d")).Pie(rdata,{
             multiTooltipTemplate: "<%= label %>",
-            segmentStrokeWidth : 1,segmentStrokeColor : this.props.color,percentageInnerCutout : 0});
+            segmentStrokeWidth : 0,borderWidth:0,percentageInnerCutout : 0});
     }
 }

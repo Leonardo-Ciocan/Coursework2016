@@ -24,10 +24,9 @@ class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
           verticalAlign:"top",
           float:"left",
           background:"white",
-          border:"1px solid lightgray",
-          borderTop:"none",
-        borderRight:"none",
-          height:"300px"
+          height:"300px",
+          paddingLeft:"25px",
+          paddingRight:"25px"
         };
         
          let titleStyle = {
@@ -39,8 +38,8 @@ class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
         return <div style={containerStyle}>
                     <h1 style={titleStyle}>Student Progress</h1>
                     <canvas style={{display:"block"}} ref={(ref) => this.ctx = ref} width="150" height="150"/>
-                    <span style={{marginTop:"10px",display:"block",width:"100%" , textAlign:"center",color:this.props.color}}>
-                            {Math.round(this.props.percentage)}% correct</span>
+                    <b><span style={{marginTop:"10px",display:"block",width:"100%" , textAlign:"center",color:this.props.color}}>
+                            {Math.round(this.props.percentage)}% correct</span></b>
                 </div>
     }
     
