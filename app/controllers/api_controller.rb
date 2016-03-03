@@ -2,7 +2,23 @@ require "lc_helper"
 
 class ApiController < ApplicationController
   include LCHelper
-  skip_before_action :authenticate_user!
+
+  before_filter :check_auth
+
+
+  def check_auth
+
+    if current_user != nil
+      return
+    end
+
+    authenticate_or_request_with_http_basic do |username,password|
+      resource = User.find_by_email(username)
+      if resource.valid_password?(password)
+        sign_in :user, resource
+      end
+    end
+  end
 
   def subscribe
     Subscription.create :lecture_id => params[:lecture_id] , :user_id => current_user.id

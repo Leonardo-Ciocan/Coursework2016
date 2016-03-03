@@ -1,5 +1,6 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../shared/LCButton.tsx" />
+/// <reference path="../shared/TextBox.tsx" />
 /// <reference path="../../typing/jquery.d.ts" />
 
 interface HeaderProps {
@@ -21,29 +22,33 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
     render(){
         var titleStyle = {
             margin:"0px",
-            marginLeft:"55px",
-            marginTop:"5px",
+            marginLeft:"65px",
+
             color:"gray",
             verticalAlign:"middle",
             textAlign:"center",
-            lineHeight:"25px",
+            lineHeight:"50px",
             fontSize:"13pt",
             fontFamily:"Open Sans"
+            ,position:"absolute"
         };
         
          var subtitleStyle = {
             margin:"0px",
-            marginLeft:"55px",
+            marginLeft:"65px",
             color:"gray",
             verticalAlign:"top",
             textAlign:"center",
             lineHeight:"15px",
             fontSize:"8pt",
-            fontFamily:"Open Sans"
+            fontFamily:"Open Sans",
+            position:"absolute",
+            marginTop:"30px"
         };
 
         var nameStyle = {
-            margin:"auto",
+            marginTop:"auto",
+            marginBottom:"auto",
             color:this.props.foreground || "white",
             verticalAlign:"middle",
             lineHeight:"50px",
@@ -86,6 +91,17 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
             visibility : this.state.showMenu ? "visible" :"collapse"
         };
         
+        let searchStyle = {
+            width:"300px",
+            display:"block",
+            fontSize:"10pt",
+            margin:"0 auto",
+            marginTop:"25px",
+            transform:"translateY(-50%)",
+            textAlign:"left",
+            background:"rgba(255,255,255,0.45)"
+        };
+        
         return  <div className="header"
                      style={{
                                 height:"50px",
@@ -96,7 +112,9 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
 
                     >
                     <h1 style={titleStyle}> {this.props.title}</h1>
-                    <h1 style={subtitleStyle}> {this.props.subtitle}</h1>
+
+                    <TextBox style={searchStyle} placeholder="Search lectures , sheets , people"/>
+
                     <h1 onClick={this.clickMenu.bind(this)} style={nameStyle}> {this.props.name}</h1>
                     <i onClick={this.props.onBack} className="fa fa-chevron-left" style={iconStyle} ></i>
                     <div  style={menuStyle}>

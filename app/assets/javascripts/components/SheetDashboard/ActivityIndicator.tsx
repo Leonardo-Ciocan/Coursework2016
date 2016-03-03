@@ -26,6 +26,7 @@ class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
           background:"white",
           border:"1px solid lightgray",
           borderTop:"none",
+        borderRight:"none",
           height:"300px"
         };
         

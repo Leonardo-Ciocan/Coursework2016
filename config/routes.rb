@@ -33,6 +33,7 @@ Rails.application.routes.draw do
 
   get "/api/statistics/" => 'api#stats'
 
+  post "/api/release/sheet" => "api#release_sheet"
 
   root 'application#index'
 

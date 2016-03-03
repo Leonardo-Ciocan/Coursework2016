@@ -19,6 +19,7 @@ class SheetEditorController < ApplicationController
     @answers = []
     for qs in @questions
       item = Answer.find_or_create_by(user:current_user , question:qs)
+      puts item.id
       @answers.push item
     end
     render "sheet_editor/SheetEditor"
@@ -27,11 +28,13 @@ class SheetEditorController < ApplicationController
   def update_answer
     answer = Answer.find params[:id]
 
+    puts answer.id
 
+    answer.update_attribute :data , params[:data]
+    puts answer.save
+    puts answer.valid?
 
-
-    answer.data = params[:data]
-    answer.save
+    #puts answer.data + " vs " + params[:data]
 
     if answer.question.type == 3
       inputs = JSON.parse(answer.question.data)["inputs"]
@@ -55,6 +58,6 @@ class SheetEditorController < ApplicationController
 
 
 
-    head :ok , content_type: "text/html"
+    head :ok
   end
 end

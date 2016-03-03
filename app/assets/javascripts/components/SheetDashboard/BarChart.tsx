@@ -33,6 +33,7 @@ class BarChart  extends React.Component<BarChartProps, any> {
           border:"1px solid lightgray",
           borderTop:"none",
           borderLeft:"none",
+          borderRight:"none",
           height:"300px"
         };
         

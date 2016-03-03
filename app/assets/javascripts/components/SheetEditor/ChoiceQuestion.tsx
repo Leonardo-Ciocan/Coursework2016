@@ -52,10 +52,10 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
         constructor(props) {
             super(props);
             this.state = {
-                selected: parseInt(this.props.answer.data),
+                selected: parseInt(this.props.answer.data || -1),
                 color: this.props.color || "red"
             };
-            console.log(this.state.selected);
+            console.log(this.props.answer);
         }
 
         onPick(index) {
@@ -69,7 +69,10 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
 
         render() {
 
+            var correct_answer = "";
+
             var answers = JSON.parse(this.props.question.data.replace(/'/g, '"')).answers.map(function (a, i) {
+                if(i==this.state.selected) correct_answer = a;
                 return <ChoiceQuestionFragment
                     releaseMode={this.props.releaseMode}
                     selected={i==this.state.selected}
@@ -103,6 +106,12 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
                 borderRadius: "100%"
             };
 
+            let answerStyle = {
+                marginLeft:"10px",
+                color:this.props.color,
+                fontSize:"13pt"
+            };
+
 
             return <div className="question-block" >
                 <div
@@ -118,15 +127,19 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
 
 
                     <span className="question-title" 
-                        dangerouslySetInnerHTML={{__html:md.render(this.props.question.title)}}/>
+                        dangerouslySetInnerHTML={{__html:md.render(this.props.question.title || "")}}/>
 
                     <h2 className="question-subtitle"> {this.props.question.subtitle} </h2>
 
                     <div style={{opacity:this.props.releaseMode ? 0.5 :1}}>{answers}</div>
                     
                     { this.props.releaseMode ? <div><span style={{display:"block",fontSize:"10pt", color:"gray",
-                                              textAlign:"left",width:"100%",paddingBottom:"5px",paddingTop:"5px"}}>Model answer</span>
-                    <div>{modelAnswers}</div></div>
+                                              textAlign:"left",width:"100%",paddingBottom:"5px",paddingTop:"10px"}}>Model answer</span>
+                    <div>
+                    
+                        <span style={answerStyle}>{correct_answer}</span>
+                    
+                    </div></div>
                     :""}
 
 

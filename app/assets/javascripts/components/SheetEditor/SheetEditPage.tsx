@@ -52,14 +52,15 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                           border:"1px solid lightgray"
                     }}>
                     {questions}
-                    <div style={{height:"65px"}}>
+                    <div style={{height:"0px"}}>
                         <h1 style={{
+                            visibility:"collapse",
                             verticalAlign:"middle",
                             textAlign:"center",
                             lineHeight:"65px",
                             fontSize:"25px",
                             margin:"0px"
-                        }}>That's all</h1>
+                        }}>~</h1>
                     </div>
                </div>
                

@@ -56,6 +56,14 @@ class InputQuestion extends React.Component<InputProps , any> {
                 padding:"10px"
             };
                 
+                 let answerStyle = {
+                marginLeft:"10px",
+                color:this.props.color,
+                fontSize:"13pt"
+            };
+            
+            let correct_answer = this.props.modelAnswer.data;
+                
             return <div className="question-block">
                 <div
                        onMouseEnter={this.mouseEnter.bind(this)}
@@ -82,13 +90,15 @@ class InputQuestion extends React.Component<InputProps , any> {
                             defaultValue={this.state.text}/>
                     </div>
                     
-                    {
-
-                       this.props.releaseMode ? <span style={{display:"block",fontSize:"10pt", color:"gray",textAlign:"left",width:"100%",paddingBottom:"5px"}}>Model answer</span> : ""
-                    }
-                    {
-                       this.props.releaseMode ? <input readOnly={true} style={inputStyle} defaultValue={this.props.modelAnswer.data}/> : ""
-                    }
+                    { this.props.releaseMode ? <div><span style={{display:"block",fontSize:"10pt", color:"gray",
+                                              textAlign:"left",width:"100%",paddingBottom:"5px",paddingTop:"10px"}}>Model answer</span>
+                    <div>
+                    
+                        <span style={answerStyle}>{correct_answer}</span>
+                    
+                    </div></div>
+                    :""}
+                    
                 </div>
             </div>
         }

@@ -9,14 +9,16 @@ class Answer < ActiveRecord::Base
   def data=(val)
     puts self
     if self.question.type == 0
-      if self.data == nil
+      if self.data == nil or self.data == ""
         #this means that this is their first choice
         Statistic.create :answer => self , :kind => @@stat_first_click , :data => val
       else
         #this is for overall clicks
         #TODO: is this useful
-        Statistic.create :answer => self, :kind=> @@stat_overall_clicks , :data => val
+        #Statistic.create :answer => self, :kind=> @@stat_overall_clicks , :data => val
       end
     end
+
+    write_attribute :data , val
   end
 end

@@ -49,7 +49,6 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
                         whiteSpace:"nowrap"
                     }}>
                         <ActivityIndicator percentage={f} color={this.props.color}  question={this.props.question}/>
-                        <BarChart color={this.props.color} title={"Overall clicks"} data={this.state.overallStats}/>
                         <BarChart color={this.props.color} title={"First choices"} data={this.state.firstStats}/>
                         
                         <div style={{clear:"both",margin:"auto"}}></div>
@@ -79,6 +78,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
                 for(var i in data[StatType.FirstClicks]){
                     arrFirst.push({name: question.choices[i] , value : +data[StatType.FirstClicks][+i]})
                 }
+                console.log(arrFirst);
                 this.setState({firstStats:arrFirst});
             }
         )

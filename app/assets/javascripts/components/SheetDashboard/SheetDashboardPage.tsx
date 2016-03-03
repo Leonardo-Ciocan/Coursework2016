@@ -38,7 +38,7 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
                     for(var i of data){
                         if(i.type == 0){
                             console.log(i.data);
-                            arr.push(new ChoiceQuestion(i.title , i.subtitle , i.id , JSON.parse(i.data).answers))
+                            arr.push(new ChoiceQuestion(i.title , i.subtitle || "" , i.id , JSON.parse(i.data).answers))
                         }
                     }    
                     ReactDOM.render(
