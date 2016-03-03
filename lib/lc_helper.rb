@@ -1,6 +1,8 @@
 module LCHelper
   def valid?(answer)
-    if answer.question.type == 0
+    puts "validity:"
+    puts ">>> " + (answer.data == answer.question.correct_answer).to_s
+    if answer.question.type == 0 or answer.question.type == 1
       return answer.data == answer.question.correct_answer
     end
   end
@@ -23,6 +25,14 @@ module LCHelper
       a.save
 
       Statistic.create :answer_id => a.id , :data => a.data , :kind => 1 ,:question_id => q1.id
+    end
+
+    q2 = Question.create :type => 1, :title => "Write down the best data structure" , :sheet_id => sheet.id , :correct_answer => "queue"
+
+    for i in 0..20
+      a = Answer.create :question_id => q2.id
+      a.data = ["stack","queue","Potato kernel", "Circular queue"][(rand * 3).round]
+      a.save
     end
 
 

@@ -47,3 +47,5 @@ gem "pg"
 #   gem 'capistrano-rails'
 #   gem 'capistrano-rbenv', '~> 2.0', require: false
 # endbu
+
+gem 'levenshtein-ffi', :require => 'levenshtein'

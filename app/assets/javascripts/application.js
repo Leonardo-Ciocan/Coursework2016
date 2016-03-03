@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require react
 //= require react_ujs
+//= require jqcloud.min.js
 // require components
 // require_tree .
 

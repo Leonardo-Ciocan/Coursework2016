@@ -35,7 +35,8 @@ class ActivityIndicator  extends React.Component<ActivityIndicatorProps, any> {
          let titleStyle = {
             fontSize:"15px",
             color:"gray",
-            margin:"10px"
+            margin:"10px",
+            paddingBottom:"10px"
         };
         
         return <div style={containerStyle}>

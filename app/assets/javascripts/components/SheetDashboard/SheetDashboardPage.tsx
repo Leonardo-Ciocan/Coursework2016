@@ -1,6 +1,7 @@
 /// <reference path="../../typing/react-global.d.ts" />
 /// <reference path="../shared/Header.tsx"/>
 /// <reference path="./ChoiceStats.tsx" />
+/// <reference path="./InputStats.tsx" />
 /// <reference path="../../models/Question.ts" />
 /// <reference path="../../models/Lecture.ts" />
 
@@ -13,12 +14,22 @@ declare var sheet_id
 declare var lecture_id
 
 class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
+    static count : number = 0
+    
   constructor(props:SheetDashboardPageProps) {
     super(props);
 }
   
   render() {
-    var stats = this.props.questions.map((item) => <ChoiceStats color={this.props.lecture.color} question={item}/>);
+    var stats = this.props.questions.map((item) => {
+        if(item.type == 0){
+            return <ChoiceStats color={this.props.lecture.color} question={item}/>
+        } 
+        else if(item.type == 1){
+            return <InputStats color={this.props.lecture.color} question={item}/>
+        }
+           
+    });
     return <div>
                  <Header name={"leonardo"} title={"Dashboard"} subtitle={"Lecture title"} foreground={this.props.lecture.color} />
                  <div style={{marginTop:"100px"}}/>
@@ -37,7 +48,7 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
                     var arr : Array<Question> = []        
                     for(var x of data){
                         let i = x as Question;
-                        if(i.type == 0){
+
                             var q =new Question();
 
                             q.type = i.type;
@@ -46,7 +57,7 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
                             q.subtitle = i.subtitle;
                             q.data = i.data;
                             arr.push(q);
-                        }
+
                     }    
                     ReactDOM.render(
                         React.createElement(SheetDashboardPage,{questions:arr,lecture:new Lecture(lecture_data.id , lecture_data.name , lecture_data.author , lecture_data.color , lecture_data.sheet)}),

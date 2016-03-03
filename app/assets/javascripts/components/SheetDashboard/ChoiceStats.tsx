@@ -17,15 +17,14 @@ enum StatType{
 }
 
 class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
-   static count : number = 0
-   countCurrent : number = 0
    
    constructor(props : ChoiceStatsProps, context) {
         super(props,context);
-        this.state={overallStats:[] , firstStats:[] , percentage:0 , correct : 0 , wrong : 0 , transitions : []};
+        SheetDashboardPage.count++;
+        this.state={n:SheetDashboardPage.count , overallStats:[] , firstStats:[] , percentage:0 , correct : 0 , wrong : 0 , transitions : []};
         this.getQuestionStats();
-        ChoiceStats.count++;
-        this.countCurrent = ChoiceStats.count;
+
+
     }
     
     render(){
@@ -86,7 +85,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
                let num = parseInt(item);
                let fraction = num / biggest;
                        console.log(fraction + "%%%");
-               let background = (index==0 || index == index0+1)? "white" : color.darken(fraction/2 || 1).toRGBString();
+               let background = (index==0 || index == index0+1)? "white" : color.darken(fraction/1.3 || 1).toRGBString();
                return <td style={{background:background  ,color:index == 0? "black": (index == index0+1?"black":"white"), padding:"15px",weight:index==0?"bold":""}}>{index == index0+1 ? "-":item}</td>
             });
            return <tr> {collumns}  </tr>;
@@ -101,7 +100,7 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
             padding:"10px"
         };
         return <div style={containerStyle}>
-                    <h2 style={titleStyle}>Question {this.countCurrent}</h2>
+                    <h2 style={titleStyle}>Question {this.state.n}</h2>
                     <div style={{
                         whiteSpace:"nowrap"
                     }}>

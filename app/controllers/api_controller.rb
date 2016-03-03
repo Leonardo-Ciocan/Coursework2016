@@ -1,5 +1,22 @@
 require "lc_helper"
 
+require 'levenshtein'
+#Copyright (c) 2009, Schuyler Erle. All rights reserved.
+
+# * Redistributions of source code must retain the above copyright notice,
+# this list of conditions and the following disclaimer.
+#
+# * Redistributions in binary form must reproduce the above copyright notice,
+#this list of conditions and the following disclaimer in the documentation
+# and/or other materials provided with the distribution.
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+# BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
+# SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+# INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+# (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+# OF SUCH DAMAGE.
+
 class ApiController < ApplicationController
   include LCHelper
 
@@ -285,21 +302,24 @@ class ApiController < ApplicationController
     question = Question.find(params[:question_id])
     answers = Answer.where(:question_id => params[:question_id])
 
-    correct = 0
     wrong = 0
+    counters = Hash.new { |h, k| h[k] = 0 }
 
     percentage = 0
-    if question.type == 0
-      sum = 0
-      for i in answers
-        if valid?(i)
-          sum += 1
-        end
+    sum = 0
+    for i in answers
+      if i.data == i.question.correct_answer
+        sum += 1
       end
-      percentage = (sum.fdiv answers.size) * 100.0
-      correct = sum
-      wrong = answers.size - correct
+
+      for word in i.data.split " "
+        counters[word] += 1
+      end
+
     end
+    percentage = (sum.fdiv answers.size) * 100.0
+    #correct = sum
+    wrong = answers.size - sum
 
     c = Statistic.joins(:answer).where(:answers => {:question_id => question.id}).where(:kind => 2).map{
       |stat|
@@ -312,16 +332,21 @@ class ApiController < ApplicationController
       transitions[transition["from"]][transition["to"]] += 1
     }
 
+    distances = {}
+    if question.type == 1
 
-    puts transitions
+      distances = answers.map{|answer| Levenshtein.distance(question.correct_answer,answer.data)}.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
 
+    end
 
 
     render :json => {
                "percentage" => percentage,
-               "correct" => correct,
+               "correct" => sum,
                "wrong" => wrong,
-               "transitions" => transitions
+               "transitions" => transitions,
+               "counters" => counters,
+               "distances" => distances
            }
   end
 
