@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/shared/Header.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/shared/Header.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetManager/SheetControl.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetManager/SheetControl.tsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetManager/SheetManagerPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetManager/SheetManagerPage.tsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestUsers.iws" />
@@ -80,8 +79,8 @@
       <file leaf-file-name="api_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74775785">
-              <caret line="364" column="75" selection-start-line="364" selection-start-column="75" selection-end-line="364" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.529148">
+              <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -1377,7 +1376,13 @@
       <option name="project" value="LOCAL" />
       <updated>1457058713723</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Fixes #8">
+      <created>1457067672344</created>
+      <option name="number" value="00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1457067672345</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1427,7 +1432,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Multiple UI tweaks , added global auth requirement" />
     <MESSAGE value="updated login , signup forms&#10;can now logout&#10;deleted reduncacies on sheets page" />
     <MESSAGE value="Can now subscribed to lectures&#10;lectures are separated by scope" />
     <MESSAGE value="Moved to PostgresDB&#10;better deployment method" />
@@ -1452,7 +1456,8 @@
     <MESSAGE value="Added lenhstein distance for input stats" />
     <MESSAGE value="Fixed #6" />
     <MESSAGE value="Added search" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added search" />
+    <MESSAGE value="Fixes #8" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes #8" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1845,8 +1850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74775785">
-          <caret line="364" column="75" selection-start-line="364" selection-start-column="75" selection-end-line="364" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.529148">
+          <caret line="351" column="0" selection-start-line="351" selection-start-column="0" selection-end-line="351" selection-end-column="0" />
           <folding />
         </state>
       </provider>

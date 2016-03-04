@@ -38,8 +38,10 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                     marginTop:"50px",
                     background:"#fdfdfd",
                     height:"41px",
-                    width:"100%",position:"relative",
-                    borderBottom:"1px solid lightgray"
+                    width:"100%",position:"fixed",
+                    left:"0px",right:"0px",top:"0px",
+                    borderBottom:"1px solid lightgray",
+                    zIndex:55
                }}>
                	   <div style={{paddingLeft:"50px",float:"right",display:"inline-block",textAlign:"right"}}>
                       <LCButton style={{fontSize:"12px",
@@ -65,8 +67,8 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                     <div style={{padding:"10px",
                                     visibility:this.state.showMenu ? "visible":"collapse",
                                  background:"white",borderRight:"1px solid lightgray" ,
-                                 position:"absolute" , left:"0px" ,
-                                 top:"0px", bottom:"0px",width:this.state.showMenu ? "200px" :"0px"}}>
+                                 position:"fixed" , left:"0px" ,
+                                 top:"90px", bottom:"0px",width:this.state.showMenu ? "200px" :"0px"}}>
                     	    
                             <div>
                                 <span>Lecture name</span>
