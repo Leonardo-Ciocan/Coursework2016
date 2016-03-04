@@ -108,7 +108,7 @@ class Header  extends React.Component<HeaderProps, HeaderState> {
             marginTop:"25px",
             transform:"translateY(-50%)",
             textAlign:"left",
-            background:"rgba(255,255,255,0.45)"
+            background:"white"
         };
         
         return  <div className="header"

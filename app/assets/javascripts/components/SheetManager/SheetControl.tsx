@@ -84,6 +84,9 @@ class SheetControl extends React.Component<SheetControlProps,SheetControlState>{
     }
     
     delete(){
+        
+        if(!confirm("Are you sure you want to delete this")) return;
+        
         $.post(
             "/api/delete/sheet",
             {sheet:this.props.sheet.id}
