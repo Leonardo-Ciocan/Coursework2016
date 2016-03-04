@@ -40,7 +40,6 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
   back = () =>{
     window.location.href = "/lectures/" + this.props.lecture.id;    
   }
-  
 }
 
 

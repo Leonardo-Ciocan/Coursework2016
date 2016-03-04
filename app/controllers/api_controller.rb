@@ -315,7 +315,6 @@ class ApiController < ApplicationController
       for word in i.data.split " "
         counters[word] += 1
       end
-
     end
     percentage = (sum.fdiv answers.size) * 100.0
     #correct = sum
@@ -347,6 +346,28 @@ class ApiController < ApplicationController
                "transitions" => transitions,
                "counters" => counters,
                "distances" => distances
+           }
+  end
+
+
+  def search
+    puts "searching"
+    query = params[:query]
+
+    sheets = Sheet.where("lower(name) like ?", "%"+query+"%").map{
+        |sheet|
+        l = Lecture.find(sheet.lecture_id)
+        {:id => sheet.id , :name=>sheet.name , :lecture=> {:title=>l.name ,:color=>l.color}}
+    }.first(5)
+
+    lectures = Lecture.where("lower(name) like ?", "%"+query+"%").map{
+      |lecture|
+      {:id => lecture.id , :name => lecture.name , :color => lecture.color}
+    }.first(5)
+
+    render :json => {
+               "sheets" => sheets,
+               "lectures" => lectures
            }
   end
 

@@ -49,3 +49,4 @@ gem "pg"
 # endbu
 
 gem 'levenshtein-ffi', :require => 'levenshtein'
+gem "faker"

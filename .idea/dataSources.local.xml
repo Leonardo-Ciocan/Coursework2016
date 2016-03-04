@@ -2,5 +2,20 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="Rails TestUsers: development" uuid="f85a2171-5851-4e1c-a7eb-287947dc45d4" />
+    <data-source name="Rails TestUsers: default" uuid="b023ab99-b585-4c65-b082-7cb494348e7c">
+      <user-name>leonardo</user-name>
+      <schema-pattern>whiteboard.pg_catalog whiteboard.public</schema-pattern>
+      <default-schemas>whiteboard.pg_catalog whiteboard.public</default-schemas>
+    </data-source>
+    <data-source name="Rails TestUsers: test" uuid="e12b5307-1dcf-46ad-988a-1165f59984c0">
+      <user-name>leonardo</user-name>
+      <schema-pattern>whiteboard_test.pg_catalog whiteboard_test.public</schema-pattern>
+      <default-schemas>whiteboard_test.pg_catalog whiteboard_test.public</default-schemas>
+    </data-source>
+    <data-source name="Rails TestUsers: production" uuid="de5f0fb5-8d87-4e37-b7e0-c50643c8d1fb">
+      <first-sync>true</first-sync>
+      <user-name>rails</user-name>
+      <user-password>dffcdfe0dff8dff8dffedfdedfe5dfdedfeedfe2</user-password>
+    </data-source>
   </component>
 </project>

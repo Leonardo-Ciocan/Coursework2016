@@ -2,6 +2,7 @@
 /// <reference path="../shared/LCButton.tsx" />
 /// <reference path="../shared/TextBox.tsx" />
 /// <reference path="../../typing/jquery.d.ts" />
+/// <reference path="./SearchDropdown.tsx" />
 
 interface HeaderProps {
     title : string
@@ -13,10 +14,18 @@ interface HeaderProps {
     hideBack? : boolean
 }
 
-class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
+interface HeaderState{
+    showMenu? : boolean 
+    showSearch? : boolean
+    searchSheets? : Array<any>
+    searchLectures? : Array<any>
+    query? : string
+}
+
+class Header  extends React.Component<HeaderProps, HeaderState> {
     constructor(props:HeaderProps) {
         super(props);
-        this.state = {showMenu : false};
+        this.state = {showMenu : false , showSearch:false , searchSheets:[] , searchLectures:[] ,query:""};
     }
     
     render(){
@@ -113,14 +122,27 @@ class Header  extends React.Component<HeaderProps, {showMenu : boolean}> {
                     >
                     <h1 style={titleStyle}> {this.props.title}</h1>
 
-                    <TextBox style={searchStyle} placeholder="Search lectures , sheets , people"/>
-
+                    <TextBox onChange={this.searchChanged} style={searchStyle} placeholder="Search lectures , sheets , people"/>
+                    <SearchDropdown color={this.props.foreground} 
+                            query={this.state.query} lectures={this.state.searchLectures} sheets={this.state.searchSheets} 
+                            shouldShow={this.state.showSearch}/>
                     <h1 onClick={this.clickMenu.bind(this)} style={nameStyle}> {this.props.name}</h1>
                     <i onClick={this.props.onBack} className="fa fa-chevron-left" style={iconStyle} ></i>
                     <div  style={menuStyle}>
                     	   <LCButton onClick={this.logout} style={{display:"block"}} color="red" text="Log out"/>
                     </div>
                 </div>
+    }
+    
+    searchChanged = (e)=>{
+        this.setState({query : e.target.value , showSearch:e.target.value != ""})
+        $.get(
+            "/api/search",
+            {query:e.target.value},
+            (data) =>{
+                this.setState({searchSheets:data.sheets , searchLectures:data.lectures});
+            }
+        )
     }
     
     logout(){

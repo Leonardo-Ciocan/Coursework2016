@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="516796673">
+  <component name="DataSourceManagerImpl" format="xml" hash="56318899">
     <data-source source="LOCAL" name="Rails TestUsers: development" uuid="f85a2171-5851-4e1c-a7eb-287947dc45d4">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:whiteboard</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails TestUsers: default" uuid="b023ab99-b585-4c65-b082-7cb494348e7c">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:whiteboard</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails TestUsers: test" uuid="e12b5307-1dcf-46ad-988a-1165f59984c0">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql:whiteboard_test</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="Rails TestUsers: production" uuid="de5f0fb5-8d87-4e37-b7e0-c50643c8d1fb">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql:whiteboard</jdbc-url>
       <libraries />
     </data-source>
