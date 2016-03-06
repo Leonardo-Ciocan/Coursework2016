@@ -72,9 +72,18 @@ class LecturePage extends React.Component<LecturePageProps,any>{
             return <LectureItem lecture={lecture}/>;
         });
         
+        if(created.length==0){
+            created.push(<h1 style={{marginLeft:"30px" , color:"gray" , fontSize:"12pt"}}>You haven't created any lectures</h1>)
+        }
+        
+        
         var subscribed =  this.props.subscribed.map(function(lecture){
             return <LectureItem lecture={lecture}/>;
         });
+        
+        if(subscribed.length==0){
+            subscribed.push(<h1 style={{marginLeft:"30px" , color:"gray" , fontSize:"12pt"}}>You are not subscribed to any lectures</h1>)
+        }
         
         let inputStyle = {border:"none" , borderBottom:"1px solid gray"};
         var parentStyle = {position:"relative" , margin:"20px" , marginTop:"60px"};

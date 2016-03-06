@@ -14,6 +14,7 @@ class Question {
                 this.choices.push(i);
             }
         }
+        this._data = newData;
     }
     
     get data() : string{

@@ -2,7 +2,7 @@
 class RQuestion extends Question{
     answers : Array<Answer> = new Array<Answer>()
     solutions : Array<CodeIO> = new Array<CodeIO>()
-    language : string
+    language : string = "python"
 }
 
 interface Answer {

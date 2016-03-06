@@ -28,7 +28,7 @@ class LCButton extends React.Component<LCButtonProps , {hovering:boolean}> {
             display: "inline-block",
             cursor:"pointer",
             textAlign:"center",
-            borderBottomWidth:"0px",
+
             fontSize:"14px"
         };
         

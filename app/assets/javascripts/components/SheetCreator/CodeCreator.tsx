@@ -41,6 +41,8 @@ class CodeCreator extends React.Component<CodeCreatorProps , CodeCreatorState>{
             background:"white",
             borderRadius:"5px",
             margin:"20px",
+            marginTop:"5px",
+            marginBottom:"5px",
             position:"relative"
         };
         
@@ -170,6 +172,7 @@ class CodeCreator extends React.Component<CodeCreatorProps , CodeCreatorState>{
     
     languageChanged(index,value){
         this.props.question.language = value.toLowerCase();
+        console.log(this.props.question.language);
     }
     
     createIO(){

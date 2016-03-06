@@ -27,6 +27,9 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
             (sheet) => <SheetControl lecture={this.props.lecture} onDelete={this.sheetDeleted.bind(this)} sheet={sheet}/>
         );
         
+        if(sheets.length==0){
+            sheets.push(<h1 style={{marginLeft:"30px" , color:"gray" , fontSize:"12pt"}}>You haven't created any sheets yet</h1>)
+        }
         
         return <div>
         	   <Header onBack={this.back.bind(this)} 
@@ -84,9 +87,18 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                                 
                                 <div style={{borderTop:"1px solid lightgray",marginTop:"10px",paddingTop:"10px"}}>
                                     <span>Invite students</span>
-                                    <span style={{fontSize:"8pt",wordWrap:"break-word",display:"block",color:"gray"}}>http://thiswebsite.com/some/link/2874-448</span>
+                                    <span style={{fontSize:"9pt",wordWrap:"break-word",display:"block",color:"gray"}}><a href={"http://0.0.0.0/subscribe/"+this.props.lecture.id}>http://0.0.0.0/subscribe/{this.props.lecture.id}</a></span>
                                 </div>
                             </div>
+                            
+                            <LCButton onClick={this.onDelete} style={{
+                                display:"block",
+                                position:"absolute",
+                                bottom:"5px",
+                                left:"0px",
+                                right:"0px",
+                                border:"1px solid red"
+                            }} text="Delete" color={"red"}/>
                     </div>
                     <div style={{position:"absolute" , left:this.state.showMenu ? "200px" :"0px" , bottom:"0px" , right:"0px",top:"10px"}}>
                     
@@ -95,6 +107,10 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                     </div>
                 </div>
         </div>
+    }
+    
+    onDelete(){
+        
     }
     
     onColorPicked(color){

@@ -31,7 +31,7 @@ class Header  extends React.Component<HeaderProps, HeaderState> {
     render(){
         var titleStyle = {
             margin:"0px",
-            marginLeft:"65px",
+            marginLeft:this.props.hideBack ? "30px": "65px",
 
             color:"gray",
             verticalAlign:"middle",
