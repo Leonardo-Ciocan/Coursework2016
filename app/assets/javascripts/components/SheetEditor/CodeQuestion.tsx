@@ -14,7 +14,7 @@ class CodeQuestionProps {
     modelAnswer : any
 }
 
- class CodeQuestion extends React.Component<CodeQuestionProps,{code?:string , correct:number}> {
+ class CodeQuestion extends React.Component<CodeQuestionProps,{code?:string , correct:number , errors?:string}> {
 
         refs: {
             [string: string]: any;
@@ -58,6 +58,7 @@ class CodeQuestionProps {
                             >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span>
                             <LCButton onClick={this.commit.bind(this)} text={"Commit"} color={this.props.color}/>
                         </div>
+                        <span style={{color:"red",padding:"10px"}}>{this.state.errors || ""}</span>
                     </div>
                     {
 
@@ -83,9 +84,11 @@ class CodeQuestionProps {
             $.post("/answer/" + this.props.answer.id,
                 {data: this.state.code}
             ).then(function(data){
-                
-                this.setState({correct : data == "true" ? 0 : 1});
-                console.log(this.state.correct);
+                console.log(data);
+                this.setState({
+                    correct : data.answer == "true" && data.errors == "" ? 0 : 1,
+                    errors:data.errors
+                });
             }.bind(this)); 
         }
         

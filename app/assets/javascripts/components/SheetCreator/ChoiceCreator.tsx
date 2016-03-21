@@ -18,6 +18,7 @@ interface ChoiceCreatorProps{
 
 interface ChoiceCreatorState{
     answers? : Array<Answer>
+    shouldShow? : boolean
 } 
 
 class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorState> {
@@ -26,7 +27,8 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
     constructor(props) {
             super(props);
             this.state = {
-                answers : this.props.question.answers
+                answers : this.props.question.answers,
+                shouldShow : false
             };
     }
     
@@ -38,9 +40,12 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
             background:"white",
             borderRadius:"5px",
             margin:"20px",
-            position:"relative"
+            position:"relative",
+            overflow:"hidden",
+            transition:"transform 0.5s",
+            transform : this.state.shouldShow ? "scale(1)":"scale(0)"
         };
-        
+
         let inputStyle = {
             textAlignment:"center",
             padding:"5px",
@@ -185,5 +190,9 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
     createAnswer(){
         this.state.answers.push({text:"",isAnswer:false,id:IDFactory.getNumber()});
         this.setState({answers:this.state.answers});
+    }
+    
+    componentDidMount(){
+        setTimeout(()=> this.setState({shouldShow:true}) , 50)
     }
 }

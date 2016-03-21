@@ -110,7 +110,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
         };
         
         items = items.map((item,index) =>{
-            return <div>
+            return <div key={this.state.items[index].id}>
                      <div onDrop={(e)=> this.createItem(e,index)} style={dragAreaStyle} onDragLeave={this.dragAreaOut} onDragOver={this.dragAreaOver}>
                         <i style={{fontSize:"20pt", color:"gray",width:"100%",lineHeight:"40px",verticalAlign:"middle",textAlign:"center"}} className="fa fa-plus"></i>
                      </div>
