@@ -52,6 +52,8 @@ class SheetEditorController < ApplicationController
       puts "inputs: " + inputs.to_s
       puts "outputs: " + outputs.to_s
       puts resp
+      answer.result = resp
+      answer.save
       render :json => resp
       return
     end

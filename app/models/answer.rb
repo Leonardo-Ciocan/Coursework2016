@@ -13,7 +13,9 @@ class Answer < ActiveRecord::Base
         #this means that this is their first choice
         Statistic.create :answer => self , :kind => @@stat_first_click , :data => val
       else
-        Statistic.create :answer => self , :kind => @@stat_change , :data => {"from" => self.data , "to"=>val}.to_json.to_s
+        Statistic.create :answer => self ,
+                         :kind => @@stat_change ,
+                         :data => {"from" => self.data , "to"=>val}.to_json.to_s
       end
     end
 

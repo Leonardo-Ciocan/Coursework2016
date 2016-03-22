@@ -78,6 +78,12 @@ $.get(
     "/api/sheet/full",
     {lecture_id : lecture_id , sheet_id : sheet_id},
     ({lecture , sheet , questions , answers , modelAnswers}) => {
+        for(var i of answers){
+            if(i.result == undefined) i.result = {correct:"false" , errors:""}
+            else{
+                i.result = JSON.parse(i.result);
+            }
+        }
         ReactDOM.render(
                     React.createElement(SheetEditPage , {sheet:sheet , questions:questions ,
                         answers : answers, modelAnswers: modelAnswers,

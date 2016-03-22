@@ -25,7 +25,10 @@ class CodeQuestionProps {
 
         constructor(props) {
             super(props);
-            this.state = {code:this.props.answer.data || "", correct:-1};
+            console.log(this.props.answer);
+            this.state = {code:this.props.answer.data || "", 
+             correct: this.props.answer.result.correct == "true" ? 0 : -1 ,
+             errors:this.props.answer.result.errors as string};
         }
         
         render() {
@@ -58,7 +61,7 @@ class CodeQuestionProps {
                             >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span>
                             <LCButton onClick={this.commit.bind(this)} text={"Commit"} color={this.props.color}/>
                         </div>
-                        <span style={{color:"red",padding:"10px"}}>{this.state.errors || ""}</span>
+                        <span style={{display:"block",color:"red",padding:"10px"}}>{this.state.errors || ""}</span>
                     </div>
                     {
 

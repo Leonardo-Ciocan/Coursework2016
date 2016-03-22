@@ -3,5 +3,6 @@ q1:
   type: 0
   data: "{\"answers\":[\"Cake\" , \"Pie\" , \"Fish\"]}"
   correct_answer: 1
+  model_answer: Cake
   sheet_id: 1
   title: What is the answer to this?

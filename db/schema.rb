@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321083836) do
+ActiveRecord::Schema.define(version: 20160322210155) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,30 +20,30 @@ ActiveRecord::Schema.define(version: 20160321083836) do
     t.string   "data",        default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
-    t.integer  "question_id"
-    t.string   "result"
+    t.integer  "user_id",                                                       null: false
+    t.integer  "question_id",                                                   null: false
+    t.string   "result",      default: "{\"correct\":\"false\",\"errors\":[]}"
   end
 
   create_table "lectures", force: true do |t|
-    t.string   "name"
+    t.string   "name",                         null: false
     t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "author_id"
-    t.string   "color"
+    t.integer  "author_id",                    null: false
+    t.string   "color",      default: "green"
   end
 
   create_table "questions", force: true do |t|
-    t.string   "title"
+    t.string   "title",          null: false
     t.string   "subtitle"
-    t.string   "data"
-    t.integer  "type"
+    t.string   "data",           null: false
+    t.integer  "type",           null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "sheet_id"
-    t.string   "correct_answer"
-    t.string   "model_answer"
+    t.integer  "sheet_id",       null: false
+    t.string   "correct_answer", null: false
+    t.string   "model_answer",   null: false
   end
 
   create_table "sheets", force: true do |t|
@@ -51,23 +51,23 @@ ActiveRecord::Schema.define(version: 20160321083836) do
     t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "lecture_id"
+    t.integer  "lecture_id",                  null: false
     t.boolean  "live",        default: false
     t.boolean  "released",    default: false
   end
 
   create_table "statistics", force: true do |t|
     t.integer  "question_id"
-    t.integer  "answer_id"
-    t.string   "data"
-    t.integer  "kind"
+    t.integer  "answer_id",   null: false
+    t.string   "data",        null: false
+    t.integer  "kind",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "subscriptions", force: true do |t|
-    t.integer  "lecture_id"
-    t.integer  "user_id"
+    t.integer  "lecture_id", null: false
+    t.integer  "user_id",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

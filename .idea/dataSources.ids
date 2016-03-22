@@ -1662,6 +1662,7 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="result" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J3siY29ycmVjdCI6dHJ1ZSwiZXJyb3JzIjpbXX0n"/>
       <primary-key name="answers_pkey" columns="id"/>
     </table>
     <table name="answers_id_seq" schema="public" catalog="whiteboard" type="SEQUENCE">
@@ -21934,6 +21935,7 @@
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
       <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="result" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J3siY29ycmVjdCI6ImZhbHNlIiwiZXJyb3JzIjpbXX0n"/>
       <primary-key name="answers_pkey" columns="id"/>
     </table>
     <table name="answers_id_seq" schema="public" catalog="whiteboard_test" type="SEQUENCE">
