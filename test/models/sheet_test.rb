@@ -15,7 +15,7 @@ class SheetTest < ActiveSupport::TestCase
 
   test 'Cannot save sheet without lecture id' do
     sheet = Sheet.new
-    sheet.name = ""
+    sheet.name = ''
 
     begin
       assert_not sheet.save

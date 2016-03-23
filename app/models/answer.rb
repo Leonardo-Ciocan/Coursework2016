@@ -7,7 +7,7 @@ class Answer < ActiveRecord::Base
   @@stat_change = 2
 
   def data=(val)
-    puts self
+    #puts self
     if self.question.type == 0
       if self.data == nil or self.data == ""
         #this means that this is their first choice
@@ -21,4 +21,5 @@ class Answer < ActiveRecord::Base
 
     write_attribute :data , val
   end
+
 end

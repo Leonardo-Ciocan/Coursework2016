@@ -24,7 +24,6 @@ class ApiController < ApplicationController
 
 
   def check_auth
-
     if current_user != nil
       return
     end
@@ -38,13 +37,16 @@ class ApiController < ApplicationController
   end
 
   def subscribe
-    Subscription.create :lecture_id => params[:lecture_id] , :user_id => current_user.id
+    Subscription.create :lecture_id => params[:lecture_id] ,
+                        :user_id => current_user.id
     head :ok
   end
 
   def statistics_for_question
     question = Question.find params[:id]
-    c = Statistic.joins(:answer).where(:answers => {:question_id => question.id}).group_by(&:kind)
+    c = Statistic.joins(:answer)
+            .where(:answers => {:question_id => question.id})
+            .group_by(&:kind)
 
     ostats = Hash.new
 
@@ -68,11 +70,15 @@ class ApiController < ApplicationController
   def completions
     question = Question.find params[:id]
 
-    answers = Answer.where(:question => question).map{|answer| answer.data == question.correct_answer}
+    answers = Answer.where(:question => question)
+                  .map{
+                    |answer|
+                    answer.data == question.correct_answer
+                  }
 
     render :json => answers , status: 200
   end
-``
+
   def lectures
     lectures = Lecture.where(:author_id => current_user.id).map{
       |lecture|
@@ -113,7 +119,17 @@ class ApiController < ApplicationController
   end
 
   def full_sheet
+
+
+
     lecture = Lecture.find(params[:lecture_id])
+
+    if Subscription.where(:user_id => current_user.id).empty? and
+        lecture.author_id != current_user.id
+      head :forbidden
+      return
+    end
+
     lecture_json = {
                "id" => lecture.id,
                "name" => lecture.name,
@@ -213,7 +229,6 @@ class ApiController < ApplicationController
       end
     end
 
-
     if sheet["name"] == ""
       errors[-1].append("The sheet needs a name")
     end
@@ -240,7 +255,14 @@ class ApiController < ApplicationController
   end
 
   def update_sheet
+
+
     sheet = Sheet.find params[:sheet]
+
+    if sheet.lecture.author_id != current_user.id
+      head :forbidden
+      return
+    end
 
     if params.has_key?("name")
       sheet.name = params[:name]
@@ -248,7 +270,7 @@ class ApiController < ApplicationController
     end
 
     if params.has_key?("live")
-      sheet.live = params[:live]
+      sheet.live = params[:live] == "true"
       sheet.save
     end
 

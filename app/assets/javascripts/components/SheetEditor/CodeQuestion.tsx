@@ -25,13 +25,26 @@ class CodeQuestionProps {
 
         constructor(props) {
             super(props);
-            console.log(this.props.answer);
             this.state = {code:this.props.answer.data || "", 
-             correct: this.props.answer.result.correct == "true" ? 0 : -1 ,
+             correct: this.props.answer.result.correct == "true" ? 0 : 1 ,
              errors:this.props.answer.result.errors as string};
         }
         
         render() {
+            
+            let bottomBar = {
+                padding:"15px",
+                marginTop:"10px",
+                border:"1px solid lightgray",
+                borderRadius:"5px"
+            };
+            
+            let cellStyle={
+                padding:"5px",
+                paddingTop:"5px",
+                paddingBottom:"5px",
+                textAlign:"left"
+            };
             
             return <div className="question-block" >
                 <div
@@ -55,13 +68,22 @@ class CodeQuestionProps {
                         <div style={{fontFamily:"Source Code Pro!important"}} ref="codeEditor">
                         </div>
                         
-                        <div>
+                        <div style={bottomBar}>                            
+                            <table >
+                                <tbody>
+                                    <tr>
+                                        <td style={cellStyle}>{"Status: "} 
                             <span
                                 style={{color:this.state.correct == 0 ? "green" : (this.state.correct == -1 ? "gray" : "red")}}
-                            >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span>
-                            <LCButton onClick={this.commit.bind(this)} text={"Commit"} color={this.props.color}/>
+                            >{this.state.correct == 0 ? "Correct code" : (this.state.correct == -1 ? "Running" : "Incorrect code")}</span></td>
+                                    <td style={cellStyle}><LCButton style={{border:"1px solid "+ this.props.color , float:"right"}} onClick={this.commit.bind(this)} text={"Save & Run"} color={this.props.color}/></td>
+                                    </tr>
+                                    <tr><td style={cellStyle} colSpan={2}>
+                                        {this.state.errors.length==0?"No errors": "Errors : "}<span style={{display:"block",color:"red",padding:"10px"}}>{this.state.errors || ""}</span>
+                                    </td></tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <span style={{display:"block",color:"red",padding:"10px"}}>{this.state.errors || ""}</span>
                     </div>
                     {
 
@@ -89,7 +111,7 @@ class CodeQuestionProps {
             ).then(function(data){
                 console.log(data);
                 this.setState({
-                    correct : data.answer == "true" && data.errors == "" ? 0 : 1,
+                    correct : data.correct === "true" && data.errors == "" ? 0 : 1,
                     errors:data.errors
                 });
             }.bind(this)); 
