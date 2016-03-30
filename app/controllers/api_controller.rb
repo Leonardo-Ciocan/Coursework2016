@@ -156,12 +156,21 @@ class ApiController < ApplicationController
         }
     }
 
+    correct = answers.count {
+      |answer|
+      JSON.parse(answer.result)["correct"].to_s == "true"
+    }
+
+    puts "\n" , correct , "\n"
+
+    percentage = ((correct.fdiv answers.count) * 100.0).round
     render :json => {
                'lecture'      => lecture_json,
                'sheet'        => sheet_json,
                'questions'    => questions,
                'answers'      => answers,
-               'modelAnswers' => modelAnswers
+               'modelAnswers' => modelAnswers,
+               'percentage'   => percentage
            } , status: 200
   end
 

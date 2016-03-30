@@ -9,6 +9,9 @@ class Answer < ActiveRecord::Base
   def data=(val)
     #puts self
     if self.question.type == 0
+
+      write_attribute :result , {:correct => val == self.question.correct_answer}.to_json
+
       if self.data == nil or self.data == ""
         #this means that this is their first choice
         Statistic.create :answer => self , :kind => @@stat_first_click , :data => val
@@ -17,6 +20,10 @@ class Answer < ActiveRecord::Base
                          :kind => @@stat_change ,
                          :data => {"from" => self.data , "to"=>val}.to_json.to_s
       end
+
+    elsif self.question.type == 1
+      write_attribute :result ,
+                      {:correct => val.match(Regexp.new(self.question.correct_answer)) != nil}.to_json
     end
 
     write_attribute :data , val

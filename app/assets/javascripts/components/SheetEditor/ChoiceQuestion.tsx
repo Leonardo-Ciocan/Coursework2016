@@ -122,7 +122,8 @@ class ChoiceQuestionFragment extends React.Component<ChoiceFragmentProps,any> {
                         padding:"25px",
                         borderBottom:"1px solid rgba(0,0,0,0.15)",
                         position:"relative",
-                        transition:"box-shadow 0.3s"
+                        transition:"box-shadow 0.3s",
+                        pointerEvents:this.props.releaseMode ? "none":""
                     }}>
 
 

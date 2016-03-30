@@ -49,6 +49,7 @@ class CodeQuestionProps {
             return <div className="question-block" >
                 <div
                      style={{
+                        pointerEvents:this.props.releaseMode ? "none" : "",
                         background:"  white",
                         margin:"0 auto",
                         width:"100%",

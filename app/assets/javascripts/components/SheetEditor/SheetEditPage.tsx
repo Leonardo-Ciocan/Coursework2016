@@ -6,13 +6,13 @@
 /// <reference path="../shared/Header.tsx" />
 /// <reference path="../../models/Lecture.ts" />
 
-console.log("hello");
 class SheetEditPageProps{
     questions : any
     sheet :any
     lecture : Lecture
     answers: any
     modelAnswers : any
+    percentage : number
 }
 
 declare var lecture_id : any
@@ -51,6 +51,12 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                           boxShadow:"0px 5px 13px -1px rgba(0,0,0,0.0);",
                           border:"1px solid lightgray"
                     }}>
+                    
+                    <div style={{background:"white",textAlign:"center"}}>
+                        <img style={{height:"300px", display:"inline-block"}} src={ this.props.percentage > 66 ? "/assets/l3.png": "/assets/l1.png"}/>
+                        <h1 style={{ color:this.props.lecture.color , fontFamily:"Helvetica",fontWeight:"200",paddingBottom:"10px" , textAlign:"center"}}>{this.props.percentage+"%"}</h1>
+                    </div>
+                    
                     {questions}
                     <div style={{height:"0px"}}>
                         <h1 style={{
@@ -77,15 +83,16 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
 $.get(
     "/api/sheet/full",
     {lecture_id : lecture_id , sheet_id : sheet_id},
-    ({lecture , sheet , questions , answers , modelAnswers}) => {
+    ({lecture , sheet , questions , answers , modelAnswers , percentage}) => {
         for(var i of answers){
             if(i.result == undefined) i.result = {correct:"false" , errors:""}
             else{
                 i.result = JSON.parse(i.result);
             }
         }
+        console.log()
         ReactDOM.render(
-                    React.createElement(SheetEditPage , {sheet:sheet , questions:questions ,
+                    React.createElement(SheetEditPage , {percentage:percentage , sheet:sheet , questions:questions ,
                         answers : answers, modelAnswers: modelAnswers,
                          lecture:new Lecture(lecture.id , lecture.name , lecture.author , lecture.color,lecture.sheets)}),
                     document.getElementById('root')
