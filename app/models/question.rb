@@ -5,11 +5,11 @@ class Question < ActiveRecord::Base
   validate :validate_answer_type
 
   def validate_answer_type
-
+    puts self.data
     if type == 0
       begin
         json = JSON.parse(self.data)
-        if json['choices'] == nil
+        if json['answers'] == nil
           self.errors.add(:data , 'Data is malformed')
         end
       rescue

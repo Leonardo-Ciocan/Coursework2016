@@ -10,8 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def index
-    @sheets = Sheet.all
-    render "layouts/application"
+    render "layouts/index"
   end
 
 end

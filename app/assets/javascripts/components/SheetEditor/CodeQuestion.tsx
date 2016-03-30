@@ -118,9 +118,11 @@ class CodeQuestionProps {
         }
         
         componentDidMount(){
+            console.log();
             var myCodeMirror = CodeMirror(this.refs.codeEditor,{
                 readOnly:this.props.releaseMode,
                 value : this.state.code,
+                mode: JSON.parse(this.props.question.data).language == "java"? "text/x-java" : "python",
                 lineNumbers:true ,
                  theme:"base16-light"});
                 

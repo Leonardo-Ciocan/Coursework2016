@@ -44,7 +44,11 @@ class SheetEditorController < ApplicationController
         header = {'Content-Type' => 'text/json'}
         request = Net::HTTP::Post.new(@@evalyn_url.request_uri, header)
         puts request.method
-        request.set_form_data( {'code' => code.to_s , "inputs" => inputs , "outputs"=>outputs})
+        request.set_form_data( {'code' => code.to_s ,
+                                "inputs" => inputs ,
+                                "outputs"=>outputs,
+                                'language' => JSON.parse(answer.question.data)['language']
+                               })
         response = http.request(request)
         resp =  response.body
 

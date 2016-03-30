@@ -109,7 +109,18 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
         </div>
     }
     
-    onDelete(){
+    onDelete = () =>{
+        
+        if(confirm("Are you sure? You cannot undo this action")){
+            $.post(
+                "/api/delete/lecture",
+                {lecture_id: this.props.lecture.id},
+                ()=>{
+                    window.location.href = "/lectures/";
+                }
+            );
+        }
+        
         
     }
     

@@ -45,9 +45,9 @@ p > code {
 #devise_root{
     width: 250px;
     margin: 0 auto;
-    margin-top: 150px;
+    margin-top: 50px;
     padding: 10px;
-    border: 1px solid lightgray;
+    border: 1px solid purple;
     border-radius: 5px;
     background:white;
 }
@@ -73,7 +73,8 @@ p > code {
     text-align: center;
     padding:7px;
     margin:5px;
-    background:#fafafa;
+    background:purple;
+    color:white;
     border-radius :5px;
     border:1px solid lightgray;
     margin-bottom: 15px;

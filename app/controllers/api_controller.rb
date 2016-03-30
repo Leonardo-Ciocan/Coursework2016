@@ -1,4 +1,4 @@
-require "lc_helper"
+require 'lc_helper'
 
 require 'levenshtein'
 #Copyright (c) 2009, Schuyler Erle. All rights reserved.
@@ -9,7 +9,7 @@ require 'levenshtein'
 # * Redistributions in binary form must reproduce the above copyright notice,
 #this list of conditions and the following disclaimer in the documentation
 # and/or other materials provided with the distribution.
-# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING,
 # BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT
 # SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
 # DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
@@ -38,7 +38,7 @@ class ApiController < ApplicationController
 
   def subscribe
     Subscription.create :lecture_id => params[:lecture_id] ,
-                        :user_id => current_user.id
+                        :user_id    => current_user.id
     head :ok
   end
 
@@ -83,11 +83,11 @@ class ApiController < ApplicationController
     lectures = Lecture.where(:author_id => current_user.id).map{
       |lecture|
       {
-          "id" => lecture.id,
-          "name" => lecture.name,
-          "author" => User.find(lecture.author_id).email,
-          "color" => lecture.color,
-          "sheets" => Sheet.where(:lecture_id => lecture.id).count
+          'id'     => lecture.id,
+          'name'   => lecture.name,
+          'author' => User.find(lecture.author_id).email,
+          'color'  => lecture.color,
+          'sheets' => Sheet.where(:lecture_id => lecture.id).count
       }
     }
 
@@ -95,11 +95,11 @@ class ApiController < ApplicationController
       |subscription|
           lecture = Lecture.find(subscription.lecture_id)
           {
-            "id" => lecture.id,
-            "name" => lecture.name,
-            "author" => User.find(lecture.author_id).email,
-            "color" => lecture.color,
-            "sheets" => Sheet.where(:lecture_id => lecture.id).count
+            'id'     => lecture.id,
+            'name'   => lecture.name,
+            'author' => User.find(lecture.author_id).email,
+            'color'  => lecture.color,
+            'sheets' => Sheet.where(:lecture_id => lecture.id).count
           }
 
     }
@@ -110,18 +110,15 @@ class ApiController < ApplicationController
   def lecture
     lecture = Lecture.find(params[:id])
     render :json => {
-               "id" => lecture.id,
-               "name" => lecture.name,
-               "author" => User.find(lecture.author_id).email,
-               "color" => lecture.color,
-               "sheets" => Sheet.where(:lecture_id => lecture.id).count
+               'id'     => lecture.id,
+               'name'   => lecture.name,
+               'author' => User.find(lecture.author_id).email,
+               'color'  => lecture.color,
+               'sheets' => Sheet.where(:lecture_id => lecture.id).count
            } , status: 200
   end
 
   def full_sheet
-
-
-
     lecture = Lecture.find(params[:lecture_id])
 
     if Subscription.where(:user_id => current_user.id).empty? and
@@ -131,16 +128,17 @@ class ApiController < ApplicationController
     end
 
     lecture_json = {
-               "id" => lecture.id,
-               "name" => lecture.name,
-               "author" => User.find(lecture.author_id).email,
-               "color" => lecture.color}
+               'id'     => lecture.id,
+               'name'   => lecture.name,
+               'author' => User.find(lecture.author_id).email,
+               'color'  => lecture.color
+    }
 
     sheet = Sheet.find(params[:sheet_id])
     sheet_json = {
-        "id" => sheet.id,
-        "name" => sheet.name,
-        "released" => sheet.released
+        'id' => sheet.id,
+        'name' => sheet.name,
+        'released' => sheet.released
     }
 
     questions = sheet.questions.all
@@ -153,17 +151,17 @@ class ApiController < ApplicationController
     modelAnswers = questions.map{
       |question|
         {
-            "data" => question.model_answer,
-            "id" => question.id
+            'data' => question.model_answer,
+            'id' => question.id
         }
     }
 
     render :json => {
-               "lecture" => lecture_json,
-               "sheet"   => sheet_json,
-               "questions" => questions,
-               "answers" => answers,
-               "modelAnswers" => modelAnswers
+               'lecture'      => lecture_json,
+               'sheet'        => sheet_json,
+               'questions'    => questions,
+               'answers'      => answers,
+               'modelAnswers' => modelAnswers
            } , status: 200
   end
 
@@ -175,20 +173,20 @@ class ApiController < ApplicationController
       sheets = Sheet.where(:lecture_id => id).map{
           |sheet|
         {
-            "id" => sheet.id,
-            "description" => sheet.description ,
-            "name" => sheet.name,
-            "live" => sheet.live,
-            "released" => sheet.released
+            'id'          => sheet.id,
+            'description' => sheet.description ,
+            'name'        => sheet.name,
+            'live'        => sheet.live,
+            'released'    => sheet.released
         }
       }
     else
       sheets = Sheet.where(:lecture_id => id , :live=>true).map{
           |sheet|
         {
-            "id" => sheet.id,
-            "description" => sheet.description ,
-            "name" => sheet.name
+            'id'          => sheet.id,
+            'description' => sheet.description ,
+            'name'        => sheet.name
         }
       }
     end
@@ -201,62 +199,59 @@ class ApiController < ApplicationController
 
     errors = Hash.new { |h, k| h[k] = [] }
     for i , qs in params[:questions]
-      if qs["title"] == ""
+      if qs['title'] == ''
         errors[i].append("Can't have an empty question body" )
       end
 
-      puts qs["type"]
-      if qs["type"] == "0"
-        if qs["correct_answer"] == "-1"
-          errors[i].append("No answer was selected")
+      puts qs['type']
+      if qs['type'] == '0'
+        if qs['correct_answer'] == '-1'
+          errors[i].append('No answer was selected')
         end
-      elsif qs["type"] == "1"
-        if qs["model_answer"] == ""
-          errors[i].append("Enter a model answer for this question" )
+      elsif qs['type'] == '1'
+        if qs['model_answer'] == ''
+          errors[i].append('Enter a model answer for this question' )
         end
 
-        regex = Regexp.new qs["correct_answer"]
-        if (qs["model_answer"] =~ regex).nil?
-          errors[i].append("Model answer does not match regex" )
+        regex = Regexp.new qs['correct_answer']
+        if (qs['model_answer'] =~ regex).nil?
+          errors[i].append('Model answer does not match regex' )
         end
-      elsif qs["type"] == "3"
-        inputs = JSON.parse(qs["data"])["inputs"]
-        outputs = JSON.parse(qs["correct_answer"])
+      elsif qs['type'] == '3'
+        inputs = JSON.parse(qs['data'])['inputs']
+        outputs = JSON.parse(qs['correct_answer'])
 
         if inputs.count != outputs.count or inputs.count == 0
-          errors[i].append("You need to have tests for this question")
+          errors[i].append('You need to have tests for this question')
         end
       end
     end
 
-    if sheet["name"] == ""
-      errors[-1].append("The sheet needs a name")
+    if sheet['name'] == ''
+      errors[-1].append('The sheet needs a name')
     end
 
     if errors.length != 0
       render :json => errors
     else
-      new_sheet = Sheet.create :description=>sheet["description"] ,
-                               :name => sheet["name"] ,
-                               :lecture_id => params[:lecture_id]
+      new_sheet = Sheet.create :description => sheet['description'] ,
+                               :name        => sheet['name'] ,
+                               :lecture_id  => params[:lecture_id]
       for i,v in params[:questions]
         puts i
-        Question.create :title => v["title"] ,
-                        :subtitle => v["subtitle"] ,
-                        :data => v["data"],
-                        :correct_answer => v["correct_answer"],
-                        :type => v["type"],
-                        :sheet_id => new_sheet.id,
-                        :model_answer => v["model_answer"]
+        Question.create :title          => v['title'] ,
+                        :subtitle       => v['subtitle'] ,
+                        :data           => v['data'],
+                        :correct_answer => v['correct_answer'],
+                        :type           => v['type'],
+                        :sheet_id       => new_sheet.id,
+                        :model_answer   => v['model_answer']
       end
       head :ok
     end
-
   end
 
   def update_sheet
-
-
     sheet = Sheet.find params[:sheet]
 
     if sheet.lecture.author_id != current_user.id
@@ -264,18 +259,18 @@ class ApiController < ApplicationController
       return
     end
 
-    if params.has_key?("name")
+    if params.has_key?('name')
       sheet.name = params[:name]
       sheet.save
     end
 
-    if params.has_key?("live")
-      sheet.live = params[:live] == "true"
+    if params.has_key?('live')
+      sheet.live = params[:live] == 'true'
       sheet.save
     end
 
-    if params.has_key?("released")
-      sheet.released = params[:released] == "true"
+    if params.has_key?('released')
+      sheet.released = params[:released] == 'true'
       sheet.save
     end
 
@@ -283,13 +278,33 @@ class ApiController < ApplicationController
   end
 
   def create_lecture
-    lecture = Lecture.create :name => params[:name] , :color => params[:color] , :author_id=>current_user.id
+    lecture = Lecture.create :name      => params[:name] ,
+                             :color     => params[:color] ,
+                             :author_id => current_user.id
     render text: lecture.id
   end
 
 
   def delete_sheet
-    Sheet.find(params[:sheet]).delete
+    s = Sheet.find(params[:sheet])
+
+    if s.lecture.author_id != current_user.id
+      head :forbidden
+      return
+    end
+
+    s.delete
+
+    render :nothing => 200
+  end
+
+  def delete_lecture
+    lecture = Lecture.find(params[:lecture_id])
+    if lecture.author_id != current_user.id
+      head :forbidden
+      return
+    end
+    lecture.delete
     render :nothing => 200
   end
 
@@ -300,12 +315,12 @@ class ApiController < ApplicationController
 
   def update_lecture
     lecture = Lecture.find params[:lecture_id]
-    if params.has_key?("name")
+    if params.has_key?('name')
       lecture.name = params[:name]
       lecture.save
     end
 
-    if params.has_key?("color")
+    if params.has_key?('color')
       lecture.color = params[:color]
       lecture.save
     end
@@ -315,7 +330,7 @@ class ApiController < ApplicationController
 
   def release_sheet
     sheet = Sheet.find params[:id]
-    sheet.released = params[:released] == "true"
+    sheet.released = params[:released] == 'true'
     sheet.save
     head :ok
   end
@@ -334,7 +349,7 @@ class ApiController < ApplicationController
         sum += 1
       end
 
-      for word in i.data.split " "
+      for word in i.data.split ' '
         counters[word] += 1
       end
     end
@@ -350,46 +365,49 @@ class ApiController < ApplicationController
     transitions = Hash.new { |h, k| h[k] = Hash.new { |h, k| h[k] = 0 } }
     c.each{
       |transition|
-      transitions[transition["from"]][transition["to"]] += 1
+      transitions[transition['from']][transition['to']] += 1
     }
 
     distances = {}
     if question.type == 1
 
-      distances = answers.map{|answer| Levenshtein.distance(question.correct_answer,answer.data)}.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
+      distances = answers.map{
+          |answer|
+        Levenshtein.distance(question.correct_answer,answer.data)
+      }.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
 
     end
 
 
     render :json => {
-               "percentage" => percentage,
-               "correct" => sum,
-               "wrong" => wrong,
-               "transitions" => transitions,
-               "counters" => counters,
-               "distances" => distances
+               'percentage'   => percentage,
+               'correct'      => sum,
+               'wrong'        => wrong,
+               'transitions'  => transitions,
+               'counters'     => counters,
+               'distances'    => distances
            }
   end
 
 
   def search
-    puts "searching"
+    puts 'searching'
     query = params[:query]
 
-    sheets = Sheet.where("lower(name) like ?", "%"+query+"%").map{
+    sheets = Sheet.where('lower(name) like ?', '%'+query+'%').map{
         |sheet|
         l = Lecture.find(sheet.lecture_id)
         {:id => sheet.id , :name=>sheet.name , :lecture=> {:title=>l.name ,:color=>l.color}}
     }.first(5)
 
-    lectures = Lecture.where("lower(name) like ?", "%"+query+"%").map{
+    lectures = Lecture.where('lower(name) like ?', '%'+query+'%').map{
       |lecture|
       {:id => lecture.id , :name => lecture.name , :color => lecture.color}
     }.first(5)
 
     render :json => {
-               "sheets" => sheets,
-               "lectures" => lectures
+               'sheets'   => sheets,
+               'lectures' => lectures
            }
   end
 

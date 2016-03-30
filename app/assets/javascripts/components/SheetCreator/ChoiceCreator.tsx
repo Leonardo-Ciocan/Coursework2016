@@ -140,7 +140,8 @@ class ChoiceCreator extends React.Component<ChoiceCreatorProps,ChoiceCreatorStat
                         
                     	   <span>Question {this.props.index+1}</span> 
                            <span style={{color:"gray" , marginRight:"10px",marginTop:"-10px",marginBottom:"-10px"}}> | Multiple Choice</span>
-                        <a onClick={()=>this.props.onDelete(this.props.question)} style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold",float:"right"}} >Delete</a>
+                        <a onClick={()=>this.props.onDelete(this.props.question)} 
+                        style={{cursor:"pointer",color:"red" , marginLeft:"10px" , fontWeight:"bold",float:"right"}} >Delete</a>
                     </div>
                    <TextArea fontSize="10pt" onChange={this.titleChanged.bind(this)} placeholder={"Question title"} />
                    <input onChange={this.subtitleChanged.bind(this)} placeholder={"Subtitle"} style={inputSubStyle}/>
