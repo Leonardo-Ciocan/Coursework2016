@@ -22,7 +22,6 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
         this.getSheets();
     }
     render(){
-        
         let sheets = this.state.sheets.map(
             (sheet) => <SheetControl lecture={this.props.lecture} onDelete={this.sheetDeleted.bind(this)} sheet={sheet}/>
         );
@@ -57,11 +56,9 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                    </div>
                    
                    <div style={{paddingLeft:"10px",float:"left",display:"inline-block",textAlign:"right"}}>
-                      <LCButton style={{fontSize:"12px",
-
-                                        
+                      <LCButton style={{fontSize:"12px", 
                                         margin:"7px",
-                                        padding:"5px"}} 
+                                        padding:"5px"}}
                         onClick={this.showMenu.bind(this)}
                         color={this.props.lecture.color} text={this.state.showMenu ? "◄ Hide lecture info" : "► Show lecture info"}/>
                    </div>
@@ -77,8 +74,6 @@ class SheetManagerPage extends React.Component<SheetManagerPageProps , SheetMana
                                 <span>Lecture name</span>
                                 <TextBox onChange={this.changeName.bind(this)} fontSize="10pt" text={this.props.lecture.name} style={{marginBottom:"10px"}}/>
                                 
-                                <span>Description</span>
-                                <TextArea fontSize="8pt" text={"This subject is about x and y bla bla"} />
                                 
                                 <ColorPicker onPicked={this.onColorPicked.bind(this)}/>
                                 

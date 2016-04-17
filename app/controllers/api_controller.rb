@@ -348,54 +348,84 @@ class ApiController < ApplicationController
     question = Question.find(params[:question_id])
     answers = Answer.where(:question_id => params[:question_id])
 
-    wrong = 0
-    counters = Hash.new { |h, k| h[k] = 0 }
+    if question.type == 0
+      wrong = 0
+      counters = Hash.new { |h, k| h[k] = 0 }
 
-    percentage = 0
-    sum = 0
-    for i in answers
-      if i.data == i.question.correct_answer
-        sum += 1
+      percentage = 0
+      sum = 0
+      for i in answers
+        if i.data == i.question.correct_answer
+          sum += 1
+        end
+
+        for word in i.data.split ' '
+          counters[word] += 1
+        end
+      end
+      percentage = (sum.fdiv answers.size) * 100.0
+      #correct = sum
+      wrong = answers.size - sum
+
+      c = Statistic.joins(:answer).where(:answers => {:question_id => question.id}).where(:kind => 2).map{
+          |stat|
+        JSON.parse(stat.data)
+      }
+
+      transitions = Hash.new { |h, k| h[k] = Hash.new { |h, k| h[k] = 0 } }
+      c.each{
+          |transition|
+        transitions[transition['from']][transition['to']] += 1
+      }
+
+      distances = {}
+      if question.type == 1
+
+        distances = answers.map{
+            |answer|
+          Levenshtein.distance(question.correct_answer,answer.data)
+        }.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
+
       end
 
-      for word in i.data.split ' '
-        counters[word] += 1
+
+      render :json => {
+                 'percentage'   => percentage,
+                 'correct'      => sum,
+                 'wrong'        => wrong,
+                 'transitions'  => transitions,
+                 'counters'     => counters,
+                 'distances'    => distances
+             }
+    elsif question.type == 3
+      wrong = 0
+      counters = Hash.new { |h, k| h[k] = 0 }
+
+      percentage = 0
+      sum = 0
+      for i in answers
+        if JSON.parse(i.result)["correct"] == "true"
+          sum += 1
+        end
       end
-    end
-    percentage = (sum.fdiv answers.size) * 100.0
-    #correct = sum
-    wrong = answers.size - sum
+      percentage = (sum.fdiv answers.size) * 100.0
+      if percentage.nan?
+        percentage = 0
+      end
+      #correct = sum
+      wrong = answers.size - sum
 
-    c = Statistic.joins(:answer).where(:answers => {:question_id => question.id}).where(:kind => 2).map{
-      |stat|
-      JSON.parse(stat.data)
-    }
 
-    transitions = Hash.new { |h, k| h[k] = Hash.new { |h, k| h[k] = 0 } }
-    c.each{
-      |transition|
-      transitions[transition['from']][transition['to']] += 1
-    }
 
-    distances = {}
-    if question.type == 1
-
-      distances = answers.map{
-          |answer|
-        Levenshtein.distance(question.correct_answer,answer.data)
-      }.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
-
+      render :json => {
+                 'percentage'   => percentage,
+                 'correct'      => sum,
+                 'wrong'        => wrong,
+                 'counters'     => counters
+             }
     end
 
 
-    render :json => {
-               'percentage'   => percentage,
-               'correct'      => sum,
-               'wrong'        => wrong,
-               'transitions'  => transitions,
-               'counters'     => counters,
-               'distances'    => distances
-           }
   end
 
 
@@ -417,6 +447,12 @@ class ApiController < ApplicationController
     render :json => {
                'sheets'   => sheets,
                'lectures' => lectures
+           }
+  end
+
+  def userinfo
+    render :json => {
+               "email" => current_user.email
            }
   end
 

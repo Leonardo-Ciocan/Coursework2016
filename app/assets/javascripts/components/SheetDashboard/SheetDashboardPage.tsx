@@ -2,6 +2,7 @@
 /// <reference path="../shared/Header.tsx"/>
 /// <reference path="./ChoiceStats.tsx" />
 /// <reference path="./InputStats.tsx" />
+/// <reference path="./CodeStats.tsx" />
 /// <reference path="../../models/Question.ts" />
 /// <reference path="../../models/Lecture.ts" />
 
@@ -28,7 +29,9 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
         else if(item.type == 1){
             return <InputStats color={this.props.lecture.color} question={item}/>
         }
-           
+        else if(item.type == 3){
+            return <CodeStats color={this.props.lecture.color} question={item}/>
+        }
     });
     return <div  style={{textAlign:"center"}}>
                  <Header onBack={this.back} name={"leonardo"} title={"Dashboard"} subtitle={"Lecture title"} foreground={this.props.lecture.color} />

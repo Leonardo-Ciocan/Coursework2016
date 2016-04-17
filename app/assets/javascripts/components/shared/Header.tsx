@@ -20,12 +20,13 @@ interface HeaderState{
     searchSheets? : Array<any>
     searchLectures? : Array<any>
     query? : string
+    name? : string
 }
 
 class Header  extends React.Component<HeaderProps, HeaderState> {
     constructor(props:HeaderProps) {
         super(props);
-        this.state = {showMenu : false , showSearch:false , searchSheets:[] , searchLectures:[] ,query:""};
+        this.state = {name : "" , showMenu : false , showSearch:false , searchSheets:[] , searchLectures:[] ,query:""};
     }
     
     render(){
@@ -126,12 +127,20 @@ class Header  extends React.Component<HeaderProps, HeaderState> {
                     <SearchDropdown color={this.props.foreground} 
                             query={this.state.query} lectures={this.state.searchLectures} sheets={this.state.searchSheets} 
                             shouldShow={this.state.showSearch}/>
-                    <h1 onClick={this.clickMenu.bind(this)} style={nameStyle}> {this.props.name}</h1>
+                    <h1 onClick={this.clickMenu.bind(this)} style={nameStyle}> {this.state.name}</h1>
                     <i onClick={this.props.onBack} className="fa fa-chevron-left" style={iconStyle} ></i>
                     <div  style={menuStyle}>
                     	   <LCButton onClick={this.logout} style={{display:"block"}} color="red" text="Log out"/>
                     </div>
                 </div>
+    }
+    
+    componentDidMount = () => {
+        $.get("/api/user/",
+        (data)=>{
+            console.log(data);
+            this.setState({name:data.email.split("@")[0]});
+        });
     }
     
     searchChanged = (e)=>{

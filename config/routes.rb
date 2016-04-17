@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   post '/api/update/lecture' => 'api#update_lecture'
   post '/api/update/sheet'   => 'api#update_sheet'
 
+  get '/api/user' => "api#userinfo"
+
   root 'application#index'
 
 end
