@@ -1660,9 +1660,9 @@
       <column name="data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="result" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J3siY29ycmVjdCI6dHJ1ZSwiZXJyb3JzIjpbXX0n"/>
+      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="result" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J3siY29ycmVjdCI6ImZhbHNlIiwiZXJyb3JzIjpbXX0n"/>
       <primary-key name="answers_pkey" columns="id"/>
     </table>
     <table name="answers_id_seq" schema="public" catalog="whiteboard" type="SEQUENCE">
@@ -1679,12 +1679,12 @@
     </table>
     <table name="lectures" schema="public" catalog="whiteboard" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbGVjdHVyZXNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="code" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="author_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="color" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="color" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J2dyZWVuJw=="/>
       <primary-key name="lectures_pkey" columns="id"/>
     </table>
     <table name="lectures_id_seq" schema="public" catalog="whiteboard" type="SEQUENCE">
@@ -1701,15 +1701,15 @@
     </table>
     <table name="questions" schema="public" catalog="whiteboard" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncXVlc3Rpb25zX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="title" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="title" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="subtitle" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="type" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="sheet_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="correct_answer" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="model_answer" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sheet_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="correct_answer" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="model_answer" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="questions_pkey" columns="id"/>
     </table>
     <table name="questions_id_seq" schema="public" catalog="whiteboard" type="SEQUENCE">
@@ -1754,9 +1754,9 @@
     <table name="statistics" schema="public" catalog="whiteboard" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3RhdGlzdGljc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="answer_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="kind" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="answer_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="kind" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <primary-key name="statistics_pkey" columns="id"/>
@@ -1775,8 +1775,8 @@
     </table>
     <table name="subscriptions" schema="public" catalog="whiteboard" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3Vic2NyaXB0aW9uc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="lecture_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="lecture_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <primary-key name="subscriptions_pkey" columns="id"/>
@@ -21933,9 +21933,9 @@
       <column name="data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="Jyc="/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="result" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J3siY29ycmVjdCI6ImZhbHNlIiwiZXJyb3JzIjpbXX0n"/>
+      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="result" sqlType="varchar" precision="512" scale="0" nullable="true" jdbcType="12" def="J3siY29ycmVjdCI6ImZhbHNlIiwiZXJyb3JzIjpbXX0n"/>
       <primary-key name="answers_pkey" columns="id"/>
     </table>
     <table name="answers_id_seq" schema="public" catalog="whiteboard_test" type="SEQUENCE">
@@ -21952,12 +21952,12 @@
     </table>
     <table name="lectures" schema="public" catalog="whiteboard_test" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnbGVjdHVyZXNfaWRfc2VxJzo6cmVnY2xhc3Mp" autoIncrement="true"/>
-      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="code" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="author_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="color" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="author_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="color" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12" def="J2dyZWVuJw=="/>
       <primary-key name="lectures_pkey" columns="id"/>
     </table>
     <table name="lectures_id_seq" schema="public" catalog="whiteboard_test" type="SEQUENCE">
@@ -21974,15 +21974,15 @@
     </table>
     <table name="questions" schema="public" catalog="whiteboard_test" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgncXVlc3Rpb25zX2lkX3NlcSc6OnJlZ2NsYXNzKQ==" autoIncrement="true"/>
-      <column name="title" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="title" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <column name="subtitle" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="type" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="type" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="sheet_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="correct_answer" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="model_answer" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="sheet_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="correct_answer" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="model_answer" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="questions_pkey" columns="id"/>
     </table>
     <table name="questions_id_seq" schema="public" catalog="whiteboard_test" type="SEQUENCE">
@@ -22007,7 +22007,7 @@
       <column name="description" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
-      <column name="lecture_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="lecture_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="live" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="ZmFsc2U="/>
       <column name="released" sqlType="bool" precision="1" scale="0" nullable="true" jdbcType="-7" def="ZmFsc2U="/>
       <primary-key name="sheets_pkey" columns="id"/>
@@ -22027,9 +22027,9 @@
     <table name="statistics" schema="public" catalog="whiteboard_test" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3RhdGlzdGljc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
       <column name="question_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="answer_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="true" jdbcType="12"/>
-      <column name="kind" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="answer_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="data" sqlType="varchar" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="kind" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <primary-key name="statistics_pkey" columns="id"/>
@@ -22048,8 +22048,8 @@
     </table>
     <table name="subscriptions" schema="public" catalog="whiteboard_test" type="TABLE">
       <column name="id" sqlType="serial" precision="10" scale="0" nullable="false" jdbcType="4" def="bmV4dHZhbCgnc3Vic2NyaXB0aW9uc19pZF9zZXEnOjpyZWdjbGFzcyk=" autoIncrement="true"/>
-      <column name="lecture_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
-      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="lecture_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="int4" precision="10" scale="0" nullable="false" jdbcType="4"/>
       <column name="created_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <column name="updated_at" sqlType="timestamp" precision="29" scale="6" nullable="true" jdbcType="93"/>
       <primary-key name="subscriptions_pkey" columns="id"/>

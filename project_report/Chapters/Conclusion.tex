@@ -1,0 +1,13 @@
+\chapter{Conclusion and Future Work}
+
+\subsubsection{Future work}
+There are a number of ways to improve the project , the system is implemented in such a way that adding more functionality can be done seamlessly without breaking or having to alter any major components of the system.
+
+Ideas for improvements:
+\begin{itemize}
+	\item More question types. For example questions that revolve around web development ( such as asking the user to create a html/css layout from an image) or unix command line tools ( asking the user to complete some command line workflow ). This should be easy to implement as the database schema for questions is very flexible and does not make any assumptions about the type of data a question expresses
+	\item Better user management for the teacher , allowing them to kick , filter and analyse student progress. This would involve adding a lot more UI components and possibly other pages
+	\item Allowing teacher to edit the title/body of questions after the sheet is created. Easy to implement the technical aspect of it , however it would not fit within any current place in the UI and would require an additional page
+	\item Password enabled lectures , or alternatively geo-locked lectures. Fairly simple to implement but needs to have extra logic in place to deal with changing the password and so on
+	\item Mobile apps for Android and iOS to expand the pool of students who have a device that can use the project. Takes time but overall the backend would not have to be changed much as it already exposes most functionality via a simple REST API
+\end{itemize}

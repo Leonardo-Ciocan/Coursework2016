@@ -1,0 +1,96 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 6CCS3PRJ Final Year Individual Project Report
+% luke.day@kcl.ac.uk
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[11pt]{informatics-report}
+\usepackage{color}
+\usepackage[square,sort,comma,numbers]{natbib} %References
+\usepackage{float}% If comment this, figure moves to Page 2
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Front Matter - project title, name, supervisor name and date
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{6CCS3PRJ Final Year\\\vspace{0.2cm}Orchestrator}
+\author{Leonardo Ciocan}
+\studentID{1308123}
+\supervisor{Jeroen Keppens}
+
+\date{\today}
+
+\abstractFile{FrontMatter/abstract.tex}
+\ackFile{FrontMatter/acknowledgements.tex} %Remove line if you do not want acknowledgements
+
+\begin{document}
+\createFrontMatter
+\doublespacing
+\tableofcontents
+\doublespacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Report Content
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% You can write each chapter directly here or in a separate .tex file and use the include command.
+
+\chapter{Introduction}
+\subsection{Summary}
+There is quite a sizeable market that would benefit from this application, there are 23729 universities around the world; a high percentage of them have Computer Science departments.
+Competitors
+Some companies have products that aim to facilitate teacher – student interaction but I believe they are rather incomplete and further more none appear to provide tools specifically for computer science students. In other words, they provide generic tools for letting students answer questions but that is not tailor for computer science specifically.
+Motivation
+The main scope of my project was to create an easily extensible platform that may be useful for teachers specifically teaching computer science as this subject in particular requires some types of question that are more complex than simple text or choices. In other words, letting users write and execute code on my platform was a core goal. Executing arbitrary code is a dangerous so security is an important part of this system.
+This project is a great way to experiment with visualisation of data and how digital solutions can enrich previous analogue methods , it also allowed me to work with technologies I had not worked before and build a full product which enriched my knowledge of security , containers , server and backend technologies.
+
+
+\subsection{Platform}
+I have decided to build this project for the web instead of a mobile application for a number of reasons. Since this is meant to be used by a lot of students, it is a requirement that it should be as accessible as possible. Statistically speaking, a web app can reach the most people, especially account for the fact that computing students are the main target audience and they are likely to have laptops with them.
+The main disadvantage of making mobile apps is that to build a good native app would mean to focus on one platform (as cross platform solutions are not up to the task for the scope of the project) which would exclude students from the process. The web is a free, universal platform and so it is the perfect medium for this project.
+Ideally, fully native mobile apps are further down the roadmap as they provide a better experience and further expand the pool of users that are able to use the application.
+The backend part of this project has been built in such a way to allow for easy expansion to other platforms. In fact, the web app could be considered just a consumer of the backend and not being renderer by the server such that another front-end could be used instead without any friction.
+
+
+
+\subsection{Objectives}
+Because the main target audience is made up of computer savvy student and lecturers, it was possible to take a few liberties with the platform. For example the questions can be written in Markdown, which is something computer scientists are already familiar with from websites such as StackOverflow and Github.
+Nevertheless, I aim to make a project that requires minimal guidance as the user interface will be built to be easy and intuitive to operate.
+
+The basic requirements for this project are:
+\begin{enumerate}
+\item Let teacher create sheets made of a variety of question types
+\item 	Allow question types to include rich formatting such as tables and code
+\item 	Allow students to subscribe to a lecture such that they may have access to those sheets
+\item 	Allow a teacher to create a class and invite students with a link
+\item 	Let the teacher decide when a sheet should go “live” and be visible by the students
+\item 	Allow the teacher to attach model answers to each question
+\item Let the teacher release model answers to the students so they may review their answers
+\item 	Monitor the students progress and present it to the teacher in an anonymous way
+Allow users to write code to be executed for code questions
+
+\end{enumerate}
+\subsection{Report structure}
+The next section will be the background which will begin by exploring the keywords or concepts that are related to the project.
+It will also analyse and contrast current implementation that attempt to solve the problem described with the project's implementation.
+
+\include{Chapters/Background}
+\include{Chapters/Body}
+\include{Chapters/DesignSpecification}
+\include{Chapters/Implementation}
+\include{Chapters/ProfessionalIssues}
+\include{Chapters/Evaluation}
+\include{Chapters/Conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibliographystyle{plain}
+\bibliography{references}
+\addcontentsline{toc}{section}{Bibliography}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\appendix
+\include{Appendices/appendix}
+\include{Appendices/UserGuide}
+\include{Appendices/SourceCode}
+\end{document}

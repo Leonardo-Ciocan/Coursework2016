@@ -1,0 +1,52 @@
+\contentsline {chapter}{\numberline {1}Introduction}{3}
+\contentsline {subsection}{\numberline {1.0.1}Summary}{3}
+\contentsline {subsection}{\numberline {1.0.2}Platform}{3}
+\contentsline {subsection}{\numberline {1.0.3}Objectives}{4}
+\contentsline {subsection}{\numberline {1.0.4}Report structure}{4}
+\contentsline {chapter}{\numberline {2}Background}{5}
+\contentsline {subsection}{\numberline {2.0.1}Relevant concepts}{5}
+\contentsline {paragraph}{Question}{5}
+\contentsline {paragraph}{Sheet}{5}
+\contentsline {paragraph}{Lecture}{5}
+\contentsline {subsection}{\numberline {2.0.2}Differentiation from competitors}{6}
+\contentsline {subsection}{\numberline {2.0.3}Security}{6}
+\contentsline {chapter}{\numberline {3}Report Body}{7}
+\contentsline {section}{\numberline {3.1}Section Heading}{7}
+\contentsline {subsection}{\numberline {3.1.1}Subsection Heading}{7}
+\contentsline {chapter}{\numberline {4}Design \& Specification}{8}
+\contentsline {subsection}{\numberline {4.0.1}Use cases}{8}
+\contentsline {subsection}{\numberline {4.0.2}System architecture}{9}
+\contentsline {paragraph}{User interface}{9}
+\contentsline {subsection}{\numberline {4.0.3}Third party libraries}{9}
+\contentsline {subsubsection}{React}{9}
+\contentsline {subsubsection}{Chromath}{10}
+\contentsline {subsubsection}{CodeMirror}{10}
+\contentsline {subsubsection}{Markdown-it}{10}
+\contentsline {subsubsection}{Highlight}{10}
+\contentsline {subsubsection}{JQCloud}{10}
+\contentsline {subsubsection}{Levenshtein-ffi}{10}
+\contentsline {subsubsection}{pg}{10}
+\contentsline {subsubsection}{Devise}{10}
+\contentsline {subsubsection}{ReactRails}{10}
+\contentsline {subsubsection}{Typescript Rails}{11}
+\contentsline {chapter}{\numberline {5}Implementation}{12}
+\contentsline {subsection}{\numberline {5.0.1}Unit testing}{12}
+\contentsline {section}{\numberline {5.1}Professional Issues}{12}
+\contentsline {section}{\numberline {5.2}Evaluation}{12}
+\contentsline {subsection}{\numberline {5.2.1}Limitations}{12}
+\contentsline {subsection}{\numberline {5.2.2}Security}{13}
+\contentsline {subsection}{\numberline {5.2.3}Overall}{13}
+\contentsline {chapter}{\numberline {6}Professional and Ethical Issues}{14}
+\contentsline {section}{\numberline {6.1}Section Heading}{14}
+\contentsline {chapter}{\numberline {7}Results/Evaluation}{15}
+\contentsline {section}{\numberline {7.1}Software Testing}{15}
+\contentsline {section}{\numberline {7.2}Section Heading}{15}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{16}
+\contentsline {subsubsection}{Future work}{16}
+\contentsline {section}{Bibliography}{18}
+\contentsline {chapter}{\numberline {A}Extra Information}{19}
+\contentsline {section}{\numberline {A.1}Tables, proofs, graphs, test cases, ...}{19}
+\contentsline {chapter}{\numberline {B}User Guide}{20}
+\contentsline {section}{\numberline {B.1}Instructions}{20}
+\contentsline {chapter}{\numberline {C}Source Code}{21}
+\contentsline {section}{\numberline {C.1}Instructions}{21}
