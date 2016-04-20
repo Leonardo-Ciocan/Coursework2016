@@ -1,55 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="Added report">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/cases.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/cases.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/cases2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/cases2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/FrontMatter/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/references.bib" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.idx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.ind" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/report.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/report.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.synctex.gz" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Appendices/Appendix.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Background.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/Background.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Body.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/Body.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/Conclusion.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/Evaluation.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Chapters/ProfessionalIssues.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Appendices/SourceCode.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/Appendices/UserGuide.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/FrontMatter/abstract.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/FrontMatter/acknowledgements.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/informatics-report.cls" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.aux" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.bbl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.blg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.ilg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.log" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/report.tex" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/report/.texpadtmp/report.toc" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/report/report.tex" afterPath="$PROJECT_DIR$/report/report.tex" />
+    <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/report.pdf" afterPath="$PROJECT_DIR$/project_report/report.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestUsers.iws" />
@@ -135,16 +101,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="answer_test.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/models/answer_test.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="25" column="7" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="api_controller_test.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/controllers/api_controller_test.rb">
               <provider selected="true" editor-type-id="text-editor">
@@ -155,11 +111,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="answer.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="answer.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.43875685">
+                <state vertical-scroll-proportion="0.0">
                   <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="schema.rb" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/db/schema.rb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.027422303">
+                  <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
                   <folding />
                 </state>
               </provider>
@@ -1307,12 +1273,6 @@
       <option name="number" value="Default" />
       <updated>1445084755533</updated>
     </task>
-    <task id="LOCAL-00010" summary="Revamped the sheets page">
-      <created>1449504312630</created>
-      <option name="number" value="00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1449504312630</updated>
-    </task>
     <task id="LOCAL-00011" summary="Added typescript&#10;Moving to MongoDB">
       <created>1450313052136</created>
       <option name="number" value="00011" />
@@ -1601,7 +1561,13 @@
       <option name="project" value="LOCAL" />
       <updated>1460922588360</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="Added report">
+      <created>1461138673809</created>
+      <option name="number" value="00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1461138673809</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1617,12 +1583,13 @@
     <frame x="-1603" y="23" width="1561" height="1027" extended-state="0" />
     <editor active="false" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864544" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30857143" sideWeight="0.6209867" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790527" sideWeight="0.49677938" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2568438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1632653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1632653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25092524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40166494" sideWeight="0.75049376" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1633,7 +1600,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.49021277" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864544" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1867,13 +1833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/schema.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26339287">
-          <caret line="34" column="5" selection-start-line="34" selection-start-column="5" selection-end-line="34" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Ruby/Gems/2.0.0/gems/actionpack-4.1.6/lib/action_controller/test_case.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325893">
@@ -2066,8 +2025,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43875685">
+        <state vertical-scroll-proportion="0.0">
           <caret line="16" column="62" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.027422303">
+          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
           <folding />
         </state>
       </provider>

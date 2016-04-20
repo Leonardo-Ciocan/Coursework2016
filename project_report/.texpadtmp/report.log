@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.4)  20 APR 2016 08:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.4)  20 APR 2016 10:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -406,21 +406,21 @@ Package pdftex.def Info: cases2.png used on input line 16.
 
 
 
- <./cases.png>] [9 <./cases2.png>]) [10] [11]
+ <./cases.png>] [9 <./cases2.png>] [10] [11]) [12]
 \openout2 = `Chapters/Implementation.aux'.
 
  (./Chapters/Implementation.tex
 Chapter 5.
-[12
+[13
 
 
 
-]) [13]
+]) [14]
 \openout2 = `Chapters/ProfessionalIssues.aux'.
 
  (./Chapters/ProfessionalIssues.tex
 Chapter 6.
-) [14
+) [15
 
 
 
@@ -429,7 +429,7 @@ Chapter 6.
 
  (./Chapters/Evaluation.tex
 Chapter 7.
-) [15
+) [16
 
 
 
@@ -438,15 +438,15 @@ Chapter 7.
 
  (./Chapters/Conclusion.tex
 Chapter 8.
-[16
+[17
 
 
 
-]) [17] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.bbl
+]) [18] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
-) [18
+) [19
 
 
 ]
@@ -454,7 +454,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 3.
 
  (./Appendices/appendix.tex
 Appendix A.
-) [19
+) [20
 
 
 ]
@@ -462,7 +462,7 @@ Appendix A.
 
  (./Appendices/UserGuide.tex
 Appendix B.
-) [20
+) [21
 
 
 
@@ -471,24 +471,24 @@ Appendix B.
 
  (./Appendices/SourceCode.tex
 Appendix C.
-) [21
+) [22
 
 
 
 ] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.aux (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Background.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Body.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/DesignSpecification.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Implementation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Evaluation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Conclusion.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/appendix.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/UserGuide.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/SourceCode.aux)) ) 
 Here is how much of TeX's memory you used:
- 4025 strings out of 493089
- 62706 string characters out of 6134843
+ 4029 strings out of 493089
+ 62756 string characters out of 6134843
  132427 words of memory out of 5000000
- 7360 multiletter control sequences out of 15000+600000
- 41202 words of font info for 33 fonts, out of 8000000 for 9000
+ 7362 multiletter control sequences out of 15000+600000
+ 49646 words of font info for 35 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,6n,34p,1103b,243s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
-Output written on /Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.pdf (25 pages, 229892 bytes).
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb>
+Output written on /Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.pdf (26 pages, 250401 bytes).
 PDF statistics:
- 113 PDF objects out of 1000 (max. 8388607)
- 75 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
