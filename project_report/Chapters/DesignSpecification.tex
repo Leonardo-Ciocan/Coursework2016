@@ -1,8 +1,9 @@
 \chapter{Design \& Specification}
 
 This section will present an abstract view of how the system works.
+The project is split into 3 main components - the web app , the backend and another external backend exclusively for running user code.
 
-\subsection{Use cases}
+\section{Use cases}
 \begin{figure}[H]
   \centering
 
@@ -17,13 +18,49 @@ This section will present an abstract view of how the system works.
 	\caption{Use cases for teachers}
 \end{figure}
 
-\subsection{System architecture}
-\paragraph{User interface}
-Since the user's are assumed to be somewhat technically savvy , the application takes some liberties with having a limited amount of help and information banners since it works similarly to other website the target audience is familiar with.
-Overall the application is meant to have a flat design that looks good on any resolution.
-Each lecture has a colour chosen by the teacher and shows up throughout the user interface so the user knows which lecture they are looking at.
+\section{System architecture}
+\subsection{Backend}
+The backend provides a simple HTTP REST API that the front end can use. It is built in such a way that the front-end is a replaceable component and may be updated or switched during further development , data is encoded as JSON unless the payload represents one single value (like a number) in which case it is not wrapped in a JSON object.
 
-\subsection{Databases}
+The backend provides all the data needed for the application to render what it needs to show , as well as allowing the client to POST data to the server to update resources.
+
+The endpoints of the API which may return private information have safeguards such that they will not expose information that the user should not be seeing - this is achieved by checking the user that is authenticated. This is to conform to Data Protection laws that impose limit data access where possible.
+
+Authentication works via session cookies , this is implemented using the Devise ruby gem as reference in section \ref{libs}. If the user is not logged in he is redirected to the login/signup page.
+
+The database itself is a PostgresSQL database, it resides on the same server as this backend and is protected with username/password authentication.
+
+\subsection{Code running backend}
+The other backend is solely responsible for running arbitrary code written by users , this acts as a security measure in case a malicious agent manages to escape the container and compromise the server.
+
+The endpoint this server exposes takes a piece of code , the language it's written in and a map of inputs and outputs. The code is written to a temporary file in a temporary folder. Then , depending on the language , a docker instance with the right runtime is started - when creating this instance , the temporary folder is mounted (mapped) to the docker instance inside the container's root drive. Then the file is executed inside the virtual machine with all the inputs , if the outputs generated match the given model answers then the API returns true ; else false. 
+
+Since the container only has access to the temporary folder where the code file is , it cannot harm the outer filesystem. In fact , deleting the root folder inside the container would only delete the code file and nothing else.
+If the code does not compile or there is a runtime error , the sever will wrap the error in a JSON object and return it to the main backend which will show it to the user.
+
+\subsection{Diagram}
+
+\section{User interface}
+Since the user's are assumed to be somewhat technically savvy , the application takes some liberties with having a limited amount of help and information banners since it works similarly to other website the target audience is familiar with ( markdown used in websites like Stackoverflow \cite{stackoverflow} ).
+Overall the application is meant to have a flat design that looks good on any resolution and is not based on bitmaps but rather on shapes - as they are more versatile and do not need to be updated as often.
+Each lecture has a colour chosen by the teacher and shows up throughout the user interface so the user knows which lecture they are looking at and provides a sense of cohesion to the application.
+
+
+\section{Security}
+Because the project allows users to input and run arbitrary code it is important to have proper security in place. There are four layers of security for running code:
+\begin{itemize}
+\item Users can only run non-native code , currently Python and Java
+\item 	All user code runs in secure Docker containers
+\item	Containers are contained in a separate server
+\item User code runs as non-root within the container
+\end{itemize}
+Because the code execution server and the database/main server are separate , even if a malicious agent used a vulnerability to break out of the container, he may not access any information or maliciously disrupt server operations.
+
+Docker is used to create containers to safetly run arbitrary code , outside of a container being basically a virtual machine Docker added extra security features \cite{dockersecurity} such as restricting the capabilities of the linux kernel , namespaces and control groups.
+
+
+
+\section{Database}
 There is one database in use which contains all the information relevant to the system , it is located on the same server as the backend ; further in the report you will find some notes on how this can be improved and why.
 The database schema is very important since changing it could break parts of the system , it was important to chose a structure that would not drastically change later in the development cycle.
 Below is the structure of the tables in the system

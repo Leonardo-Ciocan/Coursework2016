@@ -1,3 +1,13 @@
-\begin{thebibliography}{}
+\begin{thebibliography}{1}
+
+\bibitem{dockersecurity}
+Docker.
+\newblock Docker security.
+\newblock \url{https://docs.docker.com/engine/security/security/}.
+
+\bibitem{stackoverflow}
+Stackoveflow.
+\newblock Markdown editing help.
+\newblock \url{http://stackoverflow.com/editing-help}.
 
 \end{thebibliography}

@@ -30,15 +30,3 @@ The dashboard is also meant to be extensible, so any future question types could
 \subsection{Differentiation from competitors}
 The project is meant to be an extensible platform that can be enriched with more types of question along the development process to increase the variety of sheets the teachers can create. This gives it more potential than competitor’s who over inflexible solutions that are tailor made for very specific types of questions.
 Furthermore, by focusing on computer science students we allow users to run arbitrary code on the platform, which while some websites allow that – they provide that in a different setting such as code competitions – which means they do not compete with us , as this project enabled the teacher to write a question that can be answered with code as part of a sheet along with other questions.
-
-\subsection{Security}
-Because the project allows users to input and run arbitrary code it is important to have proper security in place. There are three layers of security for running code:
-\begin{itemize}
-\item Users can only run non-native code , currently Python and Java
-\item 	All user code runs in secure Docker containers
-\item	All containers are contained in a separate server
-\end{itemize}
-Because the code execution server and the database/main server are separate – even if a malicious agent used a vulnerability to break out of the container, he may not access any information or maliciously disrupt server operations.
-
-//security stats about safe code
-
