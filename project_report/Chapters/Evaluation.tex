@@ -1,5 +1,24 @@
 \chapter{Results/Evaluation}
 
-\section{Software Testing}
+\section{Evaluation}
+In this section we will explore whether the project has met the requirements that were set in the requirements section of this report as well as other general aspects of the software that can be evaluated.
 
-\section{Section Heading}
+\subsection{Limitations}
+There were some things that were simplified or postponed for the sake of keeping in line with deadlines and achieving all the compulsory requirements that I have set. Thus the system does have some limitation (solutions to those limitations will be explored in the next section)
+
+\begin{itemize}
+	\item Code question can be either Java or Python based. This is a limitation imposed to decrease the surface area for bugs that would arise from allowing more languages.
+	\item Sheets cannot be edited after they are created. This is because changing the questions as the sheet is live could invalidate existing statistical data retrieved from users completing the question.
+	\item Teacher cannot kick out or manage users. This is because currently the system aims to anonymise users so they may not feel discouraged from completing the questions
+	\item The website is glitchy and may not work at all on some mobile devices. This is especially true for pages where the user may enter a core
+\end{itemize}
+
+\subsection{Security}
+While the system is not meant to contain any sensitive data , it is important that the users of the system can be assured that their data is private. 
+There are safeguards in place to ensure that a malicious agent may not successfully acquire information they are not entitled to , this functionality is unit tested to ensure it stays this way across releases of the software.
+Another layer of security is in the system that executes the student's arbitrary code.
+The code runs in a docker container and can only run within either the java virtual machine or the python interpreter. Not allowing low level code to run discourages any traditional security holes such as buffer overflows.
+Furthermore , even if someone manages to execute code such that they break out of the language runtime and the docker container - the containers run on a server separate from the main server. Thus they cannot access the database or compromise the system.
+
+\subsection{Overall}
+The main purpose of the system was to provide teacher's a way to handle handing out sheets digitally and analyse the result easily in real time. It was built in such a way that not only fulfilled this requirement but also provides a platform that is easily extendable such that more question types can be added without having to modify the existing infrastructure.

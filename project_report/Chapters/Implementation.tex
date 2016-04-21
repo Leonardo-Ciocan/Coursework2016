@@ -1,6 +1,70 @@
 \chapter{Implementation}
 
-\subsection{Unit testing}
+\section{Languages and Frameworks}
+\subsection{Front end} 
+Since the front end of the project is a web app , HTML and CSS were used to create the user interface. However for the programming Typescript was used instead of Javascript.
+
+\paragraph{Typescript} is a super set of Javascript , made by Microsoft. It adds useful language features to Javascript such as a type system , generics , classes and more. The addition of these features helps the code base be more readable and more maintainable.
+
+In particular having types allows the code to be more easily refactored and reduces redundant documentation (such as including type information in comments).
+
+It is compiled to Javascript before being served to the user and all the functionality is compile-time only so there is no performance penalty in using it.
+
+\paragraph{User interface}
+The fronted of the application is mostly tailored , in other words the UI components are made specifically for this project. One of the reasons for this is because lecture colour is an important visual cue in the application's visual design and colouring the components of existing platforms such as Bootstrap can be glitchy as they were not meant to be used in such a way.
+
+\paragraph{ReactJS} was used to create the UI components. React is a light javascript library used to create reusable components in a functional way. Using it has helped create powerful , contained reusable components that can be customised externally without needing to dig into their implementation ( which can be useful for future development ) . They also allow for simple colouring by passing around the lecture colour when creating a component.
+
+\subsection{Backend} 
+The main backend written in Ruby , using the Ruby on Rails web framework. The main reason for choosing this framework was that it is proven to be reliable and has a very healthy developer ecosystem. Thus there are a lot of up to date libraries ( or 'gems' ) available to extend the core functionality. In particular , the Typescript gem works seamlessly as part of the Rails asset pipeline to convert the typescript files to javascript.
+
+Another backend was written for handling the execution of user code inside docker contains. This was done using Python and Flask , a python web micro framework. A micro framework was used instead of rails because this part of the system does not involve any advanced features found in full web frameworks ( authentication , models , migration for example )
+
+On the same server as the python backend , Docker is used to create instances where the user code can run safely.
+
+\section{Development Tools}
+The backend was developed using RubyMine and PyCharm.
+The front-end was written using Visual Studio Code , mainly because it was the only editor at the type that supported TSX files ( Typescript + React inline ).
+
+
+\section{Rails backend analysis}
+This section will explain the structure of code within the backend responsible for the main functionality.
+
+\subsection{Controllers}
+Controllers are split by page that the user sees , as well as an additional ApiController which is engineered to be decoupled from the HTML such that it could power a potential mobile or native client.
+
+\paragraph{Application Controller}  Has an action \textit{index} that renders the index page
+\paragraph{Lecture Creator Controller} Has an action \textit{index} that renders the page where the teacher can create a lecture
+\paragraph{Lecture List Controller} Has an action \textit{index} that renders the page where all the lectures the user created and subscribed to are listed , as well as a \textit{subscribe} method that handles rendering the subscriptions page
+\paragraph{Sheet Creator Controller} Has an action \textit{index} that renders the page where the teacher can create sheets
+\paragraph{Sheet Dashboard Controller} Has an action \textit{index} that renders the dashboard page that the teacher sees
+\paragraph{Sheet Editor Controller} Has an action \textit{index} that renders the sheet editing page where the student can answer a sheet. It also contains an action \textit{update\textunderscore sheet}  that handles updating the user's answer
+\paragraph{Sheet Manager Controller} Has an action \textit{index} that renders the page where the teacher can manage all the sheets of his lecture
+\paragraph{API Controller} Contains the following methods:
+\begin{itemize}
+	\item \textit{\textbf{subscribe}} Subscribes the current user to a lecture with id \textit{lecture \textunderscore id}
+	\item \textit{\textbf{statistics\textunderscore for \textunderscore question}} Collates and returns the statistics for a given question
+	\item \textit{\textbf{completions}} Returns the answers who correctly solved a question
+	
+	\item \textit{\textbf{lectures}} Returns an object with two properties , \textit{subscribed} which contains the lectures the user is subscribed to and \textit{created} which the user created (is a teacher of)
+	\item \textit{\textbf{lecture}} Returns a single lecture information given an id
+	\item \textit{\textbf{full \textunderscore sheet}} Returns information about a sheet. Object returned contains the following field : \textit{lecture , sheet , questions , answers , modelAnswers } and \textit{percentage}
+	\item \textit{\textbf{sheets}} Returns a list of sheets
+	\item \textit{\textbf{create  \textunderscore  sheet}} Creates a sheet given a sheet and an object which represents the new sheet. It will return any errors if any
+	\item \textit{\textbf{update \textunderscore sheet}} Updates the name , live status or result status of a given sheet
+	\item \textit{\textbf{create \textunderscore lecture}} Creates a lecture with a given name and colour
+	\item \textit{\textbf{delete \textunderscore sheet}} Deletes a given sheet
+	\item \textit{\textbf{delete \textunderscore lecture}} Deletes a given lecture
+	\item \textit{\textbf{lecture \textunderscore users  \textunderscore  count}} Return the number of users subscribed to a lecture
+	\item \textit{\textbf{update \textunderscore lecture}} Updates the name or colour of a lecture
+	\item \textit{\textbf{stats}} Collates statistics and any metadata computed from them (such as transition matrices)
+	\item \textit{\textbf{search}} Searches for a keyword and returns all sheets and lectures that contain it
+	\item \textit{\textbf{user \textunderscore info}} Return the email of the logged in user
+\end{itemize}
+
+\textcolor{red}{//typescript stuff here}
+
+\section{Unit testing}
 Unit testing was used to make sure changes and additions to the system did not break or alter any previous functionality.
 
 Purpose:
@@ -11,30 +75,42 @@ Purpose:
 \end{enumerate}
 
 
-\section{Professional Issues}
-
-\section{Evaluation}
-In this section we will explore whether the project has met the requirements that were set in the requirements section of this report as well as other general aspects of the software that can be evaluated.
-
-\subsection{Limitations}
-There were some things that were simplified or postponed for the sake of keeping in line with deadlines and achieving all the compulsory requirements that I have set. Thus the system does have some limitation (solutions to those limitations will be explored in the next section)
-
-\begin{itemize}
-	\item Code question can be either Java or Python based. This is a limitation imposed to decrease the surface area for bugs that would arise from allowing more languages.
-	\item Sheets cannot be edited after they are created. This is because changing the questions as the sheet is live could invalidate existing statistical data retrieved from users completing the question.
-	\item Teacher cannot kick out or manage users. This is because currently the system aims to anonymise users so they may not feel discouraged from completing the questions
-	\item The website is glitchy and may not work at all on some mobile devices. This is especially true for pages where the user may enter a core
-\end{itemize}
-
-\subsection{Security}
-While the system is not meant to contain any sensitive data , it is important that the users of the system can be assured that their data is private. 
-There are safeguards in place to ensure that a malicious agent may not successfully acquire information they are not entitled to , this functionality is unit tested to ensure it stays this way across releases of the software.
-Another layer of security is in the system that executes the student's arbitrary code.
-The code runs in a docker container and can only run within either the java virtual machine or the python interpreter. Not allowing low level code to run discourages any traditional security holes such as buffer overflows.
-Furthermore , even if someone manages to execute code such that they break out of the language runtime and the docker container - the containers run on a server separate from the main server. Thus they cannot access the database or compromise the system.
-
-\subsection{Overall}
-The main purpose of the system was to provide teacher's a way to handle handing out sheets digitally and analyse the result easily in real time. It was built in such a way that not only fulfilled this requirement but also provides a platform that is easily extendable such that more question types can be added without having to modify the existing infrastructure.
 
 
+\section{Third party libraries}
+
+\subsection{React}
+A javascript library that allows the project to have isolated , reusable components that build up all of the user interface
+
+\subsection{Chromath} 
+A javascript library that can manipulate colours. It is used within the dashboard to compute darker shades of the lecture color - this is useful for both the charts ( each section of the chart is a different colour ) and for the transition matrix ( the higher the transition count , the darker the shade ).
+
+	It is statically included in the project.
+	
+\subsection{CodeMirror}
+A javascript library that provides an embeddable code editor. Used to let user's write their own code.
+
+\subsection{Markdown-it}
+A javascript library used to render Markdown , in both the title preview on the sheet creation page and the actual sheet that the user sees.
+
+\subsection{Highlight}
+A javascript library to highlight code syntax , used internally by Markdown-it
+	
+\subsection{JQCloud}
+A javascript library used to render a word cloud in the dashboard for input questions.
+
+\subsection{Levenshtein-ffi}
+A ruby gem that allows fast calculation of Levenshtein distances for answer's in the input question's dashboard.
+
+\subsection{pg}
+A ruby gem for Postgres support
+
+\subsection{Devise}
+A ruby gem that simplifies authentication
+
+\subsection{ReactRails}
+Support for React in Rails applications
+
+\subsection{Typescript Rails}
+Automatic compilation of typescript files as part of the rails asset pipeline.
 

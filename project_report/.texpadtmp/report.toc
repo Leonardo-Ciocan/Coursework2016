@@ -17,43 +17,58 @@
 \contentsline {subsection}{\numberline {4.0.1}Use cases}{8}
 \contentsline {subsection}{\numberline {4.0.2}System architecture}{9}
 \contentsline {paragraph}{User interface}{9}
-\contentsline {subsection}{\numberline {4.0.3}Third party libraries}{9}
-\contentsline {subsubsection}{React}{9}
-\contentsline {subsubsection}{Chromath}{10}
-\contentsline {subsubsection}{CodeMirror}{10}
-\contentsline {subsubsection}{Markdown-it}{10}
-\contentsline {subsubsection}{Highlight}{10}
-\contentsline {subsubsection}{JQCloud}{10}
-\contentsline {subsubsection}{Levenshtein-ffi}{10}
-\contentsline {subsubsection}{pg}{10}
-\contentsline {subsubsection}{Devise}{10}
-\contentsline {subsubsection}{ReactRails}{10}
-\contentsline {subsubsection}{Typescript Rails}{11}
-\contentsline {subsection}{\numberline {4.0.4}Databases}{11}
-\contentsline {subsubsection}{Lecture table}{11}
-\contentsline {subsubsection}{Sheet table}{11}
-\contentsline {subsubsection}{Question table}{12}
-\contentsline {subsubsection}{Answer table}{12}
-\contentsline {subsubsection}{Statistic table}{12}
-\contentsline {subsubsection}{Subscription table}{12}
-\contentsline {chapter}{\numberline {5}Implementation}{13}
-\contentsline {subsection}{\numberline {5.0.1}Unit testing}{13}
-\contentsline {section}{\numberline {5.1}Professional Issues}{13}
-\contentsline {section}{\numberline {5.2}Evaluation}{13}
-\contentsline {subsection}{\numberline {5.2.1}Limitations}{13}
-\contentsline {subsection}{\numberline {5.2.2}Security}{14}
-\contentsline {subsection}{\numberline {5.2.3}Overall}{14}
-\contentsline {chapter}{\numberline {6}Professional and Ethical Issues}{15}
-\contentsline {section}{\numberline {6.1}Section Heading}{15}
-\contentsline {chapter}{\numberline {7}Results/Evaluation}{16}
-\contentsline {section}{\numberline {7.1}Software Testing}{16}
-\contentsline {section}{\numberline {7.2}Section Heading}{16}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{17}
-\contentsline {subsubsection}{Future work}{17}
-\contentsline {section}{Bibliography}{19}
-\contentsline {chapter}{\numberline {A}Extra Information}{20}
-\contentsline {section}{\numberline {A.1}Tables, proofs, graphs, test cases, ...}{20}
-\contentsline {chapter}{\numberline {B}User Guide}{21}
-\contentsline {section}{\numberline {B.1}Instructions}{21}
-\contentsline {chapter}{\numberline {C}Source Code}{22}
-\contentsline {section}{\numberline {C.1}Instructions}{22}
+\contentsline {subsection}{\numberline {4.0.3}Databases}{9}
+\contentsline {subsubsection}{Lecture table}{10}
+\contentsline {subsubsection}{Sheet table}{10}
+\contentsline {subsubsection}{Question table}{10}
+\contentsline {subsubsection}{Answer table}{11}
+\contentsline {subsubsection}{Statistic table}{11}
+\contentsline {subsubsection}{Subscription table}{11}
+\contentsline {chapter}{\numberline {5}Implementation}{12}
+\contentsline {section}{\numberline {5.1}Languages and Frameworks}{12}
+\contentsline {subsection}{\numberline {5.1.1}Front end}{12}
+\contentsline {paragraph}{Typescript}{12}
+\contentsline {paragraph}{User interface}{12}
+\contentsline {paragraph}{ReactJS}{12}
+\contentsline {subsection}{\numberline {5.1.2}Backend}{13}
+\contentsline {section}{\numberline {5.2}Development Tools}{13}
+\contentsline {section}{\numberline {5.3}Rails backend analysis}{13}
+\contentsline {subsection}{\numberline {5.3.1}Controllers}{13}
+\contentsline {paragraph}{Application Controller}{13}
+\contentsline {paragraph}{Lecture Creator Controller}{14}
+\contentsline {paragraph}{Lecture List Controller}{14}
+\contentsline {paragraph}{Sheet Creator Controller}{14}
+\contentsline {paragraph}{Sheet Dashboard Controller}{14}
+\contentsline {paragraph}{Sheet Editor Controller}{14}
+\contentsline {paragraph}{Sheet Manager Controller}{14}
+\contentsline {paragraph}{API Controller}{14}
+\contentsline {section}{\numberline {5.4}Unit testing}{15}
+\contentsline {section}{\numberline {5.5}Third party libraries}{15}
+\contentsline {subsection}{\numberline {5.5.1}React}{15}
+\contentsline {subsection}{\numberline {5.5.2}Chromath}{16}
+\contentsline {subsection}{\numberline {5.5.3}CodeMirror}{16}
+\contentsline {subsection}{\numberline {5.5.4}Markdown-it}{16}
+\contentsline {subsection}{\numberline {5.5.5}Highlight}{16}
+\contentsline {subsection}{\numberline {5.5.6}JQCloud}{16}
+\contentsline {subsection}{\numberline {5.5.7}Levenshtein-ffi}{16}
+\contentsline {subsection}{\numberline {5.5.8}pg}{16}
+\contentsline {subsection}{\numberline {5.5.9}Devise}{16}
+\contentsline {subsection}{\numberline {5.5.10}ReactRails}{17}
+\contentsline {subsection}{\numberline {5.5.11}Typescript Rails}{17}
+\contentsline {chapter}{\numberline {6}Professional and Ethical Issues}{18}
+\contentsline {section}{\numberline {6.1}Section Heading}{18}
+\contentsline {chapter}{\numberline {7}Results/Evaluation}{19}
+\contentsline {section}{\numberline {7.1}Evaluation}{19}
+\contentsline {subsection}{\numberline {7.1.1}Limitations}{19}
+\contentsline {subsection}{\numberline {7.1.2}Security}{20}
+\contentsline {subsection}{\numberline {7.1.3}Overall}{20}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Work}{21}
+\contentsline {section}{\numberline {8.1}Thoughts on project}{21}
+\contentsline {section}{\numberline {8.2}Future work}{21}
+\contentsline {section}{Bibliography}{23}
+\contentsline {chapter}{\numberline {A}Extra Information}{24}
+\contentsline {section}{\numberline {A.1}Tables, proofs, graphs, test cases, ...}{24}
+\contentsline {chapter}{\numberline {B}User Guide}{25}
+\contentsline {section}{\numberline {B.1}Instructions}{25}
+\contentsline {chapter}{\numberline {C}Source Code}{26}
+\contentsline {section}{\numberline {C.1}Instructions}{26}

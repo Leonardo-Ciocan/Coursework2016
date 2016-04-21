@@ -23,43 +23,6 @@ Since the user's are assumed to be somewhat technically savvy , the application 
 Overall the application is meant to have a flat design that looks good on any resolution.
 Each lecture has a colour chosen by the teacher and shows up throughout the user interface so the user knows which lecture they are looking at.
 
-\subsection{Third party libraries}
-
-\subsubsection{React}
-A javascript library that allows the project to have isolated , reusable components that build up all of the user interface
-
-\subsubsection{Chromath} 
-A javascript library that can manipulate colours. It is used within the dashboard to compute darker shades of the lecture color - this is useful for both the charts ( each section of the chart is a different colour ) and for the transition matrix ( the higher the transition count , the darker the shade ).
-
-	It is statically included in the project.
-	
-\subsubsection{CodeMirror}
-A javascript library that provides an embeddable code editor. Used to let user's write their own code.
-
-\subsubsection{Markdown-it}
-A javascript library used to render Markdown , in both the title preview on the sheet creation page and the actual sheet that the user sees.
-
-\subsubsection{Highlight}
-A javascript library to highlight code syntax , used internally by Markdown-it
-	
-\subsubsection{JQCloud}
-A javascript library used to render a word cloud in the dashboard for input questions.
-
-\subsubsection{Levenshtein-ffi}
-A ruby gem that allows fast calculation of Levenshtein distances for answer's in the input question's dashboard.
-
-\subsubsection{pg}
-A ruby gem for Postgres support
-
-\subsubsection{Devise}
-A ruby gem that simplifies authentication
-
-\subsubsection{ReactRails}
-Support for React in Rails applications
-
-\subsubsection{Typescript Rails}
-Automatic compilation of typescript files as part of the rails asset pipeline.
-
 \subsection{Databases}
 There is one database in use which contains all the information relevant to the system , it is located on the same server as the backend ; further in the report you will find some notes on how this can be improved and why.
 The database schema is very important since changing it could break parts of the system , it was important to chose a structure that would not drastically change later in the development cycle.
