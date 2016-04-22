@@ -1,9 +1,35 @@
 \begin{thebibliography}{1}
 
+\bibitem{laptop2}
+Why laptops?
+\newblock \url{http://www.eos.ncsu.edu/soc/laptops/why_laptops}.
+
+\bibitem{laptop1}
+Lee~Rainie Aaron~Smith and Kathryn Zickuhr.
+\newblock College students and technology.
+\newblock
+  \url{http://www.pewinternet.org/2011/07/19/college-students-and-technology/}.
+
+\bibitem{tech}
+Thomas L.~Davies Angeline M.~Lavin, Leon~Korte.
+\newblock The impact of classroom technology on student behavior.
+\newblock \url{http://www.aabri.com/manuscripts/10472.pdf}.
+
 \bibitem{dockersecurity}
 Docker.
 \newblock Docker security.
 \newblock \url{https://docs.docker.com/engine/security/security/}.
+
+\bibitem{tech2}
+Robert~B. Kozma.
+\newblock Technology and classroom practices: An international study.
+\newblock
+  \url{https://www.stcloudstate.edu/tpi/initiative/documents/technology/Technology%20and%20Classroom%20Practices.pdf}.
+
+\bibitem{printing}
+Sanjay~Kumar Pal.
+\newblock 21st century information technology revolution.
+\newblock \url{http://dl.acm.org/citation.cfm?id=1399619&coll=portal&dl=ACM}.
 
 \bibitem{stackoverflow}
 Stackoveflow.

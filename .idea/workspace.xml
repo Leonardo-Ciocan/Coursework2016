@@ -6,13 +6,12 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Background.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Background.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Background.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Background.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Body.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Body.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Conclusion.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Conclusion.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" />
@@ -21,6 +20,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.bbl" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.bbl" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.blg" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.blg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/report.tex" afterPath="$PROJECT_DIR$/project_report/report.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -1045,12 +1045,6 @@
       <option name="number" value="Default" />
       <updated>1445084755533</updated>
     </task>
-    <task id="LOCAL-00013" summary="Fixed a number of UI bugs">
-      <created>1454170797433</created>
-      <option name="number" value="00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1454170797433</updated>
-    </task>
     <task id="LOCAL-00014" summary="Added basic creation UI base&#10;created checkbox component&#10;experimneting with creation UI">
       <created>1454170863550</created>
       <option name="number" value="00014" />
@@ -1339,7 +1333,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461201752050</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="report update">
+      <created>1461229738313</created>
+      <option name="number" value="00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1461229738314</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1389,7 +1389,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed unecessary libs" />
     <MESSAGE value="Can now release and withdraw model answers" />
     <MESSAGE value="Revamped basic dashboard" />
     <MESSAGE value="Improved statistics and fixtures" />
@@ -1414,7 +1413,8 @@
     <MESSAGE value="Added report" />
     <MESSAGE value="Added database to report" />
     <MESSAGE value="Added conclusion and rails controller explanation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added conclusion and rails controller explanation" />
+    <MESSAGE value="report update" />
+    <option name="LAST_COMMIT_MESSAGE" value="report update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
