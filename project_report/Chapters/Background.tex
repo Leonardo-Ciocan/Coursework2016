@@ -1,7 +1,15 @@
 \chapter{Background}
-\subsection{Relevant concepts}
-\paragraph{Question}
-Currently there are 3 types of questions:
+\section{Relevant concepts}
+
+\subsection{Teacher}
+The word teacher is used throughout the project and its associated materials. It does not necessarily refer to an accredited teacher ; any user of the system can create their own lectures while subscribing to others. Generally speaking , a teacher is one who created a lecture.
+
+\subsection{Student}
+A student is one who joins a lecture and completes handouts. A user may be both a teacher and a student (of different lectures).
+
+\subsection{Question}
+Questions are the core component of this project since handouts are composed of questions. In the context of this project a question is not only a piece of text ; a question is composed of a body ( or title of the question ) , it has a type which defines the structure of the answer. Currently there are 3 types of question:
+
 \begin{itemize}
 \item Multiple choice: The user is presented some choice and selects one
 \item Input: The user may input any piece of text, multiple solutions can exist
@@ -10,23 +18,46 @@ Currently there are 3 types of questions:
 
 The system is built in such a way that adding further questions is trivial and does not require breaking backwards compatibility or redesigning data structures used on the server.
 
-\paragraph{Sheet}
+Each question also has a correct answer and a model answer. The correct answer structure depends on the question type (i.e for choice questions it is just the index of the right answer but for input questions it's a regex).
+
+Likewise the model answer is type dependant ; it is shown to the user after the lecture so they may understand how the question is meant to be solved.
+
+
+\subsection{Sheet}
 The application revolves around Sheets. Analogue to a paper sheet handed in class, a sheet is a collection of questions of various types. Each sheet belongs to a lecture which has a teacher.
 
 
 A teacher can create sheets by mix and matching any number of question types which enable quite a varied way to test their students.
 
-\paragraph{Lecture}
+\paragraph{Going live} When the teacher creates a sheet , it is initially not live. In other words , students who are subscribed to the lecture cannot yet see it. The teacher may decide when to show the sheet.
+
+\subsection{Lecture}
 A lecture is a collection of sheets. It has a teacher and students can subscribe to a lecture so they can have access to all the sheets.
-Dashboard
+
+\subsection{Dashboard}
 An important part of this project is for the teacher to be able to monitor the student progress so that they may respond accordingly (for example, write some hints on the board). Each sheet has a dashboard which only the teacher can access.
 For each type of question, there is a different specialised user interface that is tailored to convey the progress of the students.
+
 A code question's dashboard widget will show the percentage of students who completed the question. 
+
 An input question’s dashboard shows the percentage of completions, as well as a word cloud of popular words in the questions, this is a specialised control that visually conveys to the teacher common words that are being used.
+
 A choice question’s dashboard will show the user’s completion, a bar chart for top first choices (which could help identify misleading questions amongst other things) and a transition matrix table, which shows the way students move from one answer to another.
 
 The dashboard is also meant to be extensible, so any future question types could provide their own way of visualising student progress.
 
-\subsection{Differentiation from competitors}
-The project is meant to be an extensible platform that can be enriched with more types of question along the development process to increase the variety of sheets the teachers can create. This gives it more potential than competitor’s who over inflexible solutions that are tailor made for very specific types of questions.
-Furthermore, by focusing on computer science students we allow users to run arbitrary code on the platform, which while some websites allow that – they provide that in a different setting such as code competitions – which means they do not compete with us , as this project enabled the teacher to write a question that can be answered with code as part of a sheet along with other questions.
+\section{Existing solutions}
+There are some products that have attempted to tackle the teacher - student interaction in the classroom.
+One of the most popular is called Socrative \footnote{Socrative \url{http://www.socrative.com/}} , which allows teachers to ask the students quizzes. However the system is very limited and only allows text questions , where the answers can be a choice or piece of text. This is not flexible and rich enough to replace traditional methods , only to agreement them. However , it has been downloaded over 1000000 times just on android \footnote{Socrative on Google Play \url{https://play.google.com/store/apps/details?id=com.socrative.student}} , which shows there is a clear market for such solutions.
+
+Another service that could be potentially a competitor is Moodle \footnote{Moodle \url{https://moodle.org/}} . It is not usually used in classroom settings but it does provide support for making quizzes that the students can answer and the teacher can analyse the questions. However this feature is a minor part of Moodle and it does not provide any of the real time advantages of other solutions , including the one described in this project. Some teachers use this to collect code written by user's and then script a solution to execute and mark the answers - however this is not a good solutions as students get little feedback and the process is not automated.
+
+Overall , one of the goals of this project is to bring together the advantages of all those different solutions in a package that is extensible and yet retains the ability to be easy to use for both students and teachers.
+
+
+\section{Platform}
+I have decided to build this project for the web instead of a mobile application for a number of reasons. Since this is meant to be used by a lot of students, it is a requirement that it should be as accessible as possible. Statistically speaking, a web app can reach the most people, especially account for the fact that computing students are the main target audience and they are likely to have laptops with them.
+The main disadvantage of making mobile apps is that to build a good native app would mean to focus on one platform (as cross platform solutions are not up to the task for the scope of the project) which would exclude students from the process. The web is a free, universal platform and so it is the perfect medium for this project.
+Ideally, fully native mobile apps are further down the roadmap as they provide a better experience and further expand the pool of users that are able to use the application.
+The backend part of this project has been built in such a way to allow for easy expansion to other platforms. In fact, the web app could be considered just a consumer of the backend and not being renderer by the server such that another front-end could be used instead without any friction.
+

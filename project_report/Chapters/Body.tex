@@ -1,6 +1,28 @@
-\chapter{Report Body}
-The central part of the report usually consists of three or four chapters detailing the technical work undertaken during the project. {\bf{\textcolor{red}{The structure of these chapters is highly project dependent}}}. They can reflect the chronological development of the project, e.g. design, implementation, experimentation, optimisation, evaluation, etc (although this is not always the best approach). However you choose to structure this part of the report, you should make it clear how you arrived at your chosen approach in preference to other alternatives. In terms of the software that you produce, you should describe and justify the design of your programs at some high level, e.g. using OMT, Z, VDL, etc., and you should document any interesting problems with, or features of, your implementation. Integration and testing are also important to discuss in some cases. You may include fragments of your source code in the main body of the report to illustrate points; the full source code is included in an appendix to your written report.
 
-\section{Section Heading}
+\chapter{Requirements}
+Because the main target audience is made up of computer savvy student and lecturers, it was possible to take a few liberties on the front-end of the platform. For example the questions can be written in Markdown, which is something computer scientists are already familiar with from websites such as StackOverflow and Github.
 
-\subsection{Subsection Heading}
+Nevertheless, I aim to make a project that requires minimal guidance as the user interface will be built to be easy and intuitive to operate.
+
+\section{Functional requirements}
+\begin{enumerate}
+\item   Let teacher create sheets made of a variety of question types
+\item 	Allow question types to include rich formatting such as tables and code
+\item 	Allow students to subscribe to a lecture such that they may have access to those sheets
+\item 	Allow a teacher to create a class and invite students with a link
+\item 	Let the teacher decide when a sheet should go “live” and be visible by the students
+\item 	Allow the teacher to attach model answers to each question
+\item   Let the teacher release model answers to the students so they may review their answers
+\item 	Monitor the students progress and present it to the teacher in an anonymous way
+\item   Allow users to write code to be executed for code questions
+\end{enumerate}
+
+
+\section{Non-functional requirements}
+\begin{enumerate}
+	\item User code must be run in a secure environment so that user data is not at risk
+	\item Web app must maintain a reasonable size by using shared components and merging duplicate code
+	\item Users should not be able to view or change data that does not belong to them
+	\item Allow easy extension of question types
+	\item Not store identifying information
+\end{enumerate}

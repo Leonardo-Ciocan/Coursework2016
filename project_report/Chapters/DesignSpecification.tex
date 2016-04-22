@@ -1,7 +1,10 @@
 \chapter{Design \& Specification}
 
 This section will present an abstract view of how the system works.
-The project is split into 3 main components - the web app , the backend and another external backend exclusively for running user code.
+The project is split into 3 main components - the web app , the backend and another server used exclusively for running user code.
+
+
+
 
 \section{Use cases}
 \begin{figure}[H]
@@ -19,6 +22,17 @@ The project is split into 3 main components - the web app , the backend and anot
 \end{figure}
 
 \section{System architecture}
+
+\subsection{Diagram}
+
+\begin{figure}[H]
+  \centering
+
+	\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{architecture}
+	\caption{System architecture diagram}
+\end{figure}
+
+
 \subsection{Backend}
 The backend provides a simple HTTP REST API that the front end can use. It is built in such a way that the front-end is a replaceable component and may be updated or switched during further development , data is encoded as JSON unless the payload represents one single value (like a number) in which case it is not wrapped in a JSON object.
 
@@ -38,7 +52,8 @@ The endpoint this server exposes takes a piece of code , the language it's writt
 Since the container only has access to the temporary folder where the code file is , it cannot harm the outer filesystem. In fact , deleting the root folder inside the container would only delete the code file and nothing else.
 If the code does not compile or there is a runtime error , the sever will wrap the error in a JSON object and return it to the main backend which will show it to the user.
 
-\subsection{Diagram}
+
+
 
 \section{User interface}
 Since the user's are assumed to be somewhat technically savvy , the application takes some liberties with having a limited amount of help and information banners since it works similarly to other website the target audience is familiar with ( markdown used in websites like Stackoverflow \cite{stackoverflow} ).

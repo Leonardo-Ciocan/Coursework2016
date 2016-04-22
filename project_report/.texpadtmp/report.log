@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.4)  22 APR 2016 03:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.4)  22 APR 2016 08:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -364,71 +364,76 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 Chapter 1.
 [3
 
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 55.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 55.
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 55.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4] [5] [6]
+] [4]
 \openout2 = `Chapters/Background.aux'.
 
  (./Chapters/Background.tex
 Chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 6.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 14.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 6.
- [7
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 14.
+ [5
 
 
-]) [8]
+] [6]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 51.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 51.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 51.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [7]) [8]
 \openout2 = `Chapters/Body.aux'.
 
  (./Chapters/Body.tex
 Chapter 3.
-) [9
+[9
 
 
 
-]
+]) [10]
 \openout2 = `Chapters/DesignSpecification.aux'.
 
  (./Chapters/DesignSpecification.tex
 Chapter 4.
-<cases.png, id=54, 769.87625pt x 364.36125pt>
+<cases.png, id=57, 769.87625pt x 364.36125pt>
 File: cases.png Graphic file (type png)
  <use cases.png>
-Package pdftex.def Info: cases.png used on input line 10.
+Package pdftex.def Info: cases.png used on input line 13.
 (pdftex.def)             Requested size: 411.95609pt x 194.96747pt.
- <cases2.png, id=56, 780.9175pt x 580.1675pt>
+ <cases2.png, id=59, 780.9175pt x 580.1675pt>
 File: cases2.png Graphic file (type png)
  <use cases2.png>
-Package pdftex.def Info: cases2.png used on input line 17.
+Package pdftex.def Info: cases2.png used on input line 20.
 (pdftex.def)             Requested size: 411.94202pt x 306.04431pt.
- [10
+ [11
 
 
 
- <./cases.png>] [11 <./cases2.png>] [12] [13] [14]) [15]
+ <./cases.png>] <architecture.png, id=64, 726.715pt x 606.265pt>
+File: architecture.png Graphic file (type png)
+ <use architecture.png>
+Package pdftex.def Info: architecture.png used on input line 31.
+(pdftex.def)             Requested size: 411.94756pt x 343.66896pt.
+ [12 <./cases2.png>] [13 <./architecture.png>] [14] [15] [16]) [17]
 \openout2 = `Chapters/Implementation.aux'.
 
  (./Chapters/Implementation.tex
 Chapter 5.
-[16
+[18
 
 
 
-] [17] [18] [19] [20]) [21]
+] [19] [20] [21] [22]) [23]
 \openout2 = `Chapters/ProfessionalIssues.aux'.
 
  (./Chapters/ProfessionalIssues.tex
 Chapter 6.
-) [22
+) [24
 
 
 
@@ -437,20 +442,20 @@ Chapter 6.
 
  (./Chapters/Evaluation.tex
 Chapter 7.
-[23
-
-
-
-]) [24]
-\openout2 = `Chapters/Conclusion.aux'.
-
- (./Chapters/Conclusion.tex
-Chapter 8.
 [25
 
 
 
-]) [26] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.bbl
+]) [26]
+\openout2 = `Chapters/Conclusion.aux'.
+
+ (./Chapters/Conclusion.tex
+Chapter 8.
+[27
+
+
+
+]) [28] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.bbl
 Underfull \hbox (badness 7186) in paragraph at lines 24--28
 []\OT1/lmr/m/n/10 Robert B. Kozma.  Tech-nol-ogy and class-room prac-tices: An in-ter-na-tional
  []
@@ -460,7 +465,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
 \OT1/lmr/m/n/10 study.  $\OT1/lmtt/m/n/10 https : / / www . stcloudstate . edu / tpi / initiative / documents / technology /
  []
 
-) [27
+) [29
 
 
 ]
@@ -468,7 +473,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 24--28
 
  (./Appendices/appendix.tex
 Appendix A.
-) [28
+) [30
 
 
 ]
@@ -476,7 +481,7 @@ Appendix A.
 
  (./Appendices/UserGuide.tex
 Appendix B.
-) [29
+) [31
 
 
 
@@ -485,24 +490,24 @@ Appendix B.
 
  (./Appendices/SourceCode.tex
 Appendix C.
-) [30
+) [32
 
 
 
 ] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.aux (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Background.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Body.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/DesignSpecification.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Implementation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Evaluation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Conclusion.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/appendix.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/UserGuide.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/SourceCode.aux)) ) 
 Here is how much of TeX's memory you used:
- 4108 strings out of 493089
- 63952 string characters out of 6134843
- 132556 words of memory out of 5000000
- 7430 multiletter control sequences out of 15000+600000
+ 4113 strings out of 493089
+ 64051 string characters out of 6134843
+ 133556 words of memory out of 5000000
+ 7434 multiletter control sequences out of 15000+600000
  57462 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,34p,1103b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,34p,727b,280s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on /Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.pdf (34 pages, 393796 bytes).
+Output written on /Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.pdf (36 pages, 420858 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 116 compressed objects within 2 object streams
+ 179 PDF objects out of 1000 (max. 8388607)
+ 120 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
