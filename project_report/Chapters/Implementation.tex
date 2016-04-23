@@ -62,9 +62,122 @@ Controllers are split by page that the user sees , as well as an additional ApiC
 	\item \textit{\textbf{user \textunderscore info}} Return the email of the logged in user
 \end{itemize}
 
+\section{Front end analysis}
+The front end is mostly composed of React components; React uses a special file type called JSX which allows the mixing of javascript and HTML in the same file. JSX files go though a compilation phase to become plain JS files.
 
+In this project , Typescript is used instead of javascript , so the files written in the project are TSX files , which compile down to JSX and then to JS.
+
+\subsection{React components}
+\paragraph{LectureCreatorPage} The state contains a \textit{\textbf{name}} and \textit{\textbf{color}} which are selected by the user and send using POST when the user presses create lecture.
+\paragraph{LectureItem} The component takes a lecture object and renders a single Lecture box
+\paragraph{LecturePage} Takes two arrays of lecture objects , one for lectures created and one for subscribed lectures , then renders two sets of LectureItem
+\paragraph{SubscribePage} Takes a single lecture object and prompts the user to subscribe to it
+\paragraph{SheetCreatorPage} Takes a single lecture object ; this page let's the user create a sheet. It has the following state:
+\begin{itemize}
+	\item \textit{\textbf{items}} An array of questions that the user is creating for this sheet
+	\item \textit{\textbf{name}} The name of the sheet
+	\item \textit{\textbf{description}} The description of a sheet
+	\item \textit{\textbf{errors}} A map , where the key is a number representing the question index and the value is a list of errors for that question
+	\item \textit{\textbf{dragging}} Whether the user is dragging an element to create a new question
+\end{itemize}
+\paragraph{InputCreator} A component for creating an input question. Takes the following parameters:
+\begin{itemize}
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{question}} The question this element is editing/representing
+	\item \textit{\textbf{key}} Used internally by React
+	\item \textit{\textbf{onDelete}} A function called when the question is deleted
+	\item \textit{\textbf{errors}} A list of strings , representing errors with this question
+\end{itemize}
+\paragraph{CodeIO} An object with an input field and output field (both strings)
+\paragraph{CodeCreatorIO} A component with an input textbox and an output textbox. Used to represent a test case in the code question. It takes a CodeIO object which contains a Input and Output field , changes are reflected inside this object
+\paragraph{CodeCreator} A component for creating a code question. It allows the user to choose the language and create tests which are instances of CodeIO and are represented by CodeCreatorIO. It has the following properties:
+\begin{itemize}
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{question}} The code question this component represents
+	\item \textit{\textbf{index}} The index of the question
+	\item \textit{\textbf{onDelete}} A function called when the question is deleted
+	\item \textit{\textbf{errors}} A list of strings , representing errors with this question
+\end{itemize}
+\paragraph{ChoiceCreatorAnswer} A component that represents an answer for a choice question. Takes an answer object , the lecture color and a onDelete handler.
+\paragraph{ChoiceCreator} A component for creating a choice question. It allows the user to create choices for the user to select.. Takes the following parameters:
+\begin{itemize}
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{question}} The question this element is editing/representing
+	\item \textit{\textbf{key}} Used internally by React
+	\item \textit{\textbf{onDelete}} A function called when the question is deleted
+	\item \textit{\textbf{errors}} A list of strings , representing errors with this question
+\end{itemize}
+\paragraph{SheetDashboardPage} The page where the teacher can see the stats of a sheet. Takes a lecture and a list of questions.
+\paragraph{InputStats , CodeStats , ChoiceStats} Components that shows the statistics for the specific type of question. Takes a question and the lecture color.
+\paragraph{ActivityIndicator} A component that shows a pie chart that represents the user's who have completed a question succesfully. Takes the following parameters:
+\begin{itemize}
+	\item \textit{\textbf{question}} The question
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{percentage}} The percentage of students who solved the question
+	\item \textit{\textbf{correct}} The number of students who solved the question
+	\item \textit{\textbf{wrong}} The number of students who did not solve the question
+\end{itemize}
+\paragraph{SheetEditPage} The page where the student can complete the sheet. Takes the following properties:
+\begin{itemize}
+	\item \textit{\textbf{questions}} A list of questions in the sheet
+	\item \textit{\textbf{shet}} The sheet the user is answering
+	\item \textit{\textbf{lecture}} The lecture the sheet belongs to
+	\item \textit{\textbf{answers}} The user's answers
+	\item \textit{\textbf{modelAnswers}} The model answers for this sheet
+	\item \textit{\textbf{percentage}} The percentage of questions that the user solved
+\end{itemize}
+\paragraph{InputQuestion , CodeQuestion , ChoiceQuestion} Components that show the questions to the user and let them answer it. Each takes a question , an answer , a color , a model answer and a boolean that represents whether the sheet has model answers released.
+\paragraph{SheetManagerPage} The page where the teacher can manage the sheets in the lecture.
+\paragraph{SheetControl} A component that represents a sheet and let's the teacher release the model answers , delete it or access the dashboard
+\paragraph{SheetsPage} The student view of all the sheets , takes a lecture.
+\paragraph{SheetItem} A component that represents a sheet that the student can access. Takes a sheet object.
+
+There are also some shared components:
+
+\paragraph{CheckBox} A checkbox , takes a boolean that represents whether it's checked , a color and a onChange handler.
+\paragraph{ColorPicker} Let's the user pick select a color. Takes a onPicked handler that is triggered when a color is selected.
+\paragraph{Header} A component that sits at the top of the pages , used for navigation. Takes the following properties:
+\begin{itemize}
+	\item \textit{\textbf{title}} The title of the page , shown on the left
+	\item \textit{\textbf{name}} The name of the user logged in
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{onBack}} Handler , triggered when back button is clicked
+	\item \textit{\textbf{foreground}} The foreground color of the header
+	\item \textit{\textbf{hideBack}} Whether the back button should be shown.
+\end{itemize}
+It also has the following state:
+\begin{itemize}
+	\item \textit{\textbf{showMenu}} Whether the user menu should be shown
+	\item \textit{\textbf{showSearch}} Whether to show the search panel
+	\item \textit{\textbf{searchSheets}} The sheets found by searching
+	\item \textit{\textbf{searchLectures}} The lectures found by searching
+	\item \textit{\textbf{query}} The search query typed in the search box
+\end{itemize}
+\paragraph{IDFactory} Used to generate new IDs for React keys
+\paragraph{LCButton} A reusable colourable button , takes a piece of text for the content , a color , an onClick function and a style object.
+\paragraph{MDPreview} A reusable component for previewing Markdown. Takes a piece of markdown code and renders it.
+\paragraph{SearchDropdown} Used to show search results. Takes the following parameters:
+\begin{itemize}
+	\item \textit{\textbf{shouldShow}} Whether the search panel should be visible
+	\item \textit{\textbf{sheets}} The sheets found by search
+	\item \textit{\textbf{lectures}} The lectures found by search
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{query}} The text entered in the search bar
+\end{itemize}
+\paragraph{SegmentedButton} A segmented button control that let's the user select between options. Takes the following parameters:
+\begin{itemize}
+	\item \textit{\textbf{color}} The color of the lecture
+	\item \textit{\textbf{labels}} An array of strings representing the choices the control provides
+	\item \textit{\textbf{style}} Additional styling provided externally
+	\item \textit{\textbf{onSelected}} A function triggered when the selection changes
+	\item \textit{\textbf{selectedIndex}} The currently selected item
+	\item \textit{\textbf{itemPadding}} The padding of each item in the control
+\end{itemize}
+\paragraph{TextArea} A stylised text area
+\paragraph{TextBox} A stylised text box
 
 \textcolor{red}{//example code here and in the typescript}
+\textcolor{red}{append styles to React}
 
 \section{Unit testing}
 Unit testing was used to make sure changes and additions to the system did not break or alter any previous functionality.

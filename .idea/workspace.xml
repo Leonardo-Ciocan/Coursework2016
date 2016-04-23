@@ -2,26 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/report.pdf" afterPath="$PROJECT_DIR$/project_report/report.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Background.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Background.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Background.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Background.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Body.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Body.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Body.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Body.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/DesignSpecification.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/report.tex" afterPath="$PROJECT_DIR$/project_report/report.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestUsers.iws" />
@@ -1045,12 +1025,6 @@
       <option name="number" value="Default" />
       <updated>1445084755533</updated>
     </task>
-    <task id="LOCAL-00015" summary="Added more full fledged UI for buttons and new UI for multiple choice editor">
-      <created>1454187881795</created>
-      <option name="number" value="00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1454187881795</updated>
-    </task>
     <task id="LOCAL-00016" summary="User can now create sheets with multiple choice questions">
       <created>1454292438945</created>
       <option name="number" value="00016" />
@@ -1339,7 +1313,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461293707524</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="changed report again">
+      <created>1461315603351</created>
+      <option name="number" value="00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1461315603351</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1361,7 +1341,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2568438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1632653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1632653" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25092524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40166494" sideWeight="0.75049376" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
