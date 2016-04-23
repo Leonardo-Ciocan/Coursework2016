@@ -2,7 +2,21 @@
 
 In this section we will explore whether the project has met the requirements that were set in the requirements section of this report as well as other general aspects of the software that can be evaluated.
 
+One of the core requirements was to let the teacher create different types of question and collate them into a sheet. Since this was a core mechanic of the system , it was one of the first things to be implemented. The teacher can create choice questions (student selects one of multiple choices) , input questions (students can write any text into a text box) and code questions (students can write their own code to solve a question. Furthermore the platform was built with this requirement in mind such that it can be extended later.
 
+Markdown is used to write the body of the questions , this allows the teacher to include rich formatting within the question text. This useful because it can make questions more expressive and easier for the user to understand.
+
+
+Teachers can easily create a lecture and invite students to subscribe to it by sharing a link. After they are subscribed they can access all the sheets that the teacher has chosen to go live. As student complete the sheet , the teacher can monitor the results so that they may know how to proceed further with the lecture. 
+When the teacher decides the sheet time is over , he may release the model answers so the user can see their score and what the correct answer is. If the student accesses a sheet after the model answers are released , they will not be able to submit any changes , but may review their answers.
+
+Docker and container technology allow the system to run student code in a safe way. That coupled with the fact that the languages do not have pointer arithmetic / unsafe operations and run in a non root mode ensures the risk of malicious attack using the student code as a vector is minimised if not completely avoided.
+
+The front end has a shared folder which contains components that can be reused across different pages ; they are generic components but can be customised without the need to modify their implementation.
+
+Another requirement was the extensibility of the platform ; the code and database schema are made in such a way that adding more question types and their respective view in the dashboard is trivial. By using JSON for the core definitions of the questions and answers allows the platform to be well positioned for further development.
+
+Anonymity is an important part of this platform , in fact the only identifiable information asked of the user is their email address. Furthermore data is partitioned such that a user may not get access to data they are not supposed to see , they may also not update or attempt to modify or create a resource that belongs to a resource they do not have permission to interact with.
 
 \subsection{Limitations}
 There were some things that were simplified or postponed for the sake of keeping in line with deadlines and achieving all the compulsory requirements that I have set. Thus the system does have some limitation (solutions to those limitations will be explored in the next section)

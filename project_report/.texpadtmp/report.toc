@@ -96,16 +96,16 @@
 \contentsline {chapter}{\numberline {6}Professional and Ethical Issues}{28}
 \contentsline {section}{\numberline {6.1}Section Heading}{28}
 \contentsline {chapter}{\numberline {7}Results/Evaluation}{29}
-\contentsline {subsection}{\numberline {7.0.1}Limitations}{29}
-\contentsline {subsection}{\numberline {7.0.2}Security}{29}
-\contentsline {subsection}{\numberline {7.0.3}Overall}{30}
-\contentsline {chapter}{\numberline {8}Conclusion}{31}
-\contentsline {section}{\numberline {8.1}Thoughts on project}{31}
-\contentsline {section}{\numberline {8.2}Future work}{31}
-\contentsline {section}{Bibliography}{33}
-\contentsline {chapter}{\numberline {A}Extra Information}{34}
-\contentsline {section}{\numberline {A.1}Tables, proofs, graphs, test cases, ...}{34}
-\contentsline {chapter}{\numberline {B}User Guide}{35}
-\contentsline {section}{\numberline {B.1}Instructions}{35}
-\contentsline {chapter}{\numberline {C}Source Code}{36}
-\contentsline {section}{\numberline {C.1}Instructions}{36}
+\contentsline {subsection}{\numberline {7.0.1}Limitations}{30}
+\contentsline {subsection}{\numberline {7.0.2}Security}{30}
+\contentsline {subsection}{\numberline {7.0.3}Overall}{31}
+\contentsline {chapter}{\numberline {8}Conclusion}{32}
+\contentsline {section}{\numberline {8.1}Thoughts on project}{32}
+\contentsline {section}{\numberline {8.2}Future work}{32}
+\contentsline {section}{Bibliography}{34}
+\contentsline {chapter}{\numberline {A}Extra Information}{35}
+\contentsline {section}{\numberline {A.1}Tables, proofs, graphs, test cases, ...}{35}
+\contentsline {chapter}{\numberline {B}User Guide}{36}
+\contentsline {section}{\numberline {B.1}Instructions}{36}
+\contentsline {chapter}{\numberline {C}Source Code}{37}
+\contentsline {section}{\numberline {C.1}Instructions}{37}
