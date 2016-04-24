@@ -255,6 +255,28 @@ if(this.props.style != undefined){
 }
 \end{lstlisting}
 
+\section{Code execution server analysis}
+
+As mentioned in the Design section:
+\begin{displayquote}
+
+"The endpoint this server exposes takes a piece of code , the language it's written in and a map of inputs and outputs. The code is written to a temporary file in a temporary folder. Then , depending on the language , a docker instance with the right runtime is started.When creating this instance , the temporary folder is mounted (mapped) to the docker instance inside the container's root drive. Then the file is executed inside the virtual machine with all the inputs - if the outputs generated match the given model answers then the API returns true , else false."
+\end{displayquote}
+
+To create and execute code on the docker instance , the python program that handles the code execution server generates a bash command that can be executed. The program then executes it and hooks into the process STDIN and STDOUT so it can simulate input and get the output.
+
+To illustrate this , here is how the command string for a java program is made. Note Code.java is written to the disk previously and folder is the temporary folder where it's located.
+
+\begin{lstlisting}[breaklines,language=Typescript,frame=single,basicstyle=\ttfamily,
+    stringstyle=\color{red},
+    keywordstyle=\color{blue}]
+cmdStr = "sudo docker run -v {0}:/code/ -i java /bin/bash -c \" javac /code/Code.java;cd /code/;java Code\"".format(folder)
+\end{lstlisting}
+
+The -v switch mounts the folder to the /code/ path on the container so that the code will be at /code/Code.java
+
+
+
 \section{Unit testing}
 Unit testing is used to make sure changes and additions to the system did not break or alter any previous functionality. More precisely it has the following advantages:
 \begin{itemize}

@@ -4,22 +4,13 @@
     <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/report.pdf" afterPath="$PROJECT_DIR$/project_report/report.pdf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.synctex.gz" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/Appendix.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Background.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Background.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Conclusion.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/DesignSpecification.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Evaluation.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/Implementation.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/Implementation.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Chapters/ProfessionalIssues.tex" afterPath="$PROJECT_DIR$/project_report/Chapters/ProfessionalIssues.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/SourceCode.aux" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/Appendices/UserGuide.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/Appendices/UserGuide.tex" afterPath="$PROJECT_DIR$/project_report/Appendices/UserGuide.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/references.bib" afterPath="$PROJECT_DIR$/project_report/references.bib" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.aux" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.bbl" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.bbl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.blg" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.blg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/report.tex" afterPath="$PROJECT_DIR$/project_report/report.tex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" afterPath="$PROJECT_DIR$/project_report/.texpadtmp/report.toc" />
@@ -47,7 +38,7 @@
     <SUITE FILE_PATH="coverage/TestUsers@application.coverage" NAME="application Coverage Results" MODIFIED="1446485988045" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@Development__TestUsers.coverage" NAME="Development: TestUsers Coverage Results" MODIFIED="1456888208112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@db_migrate__2_.coverage" NAME="db:migrate (2) Coverage Results" MODIFIED="1450252103443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
-    <SUITE FILE_PATH="coverage/TestUsers@test.coverage" NAME="test Coverage Results" MODIFIED="1461507649962" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
+    <SUITE FILE_PATH="coverage/TestUsers@test.coverage" NAME="test Coverage Results" MODIFIED="1461526912477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@db_migrate__1_.coverage" NAME="db:migrate (1) Coverage Results" MODIFIED="1449255529096" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
     <SUITE FILE_PATH="coverage/TestUsers@db_migrate__5_.coverage" NAME="db:migrate (5) Coverage Results" MODIFIED="1449849585314" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="TestUsers" />
   </component>
@@ -111,8 +102,8 @@
           <file leaf-file-name="answer.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.7531993">
-                  <caret line="29" column="5" selection-start-line="8" selection-start-column="2" selection-end-line="29" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.2">
+                  <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
                   <folding />
                 </state>
               </provider>
@@ -188,16 +179,6 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gemfile">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -205,8 +186,8 @@
           <file leaf-file-name="api_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.80073124">
-                  <caret line="383" column="32" selection-start-line="383" selection-start-column="32" selection-end-line="383" selection-end-column="32" />
+                <state vertical-scroll-proportion="0.5125">
+                  <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -360,10 +341,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1603" />
-    <option name="y" value="23" />
-    <option name="width" value="1548" />
-    <option name="height" value="1027" />
+    <option name="width" value="1278" />
+    <option name="height" value="1440" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -388,9 +367,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="RailsProjectView" />
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -675,6 +653,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="RailsProjectView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -682,7 +661,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="RakeTaksPopup.undocumentedIncluded" value="false" />
     <property name="SearchEverywhereHistoryKey" value="lib/&#9;FILE&#9;file:///Users/leo/RubymineProjects/TestUsers/lib&#10;sessionc&#9;null&#9;null&#10;migra&#9;ACTION&#9;rails:generator:migration&#10;rake&#9;ACTION&#9;RAKE_TOOLS&#10;generate&#9;ACTION&#9;GenerateGroup&#10;application.js&#9;FILE&#9;file:///Users/leo/RubymineProjects/TestUsers/app/assets/javascripts/application.js" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="JavaScriptLanguageLevel" value="JSX" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Ruby" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -1064,12 +1043,6 @@
       <option name="number" value="Default" />
       <updated>1445084755533</updated>
     </task>
-    <task id="LOCAL-00019" summary="Added code mirror for basic code questions">
-      <created>1454638224411</created>
-      <option name="number" value="00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1454638224411</updated>
-    </task>
     <task id="LOCAL-00020" summary="Can now create input questions via the UI">
       <created>1454711223157</created>
       <option name="number" value="00020" />
@@ -1358,7 +1331,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461471714568</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Updated report">
+      <created>1461519127119</created>
+      <option name="number" value="00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1461519127120</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1371,29 +1350,29 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1603" y="23" width="1548" height="1027" extended-state="0" />
+    <frame x="0" y="0" width="1278" height="1440" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864544" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30857143" sideWeight="0.6209867" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32790527" sideWeight="0.49677938" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2568438" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24931507" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1679947" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15210356" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25092524" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40166494" sideWeight="0.74634796" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12034384" sideWeight="0.69902915" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.40166494" sideWeight="0.25365207" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12034384" sideWeight="0.30097088" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32903716" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32857144" sideWeight="0.49021277" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32864544" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1445,13 +1424,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/initializers/assets.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="57" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1833,18 +1805,43 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7531993">
-          <caret line="29" column="5" selection-start-line="8" selection-start-column="2" selection-end-line="29" selection-end-column="5" />
-          <folding />
+    <entry file="uml://Ruby/ApiController">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>Ruby</ID>
+          <OriginalElement>ApiController</OriginalElement>
+          <nodes>
+            <node x="" y="">ApiController</node>
+            <node x="" y="">AbstractController::Base</node>
+            <node x="" y="">ActionController::Metal</node>
+            <node x="" y="">ActiveSupport::DescendantsTracker</node>
+            <node x="" y="">ActiveSupport::Configurable</node>
+            <node x="" y="">ActionController::Base</node>
+            <node x="" y="">LCHelper</node>
+            <node x="" y="">ApplicationController</node>
+            <node x="" y="">ActiveSupport::Concern</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="167.0" y="255.0" />
+          <SelectedNodes />
+          <Categories />
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.80073124">
-          <caret line="383" column="32" selection-start-line="383" selection-start-column="32" selection-end-line="383" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.5125">
+          <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="73" selection-end-line="16" selection-end-column="73" />
           <folding />
         </state>
       </provider>
