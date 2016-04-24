@@ -14,45 +14,45 @@ A level-1 auxiliary file: Appendices/UserGuide.aux
 A level-1 auxiliary file: Appendices/SourceCode.aux
 Database file #1: ../references.bib
 Warning--to sort, need author or key in laptop2
-You've used 7 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            534 strings with 5264 characters,
-and the built_in function-call counts, 1441 in all, are:
-= -- 132
-> -- 49
+            538 strings with 5414 characters,
+and the built_in function-call counts, 1645 in all, are:
+= -- 151
+> -- 56
 < -- 0
-+ -- 22
-- -- 14
-* -- 41
-:= -- 236
-add.period$ -- 20
-call.type$ -- 7
-change.case$ -- 28
++ -- 25
+- -- 16
+* -- 46
+:= -- 270
+add.period$ -- 23
+call.type$ -- 8
+change.case$ -- 32
 chr.to.int$ -- 0
-cite$ -- 8
-duplicate$ -- 49
-empty$ -- 156
-format.name$ -- 14
-if$ -- 318
+cite$ -- 9
+duplicate$ -- 56
+empty$ -- 178
+format.name$ -- 16
+if$ -- 363
 int.to.chr$ -- 0
-int.to.str$ -- 7
+int.to.str$ -- 8
 missing$ -- 0
-newline$ -- 37
-num.names$ -- 12
-pop$ -- 57
+newline$ -- 42
+num.names$ -- 14
+pop$ -- 65
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 24
 quote$ -- 0
-skip$ -- 57
+skip$ -- 65
 stack$ -- 0
-substring$ -- 36
-swap$ -- 7
+substring$ -- 41
+swap$ -- 8
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 28
+type$ -- 32
 warning$ -- 1
-while$ -- 12
-width$ -- 8
-write$ -- 63
+while$ -- 14
+width$ -- 9
+write$ -- 72
 (There was 1 warning)

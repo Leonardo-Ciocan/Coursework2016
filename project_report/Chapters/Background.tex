@@ -2,47 +2,51 @@
 \section{Relevant concepts}
 
 \subsection{Teacher}
-The word teacher is used throughout the project and its associated materials. It does not necessarily refer to an accredited teacher ; any user of the system can create their own lectures while subscribing to others. Generally speaking , a teacher is one who created a lecture.
+The word teacher is used throughout the project and its associated materials. It does not necessarily refer to an accredited teacher ; any user of the system can create their own lectures while subscribing to others. Generally speaking , a teacher is one who created a lecture. As a concrete example , a TA\footnote{Teaching assistant} may also benefit from using this in labs.
 
 \subsection{Student}
-A student is one who joins a lecture and completes handouts. A user may be both a teacher and a student (of different lectures).
+A student is one who joins a lecture and completes handouts. A user of this system may be both a teacher and a student (of different lectures).
 
 \subsection{Question}
-Questions are the core component of this project since handouts are composed of questions. In the context of this project a question is not only a piece of text ; a question is composed of a body ( or title of the question ) , it has a type which defines the structure of the answer. Currently there are 3 types of question:
+Questions are the core component of this project since handouts are composed of questions. In the context of this project a question is not only a piece of text - a question is composed of a body (the text of the question itself) as well as a type which defines the structure of the answer. Currently there are 3 types of question:
 
 \begin{itemize}
 \item Multiple choice: The user is presented some choice and selects one
 \item Input: The user may input any piece of text, multiple solutions can exist
-\item Code: Users can write code to solve a posed question
+\item Code: Users can write code to solve a posed question , the user's code can be run against an arbitrary amount of test cases to confirm it works for a range of inputs
 \end{itemize}
 
 The system is built in such a way that adding further questions is trivial and does not require breaking backwards compatibility or redesigning data structures used on the server.
 
-Each question also has a correct answer and a model answer. The correct answer structure depends on the question type (i.e for choice questions it is just the index of the right answer but for input questions it's a regex).
+Each question also has a correct answer and a model answer. The correct answer is an object or piece of text that defines what the corrrect answer for the question is. The structure depends on the question type , for example the choice questions's correct answer is defined as a number (the index of the correct answer) , but for input questions it is a regex.
 
 Likewise the model answer is type dependant ; it is shown to the user after the lecture so they may understand how the question is meant to be solved.
 
 
 \subsection{Sheet}
-The application revolves around Sheets. Analogue to a paper sheet handed in class, a sheet is a collection of questions of various types. Each sheet belongs to a lecture which has a teacher.
+The application revolves around sheets. Analogue to a paper sheet handed in class, a sheet is a collection of questions of various types. Each sheet belongs to a lecture , all which have a teacher.
 
 
 A teacher can create sheets by mix and matching any number of question types which enable quite a varied way to test their students.
 
-\paragraph{Going live} When the teacher creates a sheet , it is initially not live. In other words , students who are subscribed to the lecture cannot yet see it. The teacher may decide when to show the sheet.
+\paragraph{Going live} When the teacher creates a sheet , it is initially not "live". In other words , students who are subscribed to the lecture cannot yet see it. The teacher may decide when to show the sheet.
+
+\paragraph{Releasing answers} After a sheet has gone live , the teacher may chose to end the sheet and stop students from submitting answers anymore. In this state the student can see the model answer's created by the teacher when designing the sheet as well as their score for that sheet.
 
 \subsection{Lecture}
-A lecture is a collection of sheets. It has a teacher and students can subscribe to a lecture so they can have access to all the sheets.
+A lecture is a collection of sheets. It has a teacher and students can subscribe to a lecture so they can have access to all the sheets that the teacher created for the lecture.
+
+Each lecture has a colour , this colour is used throughout the user interface when the student is interacting with content relating with the lecture. This provides a sense of cohesion and makes the user more aware of the lecture they are currently in.
 
 \subsection{Dashboard}
-An important part of this project is for the teacher to be able to monitor the student progress so that they may respond accordingly (for example, write some hints on the board). Each sheet has a dashboard which only the teacher can access.
-For each type of question, there is a different specialised user interface that is tailored to convey the progress of the students.
+An important part of this project is for the teacher to be able to monitor the student progress so that they may respond accordingly ; for example, write some hints on the board. Each sheet has a dashboard which only the teacher can access.
+For each type of question, there is a different specialised user interface that is tailored to convey the progress of the students for that specific type.
 
 A code question's dashboard widget will show the percentage of students who completed the question. 
 
-An input question’s dashboard shows the percentage of completions, as well as a word cloud of popular words in the questions, this is a specialised control that visually conveys to the teacher common words that are being used.
+An input question's dashboard shows the percentage of completions, as well as a word cloud of popular words in the questions, this is a specialised control that visually conveys to the teacher common words that are being used.
 
-A choice question’s dashboard will show the user’s completion, a bar chart for top first choices (which could help identify misleading questions amongst other things) and a transition matrix table, which shows the way students move from one answer to another.
+A choice question's dashboard will show the user’s completion, a bar chart for top first choices (which could help identify misleading questions amongst other things) and a transition matrix table, which shows the way students move from one answer to another.
 
 The dashboard is also meant to be extensible, so any future question types could provide their own way of visualising student progress.
 
@@ -56,8 +60,30 @@ Overall , one of the goals of this project is to bring together the advantages o
 
 
 \section{Platform}
-I have decided to build this project for the web instead of a mobile application for a number of reasons. Since this is meant to be used by a lot of students, it is a requirement that it should be as accessible as possible. Statistically speaking, a web app can reach the most people, especially account for the fact that computing students are the main target audience and they are likely to have laptops with them.
-The main disadvantage of making mobile apps is that to build a good native app would mean to focus on one platform (as cross platform solutions are not up to the task for the scope of the project) which would exclude students from the process. The web is a free, universal platform and so it is the perfect medium for this project.
-Ideally, fully native mobile apps are further down the roadmap as they provide a better experience and further expand the pool of users that are able to use the application.
+This project is built as a web app instead of a mobile application for a number of reasons. Since this is meant to be used by a lot of students, it is a requirement that it should be as accessible as possible. Statistically speaking, a web app can reach the most people, especially account for the fact that computer science students are the main target audience and they are likely to have laptops with them.
+
+The main disadvantage of making mobile apps is that to build a good native app would mean to focus on one platform (as cross platform solutions are not up to the task for the scope of the project) which would exclude students from the process. The web is a free, universal platform and so it is the perfect starting medium for this project.
+
+Ideally, fully native mobile apps are further down the roadmap as they provide a better experience and further expand the pool of users that are able to use the application , especially as tablets and hybrid devices are increasing in popularity with students\cite{tablets}.
+
 The backend part of this project has been built in such a way to allow for easy expansion to other platforms. In fact, the web app could be considered just a consumer of the backend and not being renderer by the server such that another front-end could be used instead without any friction.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
