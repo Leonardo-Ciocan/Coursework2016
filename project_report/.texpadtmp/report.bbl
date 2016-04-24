@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{laptop2}
 Why laptops?
@@ -14,6 +14,11 @@ Lee~Rainie Aaron~Smith and Kathryn Zickuhr.
 Thomas L.~Davies Angeline M.~Lavin, Leon~Korte.
 \newblock The impact of classroom technology on student behavior.
 \newblock \url{http://www.aabri.com/manuscripts/10472.pdf}.
+
+\bibitem{jsx}
+Facebook Developers.
+\newblock Jsx in depth.
+\newblock \url{https://facebook.github.io/react/docs/jsx-in-depth.html}.
 
 \bibitem{dockersecurity}
 Docker.
@@ -36,6 +41,11 @@ Pearson.
 \newblock Student mobile device survey 2015.
 \newblock
   \url{http://www.pearsoned.com/wp-content/uploads/2015-Pearson-Student-Mobile-Device-Survey-College.pdf}.
+
+\bibitem{conduct}
+British~Computer Society.
+\newblock Code of conduct.
+\newblock \url{http://www.bcs.org/upload/pdf/conduct.pdf}.
 
 \bibitem{stackoverflow}
 Stackoveflow.

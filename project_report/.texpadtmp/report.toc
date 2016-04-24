@@ -41,8 +41,9 @@
 \contentsline {subsection}{\numberline {5.1.2}Backend}{19}
 \contentsline {section}{\numberline {5.2}Development Tools}{19}
 \contentsline {section}{\numberline {5.3}Rails backend analysis}{19}
-\contentsline {subsection}{\numberline {5.3.1}Controllers}{19}
-\contentsline {paragraph}{Application Controller}{19}
+\contentsline {subsection}{\numberline {5.3.1}Routes}{19}
+\contentsline {subsection}{\numberline {5.3.2}Controllers}{19}
+\contentsline {paragraph}{Application Controller}{20}
 \contentsline {paragraph}{Lecture Creator Controller}{20}
 \contentsline {paragraph}{Lecture List Controller}{20}
 \contentsline {paragraph}{Sheet Creator Controller}{20}
@@ -50,64 +51,69 @@
 \contentsline {paragraph}{Sheet Editor Controller}{20}
 \contentsline {paragraph}{Sheet Manager Controller}{20}
 \contentsline {paragraph}{API Controller}{20}
-\contentsline {section}{\numberline {5.4}Front end analysis}{21}
-\contentsline {subsection}{\numberline {5.4.1}React components}{21}
-\contentsline {paragraph}{LectureCreatorPage}{21}
-\contentsline {paragraph}{LectureItem}{21}
-\contentsline {paragraph}{LecturePage}{21}
-\contentsline {paragraph}{SubscribePage}{21}
-\contentsline {paragraph}{SheetCreatorPage}{22}
-\contentsline {paragraph}{InputCreator}{22}
-\contentsline {paragraph}{CodeIO}{22}
-\contentsline {paragraph}{CodeCreatorIO}{22}
-\contentsline {paragraph}{CodeCreator}{22}
-\contentsline {paragraph}{ChoiceCreatorAnswer}{23}
-\contentsline {paragraph}{ChoiceCreator}{23}
-\contentsline {paragraph}{SheetDashboardPage}{23}
-\contentsline {paragraph}{InputStats , CodeStats , ChoiceStats}{23}
-\contentsline {paragraph}{ActivityIndicator}{23}
-\contentsline {paragraph}{SheetEditPage}{23}
-\contentsline {paragraph}{InputQuestion , CodeQuestion , ChoiceQuestion}{24}
-\contentsline {paragraph}{SheetManagerPage}{24}
-\contentsline {paragraph}{SheetControl}{24}
-\contentsline {paragraph}{SheetsPage}{24}
-\contentsline {paragraph}{SheetItem}{24}
-\contentsline {paragraph}{CheckBox}{24}
-\contentsline {paragraph}{ColorPicker}{24}
-\contentsline {paragraph}{Header}{24}
-\contentsline {paragraph}{IDFactory}{25}
-\contentsline {paragraph}{LCButton}{25}
-\contentsline {paragraph}{MDPreview}{25}
-\contentsline {paragraph}{SearchDropdown}{25}
-\contentsline {paragraph}{SegmentedButton}{25}
-\contentsline {paragraph}{TextArea}{26}
-\contentsline {paragraph}{TextBox}{26}
-\contentsline {section}{\numberline {5.5}Unit testing}{26}
-\contentsline {section}{\numberline {5.6}Third party libraries}{26}
-\contentsline {subsection}{\numberline {5.6.1}React}{26}
-\contentsline {subsection}{\numberline {5.6.2}Chromath}{26}
-\contentsline {subsection}{\numberline {5.6.3}CodeMirror}{26}
-\contentsline {subsection}{\numberline {5.6.4}Markdown-it}{27}
-\contentsline {subsection}{\numberline {5.6.5}Highlight}{27}
-\contentsline {subsection}{\numberline {5.6.6}JQCloud}{27}
-\contentsline {subsection}{\numberline {5.6.7}Levenshtein-ffi}{27}
-\contentsline {subsection}{\numberline {5.6.8}pg}{27}
-\contentsline {subsection}{\numberline {5.6.9}Devise}{27}
-\contentsline {subsection}{\numberline {5.6.10}ReactRails}{27}
-\contentsline {subsection}{\numberline {5.6.11}Typescript Rails}{27}
-\contentsline {chapter}{\numberline {6}Professional and Ethical Issues}{28}
-\contentsline {section}{\numberline {6.1}Section Heading}{28}
-\contentsline {chapter}{\numberline {7}Results/Evaluation}{29}
-\contentsline {subsection}{\numberline {7.0.1}Limitations}{30}
-\contentsline {subsection}{\numberline {7.0.2}Security}{30}
-\contentsline {subsection}{\numberline {7.0.3}Overall}{31}
-\contentsline {chapter}{\numberline {8}Conclusion}{32}
-\contentsline {section}{\numberline {8.1}Thoughts on project}{32}
-\contentsline {section}{\numberline {8.2}Future work}{32}
-\contentsline {section}{Bibliography}{34}
-\contentsline {chapter}{\numberline {A}Extra Information}{35}
-\contentsline {section}{\numberline {A.1}Tables, proofs, graphs, test cases, ...}{35}
-\contentsline {chapter}{\numberline {B}User Guide}{36}
-\contentsline {section}{\numberline {B.1}Instructions}{36}
-\contentsline {chapter}{\numberline {C}Source Code}{37}
-\contentsline {section}{\numberline {C.1}Instructions}{37}
+\contentsline {subsection}{\numberline {5.3.3}Statistics collection}{21}
+\contentsline {section}{\numberline {5.4}Front end analysis}{23}
+\contentsline {subsection}{\numberline {5.4.1}Entry points}{23}
+\contentsline {subsection}{\numberline {5.4.2}React components}{23}
+\contentsline {paragraph}{LectureCreatorPage}{23}
+\contentsline {paragraph}{LectureItem}{23}
+\contentsline {paragraph}{LecturePage}{23}
+\contentsline {paragraph}{SubscribePage}{23}
+\contentsline {paragraph}{SheetCreatorPage}{23}
+\contentsline {paragraph}{InputCreator}{24}
+\contentsline {paragraph}{CodeIO}{24}
+\contentsline {paragraph}{CodeCreatorIO}{24}
+\contentsline {paragraph}{CodeCreator}{24}
+\contentsline {paragraph}{ChoiceCreatorAnswer}{25}
+\contentsline {paragraph}{ChoiceCreator}{25}
+\contentsline {paragraph}{SheetDashboardPage}{25}
+\contentsline {paragraph}{InputStats , CodeStats , ChoiceStats}{25}
+\contentsline {paragraph}{ActivityIndicator}{25}
+\contentsline {paragraph}{SheetEditPage}{25}
+\contentsline {paragraph}{InputQuestion , CodeQuestion , ChoiceQuestion}{26}
+\contentsline {paragraph}{SheetManagerPage}{26}
+\contentsline {paragraph}{SheetControl}{26}
+\contentsline {paragraph}{SheetsPage}{26}
+\contentsline {paragraph}{SheetItem}{26}
+\contentsline {paragraph}{CheckBox}{26}
+\contentsline {paragraph}{ColorPicker}{26}
+\contentsline {paragraph}{Header}{26}
+\contentsline {paragraph}{IDFactory}{27}
+\contentsline {paragraph}{LCButton}{27}
+\contentsline {paragraph}{MDPreview}{27}
+\contentsline {paragraph}{SearchDropdown}{27}
+\contentsline {paragraph}{SegmentedButton}{27}
+\contentsline {paragraph}{TextArea}{28}
+\contentsline {paragraph}{TextBox}{28}
+\contentsline {subsection}{\numberline {5.4.3}Component styling}{28}
+\contentsline {section}{\numberline {5.5}Unit testing}{28}
+\contentsline {section}{\numberline {5.6}Third party libraries}{29}
+\contentsline {subsection}{\numberline {5.6.1}jQuery}{29}
+\contentsline {subsection}{\numberline {5.6.2}React}{29}
+\contentsline {subsection}{\numberline {5.6.3}Chromath}{29}
+\contentsline {subsection}{\numberline {5.6.4}CodeMirror}{29}
+\contentsline {subsection}{\numberline {5.6.5}Markdown-it}{29}
+\contentsline {subsection}{\numberline {5.6.6}Highlight}{29}
+\contentsline {subsection}{\numberline {5.6.7}JQCloud}{29}
+\contentsline {subsection}{\numberline {5.6.8}Levenshtein-ffi}{30}
+\contentsline {subsection}{\numberline {5.6.9}pg}{30}
+\contentsline {subsection}{\numberline {5.6.10}Devise}{30}
+\contentsline {subsection}{\numberline {5.6.11}ReactRails}{30}
+\contentsline {subsection}{\numberline {5.6.12}Typescript Rails}{30}
+\contentsline {chapter}{\numberline {6}Professional Issues}{31}
+\contentsline {chapter}{\numberline {7}Results/Evaluation}{32}
+\contentsline {subsection}{\numberline {7.0.1}Limitations}{33}
+\contentsline {subsection}{\numberline {7.0.2}Security}{33}
+\contentsline {subsection}{\numberline {7.0.3}Overall}{34}
+\contentsline {chapter}{\numberline {8}Conclusion}{35}
+\contentsline {section}{\numberline {8.1}Thoughts on project}{35}
+\contentsline {section}{\numberline {8.2}Future work}{35}
+\contentsline {section}{Bibliography}{37}
+\contentsline {chapter}{\numberline {A}User Guide}{38}
+\contentsline {section}{\numberline {A.1}Instructions}{38}
+\contentsline {paragraph}{Accessing the web app}{38}
+\contentsline {paragraph}{Logging in}{38}
+\contentsline {paragraph}{Creating a lecture}{38}
+\contentsline {paragraph}{Creating a sheet}{38}
+\contentsline {paragraph}{Going live}{38}
+\contentsline {paragraph}{Monitor progress of sheet}{38}

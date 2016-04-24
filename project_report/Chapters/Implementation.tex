@@ -30,6 +30,9 @@ The front-end was written using Visual Studio Code , mainly because it was the o
 \section{Rails backend analysis}
 This section will explain the structure of code within the backend responsible for the main functionality.
 
+\subsection{Routes}
+See appendix B
+
 \subsection{Controllers}
 Controllers are split by page that the user sees , as well as an additional ApiController which is engineered to be decoupled from the HTML such that it could power a potential mobile or native client.
 
@@ -62,10 +65,62 @@ Controllers are split by page that the user sees , as well as an additional ApiC
 	\item \textit{\textbf{user \textunderscore info}} Return the email of the logged in user
 \end{itemize}
 
+\subsection{Statistics collection}
+Statistics are generated when the student answers the sheet questions. They are used to capture metadata that cannot be extracted from just the current state of the user's answers.
+
+To abstract their creation away from other parts of the system , the equals operator is overridden and creates the necessary statistics. The relevant code is shown below:
+
+\begin{lstlisting}[breaklines,language=Ruby,frame=single,basicstyle=\ttfamily,
+    stringstyle=\color{red},
+    keywordstyle=\color{blue}]
+def data=(val)
+    if self.question.type == 0
+
+      write_attribute :result , {:correct => val == self.question.correct_answer}.to_json
+
+      if self.data == nil or self.data == ""
+        #this means that this is their first choice
+        Statistic.create :answer => self , :kind => @@stat_first_click , :data => val
+      else
+        Statistic.create :answer => self ,
+                         :kind => @@stat_change ,
+                         :data => {"from" => self.data , "to"=>val}.to_json.to_s
+      end
+
+    elsif self.question.type == 1
+      write_attribute :result ,
+                      {:correct => val.match(Regexp.new(self.question.correct_answer)) != nil}.to_json
+    end
+
+    write_attribute :data , val
+end
+\end{lstlisting}
+
+If the question type is one that should generate a statistic , a statistic is created. In the case the question is a choice question and the user moved from an existing answer to another , a transition statistic is created. This records the change in an object with a "from" and "to" field.
+
+After a statistic is generated , it can be acquired by the client for the dashboard by just acquiring the /statistics/ endpoint with GET over http. The object that represents the transitions is computed this way:
+
+\begin{lstlisting}[breaklines,language=Ruby,frame=single,basicstyle=\ttfamily,
+    stringstyle=\color{red},
+    keywordstyle=\color{blue}]
+transitions = Hash.new {|h, k| h[k]= Hash.new{ |h, k| h[k] = 0}}
+c.each{
+    |transition|
+	 transitions[transition['from']][transition['to']] += 1
+}
+\end{lstlisting}
+
+A nested hash object is created and using the from and to values a 2d structure is represented , thus generating a grid of numbers with headers that can be easily rendered into a table by the client.
+
 \section{Front end analysis}
-The front end is mostly composed of React components; React uses a special file type called JSX which allows the mixing of javascript and HTML in the same file. JSX files go though a compilation phase to become plain JS files.
+The front end is mostly composed of React components; React uses a special file type called JSX\cite{jsx} which allows the mixing of javascript and HTML in the same file. JSX files go though a compilation phase to become plain JS files.
 
 In this project , Typescript is used instead of javascript , so the files written in the project are TSX files , which compile down to JSX and then to JS.
+
+\subsection{Entry points}
+The combination of Typescript , React and Rails does not have a lot of official support , this is both because of the fact that typescript/react are newer technologies and that rails favours a javascript alternative called Coffeescript. However a gem called typescript-rails\footnote{Typescript rails gem \url{https://github.com/typescript-ruby/typescript-rails}} provides support for including typescript in the asset pipeline so that typescript .ts files are transparently compiled to .js files so they may work in the browser.
+
+There are however issues when dealing with .tsx files , which contain Typescript + HTML code , the gem does not include them in the pipeline as it most likely has not been updated to support this as of yet. To account for issue , each page has a entry.ts file and that file marks .tsx files as dependencies to it such that the typescript compiler may merge them (after converting TSX to standard typescript). The entry.js is references in the HTML that the server renders and it draws the root React component (often a page component as you will see below).
 
 \subsection{React components}
 \paragraph{LectureCreatorPage} The state contains a \textit{\textbf{name}} and \textit{\textbf{color}} which are selected by the user and send using POST when the user presses create lecture.
@@ -176,23 +231,45 @@ It also has the following state:
 \paragraph{TextArea} A stylised text area
 \paragraph{TextBox} A stylised text box
 
-\textcolor{red}{//example code here and in the typescript}
-\textcolor{red}{append styles to React}
+\subsection{Component styling}
+A powerful pattern in react components is to generate css at runtime , this enables features such as the dynamic coloring given by the lecture colour. The project uses some share components that are meant to be used in different pages. Often the page needs a slighly different version of the control , so instead of making flags for all posible variations the component exposes a style property.
+
+\begin{lstlisting}[breaklines,language=Typescript,frame=single,basicstyle=\ttfamily,
+    stringstyle=\color{red},
+    keywordstyle=\color{blue}]
+interface LCButtonProps{
+    text : string
+    color: string
+    onClick? : Function
+    style? : any
+}
+\end{lstlisting}
+
+The style can be any object , then when the component is rendered this object is merged with the static style. If the style property contains a new css rule it will get added ; else if the static style already has that rule , the style property one overrides the static one. It uses jQuery to do this:
+
+\begin{lstlisting}[breaklines,language=Typescript,frame=single,basicstyle=\ttfamily,
+    stringstyle=\color{red},
+    keywordstyle=\color{blue}]
+if(this.props.style != undefined){
+	$.extend(containerStyle , this.props.style);    
+}
+\end{lstlisting}
 
 \section{Unit testing}
-Unit testing was used to make sure changes and additions to the system did not break or alter any previous functionality.
-
-Purpose:
-\begin{enumerate}
+Unit testing is used to make sure changes and additions to the system did not break or alter any previous functionality. More precisely it has the following advantages:
+\begin{itemize}
 	\item To make sure existing functionality was not compromised
 	\item To ensure that the database settings worked as intended ( defaults , uniqueness etc)
-	\item Components of the system all complied with security , such as preventing user's from editing other people's date or gaining access to data they are not allowed to see
-\end{enumerate}
+	\item Components of the system all complied with security , such as preventing user's from editing other people's data or gaining access to data they are not allowed to see
+\end{itemize}
 
 
 
 
 \section{Third party libraries} \label{libs}
+
+\subsection{jQuery}
+Used in a number of places , such as the above example on merging objects. It is also a dependency of other libraries.
 
 \subsection{React}
 A javascript library that allows the project to have isolated , reusable components that build up all of the user interface

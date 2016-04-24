@@ -9,50 +9,48 @@ A level-1 auxiliary file: Chapters/ProfessionalIssues.aux
 A level-1 auxiliary file: Chapters/Evaluation.aux
 A level-1 auxiliary file: Chapters/Conclusion.aux
 The style file: plain.bst
-A level-1 auxiliary file: Appendices/appendix.aux
 A level-1 auxiliary file: Appendices/UserGuide.aux
-A level-1 auxiliary file: Appendices/SourceCode.aux
 Database file #1: ../references.bib
 Warning--to sort, need author or key in laptop2
-You've used 8 entries,
+You've used 10 entries,
             2118 wiz_defined-function locations,
-            538 strings with 5414 characters,
-and the built_in function-call counts, 1645 in all, are:
-= -- 151
-> -- 56
+            544 strings with 5554 characters,
+and the built_in function-call counts, 2055 in all, are:
+= -- 189
+> -- 70
 < -- 0
-+ -- 25
-- -- 16
-* -- 46
-:= -- 270
-add.period$ -- 23
-call.type$ -- 8
-change.case$ -- 32
++ -- 31
+- -- 20
+* -- 56
+:= -- 340
+add.period$ -- 29
+call.type$ -- 10
+change.case$ -- 40
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 56
-empty$ -- 178
-format.name$ -- 16
-if$ -- 363
+cite$ -- 11
+duplicate$ -- 70
+empty$ -- 222
+format.name$ -- 20
+if$ -- 453
 int.to.chr$ -- 0
-int.to.str$ -- 8
+int.to.str$ -- 10
 missing$ -- 0
-newline$ -- 42
-num.names$ -- 14
-pop$ -- 65
+newline$ -- 52
+num.names$ -- 18
+pop$ -- 81
 preamble$ -- 1
-purify$ -- 24
+purify$ -- 30
 quote$ -- 0
-skip$ -- 65
+skip$ -- 80
 stack$ -- 0
-substring$ -- 41
-swap$ -- 8
+substring$ -- 51
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 32
+type$ -- 40
 warning$ -- 1
-while$ -- 14
-width$ -- 9
-write$ -- 72
+while$ -- 18
+width$ -- 12
+write$ -- 90
 (There was 1 warning)

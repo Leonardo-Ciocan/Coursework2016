@@ -7,7 +7,15 @@
 \usepackage[square,sort,comma,numbers]{natbib} %References
 \usepackage{float}% If comment this, figure moves to Page 2
 \usepackage{graphicx}
-
+\lstloadlanguages{Ruby}
+\lstdefinelanguage{Typescript}{
+  keywords={break, case, catch, continue, debugger, default, delete, do, else, finally, for, function, if, in, instanceof, new, return, switch, this, throw, try, typeof, var, void, while, with , any , number , string},
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  morestring=[b]',
+  morestring=[b]",
+  sensitive=true
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Front Matter - project title, name, supervisor name and date
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -78,7 +86,7 @@ After some reflections on ethics , the conclusion will bring the report to an en
 % Appendices
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \appendix
-\include{Appendices/appendix}
+%\include{Appendices/appendix}
 \include{Appendices/UserGuide}
-\include{Appendices/SourceCode}
+%\include{Appendices/SourceCode}
 \end{document}
