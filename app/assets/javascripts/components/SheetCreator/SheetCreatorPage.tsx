@@ -297,7 +297,7 @@ class SheetCreatorPage extends React.Component<SheetCreatorPageProps,SheetCreato
             }
         ).then((data)=>{
             console.log(data);
-            if(data ==" "){
+            if(data == " " || data == "" || data == undefined){
                 window.location.href = "/lectures/" + this.props.lecture.id
             }
             else{

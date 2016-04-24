@@ -19,8 +19,10 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
     
   constructor(props:SheetDashboardPageProps) {
     super(props);
-}
-  
+    }
+  componentWillReceiveProps(){
+      this.setState({});
+  }
   render() {
     var stats = this.props.questions.map((item) => {
         if(item.type == 0){
@@ -53,7 +55,8 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
 
 // console.log("from:" + loadPageVar("from"));
 
-    $.get(
+    function update(){
+        $.get(
         "/api/lecture/",
         {id : lecture_id},
         (lecture_data) => {
@@ -81,5 +84,10 @@ class SheetDashboardPage extends React.Component<SheetDashboardPageProps, any> {
                 })
         }
     );
-    
+    }
+    update();
+    setInterval(()=>{
+        ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+        update();   
+    } , 5000);
     

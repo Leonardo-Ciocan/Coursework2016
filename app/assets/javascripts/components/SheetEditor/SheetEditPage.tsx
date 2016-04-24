@@ -52,7 +52,7 @@ class SheetEditPage extends React.Component<SheetEditPageProps,any> {
                           border:"1px solid lightgray"
                     }}>
                     
-                    <div style={{background:"white",textAlign:"center"}}>
+                    <div style={{background:"white",textAlign:"center",display:this.props.sheet.released?"":"none"}}>
                         <img style={{height:"300px", display:"inline-block"}} src={ this.props.percentage > 66 ? "/assets/l3.png": "/assets/l1.png"}/>
                         <h1 style={{ color:this.props.lecture.color , fontFamily:"Helvetica",fontWeight:"200",paddingBottom:"10px" , textAlign:"center"}}>{this.props.percentage+"%"}</h1>
                     </div>

@@ -9,7 +9,7 @@ class LectureListController < ApplicationController
   def subscribe
     @lecture_id = params[:id]
     lecture = Lecture.find @lecture_id
-    if lecture.author_id = current_user.id or Subscription.where(:user_id => current_user.id).count > 0
+    if lecture.author_id == current_user.id or Subscription.where(:user_id => current_user.id).count > 0
       redirect_to "/lectures/" + @lecture_id
       return
     end

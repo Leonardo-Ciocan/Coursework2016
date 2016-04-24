@@ -82,8 +82,8 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
         for(var tr in this.state.transitions){
             for(var td in this.state.transitions[tr]){
                 transitionData[parseInt(tr)][parseInt(td)+1] = this.state.transitions[tr][td];
-                let r = parseInt(this.state.transitions[tr][td]);
-                if( r > biggest){
+                let r = this.state.transitions[tr][td];
+                if( r > biggest && r != undefined && r != NaN){
                     biggest = r;
                 }
             }          
@@ -91,12 +91,14 @@ class ChoiceStats  extends React.Component<ChoiceStatsProps, any> {
         let color = new Chromath(this.props.color);
 
 
+console.log("BIGGEST IS " + biggest);
         let transitions = transitionData.map((transition,index0)=>{
            let collumns = transition.map((item,index) => {
                let num = parseInt(item);
                let fraction = num / biggest;
-                       console.log(fraction + "%%%");
-               let background = (index==0 || index == index0+1)? "white" : color.darken(fraction/1.3 || 1).toRGBString();
+               if(isNaN(fraction)) fraction = 0;
+               console.log("fraction is " + fraction + " for " + num);
+               let background = (index==0 || index == index0+1)? "white" : color.shade((1-fraction) ).toRGBString();
                return <td style={{background:background  ,color:index == 0? "black": (index == index0+1?"black":"white"), padding:"15px",weight:index==0?"bold":""}}>{index == index0+1 ? "-":item}</td>
             });
            return <tr> {collumns}  </tr>;

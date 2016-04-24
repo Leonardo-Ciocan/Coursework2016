@@ -11,9 +11,15 @@ class SheetEditorController < ApplicationController
   @@evalyn_url = URI.parse("http://188.166.154.242:1989/check")
 
   def index
-
     @sheet = Sheet.find params[:id]
     @lecture_id = @sheet.lecture_id
+
+    if Subscription.where(:user_id => current_user.id).empty? and
+        Lecture.find(@lecture_id).author_id != current_user.id
+      redirect_to "/lectures/"
+      return
+    end
+
     @sheet_id = @sheet.id
     @questions = @sheet.questions.all
     @answers = []

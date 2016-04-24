@@ -2,8 +2,10 @@ module LCHelper
   def valid?(answer)
     puts "validity:"
     puts ">>> " + (answer.data == answer.question.correct_answer).to_s
-    if answer.question.type == 0 or answer.question.type == 1
+    if answer.question.type == 0
       return answer.data == answer.question.correct_answer
+    elsif answer.question.type == 1
+      return JSON.parse(answer.result)["correct"] == true
     end
   end
 
@@ -31,7 +33,7 @@ module LCHelper
 
     for i in 0..20
       a = Answer.create :question_id => q2.id
-      a.data = ["stack","queue","Potato kernel", "Circular queue"][(rand * 3).round]
+      a.data = ["stack","queue","kernel", "Circular queue"][(rand * 3).round]
       a.save
     end
 

@@ -28,5 +28,4 @@ class Answer < ActiveRecord::Base
 
     write_attribute :data , val
   end
-
 end

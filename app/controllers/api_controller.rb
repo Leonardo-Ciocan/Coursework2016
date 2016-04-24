@@ -348,14 +348,14 @@ class ApiController < ApplicationController
     question = Question.find(params[:question_id])
     answers = Answer.where(:question_id => params[:question_id])
 
-    if question.type == 0
+    if question.type == 0 or question.type == 1
       wrong = 0
       counters = Hash.new { |h, k| h[k] = 0 }
 
       percentage = 0
       sum = 0
       for i in answers
-        if i.data == i.question.correct_answer
+        if valid?(i)
           sum += 1
         end
 
@@ -383,7 +383,7 @@ class ApiController < ApplicationController
 
         distances = answers.map{
             |answer|
-          Levenshtein.distance(question.correct_answer,answer.data)
+          Levenshtein.distance(question.model_answer,answer.data)
         }.each_with_object(Hash.new(0)) { |word,counts| counts[word] += 1 }
 
       end

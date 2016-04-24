@@ -144,7 +144,7 @@ class CodeCreator extends React.Component<CodeCreatorProps , CodeCreatorState>{
                    <MDPreview code={this.props.question.title || ""} />
                    <div style={{paddingTop:"10px",borderTop:"1px solid lightgray",marginRight:"-10px" , marginLeft:"-10px"}}></div>   
                    <span style={{display:"block",fontSize:"10pt", color:"gray",textAlign:"left",width:"100%",marginBottom:"10px"}}>Select a language:</span>
-                   <SegmentedButton onSelected={this.languageChanged.bind(this)} itemPadding="2px" labels={["Python" , "Java" , "Haskell"]} color={this.props.color} style={{paddingBottom:"10px"}}/>
+                   <SegmentedButton onSelected={this.languageChanged.bind(this)} itemPadding="2px" labels={["Python" , "Java"]} color={this.props.color} style={{paddingBottom:"10px"}}/>
                    <table style={{style:"100%"}}>
                         <tr>
                             <th>Input</th>
