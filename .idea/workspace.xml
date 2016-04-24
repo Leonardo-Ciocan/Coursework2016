@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2499d5f9-3d5e-4bca-b078-8f19d0509ed1" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/ChoiceStats.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/ChoiceStats.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetCreator/CodeCreator.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetCreator/CodeCreator.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetCreator/SheetCreatorPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetCreator/SheetCreatorPage.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/SheetDashboardPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetDashboard/SheetDashboardPage.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/SheetEditPage.tsx" afterPath="$PROJECT_DIR$/app/assets/javascripts/components/SheetEditor/SheetEditPage.tsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/answer.rb" afterPath="$PROJECT_DIR$/app/models/answer.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/lc_helper.rb" afterPath="$PROJECT_DIR$/lib/lc_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/lecture_list_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/lecture_list_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/sheets_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/sheets_controller.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/index.erb" afterPath="$PROJECT_DIR$/app/views/layouts/index.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TestUsers.iws" />
@@ -85,7 +76,7 @@
     <favorites_list name="TestUsers" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.47412983">
+    <splitter split-orientation="horizontal" split-proportion="0.4543744">
       <split-first>
         <leaf>
           <file leaf-file-name="api_controller_test.rb" pinned="false" current-in-tab="false">
@@ -98,11 +89,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="answer.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="answer.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.47256097">
-                  <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="index.erb" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/views/layouts/index.erb">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.265625">
+                  <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -182,21 +183,21 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="api_controller.rb" pinned="false" current-in-tab="false">
+          <file leaf-file-name="api_controller.rb" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="357" column="13" selection-start-line="357" selection-start-column="13" selection-end-line="357" selection-end-column="13" />
+                <state vertical-scroll-proportion="0.5538618">
+                  <caret line="330" column="7" selection-start-line="330" selection-start-column="7" selection-end-line="330" selection-end-column="7" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="lc_helper.rb" pinned="false" current-in-tab="true">
+          <file leaf-file-name="lc_helper.rb" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/lib/lc_helper.rb">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.10670732">
-                  <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
                   <folding />
                 </state>
               </provider>
@@ -304,7 +305,6 @@
         <option value="$PROJECT_DIR$/test/controllers/api_controller_test.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160323084824_restrict_result_length.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/index.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/index.css" />
         <option value="$PROJECT_DIR$/app/views/devise/sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
@@ -319,8 +319,9 @@
         <option value="$PROJECT_DIR$/app/controllers/sheet_editor_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/sheets_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/lecture_list_controller.rb" />
-        <option value="$PROJECT_DIR$/app/controllers/api_controller.rb" />
         <option value="$PROJECT_DIR$/lib/lc_helper.rb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/index.erb" />
+        <option value="$PROJECT_DIR$/app/controllers/api_controller.rb" />
       </list>
     </option>
   </component>
@@ -612,6 +613,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestUsers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestUsers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestUsers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="TestUsers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layouts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1043,12 +1084,6 @@
       <option name="number" value="Default" />
       <updated>1445084755533</updated>
     </task>
-    <task id="LOCAL-00021" summary="Flattened UI , linked to create lecture page">
-      <created>1455156097787</created>
-      <option name="number" value="00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1455156097788</updated>
-    </task>
     <task id="LOCAL-00022" summary="Filled missing gaps in functionality , new api endpoints">
       <created>1455239563426</created>
       <option name="number" value="00022" />
@@ -1337,7 +1372,13 @@
       <option name="project" value="LOCAL" />
       <updated>1461527048319</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Fixing bugs">
+      <created>1461532416907</created>
+      <option name="number" value="00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1461532416907</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1387,7 +1428,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Improved statistics and fixtures" />
     <MESSAGE value="Fixed UI bugs" />
     <MESSAGE value="Cleaned up a lot of stuff" />
     <MESSAGE value="Added missing files" />
@@ -1412,7 +1452,8 @@
     <MESSAGE value="report update" />
     <MESSAGE value="changed report again" />
     <MESSAGE value="Updated report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated report" />
+    <MESSAGE value="Fixing bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing bugs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1647,13 +1688,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/index.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5346062">
-          <caret line="15" column="45" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20151207191127_add_teacher_to_lecture.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1824,26 +1858,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="357" column="13" selection-start-line="357" selection-start-column="13" selection-end-line="357" selection-end-column="13" />
+          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/answer.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/index.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47256097">
-          <caret line="31" column="0" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.265625">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/lc_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10670732">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/api_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5538618">
+          <caret line="330" column="7" selection-start-line="330" selection-start-column="7" selection-end-line="330" selection-end-column="7" />
           <folding />
         </state>
       </provider>

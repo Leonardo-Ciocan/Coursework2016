@@ -324,6 +324,12 @@ class ApiController < ApplicationController
 
   def update_lecture
     lecture = Lecture.find params[:lecture_id]
+
+    if lecture.author_id != current_user.id
+      head :forbidden
+      return
+    end
+
     if params.has_key?('name')
       lecture.name = params[:name]
       lecture.save
