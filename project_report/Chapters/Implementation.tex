@@ -64,11 +64,13 @@ Controllers are split by page that the user sees , as well as an additional ApiC
 	\item \textit{\textbf{search}} Searches for a keyword and returns all sheets and lectures that contain it
 	\item \textit{\textbf{user \textunderscore info}} Return the email of the logged in user
 \end{itemize}
+\clearpage
 
 \subsection{Statistics collection}
 Statistics are generated when the student answers the sheet questions. They are used to capture metadata that cannot be extracted from just the current state of the user's answers.
 
 To abstract their creation away from other parts of the system , the equals operator is overridden and creates the necessary statistics. The relevant code is shown below:
+
 
 \begin{lstlisting}[breaklines,language=Ruby,frame=single,basicstyle=\ttfamily,
     stringstyle=\color{red},
@@ -120,7 +122,7 @@ In this project , Typescript is used instead of javascript , so the files writte
 \subsection{Entry points}
 The combination of Typescript , React and Rails does not have a lot of official support , this is both because of the fact that typescript/react are newer technologies and that rails favours a javascript alternative called Coffeescript. However a gem called typescript-rails\footnote{Typescript rails gem \url{https://github.com/typescript-ruby/typescript-rails}} provides support for including typescript in the asset pipeline so that typescript .ts files are transparently compiled to .js files so they may work in the browser.
 
-There are however issues when dealing with .tsx files , which contain Typescript + HTML code , the gem does not include them in the pipeline as it most likely has not been updated to support this as of yet. To account for issue , each page has a entry.ts file and that file marks .tsx files as dependencies to it such that the typescript compiler may merge them (after converting TSX to standard typescript). The entry.js is references in the HTML that the server renders and it draws the root React component (often a page component as you will see below).
+There are however issues when dealing with .tsx files , which contain Typescript + HTML code , the gem does not include them in the pipeline as it most likely has not been updated to support this as of yet. To account for issue , each page has a entry.ts file and that file marks .tsx files as dependencies to it such that the typescript compiler may merge them (after converting TSX to standard typescript).The a javascript file is references in the HTML , containing only a rails pipeline request for the corresponding entry.js which is merged into the empty javascript file. this file then draws the root React component (often a page component as you will see below). This is a workout until proper tsx support becomes stable on the ruby gem.
 
 \subsection{React components}
 \paragraph{LectureCreatorPage} The state contains a \textit{\textbf{name}} and \textit{\textbf{color}} which are selected by the user and send using POST when the user presses create lecture.
@@ -230,7 +232,7 @@ It also has the following state:
 \end{itemize}
 \paragraph{TextArea} A stylised text area
 \paragraph{TextBox} A stylised text box
-
+\clearpage
 \subsection{Component styling}
 A powerful pattern in react components is to generate css at runtime , this enables features such as the dynamic coloring given by the lecture colour. The project uses some share components that are meant to be used in different pages. Often the page needs a slighly different version of the control , so instead of making flags for all posible variations the component exposes a style property.
 
@@ -268,7 +270,7 @@ To create and execute code on the docker instance , the python program that hand
 To illustrate this , here is how the command string for a java program is made. Note Code.java is written to the disk previously and folder is the temporary folder where it's located.
 
 \begin{lstlisting}[breaklines,language=Typescript,frame=single,basicstyle=\ttfamily,
-    stringstyle=\color{red},
+    stringstyle=\color{red},showstringspaces=false,
     keywordstyle=\color{blue}]
 cmdStr = "sudo docker run -v {0}:/code/ -i java /bin/bash -c \" javac /code/Code.java;cd /code/;java Code\"".format(folder)
 \end{lstlisting}
@@ -327,4 +329,10 @@ Support for React in Rails applications
 
 \subsection{Typescript Rails}
 Automatic compilation of typescript files as part of the rails asset pipeline.
+
+\subsection{Flask}
+A microframework for python , used in the code executing server.
+
+\subsection{Request}
+A python library to simplify making http requests.
 

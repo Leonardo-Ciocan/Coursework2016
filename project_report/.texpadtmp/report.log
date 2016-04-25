@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.4)  24 APR 2016 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.4)  25 APR 2016 04:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -455,12 +455,16 @@ Chapter 5.
 
 
 
-] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30]) [31]
+] [19] [20] [21] [22
+
+] [23] [24] [25] [26] [27] [28] [29
+
+] [30] [31]) [32]
 \openout2 = `Chapters/ProfessionalIssues.aux'.
 
  (./Chapters/ProfessionalIssues.tex
 Chapter 6.
-) [32
+) [33
 
 
 
@@ -469,20 +473,20 @@ Chapter 6.
 
  (./Chapters/Evaluation.tex
 Chapter 7.
-[33
+[34
 
 
 
-] [34]) [35]
+] [35]) [36]
 \openout2 = `Chapters/Conclusion.aux'.
 
  (./Chapters/Conclusion.tex
 Chapter 8.
-[36
+[37
 
 
 
-]) [37] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.bbl
+]) [38] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.bbl
 Underfull \hbox (badness 5862) in paragraph at lines 29--33
 []\OT1/lmr/m/n/10 Robert B. Kozma.  Tech-nol-ogy and class-room prac-tices: An in-ter-na-tional
  []
@@ -492,28 +496,23 @@ Underfull \hbox (badness 6078) in paragraph at lines 29--33
 \OT1/lmr/m/n/10 study.  $\OT1/lmtt/m/n/10 https : / / www . stcloudstate . edu / tpi / initiative / documents / technology /
  []
 
-) [38
+) [39
 
 
 ]
 \openout2 = `Appendices/UserGuide.aux'.
 
- (./Appendices/UserGuide.tex
-Appendix A.
-) [39
-
-
-] (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.aux (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Background.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Body.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/DesignSpecification.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Implementation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Evaluation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Conclusion.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/UserGuide.aux)) ) 
+ (./Appendices/UserGuide.tex) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.aux (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Background.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Body.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/DesignSpecification.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Implementation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/ProfessionalIssues.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Evaluation.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Chapters/Conclusion.aux) (/Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/Appendices/UserGuide.aux)) ) 
 Here is how much of TeX's memory you used:
  5154 strings out of 493089
  78058 string characters out of 6134843
- 213124 words of memory out of 5000000
+ 225124 words of memory out of 5000000
  8468 multiletter control sequences out of 15000+600000
  57773 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,8n,44p,795b,1595s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,8n,44p,795b,1094s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmtti10.pfb>
-Output written on /Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.pdf (43 pages, 460430 bytes).
+Output written on /Users/leo/RubymineProjects/TestUsers/project_report/.texpadtmp/report.pdf (43 pages, 458967 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  141 compressed objects within 2 object streams
